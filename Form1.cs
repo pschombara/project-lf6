@@ -16,5 +16,16 @@ namespace projectlf6
         {
             InitializeComponent();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnNewGame_Click(object sender, EventArgs e)
+        {
+            Form newGame = new newGame();
+            newGame.Visible = true;
+        }
     }
 }
