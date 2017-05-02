@@ -25,7 +25,13 @@ namespace projectlf6
         private void btnNewGame_Click(object sender, EventArgs e)
         {
             Form newGame = new newGame();
-            newGame.Visible = true;
+            newGame.ShowDialog();
+        }
+
+        private void btnLevelEditor_Click(object sender, EventArgs e)
+        {
+            Form LevelEditorMain = new LevelEditorMain();
+            LevelEditorMain.ShowDialog();
         }
     }
 }

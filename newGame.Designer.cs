@@ -186,6 +186,7 @@
             this.btnBack.TabIndex = 16;
             this.btnBack.Text = "Zurück";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // label6
             // 
@@ -218,6 +219,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "newGame";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Neues Spiel";
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayerOneFigure)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayerTwoFigure)).EndInit();

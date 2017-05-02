@@ -52,6 +52,7 @@
             this.btnLevelEditor.TabIndex = 1;
             this.btnLevelEditor.Text = "Level Editor";
             this.btnLevelEditor.UseVisualStyleBackColor = true;
+            this.btnLevelEditor.Click += new System.EventHandler(this.btnLevelEditor_Click);
             // 
             // btnOption
             // 
@@ -82,6 +83,7 @@
             this.Controls.Add(this.btnLevelEditor);
             this.Controls.Add(this.btnNewGame);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "    ";
             this.ResumeLayout(false);
 
