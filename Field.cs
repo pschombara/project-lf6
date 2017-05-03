@@ -12,9 +12,9 @@ namespace projectlf6
         private string texture;
         private int points;
 
-        public const int FIELD_GRASS  = 0;
+        public const int FIELD_STONE = 0;
         public const int FIELD_DIRT = 1;
-        public const int FIELD_STONE = 2;
+        public const int FIELD_GRASS = 2;
         public const int FIELD_NO_BROCKEN = 3;
         public const int FIELD_COAL = 4;
         public const int FIELD_COPPER = 5;

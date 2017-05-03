@@ -39,7 +39,12 @@ namespace projectlf6
 
         public int getTotalscore()
         {
-            return this.gameScores.Count;
+            int sum = 0;
+            foreach (var item in gameScores)
+            {
+                sum += item;
+            }
+            return sum;
         }
 
         public int getMinScore()

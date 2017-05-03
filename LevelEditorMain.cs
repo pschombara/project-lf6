@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -25,17 +26,26 @@ namespace projectlf6
         #region Menü
         private void neuesLevelToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Editor.NewLevel();
+            pbLevel.Refresh();
         }
 
         private void levelLadenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                Editor.loadLevelFromFile(openFileDialog1.FileName);
+                pbLevel.Refresh();
+            }
         }
 
         private void levelSpeichernToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                Editor.saveLevelToFile(saveFileDialog1.FileName);
+                pbLevel.Refresh();
+            }
         }
 
         private void editorBeendenToolStripMenuItem_Click(object sender, EventArgs e)
@@ -133,6 +143,8 @@ namespace projectlf6
             pbSelection.BackgroundImage = Resources.Diamond;
         }
         #endregion
+
+        #region Maus-Events
         private void pbLevel_MouseDown(object sender, MouseEventArgs e)
         {
             mausDown = true;
@@ -143,19 +155,39 @@ namespace projectlf6
         private void pbLevel_MouseMove(object sender, MouseEventArgs e)
         {
             Editor.putCursor(e.X, e.Y);
-            if(mausDown)
+            toolStripStatusLblLocation.Text = "X: " + Editor.getCursor().X + " Y: " + Editor.getCursor().Y;
+            if (mausDown)
                 Editor.putTexture(e.X, e.Y);
             pbLevel.Refresh();
         }
+        private void pbLevel_MouseUp(object sender, MouseEventArgs e)
+        {
+            mausDown = false;
+        }
+        private void pbLevel_MouseEnter(object sender, EventArgs e)
+        {
+            Editor.setCursorOnMap(true);
+            pbLevel.Refresh();
+        }
+        private void pbLevel_MouseLeave(object sender, EventArgs e)
+        {
+            Editor.setCursorOnMap(false);
+            pbLevel.Refresh();
+        }
+        #endregion
 
         private void pbLevel_Paint(object sender, PaintEventArgs e)
         {
             Editor.drawLevel(e.Graphics);
         }
 
-        private void pbLevel_MouseUp(object sender, MouseEventArgs e)
+        private void cbFastMode_CheckedChanged(object sender, EventArgs e)
         {
-            mausDown = false;
+            if (cbFastMode.Checked)
+                Editor.setFastMode(true);
+            else
+                Editor.setFastMode(false);
+            pbLevel.Refresh();
         }
     }
 }

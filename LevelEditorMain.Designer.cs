@@ -57,8 +57,12 @@
             this.btnCopper = new System.Windows.Forms.Button();
             this.btnCoal = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLblLocation = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pbLevel = new System.Windows.Forms.PictureBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.cbFastMode = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             this.pnlSelection.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSelection)).BeginInit();
@@ -66,6 +70,7 @@
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLevel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,7 +137,7 @@
             // 
             this.rasterToolStripMenuItem.CheckOnClick = true;
             this.rasterToolStripMenuItem.Name = "rasterToolStripMenuItem";
-            this.rasterToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.rasterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.rasterToolStripMenuItem.Text = "Raster";
             this.rasterToolStripMenuItem.Click += new System.EventHandler(this.rasterToolStripMenuItem_Click);
             // 
@@ -140,7 +145,7 @@
             // 
             this.mauszeigerToolStripMenuItem.CheckOnClick = true;
             this.mauszeigerToolStripMenuItem.Name = "mauszeigerToolStripMenuItem";
-            this.mauszeigerToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.mauszeigerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.mauszeigerToolStripMenuItem.Text = "Mauszeiger";
             this.mauszeigerToolStripMenuItem.Click += new System.EventHandler(this.mauszeigerToolStripMenuItem_Click);
             // 
@@ -155,6 +160,7 @@
             // 
             // pbSelection
             // 
+            this.pbSelection.BackgroundImage = global::projectlf6.Properties.Resources.Grass;
             this.pbSelection.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbSelection.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbSelection.Location = new System.Drawing.Point(69, 23);
@@ -359,11 +365,19 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLblLocation});
             this.statusStrip1.Location = new System.Drawing.Point(0, 660);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1008, 22);
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLblLocation
+            // 
+            this.toolStripStatusLblLocation.Name = "toolStripStatusLblLocation";
+            this.toolStripStatusLblLocation.Size = new System.Drawing.Size(48, 17);
+            this.toolStripStatusLblLocation.Text = "X: 0 Y: 0";
             // 
             // pbLevel
             // 
@@ -375,14 +389,41 @@
             this.pbLevel.TabStop = false;
             this.pbLevel.Paint += new System.Windows.Forms.PaintEventHandler(this.pbLevel_Paint);
             this.pbLevel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbLevel_MouseDown);
+            this.pbLevel.MouseEnter += new System.EventHandler(this.pbLevel_MouseEnter);
+            this.pbLevel.MouseLeave += new System.EventHandler(this.pbLevel_MouseLeave);
             this.pbLevel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pbLevel_MouseMove);
             this.pbLevel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pbLevel_MouseUp);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "Level";
+            this.openFileDialog1.Filter = "Level-Datei|*.lvl";
+            this.openFileDialog1.Title = "Level laden...";
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.FileName = "Level";
+            this.saveFileDialog1.Filter = "Level-Datei|*.lvl";
+            this.saveFileDialog1.Title = "Level speichern...";
+            // 
+            // cbFastMode
+            // 
+            this.cbFastMode.AutoSize = true;
+            this.cbFastMode.Location = new System.Drawing.Point(48, 499);
+            this.cbFastMode.Name = "cbFastMode";
+            this.cbFastMode.Size = new System.Drawing.Size(101, 17);
+            this.cbFastMode.TabIndex = 6;
+            this.cbFastMode.Text = "Schnelles laden";
+            this.toolTip1.SetToolTip(this.cbFastMode, "Stein-Textur wird nicht angezeigt");
+            this.cbFastMode.UseVisualStyleBackColor = true;
+            this.cbFastMode.CheckedChanged += new System.EventHandler(this.cbFastMode_CheckedChanged);
             // 
             // LevelEditorMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 682);
+            this.Controls.Add(this.cbFastMode);
             this.Controls.Add(this.pbLevel);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
@@ -401,6 +442,8 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLevel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -438,5 +481,9 @@
         private System.Windows.Forms.ToolStripMenuItem ansichtToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rasterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mauszeigerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLblLocation;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.CheckBox cbFastMode;
     }
 }
