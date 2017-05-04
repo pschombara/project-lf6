@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace projectlf6
 {
@@ -79,6 +80,28 @@ namespace projectlf6
         {
             this.score -= score;
             return score;
+        }
+
+        public XmlElement serialize()
+        {
+            XmlDocument document = new XmlDocument();
+            XmlElement scoreClass = document.CreateElement("score");
+            XmlElement score = document.CreateElement("score");
+            XmlElement gameScores = document.CreateElement("gameScores");
+            score.InnerText = this.score.ToString();
+
+            scoreClass.AppendChild(score);
+            
+            for (int x = 0; x < this.gameScores.Count; x++)
+            {
+                XmlElement elem = document.CreateElement("element");
+                elem.InnerText = this.gameScores.ElementAt(x).ToString();
+                gameScores.AppendChild(elem);
+            }
+
+            scoreClass.AppendChild(gameScores);
+
+            return scoreClass;
         }
     }
 }

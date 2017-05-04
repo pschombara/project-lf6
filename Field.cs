@@ -27,7 +27,7 @@ namespace projectlf6
         {
             this.fieldType = fieldType;
             this.texture = string.Empty;
-            this.points = 0;
+            this.setPoints();
         }
 
         public string getTexture()
@@ -45,9 +45,36 @@ namespace projectlf6
             this.fieldType = fieldTypeConstant;
         }
 
-        private void setPoints(int points)
+        private void setPoints()
         {
-            this.points = points;
+            if (this.fieldType == FIELD_COAL)
+            {
+                this.points = 10;
+            }
+            else if (this.fieldType == FIELD_COPPER)
+            {
+                this.points = 20;
+            }
+            else if (this.fieldType == FIELD_IRON)
+            {
+                this.points = 40;
+            }
+            else if (this.fieldType == FIELD_SILVER)
+            {
+                this.points = 60;
+            }
+            else if (this.fieldType == FIELD_GOLD)
+            {
+                this.points = 100;
+            }
+            else if (this.fieldType == FIELD_DIAMOND)
+            {
+                this.points = 200;
+            }
+            else
+            {
+                this.points = 0;
+            }
         }
 
         public int getPoints()

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace projectlf6
 {
@@ -35,6 +36,20 @@ namespace projectlf6
         public void setY(int yValue)
         {
             this.y = yValue;
+        }
+
+        public XmlElement serialize()
+        {
+            XmlDocument document = new XmlDocument();
+            XmlElement location = document.CreateElement("location");
+            XmlElement x = document.CreateElement("x");
+            XmlElement y = document.CreateElement("y");
+            x.InnerText = this.x.ToString();
+            y.InnerText = this.y.ToString();
+            location.AppendChild(x);
+            location.AppendChild(y);
+
+            return location;
         }
     }
 }
