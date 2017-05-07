@@ -6,20 +6,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Windows.Forms;
 
 namespace projectlf6
 {
     class Editor
     {
-        private Point Level;
-        private int CursorX, CursorY;
-        private int[,] map;
-        private bool isGrid;
-        private bool isCursor;
-        private int selectedTexture;
-        private bool fastMode;
-        private bool CursorOnMap;
-        
+        private Point Level; //Größe des Levels
+        private int CursorX, CursorY; //Cursor Position
+        private int[,] map; //Level Daten
+        private bool isGrid; //Gitter zeichnen
+        private bool isCursor; //Cursor zeichnen
+        private int selectedTexture; //ausgewählte Textur
+        private bool CursorOnMap; //Ist Cursor auf Level
+
         public Editor(int x, int y)
         {
             Level = new Point(x, y);
@@ -28,21 +28,20 @@ namespace projectlf6
             isGrid = false;
             isCursor = false;
             selectedTexture = Field.FIELD_GRASS;
-            fastMode = false;
             CursorOnMap = false;
-    }
+        }
 
         #region Gitter zeichnen
         private void drawGrid(Graphics graphics, Color color, int size = 1)
         {
             Pen pen = new Pen(color, size);
             // X-Raster
-            for (int x = 0; x < Level.X; x+=16)
+            for (int x = 0; x < Level.X; x += 16)
             {
                 graphics.DrawLine(pen, x, 0, x, Level.X);
             }
             // Y-Raster
-            for (int y = 0; y < Level.Y; y+=16)
+            for (int y = 0; y < Level.Y; y += 16)
             {
                 graphics.DrawLine(pen, 0, y, Level.Y, y);
             }
@@ -74,46 +73,30 @@ namespace projectlf6
 
         private Image getTexture(int texture)
         {
-            Bitmap dummy = new Bitmap(16, 16);
-            
             switch (texture)
             {
                 case Field.FIELD_STONE:
-                    if(!fastMode)
-                        return Resources.Stone;
-                    else
-                        return dummy;
-                    break;
+                    return Resources.Stone;
                 case Field.FIELD_DIRT:
                     return Resources.Dirt;
-                    break;
                 case Field.FIELD_GRASS:
                     return Resources.Grass;
-                    break;
                 case Field.FIELD_NO_BROCKEN:
                     return Resources.No_Brocken;
-                    break;
                 case Field.FIELD_COAL:
                     return Resources.Coal;
-                    break;
                 case Field.FIELD_COPPER:
                     return Resources.Copper;
-                    break;
                 case Field.FIELD_IRON:
                     return Resources.Iron;
-                    break;
                 case Field.FIELD_SILVER:
                     return Resources.Silver;
-                    break;
                 case Field.FIELD_GOLD:
                     return Resources.Gold;
-                    break;
                 case Field.FIELD_DIAMOND:
                     return Resources.Diamond;
-                    break;
                 default:
                     return null;
-                    break;
             }
         }
 
@@ -143,18 +126,22 @@ namespace projectlf6
         }
         #endregion
 
-        public void putTexture(int x, int y)
+        public void putTexture(Graphics graphics, int x, int y)
         {
+            //TODO absturz, X | Y größer 32
             int MapX = x / 16;
             int MapY = y / 16;
             map[MapX, MapY] = selectedTexture;
+            graphics.DrawImage(getTexture(selectedTexture), (MapX * 16), (MapY * 16), 16, 16);
+            if (isGrid)
+                drawGrid(graphics, Color.Black);
         }
 
         public void setTexture(int texture)
         {
             selectedTexture = texture;
         }
-               
+
         public void setGrid(bool state)
         {
             isGrid = state;
@@ -188,11 +175,6 @@ namespace projectlf6
             File.WriteAllText(file, datei);
         }
 
-        public void setFastMode(bool state)
-        {
-            this.fastMode = state;
-        }
-
         public void NewLevel()
         {
             for (int x = 0; x < 32; x++)
@@ -207,6 +189,11 @@ namespace projectlf6
         public void setCursorOnMap(bool state)
         {
             this.CursorOnMap = state;
+        }
+
+        public Cursor getCustomCursor(Point p)
+        {
+            return new Cursor((new Bitmap("C:/Users/meteo/Documents/Cursor.png").GetHicon()));
         }
     }
 }

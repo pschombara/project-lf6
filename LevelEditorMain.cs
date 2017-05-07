@@ -16,18 +16,22 @@ namespace projectlf6
     {
         Editor Editor;
         bool mausDown;
+
+        #region Konstruktor
         public LevelEditorMain()
         {
             InitializeComponent();
             mausDown = false;
-            Editor = new Editor(pbLevel.Width, pbLevel.Height);
+            Editor = new Editor(pnlLevel.Width, pnlLevel.Height);
+            pnlLevel.Refresh();
         }
+        #endregion
 
         #region Menü
         private void neuesLevelToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Editor.NewLevel();
-            pbLevel.Refresh();
+            pnlLevel.Refresh();
         }
 
         private void levelLadenToolStripMenuItem_Click(object sender, EventArgs e)
@@ -35,7 +39,7 @@ namespace projectlf6
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 Editor.loadLevelFromFile(openFileDialog1.FileName);
-                pbLevel.Refresh();
+                pnlLevel.Refresh();
             }
         }
 
@@ -44,7 +48,6 @@ namespace projectlf6
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 Editor.saveLevelToFile(saveFileDialog1.FileName);
-                pbLevel.Refresh();
             }
         }
 
@@ -59,7 +62,7 @@ namespace projectlf6
                 Editor.setGrid(true);
             else
                 Editor.setGrid(false);
-            pbLevel.Refresh();
+            pnlLevel.Refresh();
         }
 
         private void mauszeigerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -68,11 +71,11 @@ namespace projectlf6
                 Editor.setCursor(true);
             else
                 Editor.setCursor(false);
-            pbLevel.Refresh();
+            pnlLevel.Refresh();
         }
         #endregion
 
-        #region Texture
+        #region Buttons
         private void btnPlayer1_Click(object sender, EventArgs e)
         {
             
@@ -144,50 +147,71 @@ namespace projectlf6
         }
         #endregion
 
-        #region Maus-Events
-        private void pbLevel_MouseDown(object sender, MouseEventArgs e)
+        #region Maus
+        private void pnlLevel_MouseDown(object sender, MouseEventArgs e)
         {
             mausDown = true;
-            Editor.putTexture(e.X, e.Y);
-            pbLevel.Refresh();
+            Editor.putTexture(pnlLevel.CreateGraphics(), e.X, e.Y);
         }
 
-        private void pbLevel_MouseMove(object sender, MouseEventArgs e)
+        private void pnlLevel_MouseUp(object sender, MouseEventArgs e)
+        {
+            mausDown = false;
+        }
+
+        private void pnlLevel_MouseMove(object sender, MouseEventArgs e)
         {
             Editor.putCursor(e.X, e.Y);
             toolStripStatusLblLocation.Text = "X: " + Editor.getCursor().X + " Y: " + Editor.getCursor().Y;
             if (mausDown)
-                Editor.putTexture(e.X, e.Y);
-            pbLevel.Refresh();
+                Editor.putTexture(pnlLevel.CreateGraphics(), e.X, e.Y);
         }
-        private void pbLevel_MouseUp(object sender, MouseEventArgs e)
-        {
-            mausDown = false;
-        }
-        private void pbLevel_MouseEnter(object sender, EventArgs e)
+
+        private void pnlLevel_MouseEnter(object sender, EventArgs e)
         {
             Editor.setCursorOnMap(true);
-            pbLevel.Refresh();
         }
-        private void pbLevel_MouseLeave(object sender, EventArgs e)
+
+        private void pnlLevel_MouseLeave(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.Arrow;
             Editor.setCursorOnMap(false);
-            pbLevel.Refresh();
         }
         #endregion
 
-        private void pbLevel_Paint(object sender, PaintEventArgs e)
+        private void pnlLevel_Paint(object sender, PaintEventArgs e)
         {
             Editor.drawLevel(e.Graphics);
         }
 
-        private void cbFastMode_CheckedChanged(object sender, EventArgs e)
+        private void pnlTop_MouseDown(object sender, MouseEventArgs e)
         {
-            if (cbFastMode.Checked)
-                Editor.setFastMode(true);
-            else
-                Editor.setFastMode(false);
-            pbLevel.Refresh();
+            mausDown = true;
+            Editor.putTexture(pnlLevel.CreateGraphics(), e.X, e.Y);
+        }
+
+        private void pnlTop_MouseUp(object sender, MouseEventArgs e)
+        {
+            mausDown = false;
+        }
+
+        private void pnlTop_MouseMove(object sender, MouseEventArgs e)
+        {
+            Editor.putCursor(e.X, e.Y);
+            toolStripStatusLblLocation.Text = "X: " + Editor.getCursor().X + " Y: " + Editor.getCursor().Y;
+            if (mausDown)
+                Editor.putTexture(pnlLevel.CreateGraphics(), e.X, e.Y);
+        }
+
+        private void pnlTop_MouseEnter(object sender, EventArgs e)
+        {
+            Editor.setCursorOnMap(true);
+        }
+
+        private void pnlTop_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Arrow;
+            Editor.setCursorOnMap(false);
         }
     }
 }
