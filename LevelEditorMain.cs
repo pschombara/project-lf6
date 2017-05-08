@@ -3,11 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace projectlf6
@@ -16,6 +17,7 @@ namespace projectlf6
     {
         Editor Editor;
         bool mausDown;
+        double lastValue; //CPU-Value
 
         #region Konstruktor
         public LevelEditorMain()
@@ -51,6 +53,13 @@ namespace projectlf6
             }
         }
 
+        private void levelExportierenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialogExport.ShowDialog() == DialogResult.OK)
+            {
+                getLevelAsBitmap().Save(saveFileDialogExport.FileName, ImageFormat.Bmp);
+            }
+        }
         private void editorBeendenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -67,81 +76,98 @@ namespace projectlf6
 
         private void mauszeigerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (mauszeigerToolStripMenuItem.Checked)
-                Editor.setCursor(true);
-            else
-                Editor.setCursor(false);
-            pnlLevel.Refresh();
+            //pnlLevel.Refresh();
         }
         #endregion
 
         #region Buttons
         private void btnPlayer1_Click(object sender, EventArgs e)
         {
-            
+            pbSelection.Size = new Size(31, 64);
+            Editor.setTexture(Field.FIELD_Player_1);
+            pbSelection.BackgroundImage = Resources.Player_1;
         }
 
         private void btnPlayer2_Click(object sender, EventArgs e)
         {
-
+            pbSelection.Size = new Size(31, 64);
+            Editor.setTexture(Field.FIELD_Player_2);
+            pbSelection.BackgroundImage = Resources.Player_2;
         }
 
         private void btnGrass_Click(object sender, EventArgs e)
         {
+            pbSelection.Size = new Size(50, 50);
             Editor.setTexture(Field.FIELD_GRASS);
             pbSelection.BackgroundImage = Resources.Grass;
         }
 
         private void btnDirt_Click(object sender, EventArgs e)
         {
+            pbSelection.Size = new Size(50, 50);
             Editor.setTexture(Field.FIELD_DIRT);
             pbSelection.BackgroundImage = Resources.Dirt;
         }
 
         private void btnStone_Click(object sender, EventArgs e)
         {
+            pbSelection.Size = new Size(50, 50);
             Editor.setTexture(Field.FIELD_STONE);
             pbSelection.BackgroundImage = Resources.Stone;
         }
 
         private void btnNoBrocken_Click(object sender, EventArgs e)
         {
+            pbSelection.Size = new Size(50, 50);
             Editor.setTexture(Field.FIELD_NO_BROCKEN);
             pbSelection.BackgroundImage = Resources.No_Brocken;
         }
 
+        private void btnSky_Click(object sender, EventArgs e)
+        {
+            pbSelection.Size = new Size(50, 50);
+            Editor.setTexture(Field.FIELD_SKY);
+            pbSelection.BackgroundImage = Resources.Sky;
+        }
+
         private void btnCoal_Click(object sender, EventArgs e)
         {
+            pbSelection.Size = new Size(50, 50);
             Editor.setTexture(Field.FIELD_COAL);
             pbSelection.BackgroundImage = Resources.Coal;
         }
 
         private void btnCopper_Click(object sender, EventArgs e)
         {
+            pbSelection.Size = new Size(50, 50);
             Editor.setTexture(Field.FIELD_COPPER);
             pbSelection.BackgroundImage = Resources.Copper;
         }
 
         private void btnIron_Click(object sender, EventArgs e)
         {
+            pbSelection.Size = new Size(50, 50);
             Editor.setTexture(Field.FIELD_IRON);
             pbSelection.BackgroundImage = Resources.Iron;
         }
 
         private void btnSilver_Click(object sender, EventArgs e)
         {
+            pbSelection.Size = new Size(50, 50);
             Editor.setTexture(Field.FIELD_SILVER);
             pbSelection.BackgroundImage = Resources.Silver;
         }
 
         private void btnGold_Click(object sender, EventArgs e)
         {
+            pbSelection.Size = new Size(50, 50);
             Editor.setTexture(Field.FIELD_GOLD);
             pbSelection.BackgroundImage = Resources.Gold;
         }
 
         private void btnDiamond_Click(object sender, EventArgs e)
         {
+            pbSelection.Size = new Size(50, 50);
             Editor.setTexture(Field.FIELD_DIAMOND);
             pbSelection.BackgroundImage = Resources.Diamond;
         }
@@ -161,21 +187,23 @@ namespace projectlf6
 
         private void pnlLevel_MouseMove(object sender, MouseEventArgs e)
         {
-            Editor.putCursor(e.X, e.Y);
-            toolStripStatusLblLocation.Text = "X: " + Editor.getCursor().X + " Y: " + Editor.getCursor().Y;
+            toolStripStatusLblLocation.Text = "X: " + Convert.ToInt16(e.X / 16 + 1) + " Y: " + Convert.ToInt16(e.Y / 16 + 1);
             if (mausDown)
                 Editor.putTexture(pnlLevel.CreateGraphics(), e.X, e.Y);
         }
 
         private void pnlLevel_MouseEnter(object sender, EventArgs e)
         {
-            Editor.setCursorOnMap(true);
+            if(mauszeigerToolStripMenuItem.Checked)
+            {
+                this.Cursor = Editor.getCustomCursor();
+            }
         }
 
         private void pnlLevel_MouseLeave(object sender, EventArgs e)
         {
+            toolStripStatusLblLocation.Text = "X: --" + " Y: --";
             this.Cursor = Cursors.Arrow;
-            Editor.setCursorOnMap(false);
         }
         #endregion
 
@@ -184,34 +212,27 @@ namespace projectlf6
             Editor.drawLevel(e.Graphics);
         }
 
-        private void pnlTop_MouseDown(object sender, MouseEventArgs e)
+        private Bitmap getLevelAsBitmap()
         {
-            mausDown = true;
-            Editor.putTexture(pnlLevel.CreateGraphics(), e.X, e.Y);
+            Bitmap bitmap = new Bitmap(pnlLevel.Width, pnlLevel.Height);
+            pnlLevel.DrawToBitmap(bitmap, new Rectangle(0, 0, bitmap.Width, bitmap.Height));
+            return bitmap;
         }
 
-        private void pnlTop_MouseUp(object sender, MouseEventArgs e)
+        private void timerUpdate_Tick(object sender, EventArgs e)
         {
-            mausDown = false;
-        }
+            //RAM
+            Process currentProc = Process.GetCurrentProcess();
+            long memoryUsed = currentProc.PrivateMemorySize64;
+            //Console.WriteLine(System.Environment.WorkingSet);
+            toolStripStatusLblRAM.Text = "RAM: " + Math.Round(memoryUsed / Math.Pow(1024, 2)) + " MB";
 
-        private void pnlTop_MouseMove(object sender, MouseEventArgs e)
-        {
-            Editor.putCursor(e.X, e.Y);
-            toolStripStatusLblLocation.Text = "X: " + Editor.getCursor().X + " Y: " + Editor.getCursor().Y;
-            if (mausDown)
-                Editor.putTexture(pnlLevel.CreateGraphics(), e.X, e.Y);
-        }
-
-        private void pnlTop_MouseEnter(object sender, EventArgs e)
-        {
-            Editor.setCursorOnMap(true);
-        }
-
-        private void pnlTop_MouseLeave(object sender, EventArgs e)
-        {
-            this.Cursor = Cursors.Arrow;
-            Editor.setCursorOnMap(false);
+            //CPU
+            AppDomain.MonitoringIsEnabled = true;
+            double differenz = (double) AppDomain.CurrentDomain.MonitoringTotalProcessorTime.TotalMilliseconds - lastValue;
+            double percentage = ((differenz / timerUpdate.Interval) * 100) / Environment.ProcessorCount;
+            lastValue = (double) AppDomain.CurrentDomain.MonitoringTotalProcessorTime.TotalMilliseconds;
+            toolStripStatusLblCPU.Text = "CPU: " + Math.Round(percentage) + "%";
         }
     }
 }

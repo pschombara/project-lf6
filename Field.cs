@@ -13,15 +13,18 @@ namespace projectlf6
         private int points;
 
         public const int FIELD_STONE = 0;
-        public const int FIELD_DIRT = 1;
-        public const int FIELD_GRASS = 2;
-        public const int FIELD_NO_BROCKEN = 3;
-        public const int FIELD_COAL = 4;
-        public const int FIELD_COPPER = 5;
-        public const int FIELD_IRON = 6;
-        public const int FIELD_SILVER = 7;
-        public const int FIELD_GOLD = 8;
-        public const int FIELD_DIAMOND = 9;
+        public const int FIELD_SKY = 1;
+        public const int FIELD_DIRT = 2;
+        public const int FIELD_GRASS = 3;
+        public const int FIELD_NO_BROCKEN = 4;
+        public const int FIELD_COAL = 5;
+        public const int FIELD_COPPER = 6;
+        public const int FIELD_IRON = 7;
+        public const int FIELD_SILVER = 8;
+        public const int FIELD_GOLD = 9;
+        public const int FIELD_DIAMOND = 10;
+        public const int FIELD_Player_1 = 11;
+        public const int FIELD_Player_2 = 12;
 
         public Field(int fieldType)
         {
