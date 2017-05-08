@@ -103,5 +103,29 @@ namespace projectlf6
 
             return scoreClass;
         }
+
+        public void loadFromXml(XmlNodeList xml)
+        {
+            if (xml.Count == 1 && xml.Item(0).Name == "score")
+            {
+                XmlNodeList childs = xml.Item(0).ChildNodes;
+                for (int x = 0; x < childs.Count; x++)
+                {
+                    if (childs.Item(x).Name == "score")
+                    {
+                        this.score = Convert.ToInt16(childs.Item(x).InnerText);
+                    }
+                    else if (childs.Item(x).Name == "gameScores")
+                    {
+                        XmlNodeList gameScores = childs.Item(x).ChildNodes;
+                        
+                        for (int y = 0; y < gameScores.Count; y++)
+                        {
+                            this.gameScores.Add(Convert.ToInt16(gameScores.Item(y).InnerText));
+                        }
+                    }
+                }
+            }
+        }
     }
 }

@@ -129,10 +129,13 @@
             // cbPlayerOneProfile
             // 
             this.cbPlayerOneProfile.FormattingEnabled = true;
+            this.cbPlayerOneProfile.Items.AddRange(new object[] {
+            "asf"});
             this.cbPlayerOneProfile.Location = new System.Drawing.Point(12, 50);
             this.cbPlayerOneProfile.Name = "cbPlayerOneProfile";
             this.cbPlayerOneProfile.Size = new System.Drawing.Size(121, 21);
             this.cbPlayerOneProfile.TabIndex = 10;
+            this.cbPlayerOneProfile.SelectedIndexChanged += new System.EventHandler(this.cbPlayerOneProfile_SelectedIndexChanged);
             // 
             // cbPlayerTwoProfile
             // 
@@ -177,6 +180,7 @@
             this.btnStartGame.TabIndex = 15;
             this.btnStartGame.Text = "Starten";
             this.btnStartGame.UseVisualStyleBackColor = true;
+            this.btnStartGame.Click += new System.EventHandler(this.btnStartGame_Click);
             // 
             // btnBack
             // 

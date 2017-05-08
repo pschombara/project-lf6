@@ -21,6 +21,8 @@ namespace projectlf6
         const int ORIENTATION_DOWN = 2;
         const int ORIENTATION_LEFT = 3;
 
+        const string SAVE_PATH = "\\projectlf6\\save\\";
+
         public Player()
         {
             this.name = "";
@@ -86,21 +88,13 @@ namespace projectlf6
 
             try
             {
-                string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\projectlf6\\save";
+                string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + SAVE_PATH;
                 Directory.CreateDirectory(path);
-                string saveXml =  path  + "\\player_" + this.name + ".xml";
+                string saveXml = path + "player_" + this.name + ".xml";
 
                 XmlDocument doc = new XmlDocument();
-                XmlElement player = doc.CreateElement("player");
-                XmlElement name = doc.CreateElement("name");
-                XmlElement orientation = doc.CreateElement("orientation");
-                name.InnerText = this.name;
-                orientation.InnerText = this.orientation.ToString();
-                player.AppendChild(name);
-                player.AppendChild(orientation);
-                player.AppendChild(doc.ImportNode(this.location.serialize(), true));
-                player.AppendChild(doc.ImportNode(this.score.serialize(), true));
-                doc.AppendChild(player);
+
+                doc.AppendChild(doc.ImportNode(this.serialize(), true));
 
                 doc.Save(saveXml);
             }
@@ -115,8 +109,45 @@ namespace projectlf6
 
         public void loadFromFile(string name)
         {
-            XmlReader reader;
-            //TODO load from file
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + SAVE_PATH;
+
+            XmlDocument doc = new XmlDocument();
+            doc.Load(path + "player_" + name + ".xml");
+            XmlNodeList nodeName = doc.GetElementsByTagName("name");
+
+            if (nodeName.Count == 1)
+            {
+                this.name = nodeName.Item(0).InnerText;
+            }
+
+            XmlNodeList nodeOrientation = doc.GetElementsByTagName("orientation");
+
+            if (nodeOrientation.Count == 1)
+            {
+                this.orientation = Convert.ToInt16(nodeOrientation.Item(0).InnerText);
+            }
+
+            XmlNodeList nodeLocation = doc.GetElementsByTagName("location");
+            this.location.loadFromXml(nodeLocation);
+
+            XmlNodeList nodeScore = doc.GetElementsByTagName("score");
+        }
+
+        public XmlElement serialize()
+        {
+            XmlDocument doc = new XmlDocument();
+            XmlElement player = doc.CreateElement("player");
+            XmlElement name = doc.CreateElement("name");
+            XmlElement orientation = doc.CreateElement("orientation");
+            name.InnerText = this.name;
+            orientation.InnerText = this.orientation.ToString();
+            player.AppendChild(name);
+            player.AppendChild(orientation);
+            player.AppendChild(doc.ImportNode(this.location.serialize(), true));
+            player.AppendChild(doc.ImportNode(this.score.serialize(), true));
+            doc.AppendChild(player);
+
+            return player;
         }
     }
 }

@@ -38,7 +38,7 @@
             // 
             this.btnNewGame.Location = new System.Drawing.Point(-2, 1);
             this.btnNewGame.Name = "btnNewGame";
-            this.btnNewGame.Size = new System.Drawing.Size(285, 48);
+            this.btnNewGame.Size = new System.Drawing.Size(291, 48);
             this.btnNewGame.TabIndex = 0;
             this.btnNewGame.Text = "Neues Spiel";
             this.btnNewGame.UseVisualStyleBackColor = true;
@@ -48,7 +48,7 @@
             // 
             this.btnLevelEditor.Location = new System.Drawing.Point(-2, 55);
             this.btnLevelEditor.Name = "btnLevelEditor";
-            this.btnLevelEditor.Size = new System.Drawing.Size(285, 48);
+            this.btnLevelEditor.Size = new System.Drawing.Size(291, 48);
             this.btnLevelEditor.TabIndex = 1;
             this.btnLevelEditor.Text = "Level Editor";
             this.btnLevelEditor.UseVisualStyleBackColor = true;
@@ -58,7 +58,7 @@
             // 
             this.btnOption.Location = new System.Drawing.Point(-2, 109);
             this.btnOption.Name = "btnOption";
-            this.btnOption.Size = new System.Drawing.Size(285, 48);
+            this.btnOption.Size = new System.Drawing.Size(291, 48);
             this.btnOption.TabIndex = 2;
             this.btnOption.Text = "Optionen";
             this.btnOption.UseVisualStyleBackColor = true;
@@ -67,7 +67,7 @@
             // 
             this.btnClose.Location = new System.Drawing.Point(-2, 163);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(285, 48);
+            this.btnClose.Size = new System.Drawing.Size(291, 48);
             this.btnClose.TabIndex = 3;
             this.btnClose.Text = "Beenden";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -77,7 +77,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(284, 219);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnOption);
             this.Controls.Add(this.btnLevelEditor);
