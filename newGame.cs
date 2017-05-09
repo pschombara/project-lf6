@@ -58,6 +58,9 @@ namespace projectlf6
                     playerTwo = new Player();
                     playerTwo.loadFromFile(playerTwoName);
                 }
+
+                Form GameMain = new GameMain();
+                GameMain.ShowDialog();
             }
             catch(Exception ex)
             {
