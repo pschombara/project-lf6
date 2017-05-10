@@ -34,48 +34,48 @@
             this.neuesLevelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.levelLadenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.levelSpeichernToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.levelExportierenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editorBeendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ansichtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rasterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mauszeigerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlSelection = new System.Windows.Forms.Panel();
+            this.pbSelection = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLblLocation = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.pnlLevel = new System.Windows.Forms.Panel();
-            this.levelExportierenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnPlayer2 = new System.Windows.Forms.Button();
             this.btnPlayer1 = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnSky = new System.Windows.Forms.Button();
             this.btnNoBrocken = new System.Windows.Forms.Button();
             this.btnStone = new System.Windows.Forms.Button();
             this.btnDirt = new System.Windows.Forms.Button();
             this.btnGrass = new System.Windows.Forms.Button();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.btnDiamond = new System.Windows.Forms.Button();
             this.btnGold = new System.Windows.Forms.Button();
             this.btnSilver = new System.Windows.Forms.Button();
             this.btnIron = new System.Windows.Forms.Button();
             this.btnCopper = new System.Windows.Forms.Button();
             this.btnCoal = new System.Windows.Forms.Button();
-            this.pbSelection = new System.Windows.Forms.PictureBox();
-            this.saveFileDialogExport = new System.Windows.Forms.SaveFileDialog();
-            this.timerUpdate = new System.Windows.Forms.Timer(this.components);
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLblLocation = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLblRAM = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLblCPU = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.pnlLevel = new System.Windows.Forms.Panel();
+            this.saveFileDialogExport = new System.Windows.Forms.SaveFileDialog();
+            this.timerUpdate = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.pnlSelection.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSelection)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSelection)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -122,6 +122,13 @@
             this.levelSpeichernToolStripMenuItem.Text = "Level speichern";
             this.levelSpeichernToolStripMenuItem.Click += new System.EventHandler(this.levelSpeichernToolStripMenuItem_Click);
             // 
+            // levelExportierenToolStripMenuItem
+            // 
+            this.levelExportierenToolStripMenuItem.Name = "levelExportierenToolStripMenuItem";
+            this.levelExportierenToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.levelExportierenToolStripMenuItem.Text = "Level Exportieren";
+            this.levelExportierenToolStripMenuItem.Click += new System.EventHandler(this.levelExportierenToolStripMenuItem_Click);
+            // 
             // editorBeendenToolStripMenuItem
             // 
             this.editorBeendenToolStripMenuItem.Name = "editorBeendenToolStripMenuItem";
@@ -163,6 +170,17 @@
             this.pnlSelection.Size = new System.Drawing.Size(196, 98);
             this.pnlSelection.TabIndex = 1;
             // 
+            // pbSelection
+            // 
+            this.pbSelection.BackgroundImage = global::projectlf6.Properties.Resources.Grass;
+            this.pbSelection.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbSelection.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbSelection.Location = new System.Drawing.Point(69, 23);
+            this.pbSelection.Name = "pbSelection";
+            this.pbSelection.Size = new System.Drawing.Size(50, 50);
+            this.pbSelection.TabIndex = 0;
+            this.pbSelection.TabStop = false;
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -186,87 +204,6 @@
             this.tabPage1.Text = "Spieler";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.btnSky);
-            this.tabPage2.Controls.Add(this.btnNoBrocken);
-            this.tabPage2.Controls.Add(this.btnStone);
-            this.tabPage2.Controls.Add(this.btnDirt);
-            this.tabPage2.Controls.Add(this.btnGrass);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(192, 324);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Blöcke";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.btnDiamond);
-            this.tabPage3.Controls.Add(this.btnGold);
-            this.tabPage3.Controls.Add(this.btnSilver);
-            this.tabPage3.Controls.Add(this.btnIron);
-            this.tabPage3.Controls.Add(this.btnCopper);
-            this.tabPage3.Controls.Add(this.btnCoal);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(192, 324);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Erze";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLblLocation,
-            this.toolStripStatusLblRAM,
-            this.toolStripStatusLblCPU});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 660);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1008, 22);
-            this.statusStrip1.TabIndex = 4;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLblLocation
-            // 
-            this.toolStripStatusLblLocation.Name = "toolStripStatusLblLocation";
-            this.toolStripStatusLblLocation.Size = new System.Drawing.Size(48, 17);
-            this.toolStripStatusLblLocation.Text = "X: 0 Y: 0";
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "Level";
-            this.openFileDialog1.Filter = "Level-Datei|*.lvl";
-            this.openFileDialog1.Title = "Level laden...";
-            // 
-            // saveFileDialog1
-            // 
-            this.saveFileDialog1.FileName = "Level";
-            this.saveFileDialog1.Filter = "Level-Datei|*.lvl";
-            this.saveFileDialog1.Title = "Level speichern...";
-            // 
-            // pnlLevel
-            // 
-            this.pnlLevel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlLevel.Location = new System.Drawing.Point(256, 49);
-            this.pnlLevel.Name = "pnlLevel";
-            this.pnlLevel.Size = new System.Drawing.Size(512, 512);
-            this.pnlLevel.TabIndex = 7;
-            this.pnlLevel.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlLevel_Paint);
-            this.pnlLevel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlLevel_MouseDown);
-            this.pnlLevel.MouseEnter += new System.EventHandler(this.pnlLevel_MouseEnter);
-            this.pnlLevel.MouseLeave += new System.EventHandler(this.pnlLevel_MouseLeave);
-            this.pnlLevel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlLevel_MouseMove);
-            this.pnlLevel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlLevel_MouseUp);
-            // 
-            // levelExportierenToolStripMenuItem
-            // 
-            this.levelExportierenToolStripMenuItem.Name = "levelExportierenToolStripMenuItem";
-            this.levelExportierenToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
-            this.levelExportierenToolStripMenuItem.Text = "Level Exportieren";
-            this.levelExportierenToolStripMenuItem.Click += new System.EventHandler(this.levelExportierenToolStripMenuItem_Click);
-            // 
             // btnPlayer2
             // 
             this.btnPlayer2.BackgroundImage = global::projectlf6.Properties.Resources.Player_2;
@@ -288,6 +225,21 @@
             this.toolTip1.SetToolTip(this.btnPlayer1, "Spieler 1");
             this.btnPlayer1.UseVisualStyleBackColor = true;
             this.btnPlayer1.Click += new System.EventHandler(this.btnPlayer1_Click);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.btnSky);
+            this.tabPage2.Controls.Add(this.btnNoBrocken);
+            this.tabPage2.Controls.Add(this.btnStone);
+            this.tabPage2.Controls.Add(this.btnDirt);
+            this.tabPage2.Controls.Add(this.btnGrass);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(192, 324);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Blöcke";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // btnSky
             // 
@@ -348,6 +300,21 @@
             this.toolTip1.SetToolTip(this.btnGrass, "Gras");
             this.btnGrass.UseVisualStyleBackColor = true;
             this.btnGrass.Click += new System.EventHandler(this.btnGrass_Click);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.btnDiamond);
+            this.tabPage3.Controls.Add(this.btnGold);
+            this.tabPage3.Controls.Add(this.btnSilver);
+            this.tabPage3.Controls.Add(this.btnIron);
+            this.tabPage3.Controls.Add(this.btnCopper);
+            this.tabPage3.Controls.Add(this.btnCoal);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(192, 324);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Erze";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // btnDiamond
             // 
@@ -421,28 +388,23 @@
             this.btnCoal.UseVisualStyleBackColor = true;
             this.btnCoal.Click += new System.EventHandler(this.btnCoal_Click);
             // 
-            // pbSelection
+            // statusStrip1
             // 
-            this.pbSelection.BackgroundImage = global::projectlf6.Properties.Resources.Grass;
-            this.pbSelection.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbSelection.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbSelection.Location = new System.Drawing.Point(69, 23);
-            this.pbSelection.Name = "pbSelection";
-            this.pbSelection.Size = new System.Drawing.Size(50, 50);
-            this.pbSelection.TabIndex = 0;
-            this.pbSelection.TabStop = false;
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLblLocation,
+            this.toolStripStatusLblRAM,
+            this.toolStripStatusLblCPU});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 660);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1008, 22);
+            this.statusStrip1.TabIndex = 4;
+            this.statusStrip1.Text = "statusStrip1";
             // 
-            // saveFileDialogExport
+            // toolStripStatusLblLocation
             // 
-            this.saveFileDialogExport.FileName = "Level_Export";
-            this.saveFileDialogExport.Filter = "Bitmap|*.bmp";
-            this.saveFileDialogExport.Title = "Level als Bild exportieren";
-            // 
-            // timerUpdate
-            // 
-            this.timerUpdate.Enabled = true;
-            this.timerUpdate.Interval = 1000;
-            this.timerUpdate.Tick += new System.EventHandler(this.timerUpdate_Tick);
+            this.toolStripStatusLblLocation.Name = "toolStripStatusLblLocation";
+            this.toolStripStatusLblLocation.Size = new System.Drawing.Size(48, 17);
+            this.toolStripStatusLblLocation.Text = "X: 0 Y: 0";
             // 
             // toolStripStatusLblRAM
             // 
@@ -455,6 +417,43 @@
             this.toolStripStatusLblCPU.Name = "toolStripStatusLblCPU";
             this.toolStripStatusLblCPU.Size = new System.Drawing.Size(56, 17);
             this.toolStripStatusLblCPU.Text = "CPU: --%";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "Level";
+            this.openFileDialog1.Filter = "Level-Datei|*.lvl";
+            this.openFileDialog1.Title = "Level laden...";
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.FileName = "Level";
+            this.saveFileDialog1.Filter = "Level-Datei|*.lvl";
+            this.saveFileDialog1.Title = "Level speichern...";
+            // 
+            // pnlLevel
+            // 
+            this.pnlLevel.Location = new System.Drawing.Point(256, 49);
+            this.pnlLevel.Name = "pnlLevel";
+            this.pnlLevel.Size = new System.Drawing.Size(513, 513);
+            this.pnlLevel.TabIndex = 7;
+            this.pnlLevel.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlLevel_Paint);
+            this.pnlLevel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlLevel_MouseDown);
+            this.pnlLevel.MouseEnter += new System.EventHandler(this.pnlLevel_MouseEnter);
+            this.pnlLevel.MouseLeave += new System.EventHandler(this.pnlLevel_MouseLeave);
+            this.pnlLevel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlLevel_MouseMove);
+            this.pnlLevel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlLevel_MouseUp);
+            // 
+            // saveFileDialogExport
+            // 
+            this.saveFileDialogExport.FileName = "Level_Export";
+            this.saveFileDialogExport.Filter = "Bitmap|*.bmp";
+            this.saveFileDialogExport.Title = "Level als Bild exportieren";
+            // 
+            // timerUpdate
+            // 
+            this.timerUpdate.Enabled = true;
+            this.timerUpdate.Interval = 1000;
+            this.timerUpdate.Tick += new System.EventHandler(this.timerUpdate_Tick);
             // 
             // LevelEditorMain
             // 
@@ -474,13 +473,13 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.pnlSelection.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbSelection)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSelection)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

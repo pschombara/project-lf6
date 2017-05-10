@@ -55,15 +55,14 @@ namespace projectlf6
                 {
                     if (selectedTexture == Field.FIELD_Player_1 || selectedTexture == Field.FIELD_Player_2)
                     {
-                        //graphics.DrawImage(getTexture(map[x, y]), (x * 16), (y * 16), 15, 32);
                         graphics.DrawImage(getTexture(map[x, y]), (x * 16), (y * 16), 16, 16);
                     }
                     else
                         graphics.DrawImage(getTexture(map[x, y]), (x * 16), (y * 16), 16, 16);
                 }
             }
-            graphics.DrawImage(getTexture(Field.FIELD_Player_1), (player_1.getX() * 16), (player_1.getY() * 16), 15, 32); //Zeichne Player 1
-            graphics.DrawImage(getTexture(Field.FIELD_Player_2), (player_2.getX() * 16), (player_2.getY() * 16), 15, 32); //Zeichne Player 2
+            graphics.DrawImage(getTexture(Field.FIELD_Player_1), (player_1.getX() * 16), (player_1.getY() * 16), 16, 32); //Zeichne Player 1
+            graphics.DrawImage(getTexture(Field.FIELD_Player_2), (player_2.getX() * 16), (player_2.getY() * 16), 16, 32); //Zeichne Player 2
         }
         #endregion
 
@@ -163,7 +162,7 @@ namespace projectlf6
         }
 
         public void loadLevelFromFile(String file)
-        {           
+        {
             String datei = File.ReadAllText(file);
             player_1.setX(Convert.ToInt16(getBetween(datei, "Player_1_X=", "\n")));
             player_1.setY(Convert.ToInt16(getBetween(datei, "Player_1_Y=", "\n")));
@@ -218,9 +217,19 @@ namespace projectlf6
         {
             Bitmap b;
             if (selectedTexture == Field.FIELD_Player_1 || selectedTexture == Field.FIELD_Player_2)
-                b = new Bitmap(getTexture(selectedTexture), 15, 32);
+            {
+                if(this.isGrid)
+                    b = new Bitmap(getTexture(selectedTexture), 15, 31);
+                else
+                    b = new Bitmap(getTexture(selectedTexture), 16, 32);
+            }
             else
-                b = new Bitmap(getTexture(selectedTexture), 16, 16);
+            {
+                if (this.isGrid)
+                    b = new Bitmap(getTexture(selectedTexture), 15, 15);
+                else
+                    b = new Bitmap(getTexture(selectedTexture), 16, 16);
+            }
             IntPtr ptr = b.GetHicon();
             return new Cursor(ptr);
         }
