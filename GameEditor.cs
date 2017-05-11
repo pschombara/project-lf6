@@ -13,28 +13,23 @@ namespace projectlf6
 {
     public partial class GameEditor : Form
     {
-        private string path;
-
         public GameEditor()
         {
             InitializeComponent();
 
-            this.path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + Game.SAVE_PATH;
-            string[] folders = Directory.GetDirectories(path);
+            DirectoryInfo directoryInfo = new DirectoryInfo(Game.SAVE_PATH);
+            DirectoryInfo[] folders = directoryInfo.GetDirectories();
             //DataGridView füllen
             for (int i = 0; i < folders.Length; i++)
             {
-                string[] num = Directory.GetFiles(this.path + "\\" + folders[i]);
-                dataGridViewGames.Rows.Add(folders[i], num.Length);
+                FileInfo[] fileInfo = folders[i].GetFiles();
+                dataGridViewGames.Rows.Add(folders[i].Name, fileInfo.Length);
             }
         }
 
         private void btnNewGame_Click(object sender, EventArgs e)
         {
-            // TODO check if game name already exist
-            // TODO create folder
-            // start level editor
-            string path = this.path + "\\" + txtNewGameName.Text;
+            string path = Game.SAVE_PATH + "\\" + txtNewGameName.Text;
             if (!Directory.Exists(path))
             {
                 Directory.CreateDirectory(path);

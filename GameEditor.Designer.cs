@@ -42,6 +42,7 @@
             // 
             // dataGridViewGames
             // 
+            this.dataGridViewGames.AllowUserToAddRows = false;
             this.dataGridViewGames.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.gameName,
             this.levelCount});

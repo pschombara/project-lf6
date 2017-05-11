@@ -28,7 +28,7 @@ namespace projectlf6
         }
         public LevelEditorMain(string path)
         {
-
+            InitializeComponent();
         }
         #endregion
 
