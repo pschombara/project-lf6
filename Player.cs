@@ -21,7 +21,7 @@ namespace projectlf6
         const int ORIENTATION_DOWN = 2;
         const int ORIENTATION_LEFT = 3;
 
-        const string SAVE_PATH = "\\projectlf6\\save\\";
+        public const string SAVE_PATH = "\\projectlf6\\player\\";
 
         public Player()
         {

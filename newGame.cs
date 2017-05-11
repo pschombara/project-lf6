@@ -7,14 +7,46 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace projectlf6
 {
     public partial class newGame : Form
     {
+        private List<string> playerList;
         public newGame()
         {
             InitializeComponent();
+            this.playerList = new List<string>();
+
+            this.prepareFillComboBox();
+            this.fillPlayerComboBox(this.cbPlayerOneProfile);
+            this.fillPlayerComboBox(this.cbPlayerTwoProfile);
+        }
+
+        private void prepareFillComboBox()
+        {
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + Player.SAVE_PATH;
+            FileInfo[] files = new DirectoryInfo(path).GetFiles();
+
+            for (int i = 0; i < files.Length; i++)
+            {
+                if (files[i].Name.Contains("player_"))
+                { 
+                    string playerName = files[i].Name.Replace("player_", "").Replace(".xml", "");
+
+                    this.playerList.Add(playerName);
+                }
+            }
+        }
+
+        private void fillPlayerComboBox(ComboBox box)
+        {
+            box.Items.Clear();
+            for (int i = 0; i < this.playerList.Count; i++)
+            {
+                box.Items.Add(playerList.ElementAt(i));
+            }
         }
 
         private void btnBack_Click(object sender, EventArgs e)
