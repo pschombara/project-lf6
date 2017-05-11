@@ -441,7 +441,6 @@
             this.pnlLevel.MouseEnter += new System.EventHandler(this.pnlLevel_MouseEnter);
             this.pnlLevel.MouseLeave += new System.EventHandler(this.pnlLevel_MouseLeave);
             this.pnlLevel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlLevel_MouseMove);
-            this.pnlLevel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlLevel_MouseUp);
             // 
             // saveFileDialogExport
             // 

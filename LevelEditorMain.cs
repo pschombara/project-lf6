@@ -16,14 +16,12 @@ namespace projectlf6
     public partial class LevelEditorMain : Form
     {
         Editor Editor;
-        bool mausDown;
         double lastValue; //CPU-Value
 
         #region Konstruktor
         public LevelEditorMain()
         {
             InitializeComponent();
-            mausDown = false;
             Editor = new Editor(pnlLevel.Width, pnlLevel.Height);
             pnlLevel.Refresh();
         }
@@ -176,19 +174,13 @@ namespace projectlf6
         #region Maus
         private void pnlLevel_MouseDown(object sender, MouseEventArgs e)
         {
-            mausDown = true;
             Editor.putTexture(pnlLevel.CreateGraphics(), e.X, e.Y);
-        }
-
-        private void pnlLevel_MouseUp(object sender, MouseEventArgs e)
-        {
-            mausDown = false;
         }
 
         private void pnlLevel_MouseMove(object sender, MouseEventArgs e)
         {
             toolStripStatusLblLocation.Text = "X: " + Convert.ToInt16(e.X / 16 + 1) + " Y: " + Convert.ToInt16(e.Y / 16 + 1);
-            if (mausDown)
+            if (e.Button == MouseButtons.Left)
                 Editor.putTexture(pnlLevel.CreateGraphics(), e.X, e.Y);
         }
 

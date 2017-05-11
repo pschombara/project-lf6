@@ -147,15 +147,26 @@ namespace projectlf6
             {
                 if (selectedTexture == Field.FIELD_Player_1)
                 {
-                    player_1.setX(MapX);
-                    player_1.setY(MapY);
-                    drawLevel(graphics);
+                    if (map[MapX, MapY] == Field.FIELD_SKY && map[MapX, MapY + 1] == Field.FIELD_SKY && map[MapX, MapY + 2] != Field.FIELD_SKY)
+                    {
+                        player_1.setX(MapX);
+                        player_1.setY(MapY);
+                        drawLevel(graphics);
+                    }
+                    else
+                        MessageBox.Show("Spieler 1 kann nicht an Position gesetzt werden!", "Fehler: Spieler 1");
                 }
                 else if (selectedTexture == Field.FIELD_Player_2)
                 {
-                    player_2.setX(MapX);
-                    player_2.setY(MapY);
-                    drawLevel(graphics);
+                    if (map[MapX, MapY] == Field.FIELD_SKY && map[MapX, MapY + 1] == Field.FIELD_SKY && map[MapX, MapY + 2] != Field.FIELD_SKY)
+                    {
+                        player_2.setX(MapX);
+                        player_2.setY(MapY);
+                        drawLevel(graphics);
+                    }
+                    else
+                        MessageBox.Show("Spieler 2 kann nicht an Position gesetzt werden!", "Fehler: Spieler 2");
+
                 }
                 else
                 {
@@ -165,7 +176,7 @@ namespace projectlf6
             }
             if (isGrid)
                 drawGrid(graphics, Color.Black);
-            if(checkMouseOverPlayer(MapX, MapY))
+            if (checkMouseOverPlayer(MapX, MapY))
                 drawPlayer(graphics);
         }
 
@@ -263,7 +274,7 @@ namespace projectlf6
             Bitmap b;
             if (selectedTexture == Field.FIELD_Player_1 || selectedTexture == Field.FIELD_Player_2)
             {
-                if(this.isGrid)
+                if (this.isGrid)
                     b = new Bitmap(getTexture(selectedTexture), 15, 31);
                 else
                     b = new Bitmap(getTexture(selectedTexture), 16, 32);

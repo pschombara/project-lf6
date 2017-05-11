@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewGames = new System.Windows.Forms.DataGridView();
             this.gameName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.levelCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtNewGameName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnNewGame = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGames)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewGames
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewGames.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewGames.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.gameName,
             this.levelCount});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(708, 112);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewGames.Location = new System.Drawing.Point(12, 12);
+            this.dataGridViewGames.Name = "dataGridViewGames";
+            this.dataGridViewGames.Size = new System.Drawing.Size(708, 112);
+            this.dataGridViewGames.TabIndex = 0;
             // 
             // gameName
             // 
@@ -96,10 +96,11 @@
             this.Controls.Add(this.btnNewGame);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNewGameName);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewGames);
             this.Name = "GameEditor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameEditor";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGames)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -107,7 +108,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewGames;
         private System.Windows.Forms.DataGridViewTextBoxColumn gameName;
         private System.Windows.Forms.DataGridViewTextBoxColumn levelCount;
         private System.Windows.Forms.TextBox txtNewGameName;
