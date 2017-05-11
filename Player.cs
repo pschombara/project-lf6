@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml;
-using System.IO;
 using System.Drawing;
+using System.IO;
+using System.Xml;
 
 namespace projectlf6
 {
-    public class Player
+	public class Player
     {
         private string name;
         private string skin;
@@ -18,12 +15,12 @@ namespace projectlf6
         private Location location;
         private int orientation;
 
-        const int ORIENTATION_UP = 0;
-        const int ORIENTATION_RIGHT = 1;
-        const int ORIENTATION_DOWN = 2;
-        const int ORIENTATION_LEFT = 3;
+		private const int ORIENTATION_UP = 0;
+		private const int ORIENTATION_RIGHT = 1;
+		private const int ORIENTATION_DOWN = 2;
+		private const int ORIENTATION_LEFT = 3;
 
-        public const string SAVE_PATH = "\\projectlf6\\player\\";
+		public const string SAVE_PATH = "\\projectlf6\\player\\";
 
         public Player()
         {
@@ -114,9 +111,7 @@ namespace projectlf6
             }
             catch (Exception ex)
             {
-
             }
-
 
             return true;
         }

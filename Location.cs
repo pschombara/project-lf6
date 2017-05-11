@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 
 namespace projectlf6
 {
-    public class Location
+	public class Location
     {
         private int x;
         private int y;

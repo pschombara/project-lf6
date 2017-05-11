@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace projectlf6
 {
-    public class Level
+	public class Level
     {
         private int[,] map;
         private int[,] ways;
@@ -89,6 +87,5 @@ namespace projectlf6
             //ToDo
             return true;
         }
-
     }
 }

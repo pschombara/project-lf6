@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 
 namespace projectlf6
 {
-    public class Score
+	public class Score
     {
         private int score;
         private List<int> gameScores;
@@ -91,7 +89,7 @@ namespace projectlf6
             score.InnerText = this.score.ToString();
 
             scoreClass.AppendChild(score);
-            
+
             for (int x = 0; x < this.gameScores.Count; x++)
             {
                 XmlElement elem = document.CreateElement("element");
@@ -118,7 +116,7 @@ namespace projectlf6
                     else if (childs.Item(x).Name == "gameScores")
                     {
                         XmlNodeList gameScores = childs.Item(x).ChildNodes;
-                        
+
                         for (int y = 0; y < gameScores.Count; y++)
                         {
                             this.gameScores.Add(Convert.ToInt16(gameScores.Item(y).InnerText));
