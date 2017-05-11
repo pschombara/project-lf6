@@ -15,7 +15,7 @@ namespace projectlf6
 		private int activeLevel;
 		private string name;
 
-		private string SAVE_PATH = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\projectlf6\\games\\";
+		public static string SAVE_PATH = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\projectlf6\\games\\";
 
 		#endregion Memberarea
 

@@ -21,9 +21,14 @@ namespace projectlf6
         #region Konstruktor
         public LevelEditorMain()
         {
+            //TODO remove
             InitializeComponent();
             Editor = new Editor(pnlLevel.Width, pnlLevel.Height);
             pnlLevel.Refresh();
+        }
+        public LevelEditorMain(string path)
+        {
+
         }
         #endregion
 

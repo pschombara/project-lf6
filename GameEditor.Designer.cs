@@ -34,19 +34,23 @@
             this.txtNewGameName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnNewGame = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.grbAddGame = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGames)).BeginInit();
+            this.grbAddGame.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewGames
             // 
-            this.dataGridViewGames.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewGames.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.gameName,
             this.levelCount});
-            this.dataGridViewGames.Location = new System.Drawing.Point(12, 12);
+            this.dataGridViewGames.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dataGridViewGames.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewGames.Name = "dataGridViewGames";
-            this.dataGridViewGames.Size = new System.Drawing.Size(708, 112);
+            this.dataGridViewGames.Size = new System.Drawing.Size(744, 171);
             this.dataGridViewGames.TabIndex = 0;
+            this.dataGridViewGames.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewGames_CellDoubleClick);
             // 
             // gameName
             // 
@@ -64,7 +68,7 @@
             // 
             // txtNewGameName
             // 
-            this.txtNewGameName.Location = new System.Drawing.Point(67, 285);
+            this.txtNewGameName.Location = new System.Drawing.Point(50, 34);
             this.txtNewGameName.Name = "txtNewGameName";
             this.txtNewGameName.Size = new System.Drawing.Size(100, 20);
             this.txtNewGameName.TabIndex = 1;
@@ -72,7 +76,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 288);
+            this.label1.Location = new System.Drawing.Point(6, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 2;
@@ -80,7 +84,7 @@
             // 
             // btnNewGame
             // 
-            this.btnNewGame.Location = new System.Drawing.Point(173, 283);
+            this.btnNewGame.Location = new System.Drawing.Point(156, 32);
             this.btnNewGame.Name = "btnNewGame";
             this.btnNewGame.Size = new System.Drawing.Size(151, 23);
             this.btnNewGame.TabIndex = 3;
@@ -88,21 +92,46 @@
             this.btnNewGame.UseVisualStyleBackColor = true;
             this.btnNewGame.Click += new System.EventHandler(this.btnNewGame_Click);
             // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(12, 282);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.TabIndex = 4;
+            this.btnBack.Text = "Zurück";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // grbAddGame
+            // 
+            this.grbAddGame.Controls.Add(this.label1);
+            this.grbAddGame.Controls.Add(this.txtNewGameName);
+            this.grbAddGame.Controls.Add(this.btnNewGame);
+            this.grbAddGame.Location = new System.Drawing.Point(0, 187);
+            this.grbAddGame.Name = "grbAddGame";
+            this.grbAddGame.Size = new System.Drawing.Size(744, 66);
+            this.grbAddGame.TabIndex = 5;
+            this.grbAddGame.TabStop = false;
+            this.grbAddGame.Text = "Spiel hinzufügen";
+            // 
             // GameEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(955, 317);
-            this.Controls.Add(this.btnNewGame);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtNewGameName);
+            this.ClientSize = new System.Drawing.Size(744, 317);
+            this.Controls.Add(this.grbAddGame);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dataGridViewGames);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "GameEditor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameEditor";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGames)).EndInit();
+            this.grbAddGame.ResumeLayout(false);
+            this.grbAddGame.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -114,5 +143,7 @@
         private System.Windows.Forms.TextBox txtNewGameName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnNewGame;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.GroupBox grbAddGame;
     }
 }
