@@ -21,8 +21,6 @@ namespace projectlf6
 		private const int ORIENTATION_DOWN = 2;
 		private const int ORIENTATION_LEFT = 3;
 
-		public const string SAVE_PATH = "\\projectlf6\\player\\";
-
         public Player()
         {
             this.name = "";
@@ -117,15 +115,14 @@ namespace projectlf6
         {
             try
             {
-                string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + SAVE_PATH;
-                Directory.CreateDirectory(path);
-                string saveXml = path + "player_" + this.name + ".xml";
+                Directory.CreateDirectory(Global.PATH_PLAYER_FOLDER);
+                string saveXml = this.name.ToXmlPlayerPath();
 
                 XmlDocument doc = new XmlDocument();
 
                 doc.AppendChild(doc.ImportNode(this.serialize(), true));
 
-                doc.Save(saveXml);
+                doc.Save(this.name.ToXmlPlayerPath());
             }
             catch (Exception ex)
             {
@@ -136,10 +133,8 @@ namespace projectlf6
 
         public void loadFromFile(string name)
         {
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + SAVE_PATH;
-
             XmlDocument doc = new XmlDocument();
-            doc.Load(path + "player_" + name + ".xml");
+            doc.Load(name.ToXmlPlayerPath());
             XmlNodeList nodeName = doc.GetElementsByTagName("name");
 
             if (nodeName.Count == 1)

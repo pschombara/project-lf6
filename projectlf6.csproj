@@ -67,6 +67,7 @@
       <DependentUpon>GameMain.cs</DependentUpon>
     </Compile>
     <Compile Include="GameMode.cs" />
+    <Compile Include="Global.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="LevelEditorMain.cs">
       <SubType>Form</SubType>

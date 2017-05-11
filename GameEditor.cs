@@ -19,8 +19,7 @@ namespace projectlf6
         {
             InitializeComponent();
 
-            this.path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + Game.SAVE_PATH;
-            string[] folders = Directory.GetDirectories(path);
+            string[] folders = Directory.GetDirectories(Global.PATH_GAME_FOLDER);
             //DataGridView füllen
             for (int i = 0; i < folders.Length; i++)
             {

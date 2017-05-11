@@ -26,8 +26,8 @@ namespace projectlf6
 
         private void prepareFillComboBox()
         {
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + Player.SAVE_PATH;
-            FileInfo[] files = new DirectoryInfo(path).GetFiles();
+            //string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + Player.SAVE_PATH;
+            FileInfo[] files = new DirectoryInfo(Global.PATH_PLAYER_FOLDER).GetFiles();
 
             for (int i = 0; i < files.Length; i++)
             {

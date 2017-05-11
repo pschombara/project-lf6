@@ -24,6 +24,7 @@ namespace projectlf6
         public int getScore()
         {
             return this.score;
+
         }
 
         public void addScoreToScoreList(int score)

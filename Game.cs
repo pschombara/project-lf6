@@ -15,8 +15,6 @@ namespace projectlf6
 		private int activeLevel;
 		private string name;
 
-		public static string SAVE_PATH = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\projectlf6\\games\\";
-
 		#endregion Memberarea
 
 		#region Constructors
@@ -70,7 +68,7 @@ namespace projectlf6
 		public void loadFromFile()
 		{
 			XmlDocument doc = new XmlDocument();
-			doc.Load(SAVE_PATH + this.name + ".xml");
+			doc.Load(this.name.ToXmlGamePath());
 			XmlNodeList nodeName = doc.GetElementsByTagName("name");
 
 			if (nodeName.Count == 1)
@@ -101,14 +99,13 @@ namespace projectlf6
 			bool retvar = false;
 			try
 			{
-				Directory.CreateDirectory(SAVE_PATH);
-				string saveXml = SAVE_PATH + this.name + ".xml";
+				Directory.CreateDirectory(Global.PATH_GAME_FOLDER);
 
 				XmlDocument doc = new XmlDocument();
 
 				doc.AppendChild(doc.ImportNode(this.serialize(), true));
 
-				doc.Save(saveXml);
+				doc.Save(this.name.ToXmlGamePath());
 
 				retvar = true;
 			}
@@ -133,7 +130,7 @@ namespace projectlf6
 			game.AppendChild(name);
 			game.AppendChild(activeLevel);
 
-			FileInfo[] files = new DirectoryInfo(SAVE_PATH + this.name).GetFiles();
+			FileInfo[] files = new DirectoryInfo(Global.PATH_GAME_FOLDER + this.name).GetFiles();
 			foreach (FileInfo fi in files)
 			{
 				XmlElement level = document.CreateElement("level");
