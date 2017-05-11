@@ -28,15 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridViewGames = new System.Windows.Forms.DataGridView();
             this.gameName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.levelCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmsGames = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.txtNewGameName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnNewGame = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.grbAddGame = new System.Windows.Forms.GroupBox();
+            this.btnStartLevelEditor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGames)).BeginInit();
+            this.cmsGames.SuspendLayout();
             this.grbAddGame.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,8 +51,10 @@
             this.dataGridViewGames.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.gameName,
             this.levelCount});
+            this.dataGridViewGames.ContextMenuStrip = this.cmsGames;
             this.dataGridViewGames.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridViewGames.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewGames.MultiSelect = false;
             this.dataGridViewGames.Name = "dataGridViewGames";
             this.dataGridViewGames.Size = new System.Drawing.Size(744, 171);
             this.dataGridViewGames.TabIndex = 0;
@@ -66,6 +73,20 @@
             this.levelCount.HeaderText = "Anzahl Level";
             this.levelCount.Name = "levelCount";
             this.levelCount.ReadOnly = true;
+            // 
+            // cmsGames
+            // 
+            this.cmsGames.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiDelete});
+            this.cmsGames.Name = "cmsGames";
+            this.cmsGames.Size = new System.Drawing.Size(119, 26);
+            // 
+            // tsmiDelete
+            // 
+            this.tsmiDelete.Name = "tsmiDelete";
+            this.tsmiDelete.Size = new System.Drawing.Size(118, 22);
+            this.tsmiDelete.Text = "Löschen";
+            this.tsmiDelete.Click += new System.EventHandler(this.tsmiDelete_Click);
             // 
             // txtNewGameName
             // 
@@ -115,11 +136,22 @@
             this.grbAddGame.TabStop = false;
             this.grbAddGame.Text = "Spiel hinzufügen";
             // 
+            // btnStartLevelEditor
+            // 
+            this.btnStartLevelEditor.Location = new System.Drawing.Point(94, 282);
+            this.btnStartLevelEditor.Name = "btnStartLevelEditor";
+            this.btnStartLevelEditor.Size = new System.Drawing.Size(110, 23);
+            this.btnStartLevelEditor.TabIndex = 6;
+            this.btnStartLevelEditor.Text = "Start Level Editor";
+            this.btnStartLevelEditor.UseVisualStyleBackColor = true;
+            this.btnStartLevelEditor.Click += new System.EventHandler(this.btnStartLevelEditor_Click);
+            // 
             // GameEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(744, 317);
+            this.Controls.Add(this.btnStartLevelEditor);
             this.Controls.Add(this.grbAddGame);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dataGridViewGames);
@@ -130,6 +162,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameEditor";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGames)).EndInit();
+            this.cmsGames.ResumeLayout(false);
             this.grbAddGame.ResumeLayout(false);
             this.grbAddGame.PerformLayout();
             this.ResumeLayout(false);
@@ -146,5 +179,8 @@
         private System.Windows.Forms.Button btnNewGame;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.GroupBox grbAddGame;
+        private System.Windows.Forms.ContextMenuStrip cmsGames;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDelete;
+        private System.Windows.Forms.Button btnStartLevelEditor;
     }
 }

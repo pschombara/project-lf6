@@ -47,7 +47,29 @@ namespace projectlf6
 
         private void dataGridViewGames_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            LevelEditorMain levelEditorMain = new LevelEditorMain(dataGridViewGames.SelectedCells[0].Value.ToString());
+            levelEditorMain.ShowDialog();
+        }
 
+        private void tsmiDelete_Click(object sender, EventArgs e)
+        {
+            Directory.Delete(Game.SAVE_PATH + dataGridViewGames.SelectedCells[0].Value, true);
+
+            if (dataGridViewGames.SelectedRows.Count > 0)
+            {
+                dataGridViewGames.Rows.RemoveAt(dataGridViewGames.SelectedRows[0].Index);
+            }
+            else if(dataGridViewGames.SelectedCells.Count > 0)
+            {
+                dataGridViewGames.Rows.RemoveAt(dataGridViewGames.SelectedCells[0].RowIndex);
+            }
+            dataGridViewGames.ClearSelection();
+        }
+
+        private void btnStartLevelEditor_Click(object sender, EventArgs e)
+        {
+            LevelEditorMain levelEditorMain = new LevelEditorMain();
+            levelEditorMain.ShowDialog();
         }
     }
 }
