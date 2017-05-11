@@ -5,13 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using System.IO;
+using System.Drawing;
 
 namespace projectlf6
 {
     public class Player
     {
         private string name;
-        private Skin skin;
+        private string skin;
+		private Color color;
         private Score score;
         private Location location;
         private int orientation;
@@ -26,7 +28,8 @@ namespace projectlf6
         public Player()
         {
             this.name = "";
-            this.skin = new Skin();
+            this.skin = string.Empty;
+			this.color = Color.Green;
             this.score = new Score();
             this.location = new Location();
             this.orientation = ORIENTATION_DOWN;
@@ -35,8 +38,10 @@ namespace projectlf6
         public Player(string name)
         {
             this.name = name;
-            this.skin = new Skin();
-            this.score = new Score();
+			this.color = Color.Green;
+			this.skin = string.Empty;
+			this.color = Color.Green;
+			this.score = new Score();
             this.location = new Location();
             this.orientation = ORIENTATION_DOWN;
         }
@@ -51,15 +56,25 @@ namespace projectlf6
             return this.name;
         }
 
-        public void setSkin(Skin skin)
+        public void setSkin(string skin)
         {
             this.skin = skin;
         }
 
-        public Skin getSkin()
+        public string getSkin()
         {
             return this.skin;
         }
+
+		public void setColor(Color newColor)
+		{
+			this.color = newColor;
+		}
+
+		public Color getColor()
+		{
+			return this.color;
+		}
 
         public Location getLocation()
         {
