@@ -85,7 +85,6 @@ namespace projectlf6
 
         public bool saveToFile()
         {
-
             try
             {
                 string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + SAVE_PATH;

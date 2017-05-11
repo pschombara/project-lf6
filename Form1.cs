@@ -30,6 +30,10 @@ namespace projectlf6
 
         private void btnLevelEditor_Click(object sender, EventArgs e)
         {
+            Form gameEditor = new GameEditor();
+            gameEditor.ShowDialog();
+
+            //TODO nachfolgendes entfernen wenn, game editor fähig ist level editor aufzurufen
             Form LevelEditorMain = new LevelEditorMain();
             LevelEditorMain.ShowDialog();
         }
