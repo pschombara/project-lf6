@@ -30,7 +30,7 @@
         {
             this.btnNewGame = new System.Windows.Forms.Button();
             this.btnLevelEditor = new System.Windows.Forms.Button();
-            this.btnOption = new System.Windows.Forms.Button();
+            this.btnHelp = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -54,14 +54,14 @@
             this.btnLevelEditor.UseVisualStyleBackColor = true;
             this.btnLevelEditor.Click += new System.EventHandler(this.btnLevelEditor_Click);
             // 
-            // btnOption
+            // btnHelp
             // 
-            this.btnOption.Location = new System.Drawing.Point(-2, 109);
-            this.btnOption.Name = "btnOption";
-            this.btnOption.Size = new System.Drawing.Size(291, 48);
-            this.btnOption.TabIndex = 2;
-            this.btnOption.Text = "Optionen";
-            this.btnOption.UseVisualStyleBackColor = true;
+            this.btnHelp.Location = new System.Drawing.Point(-2, 109);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(291, 48);
+            this.btnHelp.TabIndex = 2;
+            this.btnHelp.Text = "Hilfe";
+            this.btnHelp.UseVisualStyleBackColor = true;
             // 
             // btnClose
             // 
@@ -79,7 +79,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 219);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnOption);
+            this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.btnLevelEditor);
             this.Controls.Add(this.btnNewGame);
             this.Name = "Form1";
@@ -93,7 +93,7 @@
 
         private System.Windows.Forms.Button btnNewGame;
         private System.Windows.Forms.Button btnLevelEditor;
-        private System.Windows.Forms.Button btnOption;
+        private System.Windows.Forms.Button btnHelp;
         private System.Windows.Forms.Button btnClose;
     }
 }

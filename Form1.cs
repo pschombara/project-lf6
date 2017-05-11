@@ -30,10 +30,6 @@ namespace projectlf6
 		{
 			Form gameEditor = new GameEditor();
 			gameEditor.ShowDialog();
-
-			//TODO nachfolgendes entfernen wenn, game editor fähig ist level editor aufzurufen
-			Form LevelEditorMain = new LevelEditorMain();
-			LevelEditorMain.ShowDialog();
 		}
 
 		private void CreateFolderTree()
