@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace projectlf6
 {
-    class Field
+    public class Field
     {
         private int fieldType;
         private string texture;

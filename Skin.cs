@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace projectlf6
 {
-    class Skin
+    public class Skin
     {
         private string texture;
         private Color color;

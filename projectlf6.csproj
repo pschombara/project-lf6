@@ -60,6 +60,7 @@
     <Compile Include="GameMain.Designer.cs">
       <DependentUpon>GameMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="GameMode.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="LevelEditorMain.cs">
       <SubType>Form</SubType>
@@ -68,7 +69,6 @@
       <DependentUpon>LevelEditorMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Location.cs" />
-    <Compile Include="Modus.cs" />
     <Compile Include="newGame.cs">
       <SubType>Form</SubType>
     </Compile>

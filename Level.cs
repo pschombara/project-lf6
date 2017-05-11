@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace projectlf6
 {
-    class Level
+    public class Level
     {
         private int[,] map;
         private int[,] ways;

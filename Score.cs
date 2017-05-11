@@ -7,7 +7,7 @@ using System.Xml;
 
 namespace projectlf6
 {
-    class Score
+    public class Score
     {
         private int score;
         private List<int> gameScores;

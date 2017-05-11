@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace projectlf6
 {
-    class Editor
+    public class Editor
     {
         private Point Level; //Größe des Levels
         private int[,] map; //Level Daten

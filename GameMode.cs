@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace projectlf6
 {
-    class Modus
-    {
-    }
+	public class GameMode
+	{
+		#region Memberarea
+
+		#endregion Memberarea
+	}
 }

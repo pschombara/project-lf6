@@ -7,7 +7,7 @@ using System.Xml;
 
 namespace projectlf6
 {
-    class Location
+    public class Location
     {
         private int x;
         private int y;

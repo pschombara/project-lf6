@@ -8,7 +8,7 @@ using System.IO;
 
 namespace projectlf6
 {
-    class Player
+    public class Player
     {
         private string name;
         private Skin skin;
