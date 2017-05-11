@@ -11,47 +11,65 @@ using System.IO;
 
 namespace projectlf6
 {
-    public partial class GameEditor : Form
-    {
-        private string path;
+	public partial class GameEditor : Form
+	{
+		public GameEditor()
+		{
+			InitializeComponent();
 
-        public GameEditor()
-        {
-            InitializeComponent();
+			DirectoryInfo directoryInfo = new DirectoryInfo(Global.PATH_GAME_FOLDER);
+			DirectoryInfo[] folders = directoryInfo.GetDirectories();
+			//DataGridView füllen
+			for (int i = 0; i < folders.Length; i++)
+			{
+				FileInfo[] fileInfo = folders[i].GetFiles();
+				dataGridViewGames.Rows.Add(folders[i].Name, fileInfo.Length);
+			}
+		}
 
-            string[] folders = Directory.GetDirectories(Global.PATH_GAME_FOLDER);
-            //DataGridView füllen
-            for (int i = 0; i < folders.Length; i++)
-            {
-                string[] num = Directory.GetFiles(this.path + "\\" + folders[i]);
-                dataGridViewGames.Rows.Add(folders[i], num.Length);
-            }
-        }
+		private void btnNewGame_Click(object sender, EventArgs e)
+		{
+			string path = Global.PATH_GAME_FOLDER + "\\" + txtNewGameName.Text;
+			if (!Directory.Exists(path))
+			{
+				Directory.CreateDirectory(path);
+				LevelEditorMain levelEditorMain = new LevelEditorMain(path);
+				levelEditorMain.ShowDialog();
+			}
+			else
+				MessageBox.Show("Spielname existiert bereits!", "Fehler: Spielname!");
+		}
 
-        private void btnNewGame_Click(object sender, EventArgs e)
-        {
-            // TODO check if game name already exist
-            // TODO create folder
-            // start level editor
-            string path = this.path + "\\" + txtNewGameName.Text;
-            if (!Directory.Exists(path))
-            {
-                Directory.CreateDirectory(path);
-                LevelEditorMain levelEditorMain = new LevelEditorMain(path);
-                levelEditorMain.ShowDialog();
-            }
-            else
-                MessageBox.Show("Spielname existiert bereits!", "Fehler: Spielname!");
-        }
+		private void btnBack_Click(object sender, EventArgs e)
+		{
+			Hide();
+		}
 
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            Hide();
-        }
+		private void dataGridViewGames_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+		{
+			LevelEditorMain levelEditorMain = new LevelEditorMain(dataGridViewGames.SelectedCells[0].Value.ToString());
+			levelEditorMain.ShowDialog();
+		}
 
-        private void dataGridViewGames_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
+		private void tsmiDelete_Click(object sender, EventArgs e)
+		{
+			Directory.Delete(Global.PATH_GAME_FOLDER + dataGridViewGames.SelectedCells[0].Value, true);
 
-        }
-    }
+			if (dataGridViewGames.SelectedRows.Count > 0)
+			{
+				dataGridViewGames.Rows.RemoveAt(dataGridViewGames.SelectedRows[0].Index);
+			}
+			else if (dataGridViewGames.SelectedCells.Count > 0)
+			{
+				dataGridViewGames.Rows.RemoveAt(dataGridViewGames.SelectedCells[0].RowIndex);
+			}
+			dataGridViewGames.ClearSelection();
+		}
+
+		private void btnStartLevelEditor_Click(object sender, EventArgs e)
+		{
+			LevelEditorMain levelEditorMain = new LevelEditorMain();
+			levelEditorMain.ShowDialog();
+		}
+	}
 }

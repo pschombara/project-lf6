@@ -31,7 +31,7 @@ namespace projectlf6
             InitializeComponent();
             
             Editor = new Editor(pnlLevel.Width, pnlLevel.Height);
-            Editor.loadLevelFromFile(Game.SAVE_PATH + path);
+            Editor.loadLevelFromFile(Global.PATH_GAME_FOLDER + path);
             pnlLevel.Refresh();
         }
         #endregion
