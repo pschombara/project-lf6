@@ -23,10 +23,11 @@ namespace projectlf6
             Level = new Point(x, y);
             x = 0; y = 0;
             map = new int[32, 32];
+            NewLevel();
             isGrid = false;
             selectedTexture = Field.FIELD_GRASS;
-            player_1 = new Location();
-            player_2 = new Location();
+            player_1 = new Location(6, 0);
+            player_2 = new Location(25, 0);
         }
 
         #region Gitter zeichnen
@@ -61,12 +62,19 @@ namespace projectlf6
                         graphics.DrawImage(getTexture(map[x, y]), (x * 16), (y * 16), 16, 16);
                 }
             }
+            drawPlayer(graphics);
+        }
+        #endregion
+
+        #region Draw Player
+        private void drawPlayer(Graphics graphics)
+        {
             graphics.DrawImage(getTexture(Field.FIELD_Player_1), (player_1.getX() * 16), (player_1.getY() * 16), 16, 32); //Zeichne Player 1
             graphics.DrawImage(getTexture(Field.FIELD_Player_2), (player_2.getX() * 16), (player_2.getY() * 16), 16, 32); //Zeichne Player 2
         }
         #endregion
 
-        public static string getBetween(string strSource, string strStart, string strEnd)
+        private static string getBetween(string strSource, string strStart, string strEnd)
         {
             int Start, End;
             if (strSource.Contains(strStart) && strSource.Contains(strEnd))
@@ -123,6 +131,14 @@ namespace projectlf6
                 drawGrid(graphics, Color.Black);
         }
 
+        private bool checkMouseOverPlayer(int mapX, int mapY)
+        {
+            if (mapX == player_1.getX() && mapY == player_1.getY() || mapX == player_2.getX() && mapY == player_2.getY() || mapX == player_1.getX() && mapY == player_1.getY() + 1 || mapX == player_2.getX() && mapY == player_2.getY() + 1)
+                return true;
+            else
+                return false;
+        }
+
         public void putTexture(Graphics graphics, int x, int y)
         {
             int MapX = x / 16;
@@ -149,6 +165,8 @@ namespace projectlf6
             }
             if (isGrid)
                 drawGrid(graphics, Color.Black);
+            if(checkMouseOverPlayer(MapX, MapY))
+                drawPlayer(graphics);
         }
 
         public void setTexture(int texture)
@@ -204,12 +222,39 @@ namespace projectlf6
 
         public void NewLevel()
         {
+            //Himmel zeichnen
+            for (int y = 0; y < 2; y++)
+            {
+                for (int x = 0; x < 32; x++)
+                {
+                    map[x, y] = Field.FIELD_SKY;
+                }
+            }
+            //Gras zeichnen
             for (int x = 0; x < 32; x++)
             {
-                for (int y = 0; y < 32; y++)
+                map[x, 2] = Field.FIELD_GRASS;
+            }
+            //Erde zeichnen
+            for (int y = 3; y < 6; y++)
+            {
+                for (int x = 0; x < 32; x++)
+                {
+                    map[x, y] = Field.FIELD_DIRT;
+                }
+            }
+            //Steine zeichnen
+            for (int y = 6; y < 30; y++)
+            {
+                for (int x = 0; x < 32; x++)
                 {
                     map[x, y] = Field.FIELD_STONE;
                 }
+            }
+            //Nicht-abbaubar zeichnen
+            for (int x = 0; x < 32; x++)
+            {
+                map[x, 31] = Field.FIELD_NO_BROCKEN;
             }
         }
 

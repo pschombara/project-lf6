@@ -36,7 +36,7 @@ namespace projectlf6
             return field;
         }
 
-        public List<Location> getWayLocationsForPlayer(int player)
+        public List<Location> getWayLocationsForPlayer(Player player)
         {
             //ToDo
             return null;
@@ -48,7 +48,7 @@ namespace projectlf6
             return true;
         }
 
-        public void setWayAtLocation(Location location, int player)
+        public void setWayAtLocation(Location location, Player player)
         {
             //ToDo
         }
@@ -90,10 +90,5 @@ namespace projectlf6
             return true;
         }
 
-        private bool isMapComplete()
-        {
-            //ToDo
-            return true;
-        }
     }
 }
