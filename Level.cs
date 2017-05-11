@@ -6,8 +6,8 @@ namespace projectlf6
 {
 	public class Level
     {
-        private int[,] map;
-        private int[,] ways;
+        private int[][] map;
+        private int[][] ways;
         private Location startOne;
         private Location startTwo;
         private string name;
@@ -30,14 +30,24 @@ namespace projectlf6
 
         public Field getFieldAtLocation(Location location)
         {
-            Field field = new Field(this.map[location.getX(), location.getY()]);
+            Field field = new Field(this.map[location.getX()][location.getY()]);
             return field;
         }
 
         public List<Location> getWayLocationsForPlayer(Player player)
         {
-            //ToDo
-            return null;
+			List<Location> wayPoints = new List<Location>();
+			for (int x = 0; x < ways.Length; x++)
+			{
+				for (int y = 0; y < ways[x].Length; y++)
+				{
+					if (ways[x][y] == player.getNumber())
+					{
+						wayPoints.Add(new Location(x, y));
+					}
+				}
+			}
+            return wayPoints;
         }
 
         public bool isLocationFreeForWay(Location location)
@@ -61,7 +71,7 @@ namespace projectlf6
 
         public void setFieldAtLocation(Location location, Field field)
         {
-            this.map[location.getX(), location.getY()] = field.getFieldType();
+            this.map[location.getX()][location.getY()] = field.getFieldType();
         }
 
         public void setStartLocationForPlayer(Location startLocation, int player)

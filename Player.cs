@@ -14,6 +14,7 @@ namespace projectlf6
         private Score score;
         private Location location;
         private int orientation;
+		private int number;
 
 		private const int ORIENTATION_UP = 0;
 		private const int ORIENTATION_RIGHT = 1;
@@ -30,6 +31,7 @@ namespace projectlf6
             this.score = new Score();
             this.location = new Location();
             this.orientation = ORIENTATION_DOWN;
+			this.number = 0;
         }
 
         public Player(string name)
@@ -41,6 +43,7 @@ namespace projectlf6
 			this.score = new Score();
             this.location = new Location();
             this.orientation = ORIENTATION_DOWN;
+			this.number = 0;
         }
 
         public void setName(string name)
@@ -77,6 +80,21 @@ namespace projectlf6
         {
             return this.location;
         }
+
+		public int getNumber()
+		{
+			return this.number;
+		}
+
+		public void setNumber(int number)
+		{
+			if (number > 2 || number < 1)
+				this.number = 0;
+			if (number == 1)
+				this.number = 1;
+			if (number == 2)
+				this.number = 2;
+		}
 
         public void setOrientation(int orientation)
         {
