@@ -191,7 +191,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "GameMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GameMain";
+            this.Text = "Game Main";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

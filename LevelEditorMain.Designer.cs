@@ -69,13 +69,13 @@
             this.saveFileDialogExport = new System.Windows.Forms.SaveFileDialog();
             this.timerUpdate = new System.Windows.Forms.Timer(this.components);
             this.grbGameManager = new System.Windows.Forms.GroupBox();
+            this.btnSaveLevel = new System.Windows.Forms.Button();
             this.btnAddLevel = new System.Windows.Forms.Button();
             this.btnRemoveLevel = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBoxLevel = new System.Windows.Forms.ComboBox();
             this.edtGameName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnSaveLevel = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.pnlSelection.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSelection)).BeginInit();
@@ -158,7 +158,7 @@
             // 
             this.rasterToolStripMenuItem.CheckOnClick = true;
             this.rasterToolStripMenuItem.Name = "rasterToolStripMenuItem";
-            this.rasterToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.rasterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.rasterToolStripMenuItem.Text = "Raster";
             this.rasterToolStripMenuItem.Click += new System.EventHandler(this.rasterToolStripMenuItem_Click);
             // 
@@ -166,7 +166,7 @@
             // 
             this.mauszeigerToolStripMenuItem.CheckOnClick = true;
             this.mauszeigerToolStripMenuItem.Name = "mauszeigerToolStripMenuItem";
-            this.mauszeigerToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.mauszeigerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.mauszeigerToolStripMenuItem.Text = "Mauszeiger";
             this.mauszeigerToolStripMenuItem.Click += new System.EventHandler(this.mauszeigerToolStripMenuItem_Click);
             // 
@@ -479,12 +479,22 @@
             this.grbGameManager.TabStop = false;
             this.grbGameManager.Text = "Spiel Werkzeuge";
             // 
+            // btnSaveLevel
+            // 
+            this.btnSaveLevel.Location = new System.Drawing.Point(46, 128);
+            this.btnSaveLevel.Name = "btnSaveLevel";
+            this.btnSaveLevel.Size = new System.Drawing.Size(179, 23);
+            this.btnSaveLevel.TabIndex = 5;
+            this.btnSaveLevel.Text = "Level speichern";
+            this.btnSaveLevel.UseVisualStyleBackColor = true;
+            this.btnSaveLevel.Click += new System.EventHandler(this.btnSaveLevel_Click);
+            // 
             // btnAddLevel
             // 
             this.btnAddLevel.Location = new System.Drawing.Point(46, 70);
             this.btnAddLevel.Name = "btnAddLevel";
             this.btnAddLevel.Size = new System.Drawing.Size(179, 23);
-            this.btnAddLevel.TabIndex = 5;
+            this.btnAddLevel.TabIndex = 3;
             this.btnAddLevel.Text = "Level hinzufügen";
             this.btnAddLevel.UseVisualStyleBackColor = true;
             this.btnAddLevel.Click += new System.EventHandler(this.btnAddLevel_Click);
@@ -533,16 +543,6 @@
             this.label1.Size = new System.Drawing.Size(33, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Spiel:";
-            // 
-            // btnSaveLevel
-            // 
-            this.btnSaveLevel.Location = new System.Drawing.Point(46, 128);
-            this.btnSaveLevel.Name = "btnSaveLevel";
-            this.btnSaveLevel.Size = new System.Drawing.Size(179, 23);
-            this.btnSaveLevel.TabIndex = 6;
-            this.btnSaveLevel.Text = "Level speichern";
-            this.btnSaveLevel.UseVisualStyleBackColor = true;
-            this.btnSaveLevel.Click += new System.EventHandler(this.btnSaveLevel_Click);
             // 
             // LevelEditorMain
             // 

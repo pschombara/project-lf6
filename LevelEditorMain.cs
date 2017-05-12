@@ -38,7 +38,7 @@ namespace projectlf6
             else
                 Editor.loadGameFromDirectory(Global.PATH_GAME_FOLDER + path);
             edtGameName.Text = Editor.getGameName();
-            levelToComboBox();
+            levelToComboBox(true);
             if (comboBoxLevel.Items.Count > 0)
                 comboBoxLevel.SelectedIndex = 0;
             pnlLevel.Refresh();
@@ -229,7 +229,7 @@ namespace projectlf6
             return bitmap;
         }
 
-        private void levelToComboBox()
+        private void levelToComboBox(bool selectNew = false)
         {
             comboBoxLevel.Items.Clear();
             List<FileInfo> levels = Editor.getLevels();
@@ -237,7 +237,7 @@ namespace projectlf6
             {
                 comboBoxLevel.Items.Add(levels[i].Name);
             }
-            if (comboBoxLevel.Items.Count > 0)
+            if (comboBoxLevel.Items.Count > 0 && selectNew)
                 comboBoxLevel.SelectedIndex = 0;
         }
 
@@ -268,12 +268,13 @@ namespace projectlf6
         {
             Editor.addLevelToGame(comboBoxLevel.Text);
             levelToComboBox();
+            comboBoxLevel.SelectedItem = comboBoxLevel.Text;
         }
 
         private void btnRemoveLevel_Click(object sender, EventArgs e)
         {
             Editor.removeLevel(comboBoxLevel.SelectedIndex);
-            levelToComboBox();
+            levelToComboBox(true);
         }
 
         private void btnSaveLevel_Click(object sender, EventArgs e)
