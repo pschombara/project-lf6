@@ -13,21 +13,24 @@ namespace projectlf6
 {
 	public partial class GameEditor : Form
 	{
-		public GameEditor()
+        #region Konstruktor
+        public GameEditor()
 		{
 			InitializeComponent();
 
-			DirectoryInfo directoryInfo = new DirectoryInfo(Global.PATH_GAME_FOLDER);
-			DirectoryInfo[] folders = directoryInfo.GetDirectories();
-			//DataGridView füllen
-			for (int i = 0; i < folders.Length; i++)
-			{
-				FileInfo[] fileInfo = folders[i].GetFiles();
-				dataGridViewGames.Rows.Add(folders[i].Name, fileInfo.Length);
-			}
+            //refreshDataGridView();
 		}
+        #endregion
 
-		private void btnNewGame_Click(object sender, EventArgs e)
+        #region Activated Event
+        private void GameEditor_Activated(object sender, EventArgs e)
+        {
+            refreshDataGridView();
+        }
+        #endregion
+
+        #region Buttons
+        private void btnNewGame_Click(object sender, EventArgs e)
 		{
 			string path = Global.PATH_GAME_FOLDER + txtNewGameName.Text;
 			if (!Directory.Exists(path))
@@ -45,31 +48,58 @@ namespace projectlf6
 			Hide();
 		}
 
-		private void dataGridViewGames_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-		{
-			LevelEditorMain levelEditorMain = new LevelEditorMain(dataGridViewGames.SelectedCells[0].Value.ToString());
-			levelEditorMain.ShowDialog();
-		}
+        private void btnStartLevelEditor_Click(object sender, EventArgs e)
+        {
+            LevelEditorMain levelEditorMain = new LevelEditorMain();
+            levelEditorMain.ShowDialog();
+        }
+        #endregion
 
-		private void tsmiDelete_Click(object sender, EventArgs e)
+        #region DataGridView Events
+        private void dataGridViewGames_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
 		{
-			Directory.Delete(Global.PATH_GAME_FOLDER + dataGridViewGames.SelectedCells[0].Value, true);
-
-			if (dataGridViewGames.SelectedRows.Count > 0)
-			{
-				dataGridViewGames.Rows.RemoveAt(dataGridViewGames.SelectedRows[0].Index);
-			}
-			else if (dataGridViewGames.SelectedCells.Count > 0)
-			{
-				dataGridViewGames.Rows.RemoveAt(dataGridViewGames.SelectedCells[0].RowIndex);
-			}
-			dataGridViewGames.ClearSelection();
+            if (dataGridViewGames.SelectedCells.Count > 0)
+            {
+                LevelEditorMain levelEditorMain = new LevelEditorMain(dataGridViewGames.SelectedCells[0].Value.ToString());
+                levelEditorMain.ShowDialog();
+            }
+            else
+                MessageBox.Show("Zuerst ein Spiel auswählen bzw. neu erstellen", "Fehler: Kein Spiel ausgewählt");
 		}
+        #endregion
 
-		private void btnStartLevelEditor_Click(object sender, EventArgs e)
+        #region Kontextmenü
+        private void tsmiOpen_Click(object sender, EventArgs e)
+        {
+            dataGridViewGames_CellDoubleClick(null, null);
+        }
+
+        private void tsmiDelete_Click(object sender, EventArgs e)
 		{
-			LevelEditorMain levelEditorMain = new LevelEditorMain();
-			levelEditorMain.ShowDialog();
-		}
-	}
+            if (dataGridViewGames.SelectedCells.Count > 0)
+            {
+                Directory.Delete(Global.PATH_GAME_FOLDER + dataGridViewGames.SelectedCells[0].Value, true);
+                dataGridViewGames.Rows.Remove(dataGridViewGames.SelectedRows[0]);
+                dataGridViewGames.ClearSelection();
+            }
+            else
+                MessageBox.Show("Zuerst ein Spiel auswählen bzw. neu erstellen", "Fehler: Kein Spiel ausgewählt");
+        }
+        #endregion
+
+        private void refreshDataGridView()
+        {
+            dataGridViewGames.Rows.Clear();
+            DirectoryInfo directoryInfo = new DirectoryInfo(Global.PATH_GAME_FOLDER);
+            DirectoryInfo[] folders = directoryInfo.GetDirectories();
+            //DataGridView füllen
+            for (int i = 0; i < folders.Length; i++)
+            {
+                FileInfo[] fileInfo = folders[i].GetFiles();
+                dataGridViewGames.Rows.Add(folders[i].Name, fileInfo.Length);
+            }
+
+            txtNewGameName.Text = string.Empty;
+        }
+    }
 }
