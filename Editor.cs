@@ -17,6 +17,9 @@ namespace projectlf6
         private bool isGrid; //Gitter zeichnen
         private int selectedTexture; //ausgewählte Textur
         private Location player_1, player_2; //Spieler Koordinaten
+        private List<FileInfo> lstLevels; //enthält alle Levels eines Spiels
+        private string gameName; //enthält Spielname
+        private string gamePath; //enthält Spielpfad
 
         public Editor(int x, int y)
         {
@@ -28,6 +31,9 @@ namespace projectlf6
             selectedTexture = Field.FIELD_GRASS;
             player_1 = new Location(6, 0);
             player_2 = new Location(25, 0);
+            lstLevels = new List<FileInfo>();
+            gameName = string.Empty;
+            gamePath = string.Empty;
         }
 
         #region Gitter zeichnen
@@ -190,6 +196,59 @@ namespace projectlf6
             isGrid = state;
         }
 
+        public void loadGameFromDirectory(string path)
+        {
+            this.gameName = new FileInfo(path).Name;
+            this.gamePath = path;
+
+            refreshLevels();
+        }
+
+        public List<FileInfo> getLevels()
+        {
+            refreshLevels();
+            return lstLevels;
+        }
+
+        public void removeLevel(int levelIndex)
+        {
+            if (levelIndex > 0)
+            {
+                File.Delete(lstLevels[levelIndex].FullName);
+                lstLevels.RemoveAt(levelIndex);
+                refreshLevels();
+            }
+            else
+                MessageBox.Show("Zuerst Level auswählen", "Fehler: Kein Level ausgewählt");
+        }
+
+        public void refreshLevels()
+        {
+            lstLevels.Clear();
+            string[] files = Directory.GetFiles(this.gamePath);
+            for (int i = 0; i < files.Length; i++)
+            {
+                FileInfo fileInfo = new FileInfo(files[i]);
+                lstLevels.Add(fileInfo);
+            }
+            if (files.Length != 0)
+                loadLevelFromFile(files[0]);
+        }
+
+        public string getGameName()
+        {
+            return this.gameName;
+        }
+
+        public void addLevelToGame(string levelName)
+        {
+            if (levelName != string.Empty)
+                saveLevelToFile(this.gamePath + "\\" + levelName);
+            else
+                MessageBox.Show("Levelname darf nicht leer sein!", "Fehler: Levelname");
+        }
+
+        #region loadLevel
         public void loadLevelFromFile(String file)
         {
             String datei = File.ReadAllText(file);
@@ -210,6 +269,28 @@ namespace projectlf6
             }
         }
 
+        public void loadLevelFromFile(int levelIndex)
+        {
+            String datei = File.ReadAllText(lstLevels[levelIndex].FullName);
+            player_1.setX(Convert.ToInt16(getBetween(datei, "Player_1_X=", "\n")));
+            player_1.setY(Convert.ToInt16(getBetween(datei, "Player_1_Y=", "\n")));
+            player_2.setX(Convert.ToInt16(getBetween(datei, "Player_2_X=", "\n")));
+            player_2.setY(Convert.ToInt16(getBetween(datei, "Player_2_Y=", "\n")));
+
+            datei = getBetween(datei, "<Map>", "</Map>");
+            string[] str = datei.Split(';');
+            //Level
+            for (int x = 0; x < 32; x++)
+            {
+                for (int y = 0; y < 32; y++)
+                {
+                    map[x, y] = Convert.ToInt16(str[(32 * x) + y]);
+                }
+            }
+        }
+        #endregion
+
+        #region saveLevel
         public void saveLevelToFile(String file)
         {
             String datei = String.Empty;
@@ -230,6 +311,33 @@ namespace projectlf6
             datei += "</Map>";
             File.WriteAllText(file, datei);
         }
+
+        public void saveLevelToFile(int levelIndex)
+        {
+            if (levelIndex > 0)
+            {
+                String datei = String.Empty;
+                datei += "Player_1_X=" + player_1.getX() + Environment.NewLine;
+                datei += "Player_1_Y=" + player_1.getY() + Environment.NewLine;
+                datei += "Player_2_X=" + player_2.getX() + Environment.NewLine;
+                datei += "Player_2_Y=" + player_2.getY() + Environment.NewLine;
+                //Level
+                datei += "<Map>" + Environment.NewLine;
+                for (int x = 0; x < 32; x++)
+                {
+                    for (int y = 0; y < 32; y++)
+                    {
+                        datei += map[x, y].ToString() + ';';
+                    }
+                    datei += Environment.NewLine;
+                }
+                datei += "</Map>";
+                File.WriteAllText(lstLevels[levelIndex].FullName, datei);
+            }
+            else
+                MessageBox.Show("Levelname darf nicht leer sein!", "Fehler: Levelname");
+        }
+        #endregion
 
         public void NewLevel()
         {

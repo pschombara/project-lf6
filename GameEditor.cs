@@ -29,7 +29,7 @@ namespace projectlf6
 
 		private void btnNewGame_Click(object sender, EventArgs e)
 		{
-			string path = Global.PATH_GAME_FOLDER + "\\" + txtNewGameName.Text;
+			string path = Global.PATH_GAME_FOLDER + txtNewGameName.Text;
 			if (!Directory.Exists(path))
 			{
 				Directory.CreateDirectory(path);

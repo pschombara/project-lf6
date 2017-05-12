@@ -68,6 +68,14 @@
             this.pnlLevel = new System.Windows.Forms.Panel();
             this.saveFileDialogExport = new System.Windows.Forms.SaveFileDialog();
             this.timerUpdate = new System.Windows.Forms.Timer(this.components);
+            this.grbGameManager = new System.Windows.Forms.GroupBox();
+            this.btnAddLevel = new System.Windows.Forms.Button();
+            this.btnRemoveLevel = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBoxLevel = new System.Windows.Forms.ComboBox();
+            this.edtGameName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnSaveLevel = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.pnlSelection.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSelection)).BeginInit();
@@ -76,6 +84,7 @@
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            this.grbGameManager.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -432,7 +441,7 @@
             // 
             // pnlLevel
             // 
-            this.pnlLevel.Location = new System.Drawing.Point(256, 49);
+            this.pnlLevel.Location = new System.Drawing.Point(229, 49);
             this.pnlLevel.Name = "pnlLevel";
             this.pnlLevel.Size = new System.Drawing.Size(513, 513);
             this.pnlLevel.TabIndex = 7;
@@ -454,11 +463,93 @@
             this.timerUpdate.Interval = 1000;
             this.timerUpdate.Tick += new System.EventHandler(this.timerUpdate_Tick);
             // 
+            // grbGameManager
+            // 
+            this.grbGameManager.Controls.Add(this.btnSaveLevel);
+            this.grbGameManager.Controls.Add(this.btnAddLevel);
+            this.grbGameManager.Controls.Add(this.btnRemoveLevel);
+            this.grbGameManager.Controls.Add(this.label2);
+            this.grbGameManager.Controls.Add(this.comboBoxLevel);
+            this.grbGameManager.Controls.Add(this.edtGameName);
+            this.grbGameManager.Controls.Add(this.label1);
+            this.grbGameManager.Location = new System.Drawing.Point(765, 49);
+            this.grbGameManager.Name = "grbGameManager";
+            this.grbGameManager.Size = new System.Drawing.Size(231, 328);
+            this.grbGameManager.TabIndex = 8;
+            this.grbGameManager.TabStop = false;
+            this.grbGameManager.Text = "Spiel Werkzeuge";
+            // 
+            // btnAddLevel
+            // 
+            this.btnAddLevel.Location = new System.Drawing.Point(46, 70);
+            this.btnAddLevel.Name = "btnAddLevel";
+            this.btnAddLevel.Size = new System.Drawing.Size(179, 23);
+            this.btnAddLevel.TabIndex = 5;
+            this.btnAddLevel.Text = "Level hinzufügen";
+            this.btnAddLevel.UseVisualStyleBackColor = true;
+            this.btnAddLevel.Click += new System.EventHandler(this.btnAddLevel_Click);
+            // 
+            // btnRemoveLevel
+            // 
+            this.btnRemoveLevel.Location = new System.Drawing.Point(46, 99);
+            this.btnRemoveLevel.Name = "btnRemoveLevel";
+            this.btnRemoveLevel.Size = new System.Drawing.Size(179, 23);
+            this.btnRemoveLevel.TabIndex = 4;
+            this.btnRemoveLevel.Text = "Level löschen";
+            this.btnRemoveLevel.UseVisualStyleBackColor = true;
+            this.btnRemoveLevel.Click += new System.EventHandler(this.btnRemoveLevel_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 46);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(36, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Level:";
+            // 
+            // comboBoxLevel
+            // 
+            this.comboBoxLevel.FormattingEnabled = true;
+            this.comboBoxLevel.Location = new System.Drawing.Point(46, 43);
+            this.comboBoxLevel.Name = "comboBoxLevel";
+            this.comboBoxLevel.Size = new System.Drawing.Size(179, 21);
+            this.comboBoxLevel.TabIndex = 2;
+            this.comboBoxLevel.SelectedIndexChanged += new System.EventHandler(this.comboBoxLevel_SelectedIndexChanged);
+            // 
+            // edtGameName
+            // 
+            this.edtGameName.Location = new System.Drawing.Point(46, 17);
+            this.edtGameName.Name = "edtGameName";
+            this.edtGameName.ReadOnly = true;
+            this.edtGameName.Size = new System.Drawing.Size(179, 20);
+            this.edtGameName.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(33, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Spiel:";
+            // 
+            // btnSaveLevel
+            // 
+            this.btnSaveLevel.Location = new System.Drawing.Point(46, 128);
+            this.btnSaveLevel.Name = "btnSaveLevel";
+            this.btnSaveLevel.Size = new System.Drawing.Size(179, 23);
+            this.btnSaveLevel.TabIndex = 6;
+            this.btnSaveLevel.Text = "Level speichern";
+            this.btnSaveLevel.UseVisualStyleBackColor = true;
+            this.btnSaveLevel.Click += new System.EventHandler(this.btnSaveLevel_Click);
+            // 
             // LevelEditorMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 682);
+            this.Controls.Add(this.grbGameManager);
             this.Controls.Add(this.pnlLevel);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
@@ -482,6 +573,8 @@
             this.tabPage3.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.grbGameManager.ResumeLayout(false);
+            this.grbGameManager.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -527,5 +620,13 @@
         private System.Windows.Forms.Timer timerUpdate;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLblRAM;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLblCPU;
+        private System.Windows.Forms.GroupBox grbGameManager;
+        private System.Windows.Forms.TextBox edtGameName;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBoxLevel;
+        private System.Windows.Forms.Button btnAddLevel;
+        private System.Windows.Forms.Button btnRemoveLevel;
+        private System.Windows.Forms.Button btnSaveLevel;
     }
 }

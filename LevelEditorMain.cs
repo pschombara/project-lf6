@@ -6,6 +6,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -21,17 +22,25 @@ namespace projectlf6
         #region Konstruktor
         public LevelEditorMain()
         {
-            //TODO remove
             InitializeComponent();
             Editor = new Editor(pnlLevel.Width, pnlLevel.Height);
             pnlLevel.Refresh();
+            grbGameManager.Visible = false; //GameManager ausblenden
         }
+
         public LevelEditorMain(string path)
         {
             InitializeComponent();
             
             Editor = new Editor(pnlLevel.Width, pnlLevel.Height);
-            Editor.loadLevelFromFile(Global.PATH_GAME_FOLDER + path);
+            if (path.Contains("\\"))
+                Editor.loadGameFromDirectory(path);
+            else
+                Editor.loadGameFromDirectory(Global.PATH_GAME_FOLDER + path);
+            edtGameName.Text = Editor.getGameName();
+            levelToComboBox();
+            if (comboBoxLevel.Items.Count > 0)
+                comboBoxLevel.SelectedIndex = 0;
             pnlLevel.Refresh();
         }
         #endregion
@@ -220,6 +229,18 @@ namespace projectlf6
             return bitmap;
         }
 
+        private void levelToComboBox()
+        {
+            comboBoxLevel.Items.Clear();
+            List<FileInfo> levels = Editor.getLevels();
+            for (int i = 0; i < levels.Count; i++)
+            {
+                comboBoxLevel.Items.Add(levels[i].Name);
+            }
+            if (comboBoxLevel.Items.Count > 0)
+                comboBoxLevel.SelectedIndex = 0;
+        }
+
         private void timerUpdate_Tick(object sender, EventArgs e)
         {
             //RAM
@@ -235,5 +256,30 @@ namespace projectlf6
             lastValue = (double) AppDomain.CurrentDomain.MonitoringTotalProcessorTime.TotalMilliseconds;
             toolStripStatusLblCPU.Text = "CPU: " + Math.Round(percentage) + "%";
         }
+
+        #region Spiel Werkzeuge
+        private void comboBoxLevel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Editor.loadLevelFromFile(comboBoxLevel.SelectedIndex);
+            pnlLevel.Refresh();
+        }
+
+        private void btnAddLevel_Click(object sender, EventArgs e)
+        {
+            Editor.addLevelToGame(comboBoxLevel.Text);
+            levelToComboBox();
+        }
+
+        private void btnRemoveLevel_Click(object sender, EventArgs e)
+        {
+            Editor.removeLevel(comboBoxLevel.SelectedIndex);
+            levelToComboBox();
+        }
+
+        private void btnSaveLevel_Click(object sender, EventArgs e)
+        {
+            Editor.saveLevelToFile(comboBoxLevel.SelectedIndex);
+        }
+        #endregion
     }
 }
