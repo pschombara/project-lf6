@@ -44,7 +44,7 @@
             this.btnStartGame = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbGames = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayerOneFigure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayerTwoFigure)).BeginInit();
             this.SuspendLayout();
@@ -202,23 +202,21 @@
             this.label6.TabIndex = 17;
             this.label6.Text = "Spiel auswählen";
             // 
-            // comboBox1
+            // cbGames
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "XYZ"});
-            this.comboBox1.Location = new System.Drawing.Point(322, 285);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 18;
+            this.cbGames.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGames.FormattingEnabled = true;
+            this.cbGames.Location = new System.Drawing.Point(322, 285);
+            this.cbGames.Name = "cbGames";
+            this.cbGames.Size = new System.Drawing.Size(121, 21);
+            this.cbGames.TabIndex = 18;
             // 
             // newGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 320);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbGames);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnStartGame);
@@ -263,6 +261,6 @@
         private System.Windows.Forms.Button btnStartGame;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbGames;
     }
 }

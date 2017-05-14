@@ -12,9 +12,19 @@ namespace projectlf6
 {
     public partial class GameMain : Form
     {
-        public GameMain()
+        private Player playerOne;
+        private Player playerTwo;
+        
+        public GameMain(Player one, Player two)
         {
             InitializeComponent();
+            this.playerOne = one;
+            this.playerTwo = two;
+
+            this.lbl_playerone.Text = playerOne.getName();
+            this.lbl_playertwo.Text = playerTwo.getName();
+            this.lbl_scoreplayerone.Text = playerOne.getScore().getScore().ToString();
+            this.lbl_scoreplayertwo.Text = playerTwo.getScore().getScore().ToString();
         }
     }
 }

@@ -54,6 +54,11 @@ namespace projectlf6
             return this.name;
         }
 
+        public Score getScore()
+        {
+            return this.score;
+        }
+
         public void setSkin(string skin)
         {
             this.skin = skin;

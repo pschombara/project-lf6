@@ -90,13 +90,12 @@ namespace projectlf6
         private void refreshDataGridView()
         {
             dataGridViewGames.Rows.Clear();
-            DirectoryInfo directoryInfo = new DirectoryInfo(Global.PATH_GAME_FOLDER);
-            DirectoryInfo[] folders = directoryInfo.GetDirectories();
+            Games games = new Games();
+           
             //DataGridView füllen
-            for (int i = 0; i < folders.Length; i++)
+            for (int i = 0; i < games.getNumberOfGames(); i++)
             {
-                FileInfo[] fileInfo = folders[i].GetFiles();
-                dataGridViewGames.Rows.Add(folders[i].Name, fileInfo.Length);
+                dataGridViewGames.Rows.Add(games.getGameName(i), games.getNumberOfLevelForGame(i));
             }
 
             txtNewGameName.Text = string.Empty;
