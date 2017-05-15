@@ -113,35 +113,40 @@
             // neuesLevelToolStripMenuItem
             // 
             this.neuesLevelToolStripMenuItem.Name = "neuesLevelToolStripMenuItem";
-            this.neuesLevelToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.neuesLevelToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.neuesLevelToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.neuesLevelToolStripMenuItem.Text = "Neues Level";
             this.neuesLevelToolStripMenuItem.Click += new System.EventHandler(this.neuesLevelToolStripMenuItem_Click);
             // 
             // levelLadenToolStripMenuItem
             // 
             this.levelLadenToolStripMenuItem.Name = "levelLadenToolStripMenuItem";
-            this.levelLadenToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.levelLadenToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
+            this.levelLadenToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.levelLadenToolStripMenuItem.Text = "Level laden";
             this.levelLadenToolStripMenuItem.Click += new System.EventHandler(this.levelLadenToolStripMenuItem_Click);
             // 
             // levelSpeichernToolStripMenuItem
             // 
             this.levelSpeichernToolStripMenuItem.Name = "levelSpeichernToolStripMenuItem";
-            this.levelSpeichernToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.levelSpeichernToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.levelSpeichernToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.levelSpeichernToolStripMenuItem.Text = "Level speichern";
             this.levelSpeichernToolStripMenuItem.Click += new System.EventHandler(this.levelSpeichernToolStripMenuItem_Click);
             // 
             // levelExportierenToolStripMenuItem
             // 
             this.levelExportierenToolStripMenuItem.Name = "levelExportierenToolStripMenuItem";
-            this.levelExportierenToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.levelExportierenToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
+            this.levelExportierenToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.levelExportierenToolStripMenuItem.Text = "Level Exportieren";
             this.levelExportierenToolStripMenuItem.Click += new System.EventHandler(this.levelExportierenToolStripMenuItem_Click);
             // 
             // editorBeendenToolStripMenuItem
             // 
             this.editorBeendenToolStripMenuItem.Name = "editorBeendenToolStripMenuItem";
-            this.editorBeendenToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.editorBeendenToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
+            this.editorBeendenToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.editorBeendenToolStripMenuItem.Text = "Editor beenden";
             this.editorBeendenToolStripMenuItem.Click += new System.EventHandler(this.editorBeendenToolStripMenuItem_Click);
             // 
@@ -158,7 +163,8 @@
             // 
             this.rasterToolStripMenuItem.CheckOnClick = true;
             this.rasterToolStripMenuItem.Name = "rasterToolStripMenuItem";
-            this.rasterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.rasterToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
+            this.rasterToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.rasterToolStripMenuItem.Text = "Raster";
             this.rasterToolStripMenuItem.Click += new System.EventHandler(this.rasterToolStripMenuItem_Click);
             // 
@@ -166,7 +172,8 @@
             // 
             this.mauszeigerToolStripMenuItem.CheckOnClick = true;
             this.mauszeigerToolStripMenuItem.Name = "mauszeigerToolStripMenuItem";
-            this.mauszeigerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.mauszeigerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.M)));
+            this.mauszeigerToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.mauszeigerToolStripMenuItem.Text = "Mauszeiger";
             this.mauszeigerToolStripMenuItem.Click += new System.EventHandler(this.mauszeigerToolStripMenuItem_Click);
             // 
@@ -491,6 +498,7 @@
             // 
             // btnAddLevel
             // 
+            this.btnAddLevel.Enabled = false;
             this.btnAddLevel.Location = new System.Drawing.Point(46, 70);
             this.btnAddLevel.Name = "btnAddLevel";
             this.btnAddLevel.Size = new System.Drawing.Size(179, 23);
@@ -526,6 +534,7 @@
             this.comboBoxLevel.Size = new System.Drawing.Size(179, 21);
             this.comboBoxLevel.TabIndex = 2;
             this.comboBoxLevel.SelectedIndexChanged += new System.EventHandler(this.comboBoxLevel_SelectedIndexChanged);
+            this.comboBoxLevel.TextUpdate += new System.EventHandler(this.comboBoxLevel_TextUpdate);
             // 
             // edtGameName
             // 
@@ -563,6 +572,7 @@
             this.Name = "LevelEditorMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Level Editor";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LevelEditorMain_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.pnlSelection.ResumeLayout(false);
