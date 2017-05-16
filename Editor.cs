@@ -102,9 +102,14 @@ namespace projectlf6
                 {
                     if (map[MapX, MapY] == Field.FIELD_SKY && map[MapX, MapY + 1] == Field.FIELD_SKY && map[MapX, MapY + 2] != Field.FIELD_SKY)
                     {
-                        player_1.setX(MapX);
-                        player_1.setY(MapY);
-                        drawLevel(graphics);
+                        if (Math.Abs(MapX - player_2.getX()) >= 4)
+                        {
+                            player_1.setX(MapX);
+                            player_1.setY(MapY);
+                            drawLevel(graphics);
+                        }
+                        else
+                            MessageBox.Show("Spieler 1 muss mindestens 4 Blöcke Abstand zu Spieler 2 haben!", "Fehler: Spieler 1");
                     }
                     else
                         MessageBox.Show("Spieler 1 kann nicht an Position gesetzt werden!", "Fehler: Spieler 1");
@@ -113,9 +118,14 @@ namespace projectlf6
                 {
                     if (map[MapX, MapY] == Field.FIELD_SKY && map[MapX, MapY + 1] == Field.FIELD_SKY && map[MapX, MapY + 2] != Field.FIELD_SKY)
                     {
-                        player_2.setX(MapX);
-                        player_2.setY(MapY);
-                        drawLevel(graphics);
+                        if (Math.Abs(MapX - player_1.getX()) >= 4)
+                        {
+                            player_2.setX(MapX);
+                            player_2.setY(MapY);
+                            drawLevel(graphics);
+                        }
+                        else
+                            MessageBox.Show("Spieler 2 muss mindestens 4 Blöcke Abstand zu Spieler 1 haben!", "Fehler: Spieler 2");
                     }
                     else
                         MessageBox.Show("Spieler 2 kann nicht an Position gesetzt werden!", "Fehler: Spieler 2");
@@ -407,5 +417,42 @@ namespace projectlf6
             IntPtr ptr = b.GetHicon();
             return new Cursor(ptr);
         }
+
+        #region Erze zufällig verteilen
+        public void randomOres(int cntCoal, int cntCopper, int cntIron, int cntSilver, int cntGold, int cntDiamond)
+        {
+            Random rnd = new Random();
+            //Kohle
+            for (int i = 0; i < cntCoal; i++)
+            {
+                map[rnd.Next(32), rnd.Next(6, 11)] = Field.FIELD_COAL;
+            }
+            //Kupfer
+            for (int i = 0; i < cntCopper; i++)
+            {
+                map[rnd.Next(32), rnd.Next(11, 16)] = Field.FIELD_COPPER;
+            }
+            //Eisen
+            for (int i = 0; i < cntIron; i++)
+            {
+                map[rnd.Next(32), rnd.Next(16, 20)] = Field.FIELD_IRON;
+            }
+            //Silber
+            for (int i = 0; i < cntSilver; i++)
+            {
+                map[rnd.Next(32), rnd.Next(20, 24)] = Field.FIELD_SILVER;
+            }
+            //Gold
+            for (int i = 0; i < cntGold; i++)
+            {
+                map[rnd.Next(32), rnd.Next(24, 28)] = Field.FIELD_GOLD;
+            }
+            //Diamant
+            for (int i = 0; i < cntDiamond; i++)
+            {
+                map[rnd.Next(32), rnd.Next(28, 31)] = Field.FIELD_DIAMOND;
+            }
+        }
+        #endregion
     }
 }

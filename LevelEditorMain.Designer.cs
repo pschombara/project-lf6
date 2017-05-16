@@ -76,6 +76,20 @@
             this.comboBoxLevel = new System.Windows.Forms.ComboBox();
             this.edtGameName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.grbRandomOre = new System.Windows.Forms.GroupBox();
+            this.pbCoal = new System.Windows.Forms.PictureBox();
+            this.numCoalCnt = new System.Windows.Forms.NumericUpDown();
+            this.pbCopper = new System.Windows.Forms.PictureBox();
+            this.numCopperCnt = new System.Windows.Forms.NumericUpDown();
+            this.pbIron = new System.Windows.Forms.PictureBox();
+            this.numIronCnt = new System.Windows.Forms.NumericUpDown();
+            this.pbSilver = new System.Windows.Forms.PictureBox();
+            this.numSilverCnt = new System.Windows.Forms.NumericUpDown();
+            this.pbGold = new System.Windows.Forms.PictureBox();
+            this.numGoldCnt = new System.Windows.Forms.NumericUpDown();
+            this.pbDiamond = new System.Windows.Forms.PictureBox();
+            this.numDiamondCnt = new System.Windows.Forms.NumericUpDown();
+            this.btnRandomOres = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.pnlSelection.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSelection)).BeginInit();
@@ -85,6 +99,19 @@
             this.tabPage3.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.grbGameManager.SuspendLayout();
+            this.grbRandomOre.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCoalCnt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCopper)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCopperCnt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbIron)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numIronCnt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSilver)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSilverCnt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGold)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numGoldCnt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDiamond)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDiamondCnt)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -183,7 +210,7 @@
             this.pnlSelection.Controls.Add(this.pbSelection);
             this.pnlSelection.Location = new System.Drawing.Point(12, 383);
             this.pnlSelection.Name = "pnlSelection";
-            this.pnlSelection.Size = new System.Drawing.Size(196, 98);
+            this.pnlSelection.Size = new System.Drawing.Size(196, 110);
             this.pnlSelection.TabIndex = 1;
             // 
             // pbSelection
@@ -191,11 +218,12 @@
             this.pbSelection.BackgroundImage = global::projectlf6.Properties.Resources.Grass;
             this.pbSelection.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbSelection.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbSelection.Location = new System.Drawing.Point(69, 23);
+            this.pbSelection.Location = new System.Drawing.Point(69, 29);
             this.pbSelection.Name = "pbSelection";
             this.pbSelection.Size = new System.Drawing.Size(50, 50);
             this.pbSelection.TabIndex = 0;
             this.pbSelection.TabStop = false;
+            this.toolTip1.SetToolTip(this.pbSelection, "Aktuell ausgewählte Textur");
             // 
             // tabControl1
             // 
@@ -481,7 +509,7 @@
             this.grbGameManager.Controls.Add(this.label1);
             this.grbGameManager.Location = new System.Drawing.Point(765, 49);
             this.grbGameManager.Name = "grbGameManager";
-            this.grbGameManager.Size = new System.Drawing.Size(231, 328);
+            this.grbGameManager.Size = new System.Drawing.Size(231, 160);
             this.grbGameManager.TabIndex = 8;
             this.grbGameManager.TabStop = false;
             this.grbGameManager.Text = "Spiel Werkzeuge";
@@ -553,11 +581,176 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Spiel:";
             // 
+            // grbRandomOre
+            // 
+            this.grbRandomOre.Controls.Add(this.btnRandomOres);
+            this.grbRandomOre.Controls.Add(this.numDiamondCnt);
+            this.grbRandomOre.Controls.Add(this.pbDiamond);
+            this.grbRandomOre.Controls.Add(this.numGoldCnt);
+            this.grbRandomOre.Controls.Add(this.pbGold);
+            this.grbRandomOre.Controls.Add(this.numSilverCnt);
+            this.grbRandomOre.Controls.Add(this.pbSilver);
+            this.grbRandomOre.Controls.Add(this.numIronCnt);
+            this.grbRandomOre.Controls.Add(this.pbIron);
+            this.grbRandomOre.Controls.Add(this.numCopperCnt);
+            this.grbRandomOre.Controls.Add(this.pbCopper);
+            this.grbRandomOre.Controls.Add(this.numCoalCnt);
+            this.grbRandomOre.Controls.Add(this.pbCoal);
+            this.grbRandomOre.Location = new System.Drawing.Point(765, 215);
+            this.grbRandomOre.Name = "grbRandomOre";
+            this.grbRandomOre.Size = new System.Drawing.Size(231, 278);
+            this.grbRandomOre.TabIndex = 9;
+            this.grbRandomOre.TabStop = false;
+            this.grbRandomOre.Text = "Erze zufällig verteilen";
+            // 
+            // pbCoal
+            // 
+            this.pbCoal.BackgroundImage = global::projectlf6.Properties.Resources.Coal;
+            this.pbCoal.Location = new System.Drawing.Point(65, 18);
+            this.pbCoal.Name = "pbCoal";
+            this.pbCoal.Size = new System.Drawing.Size(32, 32);
+            this.pbCoal.TabIndex = 0;
+            this.pbCoal.TabStop = false;
+            this.toolTip1.SetToolTip(this.pbCoal, "Kohle");
+            // 
+            // numCoalCnt
+            // 
+            this.numCoalCnt.Location = new System.Drawing.Point(103, 30);
+            this.numCoalCnt.Name = "numCoalCnt";
+            this.numCoalCnt.Size = new System.Drawing.Size(68, 20);
+            this.numCoalCnt.TabIndex = 1;
+            this.numCoalCnt.Value = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            // 
+            // pbCopper
+            // 
+            this.pbCopper.BackgroundImage = global::projectlf6.Properties.Resources.Copper;
+            this.pbCopper.Location = new System.Drawing.Point(65, 56);
+            this.pbCopper.Name = "pbCopper";
+            this.pbCopper.Size = new System.Drawing.Size(32, 32);
+            this.pbCopper.TabIndex = 4;
+            this.pbCopper.TabStop = false;
+            this.toolTip1.SetToolTip(this.pbCopper, "Kupfer");
+            // 
+            // numCopperCnt
+            // 
+            this.numCopperCnt.Location = new System.Drawing.Point(103, 68);
+            this.numCopperCnt.Name = "numCopperCnt";
+            this.numCopperCnt.Size = new System.Drawing.Size(68, 20);
+            this.numCopperCnt.TabIndex = 5;
+            this.numCopperCnt.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // pbIron
+            // 
+            this.pbIron.BackgroundImage = global::projectlf6.Properties.Resources.Iron;
+            this.pbIron.Location = new System.Drawing.Point(65, 94);
+            this.pbIron.Name = "pbIron";
+            this.pbIron.Size = new System.Drawing.Size(32, 32);
+            this.pbIron.TabIndex = 6;
+            this.pbIron.TabStop = false;
+            this.toolTip1.SetToolTip(this.pbIron, "Eisen");
+            // 
+            // numIronCnt
+            // 
+            this.numIronCnt.Location = new System.Drawing.Point(103, 106);
+            this.numIronCnt.Name = "numIronCnt";
+            this.numIronCnt.Size = new System.Drawing.Size(68, 20);
+            this.numIronCnt.TabIndex = 7;
+            this.numIronCnt.Value = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            // 
+            // pbSilver
+            // 
+            this.pbSilver.BackgroundImage = global::projectlf6.Properties.Resources.Silver;
+            this.pbSilver.Location = new System.Drawing.Point(65, 132);
+            this.pbSilver.Name = "pbSilver";
+            this.pbSilver.Size = new System.Drawing.Size(32, 32);
+            this.pbSilver.TabIndex = 8;
+            this.pbSilver.TabStop = false;
+            this.toolTip1.SetToolTip(this.pbSilver, "Silber");
+            // 
+            // numSilverCnt
+            // 
+            this.numSilverCnt.Location = new System.Drawing.Point(103, 144);
+            this.numSilverCnt.Name = "numSilverCnt";
+            this.numSilverCnt.Size = new System.Drawing.Size(68, 20);
+            this.numSilverCnt.TabIndex = 9;
+            this.numSilverCnt.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // pbGold
+            // 
+            this.pbGold.BackgroundImage = global::projectlf6.Properties.Resources.Gold;
+            this.pbGold.Location = new System.Drawing.Point(65, 170);
+            this.pbGold.Name = "pbGold";
+            this.pbGold.Size = new System.Drawing.Size(32, 32);
+            this.pbGold.TabIndex = 10;
+            this.pbGold.TabStop = false;
+            this.toolTip1.SetToolTip(this.pbGold, "Gold");
+            // 
+            // numGoldCnt
+            // 
+            this.numGoldCnt.Location = new System.Drawing.Point(103, 182);
+            this.numGoldCnt.Name = "numGoldCnt";
+            this.numGoldCnt.Size = new System.Drawing.Size(68, 20);
+            this.numGoldCnt.TabIndex = 11;
+            this.numGoldCnt.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            // 
+            // pbDiamond
+            // 
+            this.pbDiamond.BackgroundImage = global::projectlf6.Properties.Resources.Diamond;
+            this.pbDiamond.Location = new System.Drawing.Point(65, 208);
+            this.pbDiamond.Name = "pbDiamond";
+            this.pbDiamond.Size = new System.Drawing.Size(32, 32);
+            this.pbDiamond.TabIndex = 12;
+            this.pbDiamond.TabStop = false;
+            this.toolTip1.SetToolTip(this.pbDiamond, "Diamant");
+            // 
+            // numDiamondCnt
+            // 
+            this.numDiamondCnt.Location = new System.Drawing.Point(103, 220);
+            this.numDiamondCnt.Name = "numDiamondCnt";
+            this.numDiamondCnt.Size = new System.Drawing.Size(68, 20);
+            this.numDiamondCnt.TabIndex = 13;
+            this.numDiamondCnt.Value = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            // 
+            // btnRandomOres
+            // 
+            this.btnRandomOres.Location = new System.Drawing.Point(23, 246);
+            this.btnRandomOres.Name = "btnRandomOres";
+            this.btnRandomOres.Size = new System.Drawing.Size(179, 23);
+            this.btnRandomOres.TabIndex = 6;
+            this.btnRandomOres.Text = "Erze zufällig verteilen";
+            this.btnRandomOres.UseVisualStyleBackColor = true;
+            this.btnRandomOres.Click += new System.EventHandler(this.btnRandomOres_Click);
+            // 
             // LevelEditorMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 682);
+            this.Controls.Add(this.grbRandomOre);
             this.Controls.Add(this.grbGameManager);
             this.Controls.Add(this.pnlLevel);
             this.Controls.Add(this.statusStrip1);
@@ -585,6 +778,19 @@
             this.statusStrip1.PerformLayout();
             this.grbGameManager.ResumeLayout(false);
             this.grbGameManager.PerformLayout();
+            this.grbRandomOre.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCoalCnt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCopper)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCopperCnt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbIron)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numIronCnt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSilver)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSilverCnt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGold)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numGoldCnt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDiamond)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDiamondCnt)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -638,5 +844,19 @@
         private System.Windows.Forms.Button btnAddLevel;
         private System.Windows.Forms.Button btnRemoveLevel;
         private System.Windows.Forms.Button btnSaveLevel;
+        private System.Windows.Forms.GroupBox grbRandomOre;
+        private System.Windows.Forms.Button btnRandomOres;
+        private System.Windows.Forms.NumericUpDown numDiamondCnt;
+        private System.Windows.Forms.PictureBox pbDiamond;
+        private System.Windows.Forms.NumericUpDown numGoldCnt;
+        private System.Windows.Forms.PictureBox pbGold;
+        private System.Windows.Forms.NumericUpDown numSilverCnt;
+        private System.Windows.Forms.PictureBox pbSilver;
+        private System.Windows.Forms.NumericUpDown numIronCnt;
+        private System.Windows.Forms.PictureBox pbIron;
+        private System.Windows.Forms.NumericUpDown numCopperCnt;
+        private System.Windows.Forms.PictureBox pbCopper;
+        private System.Windows.Forms.NumericUpDown numCoalCnt;
+        private System.Windows.Forms.PictureBox pbCoal;
     }
 }

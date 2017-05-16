@@ -146,7 +146,7 @@ namespace projectlf6
         }
         #endregion
 
-        #region Buttons
+        #region Texture Buttons
         private void btnPlayer1_Click(object sender, EventArgs e)
         {
             pbSelection.Size = new Size(31, 64);
@@ -378,6 +378,13 @@ namespace projectlf6
                 if (MessageBox.Show("Möchten Sie ohne zu speichern fortfahren?", "Level nicht gespeichert!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
                     e.Cancel = true;
             }
+        }
+
+        private void btnRandomOres_Click(object sender, EventArgs e)
+        {
+            Editor.randomOres((int) numCoalCnt.Value, (int) numCopperCnt.Value, (int) numIronCnt.Value, (int) numSilverCnt.Value, (int) numGoldCnt.Value, (int) numDiamondCnt.Value);
+            pnlLevel.Refresh();
+            setSaved(false);
         }
     }
 }
