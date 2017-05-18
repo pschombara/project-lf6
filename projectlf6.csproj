@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameModes\ExtendedClasses\TextureObject.cs" />
     <Compile Include="Editor.cs" />
     <Compile Include="Field.cs" />
     <Compile Include="Form1.cs">
@@ -60,10 +61,10 @@
     <Compile Include="GameEditor.Designer.cs">
       <DependentUpon>GameEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="GameMain.cs">
+    <Compile Include="GameModes\Base\GameMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GameMain.Designer.cs">
+    <Compile Include="GameModes\Base\GameMain.Designer.cs">
       <DependentUpon>GameMain.cs</DependentUpon>
     </Compile>
     <Compile Include="GameMode.cs" />
@@ -92,7 +93,7 @@
     <EmbeddedResource Include="GameEditor.resx">
       <DependentUpon>GameEditor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GameMain.resx">
+    <EmbeddedResource Include="GameModes\Base\GameMain.resx">
       <DependentUpon>GameMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LevelEditorMain.resx">
@@ -162,6 +163,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Sky.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ClearTexture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wayBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wayBlueDark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wayBlueLight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wayGreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wayOrange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wayPink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wayPurple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wayRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wayYellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\board.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

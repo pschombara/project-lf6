@@ -157,4 +157,37 @@
   <data name="Sky" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sky.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ClearTexture" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ClearTexture.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wayBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wayBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wayBlueDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wayBlueDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wayBlueLight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wayBlueLight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wayGreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wayGreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wayOrange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wayOrange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wayPink" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wayPink.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wayPurple" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wayPurple.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wayRed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wayRed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wayYellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wayYellow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="board" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\board.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

@@ -91,7 +91,7 @@ namespace projectlf6
                     playerTwo.loadFromFile(playerTwoName);
                 }
 
-                Form GameMain = new GameMain();
+                Form GameMain = new GameMain(playerOne, playerTwo, new Game("LOL"));
                 GameMain.ShowDialog();
             }
             catch(Exception ex)

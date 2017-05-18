@@ -23,7 +23,7 @@ namespace projectlf6
 		{
 			this.name = name;
 			this.levels = new List<Level>();
-			this.activeLevel = -1;
+			this.activeLevel = 0;
 		}
 
 		#endregion Constructors
@@ -89,7 +89,7 @@ namespace projectlf6
 			{
 				string levelName = nodeLevels.Item(i).InnerText;
 				Level level = new Level(levelName);
-				level.loadLevelFromFile();
+				level.loadLevelFromFile(Global.PATH_GAME_FOLDER + this.name + "\\" + levelName);
 				this.levels.Add(level);
 			}
 		}
