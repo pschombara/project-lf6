@@ -40,6 +40,7 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.grbAddGame = new System.Windows.Forms.GroupBox();
             this.btnStartLevelEditor = new System.Windows.Forms.Button();
+            this.tsmiOpen = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGames)).BeginInit();
             this.cmsGames.SuspendLayout();
             this.grbAddGame.SuspendLayout();
@@ -56,6 +57,7 @@
             this.dataGridViewGames.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewGames.MultiSelect = false;
             this.dataGridViewGames.Name = "dataGridViewGames";
+            this.dataGridViewGames.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewGames.Size = new System.Drawing.Size(744, 171);
             this.dataGridViewGames.TabIndex = 0;
             this.dataGridViewGames.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewGames_CellDoubleClick);
@@ -77,14 +79,15 @@
             // cmsGames
             // 
             this.cmsGames.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiOpen,
             this.tsmiDelete});
             this.cmsGames.Name = "cmsGames";
-            this.cmsGames.Size = new System.Drawing.Size(119, 26);
+            this.cmsGames.Size = new System.Drawing.Size(119, 48);
             // 
             // tsmiDelete
             // 
             this.tsmiDelete.Name = "tsmiDelete";
-            this.tsmiDelete.Size = new System.Drawing.Size(118, 22);
+            this.tsmiDelete.Size = new System.Drawing.Size(152, 22);
             this.tsmiDelete.Text = "Löschen";
             this.tsmiDelete.Click += new System.EventHandler(this.tsmiDelete_Click);
             // 
@@ -146,6 +149,13 @@
             this.btnStartLevelEditor.UseVisualStyleBackColor = true;
             this.btnStartLevelEditor.Click += new System.EventHandler(this.btnStartLevelEditor_Click);
             // 
+            // tsmiOpen
+            // 
+            this.tsmiOpen.Name = "tsmiOpen";
+            this.tsmiOpen.Size = new System.Drawing.Size(152, 22);
+            this.tsmiOpen.Text = "Öffnen";
+            this.tsmiOpen.Click += new System.EventHandler(this.tsmiOpen_Click);
+            // 
             // GameEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -161,6 +171,7 @@
             this.Name = "GameEditor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameEditor";
+            this.Activated += new System.EventHandler(this.GameEditor_Activated);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGames)).EndInit();
             this.cmsGames.ResumeLayout(false);
             this.grbAddGame.ResumeLayout(false);
@@ -182,5 +193,6 @@
         private System.Windows.Forms.ContextMenuStrip cmsGames;
         private System.Windows.Forms.ToolStripMenuItem tsmiDelete;
         private System.Windows.Forms.Button btnStartLevelEditor;
+        private System.Windows.Forms.ToolStripMenuItem tsmiOpen;
     }
 }

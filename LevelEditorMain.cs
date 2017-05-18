@@ -6,6 +6,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -17,46 +18,104 @@ namespace projectlf6
     {
         Editor Editor;
         double lastValue; //CPU-Value
+        bool saved; // Level gespeichert
+        int lastLevelIndex; //letztes Level
 
         #region Konstruktor
         public LevelEditorMain()
         {
-            //TODO remove
             InitializeComponent();
             Editor = new Editor(pnlLevel.Width, pnlLevel.Height);
+            setSaved(true);
             pnlLevel.Refresh();
+            grbGameManager.Visible = false; //GameManager ausblenden
+            lastLevelIndex = 0;
         }
+
         public LevelEditorMain(string path)
         {
             InitializeComponent();
-            
+
             Editor = new Editor(pnlLevel.Width, pnlLevel.Height);
-            Editor.loadLevelFromFile(Global.PATH_GAME_FOLDER + path);
+            setSaved(true);
+            if (path.Contains("\\"))
+                Editor.loadGameFromDirectory(path);
+            else
+                Editor.loadGameFromDirectory(Global.PATH_GAME_FOLDER + path);
+            edtGameName.Text = Editor.getGameName();
+            levelToComboBox(true);
+            if (comboBoxLevel.Items.Count > 0)
+                comboBoxLevel.SelectedIndex = 0;
             pnlLevel.Refresh();
+            lastLevelIndex = 0;
         }
         #endregion
 
         #region Menü
         private void neuesLevelToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Editor.NewLevel();
-            pnlLevel.Refresh();
+            if (saved)
+            {
+                Editor.NewLevel();
+                pnlLevel.Refresh();
+                setSaved(false);
+            }
+            else
+            {
+                if (MessageBox.Show("Möchten Sie ohne zu speichern fortfahren?", "Level nicht gespeichert!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Editor.NewLevel();
+                    pnlLevel.Refresh();
+                    setSaved(false);
+                }
+            }
         }
 
         private void levelLadenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            if (saved)
             {
-                Editor.loadLevelFromFile(openFileDialog1.FileName);
-                pnlLevel.Refresh();
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    Editor.loadLevelFromFile(openFileDialog1.FileName);
+                    pnlLevel.Refresh();
+                    setSaved(false);
+                }
+            }
+            else
+            {
+                if (MessageBox.Show("Möchten Sie ohne zu speichern fortfahren?", "Level nicht gespeichert!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        Editor.loadLevelFromFile(openFileDialog1.FileName);
+                        pnlLevel.Refresh();
+                        setSaved(false);
+                    }
+                }
             }
         }
 
         private void levelSpeichernToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            if (saved)
             {
-                Editor.saveLevelToFile(saveFileDialog1.FileName);
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    Editor.saveLevelToFile(saveFileDialog1.FileName);
+                    setSaved(true);
+                }
+            }
+            else
+            {
+                if (MessageBox.Show("Möchten Sie ohne zu speichern fortfahren?", "Level nicht gespeichert!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        Editor.saveLevelToFile(saveFileDialog1.FileName);
+                        setSaved(true);
+                    }
+                }
             }
         }
 
@@ -87,7 +146,7 @@ namespace projectlf6
         }
         #endregion
 
-        #region Buttons
+        #region Texture Buttons
         private void btnPlayer1_Click(object sender, EventArgs e)
         {
             pbSelection.Size = new Size(31, 64);
@@ -184,18 +243,22 @@ namespace projectlf6
         private void pnlLevel_MouseDown(object sender, MouseEventArgs e)
         {
             Editor.putTexture(pnlLevel.CreateGraphics(), e.X, e.Y);
+            setSaved(false);
         }
 
         private void pnlLevel_MouseMove(object sender, MouseEventArgs e)
         {
             toolStripStatusLblLocation.Text = "X: " + Convert.ToInt16(e.X / 16 + 1) + " Y: " + Convert.ToInt16(e.Y / 16 + 1);
             if (e.Button == MouseButtons.Left)
+            {
                 Editor.putTexture(pnlLevel.CreateGraphics(), e.X, e.Y);
+                setSaved(false);
+            }
         }
 
         private void pnlLevel_MouseEnter(object sender, EventArgs e)
         {
-            if(mauszeigerToolStripMenuItem.Checked)
+            if (mauszeigerToolStripMenuItem.Checked)
             {
                 this.Cursor = Editor.getCustomCursor();
             }
@@ -220,6 +283,18 @@ namespace projectlf6
             return bitmap;
         }
 
+        private void levelToComboBox(bool selectNew = false)
+        {
+            comboBoxLevel.Items.Clear();
+            List<FileInfo> levels = Editor.getLevels();
+            for (int i = 0; i < levels.Count; i++)
+            {
+                comboBoxLevel.Items.Add(levels[i].Name);
+            }
+            if (comboBoxLevel.Items.Count > 0 && selectNew)
+                comboBoxLevel.SelectedIndex = 0;
+        }
+
         private void timerUpdate_Tick(object sender, EventArgs e)
         {
             //RAM
@@ -230,10 +305,86 @@ namespace projectlf6
 
             //CPU
             AppDomain.MonitoringIsEnabled = true;
-            double differenz = (double) AppDomain.CurrentDomain.MonitoringTotalProcessorTime.TotalMilliseconds - lastValue;
+            double differenz = (double)AppDomain.CurrentDomain.MonitoringTotalProcessorTime.TotalMilliseconds - lastValue;
             double percentage = ((differenz / timerUpdate.Interval) * 100) / Environment.ProcessorCount;
-            lastValue = (double) AppDomain.CurrentDomain.MonitoringTotalProcessorTime.TotalMilliseconds;
+            lastValue = (double)AppDomain.CurrentDomain.MonitoringTotalProcessorTime.TotalMilliseconds;
             toolStripStatusLblCPU.Text = "CPU: " + Math.Round(percentage) + "%";
+        }
+
+        private void setSaved(bool state)
+        {
+            saved = state;
+            btnSaveLevel.Enabled = !saved;
+            levelSpeichernToolStripMenuItem.Enabled = !saved;
+        }
+
+        #region Spiel Werkzeuge
+        private void comboBoxLevel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (saved)
+            {
+                Editor.loadLevelFromFile(comboBoxLevel.SelectedIndex);
+                pnlLevel.Refresh();
+            }
+            else
+            {
+                if (MessageBox.Show("Möchten Sie ohne zu speichern fortfahren?", "Level nicht gespeichert!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Editor.loadLevelFromFile(comboBoxLevel.SelectedIndex);
+                    pnlLevel.Refresh();
+                    setSaved(true);
+                    lastLevelIndex = comboBoxLevel.SelectedIndex;
+                }
+                else
+                {
+                    comboBoxLevel.SelectedIndexChanged -= comboBoxLevel_SelectedIndexChanged;
+                    comboBoxLevel.SelectedIndex = lastLevelIndex;
+                    comboBoxLevel.SelectedIndexChanged += comboBoxLevel_SelectedIndexChanged;
+                }
+            }
+        }
+
+        private void comboBoxLevel_TextUpdate(object sender, EventArgs e)
+        {
+            btnAddLevel.Enabled = true;
+        }
+
+        private void btnAddLevel_Click(object sender, EventArgs e)
+        {
+            btnAddLevel.Enabled = false;
+            Editor.addLevelToGame(comboBoxLevel.Text);
+            levelToComboBox();
+            comboBoxLevel.SelectedItem = comboBoxLevel.Text;
+            setSaved(true);
+        }
+
+        private void btnRemoveLevel_Click(object sender, EventArgs e)
+        {
+            Editor.removeLevel(comboBoxLevel.SelectedIndex);
+            levelToComboBox(true);
+        }
+
+        private void btnSaveLevel_Click(object sender, EventArgs e)
+        {
+            Editor.saveLevelToFile(comboBoxLevel.SelectedIndex);
+            setSaved(true);
+        }
+        #endregion
+
+        private void LevelEditorMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!saved)
+            {
+                if (MessageBox.Show("Möchten Sie ohne zu speichern fortfahren?", "Level nicht gespeichert!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+                    e.Cancel = true;
+            }
+        }
+
+        private void btnRandomOres_Click(object sender, EventArgs e)
+        {
+            Editor.randomOres((int) numCoalCnt.Value, (int) numCopperCnt.Value, (int) numIronCnt.Value, (int) numSilverCnt.Value, (int) numGoldCnt.Value, (int) numDiamondCnt.Value);
+            pnlLevel.Refresh();
+            setSaved(false);
         }
     }
 }
