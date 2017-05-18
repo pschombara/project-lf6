@@ -26,7 +26,7 @@ namespace projectlf6
 		public GameMain(Player player_1, Player player_2, Game game)
 		{
 			InitializeComponent();
-			//this.DoubleBuffered = true;
+			this.DoubleBuffered = true;
 			this.dice = new Random();
 			this.playerOne = player_1;
 			this.playerTwo = player_2;
@@ -42,6 +42,7 @@ namespace projectlf6
 			this.waysP2.Add(new Location(playerTwo.getLocation().getX(), playerTwo.getLocation().getY() + 1));
 			this.waysP2.Add(new Location(playerTwo.getLocation().getX(), playerTwo.getLocation().getY() + 2));
 			this.board = this.game.getActiveLevel().getMap();
+			updateLabels();
 		}
 
 		private Image getTexture(int texture)
@@ -210,6 +211,14 @@ namespace projectlf6
 					updateData(newLoc.getX(), newLoc.getY(), diggingBeforeMove);
 				}
 			}
+
+			if (moves == 0)
+			{
+				if (activePlayer == playerOne)
+					activePlayer = playerTwo;
+				else
+					activePlayer = playerOne;
+			}
 		}
 
 		private void repaintOldTextures(Graphics g)
@@ -284,7 +293,10 @@ namespace projectlf6
 			if (digging)
 			{
 				board[x, y] = Field.FIELD_STONE;
+				this.moves--;
 			}
+
+			updateLabels();
 		}
 
 		private Location getNewLocation(Location oldLocation, int orientation)
@@ -334,65 +346,89 @@ namespace projectlf6
 
 		private void GameMain_KeyDown(object sender, KeyEventArgs e)
 		{
-			#region player one
-			if (activePlayer == playerOne)
+			if (moves > 0)
 			{
-				if (e.KeyCode == Keys.W)
+				#region player one
+				if (activePlayer == playerOne)
 				{
-					playerOne.setOrientation(Player.ORIENTATION_UP);
-					move(getNewLocation(activePlayer.getLocation(), Player.ORIENTATION_UP));
+					if (e.KeyCode == Keys.W)
+					{
+						playerOne.setOrientation(Player.ORIENTATION_UP);
+						move(getNewLocation(activePlayer.getLocation(), Player.ORIENTATION_UP));
+					}
+					else if (e.KeyCode == Keys.A)
+					{
+						playerOne.setOrientation(Player.ORIENTATION_LEFT);
+						move(getNewLocation(activePlayer.getLocation(), Player.ORIENTATION_LEFT));
+					}
+					else if (e.KeyCode == Keys.S)
+					{
+						playerOne.setOrientation(Player.ORIENTATION_DOWN);
+						move(getNewLocation(activePlayer.getLocation(), Player.ORIENTATION_DOWN));
+					}
+					else if (e.KeyCode == Keys.D)
+					{
+						playerOne.setOrientation(Player.ORIENTATION_RIGHT);
+						move(getNewLocation(activePlayer.getLocation(), Player.ORIENTATION_RIGHT));
+					}
+					else if (e.KeyCode == Keys.V)
+					{
+						digIt();
+					}
 				}
-				else if (e.KeyCode == Keys.A)
+				#endregion player one
+
+				#region player two
+				else
 				{
-					playerOne.setOrientation(Player.ORIENTATION_LEFT);
-					move(getNewLocation(activePlayer.getLocation(), Player.ORIENTATION_LEFT));
-				}
-				else if (e.KeyCode == Keys.S)
-				{
-					playerOne.setOrientation(Player.ORIENTATION_DOWN);
-					move(getNewLocation(activePlayer.getLocation(), Player.ORIENTATION_DOWN));
-				}
-				else if (e.KeyCode == Keys.D)
-				{
-					playerOne.setOrientation(Player.ORIENTATION_RIGHT);
-					move(getNewLocation(activePlayer.getLocation(), Player.ORIENTATION_RIGHT));
-				}
-				else if (e.KeyCode == Keys.V)
-				{
-					digIt();
+					if (e.KeyCode == Keys.NumPad8)
+					{
+						playerTwo.setOrientation(Player.ORIENTATION_UP);
+						move(getNewLocation(activePlayer.getLocation(), Player.ORIENTATION_UP));
+					}
+					else if (e.KeyCode == Keys.NumPad4)
+					{
+						playerTwo.setOrientation(Player.ORIENTATION_LEFT);
+						move(getNewLocation(activePlayer.getLocation(), Player.ORIENTATION_LEFT));
+					}
+					else if (e.KeyCode == Keys.NumPad2)
+					{
+						playerTwo.setOrientation(Player.ORIENTATION_DOWN);
+						move(getNewLocation(activePlayer.getLocation(), Player.ORIENTATION_DOWN));
+					}
+					else if (e.KeyCode == Keys.NumPad6)
+					{
+						playerTwo.setOrientation(Player.ORIENTATION_RIGHT);
+						move(getNewLocation(activePlayer.getLocation(), Player.ORIENTATION_RIGHT));
+					}
+					else if (e.KeyCode == Keys.NumPad5)
+					{
+						digIt();
+					}
 				}
 			}
-			#endregion player one
 
-			#region player two
-			else
+			if (moves == 0 && e.KeyCode == Keys.Space)
 			{
-				if (e.KeyCode == Keys.NumPad8)
-				{
-					playerTwo.setOrientation(Player.ORIENTATION_UP);
-					move(getNewLocation(activePlayer.getLocation(), Player.ORIENTATION_UP));
-				}
-				else if (e.KeyCode == Keys.NumPad4)
-				{
-					playerTwo.setOrientation(Player.ORIENTATION_LEFT);
-					move(getNewLocation(activePlayer.getLocation(), Player.ORIENTATION_LEFT));
-				}
-				else if (e.KeyCode == Keys.NumPad2)
-				{
-					playerTwo.setOrientation(Player.ORIENTATION_DOWN);
-					move(getNewLocation(activePlayer.getLocation(), Player.ORIENTATION_DOWN));
-				}
-				else if (e.KeyCode == Keys.NumPad6)
-				{
-					playerTwo.setOrientation(Player.ORIENTATION_RIGHT);
-					move(getNewLocation(activePlayer.getLocation(), Player.ORIENTATION_RIGHT));
-				}
-				else if (e.KeyCode == Keys.NumPad5)
-				{
-					digIt();
-				}
+				moves = rollTheDice();
+				moves += rollTheDice();
+				updateLabels();
 			}
 			#endregion player two
+		}
+
+		private void updateLabels()
+		{
+			lbl_playerone.Text = playerOne.getName();
+			lbl_scoreplayerone.Text = playerOne.getScore().getScore().ToString();
+
+
+			lbl_playertwo.Text = playerTwo.getName();
+			lbl_scoreplayertwo.Text = playerTwo.getScore().getScore().ToString();
+
+			lbl_currentPlayer.Text = activePlayer.getName();
+
+			this.Text = this.game.getName() + " - " + this.game.getActiveLevel().getName() + " - Moves: " + moves;
 		}
 	}
 

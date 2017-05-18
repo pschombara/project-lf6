@@ -49,7 +49,7 @@
 			// 
 			this.lbl_playerone.AutoSize = true;
 			this.lbl_playerone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbl_playerone.Location = new System.Drawing.Point(12, 27);
+			this.lbl_playerone.Location = new System.Drawing.Point(57, 28);
 			this.lbl_playerone.Name = "lbl_playerone";
 			this.lbl_playerone.Size = new System.Drawing.Size(56, 17);
 			this.lbl_playerone.TabIndex = 1;
@@ -57,13 +57,16 @@
 			// 
 			// lbl_playertwo
 			// 
+			this.lbl_playertwo.Anchor = System.Windows.Forms.AnchorStyles.Right;
 			this.lbl_playertwo.AutoSize = true;
 			this.lbl_playertwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbl_playertwo.Location = new System.Drawing.Point(940, 27);
+			this.lbl_playertwo.Location = new System.Drawing.Point(824, 27);
 			this.lbl_playertwo.Name = "lbl_playertwo";
+			this.lbl_playertwo.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			this.lbl_playertwo.Size = new System.Drawing.Size(56, 17);
 			this.lbl_playertwo.TabIndex = 2;
 			this.lbl_playertwo.Text = "Player2";
+			this.lbl_playertwo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// p_cubeplayerone
 			// 
