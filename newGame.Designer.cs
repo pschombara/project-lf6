@@ -210,6 +210,7 @@
             this.cbGames.Name = "cbGames";
             this.cbGames.Size = new System.Drawing.Size(121, 21);
             this.cbGames.TabIndex = 18;
+            this.cbGames.SelectedIndexChanged += new System.EventHandler(this.cbGames_SelectedIndexChanged);
             // 
             // newGame
             // 

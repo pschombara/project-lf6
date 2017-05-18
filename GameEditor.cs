@@ -33,7 +33,8 @@ namespace projectlf6
         private void btnNewGame_Click(object sender, EventArgs e)
 		{
 			string path = Global.PATH_GAME_FOLDER + txtNewGameName.Text;
-			if (!Directory.Exists(path))
+            Game g = new Game(txtNewGameName.Text);
+            if (!Directory.Exists(path))
 			{
 				Directory.CreateDirectory(path);
 				LevelEditorMain levelEditorMain = new LevelEditorMain(path);
@@ -41,6 +42,8 @@ namespace projectlf6
 			}
 			else
 				MessageBox.Show("Spielname existiert bereits!", "Fehler: Spielname!");
+
+            g.saveToFile();
 		}
 
 		private void btnBack_Click(object sender, EventArgs e)

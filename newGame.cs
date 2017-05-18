@@ -67,7 +67,8 @@ namespace projectlf6
 
 		private void btnStartGame_Click(object sender, EventArgs e)
 		{
-			Player playerOne;
+            Game game = new Game(cbGames.Text);
+            Player playerOne;
 			Player playerTwo;
 			string playerOneName = this.cbPlayerOneProfile.Text;
 			string playerTwoName = this.cbPlayerTwoProfile.Text;
@@ -76,7 +77,8 @@ namespace projectlf6
 			{
 				playerOne = new Player(playerOneName);
 				playerTwo = new Player(playerTwoName);
-				Form GameMain = new GameMain(playerOne, playerTwo, new Game("LOL"));
+                game.loadFromFile();
+				Form GameMain = new GameMain(playerOne, playerTwo, game);
 
 				GameMain.ShowDialog();
 			}
@@ -115,5 +117,10 @@ namespace projectlf6
 
 			return start;
 		}
-	}
+
+        private void cbGames_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
