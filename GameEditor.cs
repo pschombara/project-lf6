@@ -48,7 +48,7 @@ namespace projectlf6
 
 		private void btnBack_Click(object sender, EventArgs e)
 		{
-			Hide();
+            Close();
 		}
 
         private void btnStartLevelEditor_Click(object sender, EventArgs e)
@@ -81,6 +81,7 @@ namespace projectlf6
 		{
             if (dataGridViewGames.SelectedCells.Count > 0)
             {
+                File.Delete(Global.PATH_GAME_FOLDER + dataGridViewGames.SelectedCells[0].Value + ".xml");
                 Directory.Delete(Global.PATH_GAME_FOLDER + dataGridViewGames.SelectedCells[0].Value, true);
                 dataGridViewGames.Rows.Remove(dataGridViewGames.SelectedRows[0]);
                 dataGridViewGames.ClearSelection();

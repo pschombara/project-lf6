@@ -262,7 +262,7 @@ namespace projectlf6
         public void addLevelToGame(string levelName)
         {
             if (levelName != string.Empty)
-                saveLevelToFile(this.gamePath + "\\" + levelName);
+                saveLevelToFile(this.gamePath + "\\" + levelName + ".lvl");
             else
                 MessageBox.Show("Levelname darf nicht leer sein!", "Fehler: Levelname");
         }

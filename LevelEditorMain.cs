@@ -289,7 +289,7 @@ namespace projectlf6
             List<FileInfo> levels = Editor.getLevels();
             for (int i = 0; i < levels.Count; i++)
             {
-                comboBoxLevel.Items.Add(levels[i].Name);
+                comboBoxLevel.Items.Add(levels[i].Name.Replace(levels[i].Extension, string.Empty));
             }
             if (comboBoxLevel.Items.Count > 0 && selectNew)
                 comboBoxLevel.SelectedIndex = 0;
