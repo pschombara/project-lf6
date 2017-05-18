@@ -57,10 +57,6 @@ namespace projectlf6
 		{
 			this.skin = skin;
 		}
-        public Score getScore()
-        {
-            return this.score;
-        }
 
 		public int getSkin()
 		{
