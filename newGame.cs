@@ -76,8 +76,10 @@ namespace projectlf6
 			if (this.checkGameStart())
 			{
 				playerOne = new Player(playerOneName);
+                playerOne.setWayColor(cbPlayerOneColor.SelectedIndex + 14);
                 playerOne.saveToFile();
 				playerTwo = new Player(playerTwoName);
+                playerTwo.setWayColor(cbPlayerTwoColor.SelectedIndex + 14);
                 playerTwo.saveToFile();
                 game.loadFromFile();
 				Form GameMain = new GameMain(playerOne, playerTwo, game);
@@ -96,6 +98,18 @@ namespace projectlf6
         {
             Player player = new Player();
             player.loadFromFile(this.cbPlayerTwoProfile.SelectedItem.ToString());
+        }
+
+        private void cbPlayerOneColor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Field field = new Field(cbPlayerOneColor.SelectedIndex + 14);
+            pbPlayerOneFigure.BackgroundImage = field.getTexture();
+        }
+
+        private void cbPlayerTwoColor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Field field = new Field(cbPlayerTwoColor.SelectedIndex + 14);
+            pbPlayerTwoFigure.BackgroundImage = field.getTexture();
         }
 
         private bool checkGameStart()
@@ -122,6 +136,21 @@ namespace projectlf6
 				start = false;
 				MessageBox.Show("Bitte wählen Sie ein Spiel aus.");
 			}
+            else if (this.cbPlayerOneColor.SelectedIndex == -1)
+            {
+                start = false;
+                MessageBox.Show("Bitte wählen Sie eine Farbe für Spieler 1 aus.");
+            }
+            else if (this.cbPlayerTwoColor.SelectedIndex == -1)
+            {
+                start = false;
+                MessageBox.Show("Bitte wählen Sie eine Farbe für Spieler 2 aus.");
+            }
+            else if (cbPlayerOneColor.SelectedIndex == cbPlayerTwoColor.SelectedIndex)
+            {
+                start = false;
+                MessageBox.Show("Bitte wählen Sie unterschiedliche Farben aus.");
+            }
 
 			return start;
 		}
