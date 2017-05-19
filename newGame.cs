@@ -76,7 +76,9 @@ namespace projectlf6
 			if (this.checkGameStart())
 			{
 				playerOne = new Player(playerOneName);
+                playerOne.saveToFile();
 				playerTwo = new Player(playerTwoName);
+                playerTwo.saveToFile();
                 game.loadFromFile();
 				Form GameMain = new GameMain(playerOne, playerTwo, game);
 
@@ -86,11 +88,17 @@ namespace projectlf6
 
 		private void cbPlayerOneProfile_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			Player player = new Player();
-			player.loadFromFile(this.cbPlayerOneProfile.SelectedItem.ToString());
+            Player player = new Player();
+            player.loadFromFile(this.cbPlayerOneProfile.SelectedItem.ToString());
 		}
 
-		private bool checkGameStart()
+        private void cbPlayerTwoProfile_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Player player = new Player();
+            player.loadFromFile(this.cbPlayerTwoProfile.SelectedItem.ToString());
+        }
+
+        private bool checkGameStart()
 		{
 			bool start = true;
 
@@ -118,9 +126,5 @@ namespace projectlf6
 			return start;
 		}
 
-        private void cbGames_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

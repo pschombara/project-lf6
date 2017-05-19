@@ -145,6 +145,7 @@
             this.cbPlayerTwoProfile.Name = "cbPlayerTwoProfile";
             this.cbPlayerTwoProfile.Size = new System.Drawing.Size(121, 21);
             this.cbPlayerTwoProfile.TabIndex = 11;
+            this.cbPlayerTwoProfile.SelectedIndexChanged += new System.EventHandler(this.cbPlayerTwoProfile_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -210,7 +211,6 @@
             this.cbGames.Name = "cbGames";
             this.cbGames.Size = new System.Drawing.Size(121, 21);
             this.cbGames.TabIndex = 18;
-            this.cbGames.SelectedIndexChanged += new System.EventHandler(this.cbGames_SelectedIndexChanged);
             // 
             // newGame
             // 
