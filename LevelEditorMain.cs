@@ -254,6 +254,13 @@ namespace projectlf6
                 Editor.putTexture(pnlLevel.CreateGraphics(), e.X, e.Y);
                 setSaved(false);
             }
+
+            if (mauszeigerToolStripMenuItem.Checked)
+            {
+                this.Cursor = Editor.getCustomCursor();
+            }
+            else
+                this.Cursor = Cursors.Arrow;
         }
 
         private void pnlLevel_MouseEnter(object sender, EventArgs e)

@@ -33,6 +33,7 @@
             this.gameName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.levelCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmsGames = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.txtNewGameName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,7 +41,6 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.grbAddGame = new System.Windows.Forms.GroupBox();
             this.btnStartLevelEditor = new System.Windows.Forms.Button();
-            this.tsmiOpen = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGames)).BeginInit();
             this.cmsGames.SuspendLayout();
             this.grbAddGame.SuspendLayout();
@@ -61,6 +61,7 @@
             this.dataGridViewGames.Size = new System.Drawing.Size(744, 171);
             this.dataGridViewGames.TabIndex = 0;
             this.dataGridViewGames.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewGames_CellDoubleClick);
+            this.dataGridViewGames.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridViewGames_KeyDown);
             // 
             // gameName
             // 
@@ -84,10 +85,17 @@
             this.cmsGames.Name = "cmsGames";
             this.cmsGames.Size = new System.Drawing.Size(119, 48);
             // 
+            // tsmiOpen
+            // 
+            this.tsmiOpen.Name = "tsmiOpen";
+            this.tsmiOpen.Size = new System.Drawing.Size(118, 22);
+            this.tsmiOpen.Text = "Öffnen";
+            this.tsmiOpen.Click += new System.EventHandler(this.tsmiOpen_Click);
+            // 
             // tsmiDelete
             // 
             this.tsmiDelete.Name = "tsmiDelete";
-            this.tsmiDelete.Size = new System.Drawing.Size(152, 22);
+            this.tsmiDelete.Size = new System.Drawing.Size(118, 22);
             this.tsmiDelete.Text = "Löschen";
             this.tsmiDelete.Click += new System.EventHandler(this.tsmiDelete_Click);
             // 
@@ -97,6 +105,7 @@
             this.txtNewGameName.Name = "txtNewGameName";
             this.txtNewGameName.Size = new System.Drawing.Size(100, 20);
             this.txtNewGameName.TabIndex = 1;
+            this.txtNewGameName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNewGameName_KeyDown);
             // 
             // label1
             // 
@@ -145,16 +154,9 @@
             this.btnStartLevelEditor.Name = "btnStartLevelEditor";
             this.btnStartLevelEditor.Size = new System.Drawing.Size(110, 23);
             this.btnStartLevelEditor.TabIndex = 6;
-            this.btnStartLevelEditor.Text = "Start Level Editor";
+            this.btnStartLevelEditor.Text = "<Level Editor>";
             this.btnStartLevelEditor.UseVisualStyleBackColor = true;
             this.btnStartLevelEditor.Click += new System.EventHandler(this.btnStartLevelEditor_Click);
-            // 
-            // tsmiOpen
-            // 
-            this.tsmiOpen.Name = "tsmiOpen";
-            this.tsmiOpen.Size = new System.Drawing.Size(152, 22);
-            this.tsmiOpen.Text = "Öffnen";
-            this.tsmiOpen.Click += new System.EventHandler(this.tsmiOpen_Click);
             // 
             // GameEditor
             // 
@@ -170,7 +172,7 @@
             this.MinimizeBox = false;
             this.Name = "GameEditor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GameEditor";
+            this.Text = "Spiel Editor";
             this.Activated += new System.EventHandler(this.GameEditor_Activated);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGames)).EndInit();
             this.cmsGames.ResumeLayout(false);

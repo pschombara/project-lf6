@@ -69,6 +69,14 @@ namespace projectlf6
             else
                 MessageBox.Show("Zuerst ein Spiel auswählen bzw. neu erstellen", "Fehler: Kein Spiel ausgewählt");
 		}
+
+        private void dataGridViewGames_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                dataGridViewGames_CellDoubleClick(null, null);
+            else if (e.KeyCode == Keys.Delete)
+                tsmiDelete_Click(null, null);
+        }
         #endregion
 
         #region Kontextmenü
@@ -103,6 +111,12 @@ namespace projectlf6
             }
 
             txtNewGameName.Text = string.Empty;
+        }
+
+        private void txtNewGameName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnNewGame.PerformClick();
         }
     }
 }
