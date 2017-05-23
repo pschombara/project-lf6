@@ -255,10 +255,9 @@ namespace projectlf6
                 setSaved(false);
             }
 
+            //ToDo stürtzt manchmal ab wenn Mauszeiger angeschaltet
             if (mauszeigerToolStripMenuItem.Checked)
-            {
                 this.Cursor = Editor.getCustomCursor();
-            }
             else
                 this.Cursor = Cursors.Arrow;
         }

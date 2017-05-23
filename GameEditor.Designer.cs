@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameEditor));
             this.dataGridViewGames = new System.Windows.Forms.DataGridView();
             this.gameName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.levelCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -168,6 +169,7 @@
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dataGridViewGames);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "GameEditor";

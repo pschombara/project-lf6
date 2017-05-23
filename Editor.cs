@@ -419,6 +419,7 @@ namespace projectlf6
                     b = new Bitmap(getTexture(selectedTexture), 16, 16);
             }
             IntPtr ptr = b.GetHicon();
+            b.Dispose();
             return new Cursor(ptr);
         }
 
