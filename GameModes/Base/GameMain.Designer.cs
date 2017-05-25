@@ -41,8 +41,9 @@
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.optionenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menue_mute = new System.Windows.Forms.ToolStripMenuItem();
-			this.pnl_game = new System.Windows.Forms.Panel();
+			this.pbBoard = new System.Windows.Forms.PictureBox();
 			this.menuStrip1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pbBoard)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// lbl_playerone
@@ -165,21 +166,20 @@
 			this.menue_mute.Size = new System.Drawing.Size(165, 22);
 			this.menue_mute.Text = "Stumm (Ein/Aus)";
 			// 
-			// pnl_game
+			// pbBoard
 			// 
-			this.pnl_game.Location = new System.Drawing.Point(226, 28);
-			this.pnl_game.Name = "pnl_game";
-			this.pnl_game.Size = new System.Drawing.Size(512, 512);
-			this.pnl_game.TabIndex = 12;
-			this.pnl_game.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_game_Paint);
-			this.pnl_game.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.pnl_game_PreviewKeyDown);
+			this.pbBoard.Location = new System.Drawing.Point(230, 28);
+			this.pbBoard.Name = "pbBoard";
+			this.pbBoard.Size = new System.Drawing.Size(512, 512);
+			this.pbBoard.TabIndex = 12;
+			this.pbBoard.TabStop = false;
 			// 
 			// GameMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1008, 584);
-			this.Controls.Add(this.pnl_game);
+			this.Controls.Add(this.pbBoard);
 			this.Controls.Add(this.lbl_currentPlayer);
 			this.Controls.Add(this.lbl3);
 			this.Controls.Add(this.lbl_scoreplayertwo);
@@ -199,6 +199,7 @@
 			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameMain_KeyDown);
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pbBoard)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -218,6 +219,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem optionenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menue_mute;
-		private System.Windows.Forms.Panel pnl_game;
+		private System.Windows.Forms.PictureBox pbBoard;
 	}
 }
