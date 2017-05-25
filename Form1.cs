@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace projectlf6
@@ -8,16 +9,23 @@ namespace projectlf6
 	public partial class Form1 : Form
 	{
 		private string MAIN_PATH = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\projectlf6\\";
+        FormSplash formSplash;
 
-		public Form1()
+        public Form1()
 		{
 			InitializeComponent();
-			CreateFolderTree();
+            //SplashScreen
+            formSplash = new FormSplash();
+            formSplash.Show();
+            Thread.Sleep(2000);
+            formSplash.Close();
+
+            CreateFolderTree();
 		}
 
 		private void btnClose_Click(object sender, EventArgs e)
 		{
-			this.Close();
+            this.Close();
 		}
 
 		private void btnNewGame_Click(object sender, EventArgs e)

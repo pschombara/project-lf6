@@ -48,7 +48,7 @@ namespace projectlf6
 
 		private void btnBack_Click(object sender, EventArgs e)
 		{
-			Hide();
+            Close();
 		}
 
         private void btnStartLevelEditor_Click(object sender, EventArgs e)
@@ -69,6 +69,14 @@ namespace projectlf6
             else
                 MessageBox.Show("Zuerst ein Spiel auswählen bzw. neu erstellen", "Fehler: Kein Spiel ausgewählt");
 		}
+
+        private void dataGridViewGames_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                dataGridViewGames_CellDoubleClick(null, null);
+            else if (e.KeyCode == Keys.Delete)
+                tsmiDelete_Click(null, null);
+        }
         #endregion
 
         #region Kontextmenü
@@ -81,6 +89,7 @@ namespace projectlf6
 		{
             if (dataGridViewGames.SelectedCells.Count > 0)
             {
+                File.Delete(Global.PATH_GAME_FOLDER + dataGridViewGames.SelectedCells[0].Value + ".xml");
                 Directory.Delete(Global.PATH_GAME_FOLDER + dataGridViewGames.SelectedCells[0].Value, true);
                 dataGridViewGames.Rows.Remove(dataGridViewGames.SelectedRows[0]);
                 dataGridViewGames.ClearSelection();
@@ -102,6 +111,12 @@ namespace projectlf6
             }
 
             txtNewGameName.Text = string.Empty;
+        }
+
+        private void txtNewGameName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnNewGame.PerformClick();
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(newGame));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pbPlayerOneFigure = new System.Windows.Forms.PictureBox();
@@ -45,6 +46,8 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.cbGames = new System.Windows.Forms.ComboBox();
+            this.cbPlayerOneColor = new System.Windows.Forms.ComboBox();
+            this.cbPlayerTwoColor = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayerOneFigure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayerTwoFigure)).BeginInit();
             this.SuspendLayout();
@@ -145,6 +148,7 @@
             this.cbPlayerTwoProfile.Name = "cbPlayerTwoProfile";
             this.cbPlayerTwoProfile.Size = new System.Drawing.Size(121, 21);
             this.cbPlayerTwoProfile.TabIndex = 11;
+            this.cbPlayerTwoProfile.SelectedIndexChanged += new System.EventHandler(this.cbPlayerTwoProfile_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -210,13 +214,52 @@
             this.cbGames.Name = "cbGames";
             this.cbGames.Size = new System.Drawing.Size(121, 21);
             this.cbGames.TabIndex = 18;
-            this.cbGames.SelectedIndexChanged += new System.EventHandler(this.cbGames_SelectedIndexChanged);
+            // 
+            // cbPlayerOneColor
+            // 
+            this.cbPlayerOneColor.FormattingEnabled = true;
+            this.cbPlayerOneColor.Items.AddRange(new object[] {
+            "Blau",
+            "Dunkel Grau",
+            "Hell Blau",
+            "Grün",
+            "Orange",
+            "Pink",
+            "Lila",
+            "Rot",
+            "Gelb"});
+            this.cbPlayerOneColor.Location = new System.Drawing.Point(12, 241);
+            this.cbPlayerOneColor.Name = "cbPlayerOneColor";
+            this.cbPlayerOneColor.Size = new System.Drawing.Size(121, 21);
+            this.cbPlayerOneColor.TabIndex = 19;
+            this.cbPlayerOneColor.SelectedIndexChanged += new System.EventHandler(this.cbPlayerOneColor_SelectedIndexChanged);
+            // 
+            // cbPlayerTwoColor
+            // 
+            this.cbPlayerTwoColor.FormattingEnabled = true;
+            this.cbPlayerTwoColor.Items.AddRange(new object[] {
+            "Blau",
+            "Dunkel Grau",
+            "Hell Blau",
+            "Grün",
+            "Orange",
+            "Pink",
+            "Lila",
+            "Rot",
+            "Gelb"});
+            this.cbPlayerTwoColor.Location = new System.Drawing.Point(651, 241);
+            this.cbPlayerTwoColor.Name = "cbPlayerTwoColor";
+            this.cbPlayerTwoColor.Size = new System.Drawing.Size(121, 21);
+            this.cbPlayerTwoColor.TabIndex = 20;
+            this.cbPlayerTwoColor.SelectedIndexChanged += new System.EventHandler(this.cbPlayerTwoColor_SelectedIndexChanged);
             // 
             // newGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 320);
+            this.Controls.Add(this.cbPlayerTwoColor);
+            this.Controls.Add(this.cbPlayerOneColor);
             this.Controls.Add(this.cbGames);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnBack);
@@ -234,6 +277,7 @@
             this.Controls.Add(this.pbPlayerOneFigure);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "newGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Neues Spiel";
@@ -263,5 +307,7 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbGames;
+        private System.Windows.Forms.ComboBox cbPlayerOneColor;
+        private System.Windows.Forms.ComboBox cbPlayerTwoColor;
     }
 }

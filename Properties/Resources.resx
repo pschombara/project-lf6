@@ -136,9 +136,6 @@
   <data name="No_Brocken" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\No_Brocken.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Iron" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Iron.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Gold" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Gold.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -189,5 +186,17 @@
   </data>
   <data name="board" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\board.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Iron" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Iron.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon_1024" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon_1024.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon_512" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon_512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

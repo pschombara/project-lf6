@@ -254,6 +254,12 @@ namespace projectlf6
                 Editor.putTexture(pnlLevel.CreateGraphics(), e.X, e.Y);
                 setSaved(false);
             }
+
+            //ToDo stürtzt manchmal ab wenn Mauszeiger angeschaltet
+            if (mauszeigerToolStripMenuItem.Checked)
+                this.Cursor = Editor.getCustomCursor();
+            else
+                this.Cursor = Cursors.Arrow;
         }
 
         private void pnlLevel_MouseEnter(object sender, EventArgs e)
@@ -289,7 +295,7 @@ namespace projectlf6
             List<FileInfo> levels = Editor.getLevels();
             for (int i = 0; i < levels.Count; i++)
             {
-                comboBoxLevel.Items.Add(levels[i].Name);
+                comboBoxLevel.Items.Add(levels[i].Name.Replace(levels[i].Extension, string.Empty));
             }
             if (comboBoxLevel.Items.Count > 0 && selectNew)
                 comboBoxLevel.SelectedIndex = 0;

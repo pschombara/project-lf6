@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnNewGame = new System.Windows.Forms.Button();
             this.btnLevelEditor = new System.Windows.Forms.Button();
             this.btnHelp = new System.Windows.Forms.Button();
@@ -82,6 +83,7 @@
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.btnLevelEditor);
             this.Controls.Add(this.btnNewGame);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "    ";

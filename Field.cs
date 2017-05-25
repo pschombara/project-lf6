@@ -1,4 +1,4 @@
-﻿using System;
+﻿using projectlf6.Properties;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -10,7 +10,7 @@ namespace projectlf6
 	public class Field
 	{
 		private int fieldType;
-		private string texture;
+		private Bitmap texture;
 		private int points;
 
 		public const int FIELD_STONE = 0;
@@ -40,13 +40,35 @@ namespace projectlf6
 		public Field(int fieldType)
 		{
 			this.fieldType = fieldType;
-			this.texture = string.Empty;
+			this.texture = new Bitmap(16, 16);
 			this.setPoints();
 		}
 
-		public string getTexture()
+		public Bitmap getTexture()
 		{
-			return this.texture;
+            switch(fieldType)
+            {
+                case WAY_BLUE:
+                    return Resources.wayBlue;
+                case WAY_BLUE_DARK:
+                    return Resources.wayBlueDark;
+                case WAY_BLUE_LIGHT:
+                    return Resources.wayBlueLight;
+                case WAY_GREEN:
+                    return Resources.wayGreen;
+                case WAY_ORANGE:
+                    return Resources.wayOrange;
+                case WAY_PINK:
+                    return Resources.wayPink;
+                case WAY_PURPLE:
+                    return Resources.wayPurple;
+                case WAY_RED:
+                    return Resources.wayRed;
+                case WAY_YELLOW:
+                    return Resources.wayYellow;
+                default:
+                    return null;
+            }
 		}
 
 		public int getFieldType()

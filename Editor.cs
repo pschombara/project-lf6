@@ -30,8 +30,6 @@ namespace projectlf6
             NewLevel();
             isGrid = false;
             selectedTexture = Field.FIELD_GRASS;
-            player_1 = new Location(6, 0);
-            player_2 = new Location(25, 0);
             lstLevels = new List<FileInfo>();
             gameName = string.Empty;
             gamePath = string.Empty;
@@ -133,14 +131,17 @@ namespace projectlf6
                 }
                 else
                 {
-                    map[MapX, MapY] = selectedTexture;
-                    graphics.DrawImage(getTexture(selectedTexture), (MapX * 16), (MapY * 16), 16, 16);
+                    if (!checkMouseOverPlayer(MapX, MapY))
+                    {
+                        map[MapX, MapY] = selectedTexture;
+                        graphics.DrawImage(getTexture(selectedTexture), (MapX * 16), (MapY * 16), 16, 16);
+                    }
                 }
             }
             if (isGrid)
                 drawGrid(graphics, Color.Black);
-            if (checkMouseOverPlayer(MapX, MapY))
-                drawPlayer(graphics);
+            /*if (checkMouseOverPlayer(MapX, MapY))
+                drawPlayer(graphics);*/
         }
         #endregion
 
@@ -262,7 +263,7 @@ namespace projectlf6
         public void addLevelToGame(string levelName)
         {
             if (levelName != string.Empty)
-                saveLevelToFile(this.gamePath + "\\" + levelName);
+                saveLevelToFile(this.gamePath + "\\" + levelName + ".lvl");
             else
                 MessageBox.Show("Levelname darf nicht leer sein!", "Fehler: Levelname");
         }
@@ -395,6 +396,9 @@ namespace projectlf6
             {
                 map[x, 31] = Field.FIELD_NO_BROCKEN;
             }
+            //Spieler
+            player_1 = new Location(6, 0);
+            player_2 = new Location(25, 0);
         }
 
         public Cursor getCustomCursor()
@@ -415,6 +419,7 @@ namespace projectlf6
                     b = new Bitmap(getTexture(selectedTexture), 16, 16);
             }
             IntPtr ptr = b.GetHicon();
+            b.Dispose();
             return new Cursor(ptr);
         }
 
