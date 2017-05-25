@@ -30,20 +30,22 @@
         {
 			this.lbl_playerone = new System.Windows.Forms.Label();
 			this.lbl_playertwo = new System.Windows.Forms.Label();
-			this.p_cubeplayerone = new System.Windows.Forms.Panel();
-			this.p_cubeplayertwo = new System.Windows.Forms.Panel();
 			this.lbl1 = new System.Windows.Forms.Label();
 			this.lbl2 = new System.Windows.Forms.Label();
 			this.lbl_scoreplayerone = new System.Windows.Forms.Label();
 			this.lbl_scoreplayertwo = new System.Windows.Forms.Label();
-			this.lbl3 = new System.Windows.Forms.Label();
-			this.lbl_currentPlayer = new System.Windows.Forms.Label();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.optionenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menue_mute = new System.Windows.Forms.ToolStripMenuItem();
 			this.pbBoard = new System.Windows.Forms.PictureBox();
+			this.pbxPlayerOneSkin = new System.Windows.Forms.PictureBox();
+			this.pbxPlayerTwoSkin = new System.Windows.Forms.PictureBox();
+			this.pbxMoves = new System.Windows.Forms.PictureBox();
 			this.menuStrip1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pbBoard)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pbxPlayerOneSkin)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pbxPlayerTwoSkin)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pbxMoves)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// lbl_playerone
@@ -61,7 +63,7 @@
 			this.lbl_playertwo.Anchor = System.Windows.Forms.AnchorStyles.Right;
 			this.lbl_playertwo.AutoSize = true;
 			this.lbl_playertwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbl_playertwo.Location = new System.Drawing.Point(824, 27);
+			this.lbl_playertwo.Location = new System.Drawing.Point(824, 43);
 			this.lbl_playertwo.Name = "lbl_playertwo";
 			this.lbl_playertwo.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			this.lbl_playertwo.Size = new System.Drawing.Size(56, 17);
@@ -69,27 +71,11 @@
 			this.lbl_playertwo.Text = "Player2";
 			this.lbl_playertwo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// p_cubeplayerone
-			// 
-			this.p_cubeplayerone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.p_cubeplayerone.Location = new System.Drawing.Point(60, 450);
-			this.p_cubeplayerone.Name = "p_cubeplayerone";
-			this.p_cubeplayerone.Size = new System.Drawing.Size(90, 90);
-			this.p_cubeplayerone.TabIndex = 3;
-			// 
-			// p_cubeplayertwo
-			// 
-			this.p_cubeplayertwo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.p_cubeplayertwo.Location = new System.Drawing.Point(827, 450);
-			this.p_cubeplayertwo.Name = "p_cubeplayertwo";
-			this.p_cubeplayertwo.Size = new System.Drawing.Size(90, 90);
-			this.p_cubeplayertwo.TabIndex = 4;
-			// 
 			// lbl1
 			// 
 			this.lbl1.AutoSize = true;
 			this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbl1.Location = new System.Drawing.Point(57, 68);
+			this.lbl1.Location = new System.Drawing.Point(57, 208);
 			this.lbl1.Name = "lbl1";
 			this.lbl1.Size = new System.Drawing.Size(44, 13);
 			this.lbl1.TabIndex = 5;
@@ -99,7 +85,7 @@
 			// 
 			this.lbl2.AutoSize = true;
 			this.lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbl2.Location = new System.Drawing.Point(824, 68);
+			this.lbl2.Location = new System.Drawing.Point(824, 208);
 			this.lbl2.Name = "lbl2";
 			this.lbl2.Size = new System.Drawing.Size(44, 13);
 			this.lbl2.TabIndex = 6;
@@ -108,7 +94,7 @@
 			// lbl_scoreplayerone
 			// 
 			this.lbl_scoreplayerone.AutoSize = true;
-			this.lbl_scoreplayerone.Location = new System.Drawing.Point(115, 68);
+			this.lbl_scoreplayerone.Location = new System.Drawing.Point(115, 208);
 			this.lbl_scoreplayerone.Name = "lbl_scoreplayerone";
 			this.lbl_scoreplayerone.Size = new System.Drawing.Size(35, 13);
 			this.lbl_scoreplayerone.TabIndex = 7;
@@ -117,30 +103,11 @@
 			// lbl_scoreplayertwo
 			// 
 			this.lbl_scoreplayertwo.AutoSize = true;
-			this.lbl_scoreplayertwo.Location = new System.Drawing.Point(882, 68);
+			this.lbl_scoreplayertwo.Location = new System.Drawing.Point(882, 208);
 			this.lbl_scoreplayertwo.Name = "lbl_scoreplayertwo";
 			this.lbl_scoreplayertwo.Size = new System.Drawing.Size(35, 13);
 			this.lbl_scoreplayertwo.TabIndex = 8;
 			this.lbl_scoreplayertwo.Text = "label2";
-			// 
-			// lbl3
-			// 
-			this.lbl3.AutoSize = true;
-			this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbl3.Location = new System.Drawing.Point(396, 556);
-			this.lbl3.Name = "lbl3";
-			this.lbl3.Size = new System.Drawing.Size(104, 13);
-			this.lbl3.TabIndex = 9;
-			this.lbl3.Text = "Akuteller Spieler:";
-			// 
-			// lbl_currentPlayer
-			// 
-			this.lbl_currentPlayer.AutoSize = true;
-			this.lbl_currentPlayer.Location = new System.Drawing.Point(498, 556);
-			this.lbl_currentPlayer.Name = "lbl_currentPlayer";
-			this.lbl_currentPlayer.Size = new System.Drawing.Size(51, 13);
-			this.lbl_currentPlayer.TabIndex = 10;
-			this.lbl_currentPlayer.Text = "aktPlayer";
 			// 
 			// menuStrip1
 			// 
@@ -168,26 +135,52 @@
 			// 
 			// pbBoard
 			// 
-			this.pbBoard.Location = new System.Drawing.Point(230, 28);
+			this.pbBoard.Location = new System.Drawing.Point(249, 27);
 			this.pbBoard.Name = "pbBoard";
 			this.pbBoard.Size = new System.Drawing.Size(512, 512);
 			this.pbBoard.TabIndex = 12;
 			this.pbBoard.TabStop = false;
 			// 
+			// pbxPlayerOneSkin
+			// 
+			this.pbxPlayerOneSkin.Location = new System.Drawing.Point(60, 75);
+			this.pbxPlayerOneSkin.Name = "pbxPlayerOneSkin";
+			this.pbxPlayerOneSkin.Size = new System.Drawing.Size(75, 123);
+			this.pbxPlayerOneSkin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+			this.pbxPlayerOneSkin.TabIndex = 13;
+			this.pbxPlayerOneSkin.TabStop = false;
+			// 
+			// pbxPlayerTwoSkin
+			// 
+			this.pbxPlayerTwoSkin.Location = new System.Drawing.Point(827, 75);
+			this.pbxPlayerTwoSkin.Name = "pbxPlayerTwoSkin";
+			this.pbxPlayerTwoSkin.Size = new System.Drawing.Size(75, 130);
+			this.pbxPlayerTwoSkin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+			this.pbxPlayerTwoSkin.TabIndex = 14;
+			this.pbxPlayerTwoSkin.TabStop = false;
+			// 
+			// pbxMoves
+			// 
+			this.pbxMoves.Location = new System.Drawing.Point(205, 554);
+			this.pbxMoves.Name = "pbxMoves";
+			this.pbxMoves.Size = new System.Drawing.Size(600, 50);
+			this.pbxMoves.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+			this.pbxMoves.TabIndex = 15;
+			this.pbxMoves.TabStop = false;
+			// 
 			// GameMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1008, 584);
+			this.ClientSize = new System.Drawing.Size(1008, 616);
+			this.Controls.Add(this.pbxMoves);
+			this.Controls.Add(this.pbxPlayerTwoSkin);
+			this.Controls.Add(this.pbxPlayerOneSkin);
 			this.Controls.Add(this.pbBoard);
-			this.Controls.Add(this.lbl_currentPlayer);
-			this.Controls.Add(this.lbl3);
 			this.Controls.Add(this.lbl_scoreplayertwo);
 			this.Controls.Add(this.lbl_scoreplayerone);
 			this.Controls.Add(this.lbl2);
 			this.Controls.Add(this.lbl1);
-			this.Controls.Add(this.p_cubeplayertwo);
-			this.Controls.Add(this.p_cubeplayerone);
 			this.Controls.Add(this.lbl_playertwo);
 			this.Controls.Add(this.lbl_playerone);
 			this.Controls.Add(this.menuStrip1);
@@ -200,6 +193,9 @@
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pbBoard)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pbxPlayerOneSkin)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pbxPlayerTwoSkin)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pbxMoves)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -208,17 +204,16 @@
         #endregion
         private System.Windows.Forms.Label lbl_playerone;
         private System.Windows.Forms.Label lbl_playertwo;
-        private System.Windows.Forms.Panel p_cubeplayerone;
-        private System.Windows.Forms.Panel p_cubeplayertwo;
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.Label lbl2;
         private System.Windows.Forms.Label lbl_scoreplayerone;
         private System.Windows.Forms.Label lbl_scoreplayertwo;
-        private System.Windows.Forms.Label lbl3;
-        private System.Windows.Forms.Label lbl_currentPlayer;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem optionenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menue_mute;
 		private System.Windows.Forms.PictureBox pbBoard;
+		private System.Windows.Forms.PictureBox pbxPlayerOneSkin;
+		private System.Windows.Forms.PictureBox pbxPlayerTwoSkin;
+		private System.Windows.Forms.PictureBox pbxMoves;
 	}
 }

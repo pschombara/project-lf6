@@ -3,6 +3,7 @@ using System.Linq;
 using System.Drawing;
 using System.IO;
 using System.Xml;
+using projectlf6.Properties;
 
 namespace projectlf6
 {
@@ -20,6 +21,9 @@ namespace projectlf6
 		public const int ORIENTATION_RIGHT = 1;
 		public const int ORIENTATION_DOWN = 2;
 		public const int ORIENTATION_LEFT = 3;
+
+		public const int SKIN_STEVE = 30;
+		public const int SKIN_ALEX = 40;
 
 		public Player()
 		{
@@ -61,6 +65,39 @@ namespace projectlf6
 		public int getSkin()
 		{
 			return this.skin;
+		}
+
+		public Image getSkinImage()
+		{
+			Image img = null;
+			switch (this.orientation + this.skin)
+			{
+				case 30:
+					img = Resources.Steve_Up;
+					break;
+				case 31:
+					img = Resources.Steve_Right;
+					break;
+				case 32:
+					img = Resources.Steve_Down;
+					break;
+				case 33:
+					img = Resources.Steve_Left;
+					break;
+				case 40:
+					img = Resources.Alex_Up;
+					break;
+				case 41:
+					img = Resources.Alex_Right;
+					break;
+				case 42:
+					img = Resources.Alex_Down;
+					break;
+				case 43:
+					img = Resources.Alex_Left;
+					break;
+			}
+			return img;
 		}
 
 		public void setWayColor(int newColor)

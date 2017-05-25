@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using projectlf6.Properties;
@@ -35,7 +36,6 @@ namespace projectlf6
 			this.playerTwo = player_2;
 			this.activePlayer = (rollTheDice() % 2 == 1 ? playerOne : playerTwo);
 			this.firstPlayer = activePlayer;
-			this.lbl_currentPlayer.Text = activePlayer.getName();
 			this.game = game;
 			startNewLevel();
 			
@@ -80,9 +80,11 @@ namespace projectlf6
 					img = Resources.Diamond;
 					break;
 				case Field.FIELD_Player_1:
+				case 11:
 					img = Resources.Player_1;
 					break;
 				case Field.FIELD_Player_2:
+				case 12:
 					img = Resources.Player_2;
 					break;
 				case Field.FIELD_CLEAR:
@@ -151,8 +153,8 @@ namespace projectlf6
 
 		private void drawPlayer(Graphics g)
 		{
-			g.DrawImage(getTexture(playerOne.getSkin()), playerOne.getLocation().getX() * 16, playerOne.getLocation().getY() * 16, 16, 32);
-			g.DrawImage(getTexture(playerTwo.getSkin()), playerTwo.getLocation().getX() * 16, playerTwo.getLocation().getY() * 16, 16, 32);
+			g.DrawImage(playerOne.getSkinImage(), playerOne.getLocation().getX() * 16, playerOne.getLocation().getY() * 16, 16, 32);
+			g.DrawImage(playerTwo.getSkinImage(), playerTwo.getLocation().getX() * 16, playerTwo.getLocation().getY() * 16, 16, 32);
 		}
 
 		#endregion draw complete board
@@ -166,7 +168,7 @@ namespace projectlf6
 
 		public void drawSinglePlayer(Graphics g, Player p, int newX, int newY)
 		{
-			g.DrawImage(getTexture(p.getSkin()), newX * 16, newY * 16, 16, 32);
+			g.DrawImage(p.getSkinImage(), newX * 16, newY * 16, 16, 32);
 		}
 
 		#endregion draw singles textures
@@ -189,36 +191,33 @@ namespace projectlf6
 
 				if (canMove || diggingBeforeMove)
 				{
-					Graphics g = Graphics.FromImage(visualBoard);
-
-					////call "delete" old textures
-					//repaintOldTextures(g);
-
-					////draw new Textures
-					//if (diggingBeforeMove)
-					//	drawSingleTexture(g, Field.FIELD_STONE, newLoc.getX(), newLoc.getY(), 16, 16);
-
-					//drawSingleTexture(g, activePlayer.getWayColor(), newLoc.getX(), newLoc.getY(), 16, 16);
-
-					////draw new playerlocation
-					//drawSinglePlayer(g, activePlayer, newLoc.getX(), newLoc.getY() - 1);
-					//g.Dispose();
-
 					updateData(newLoc.getX(), newLoc.getY(), diggingBeforeMove);
 
-					drawBoard(g);
-					drawWays(g);
-					drawPlayer(g);
-					g.Dispose();
 				}
+
+				Graphics g = Graphics.FromImage(visualBoard);
+
+				drawBoard(g);
+				drawWays(g);
+				drawPlayer(g);
+				g.Dispose();
+
 			}
 
 			if (moves == 0)
 			{
 				if (activePlayer == playerOne)
+				{
 					activePlayer = playerTwo;
+					pbxPlayerTwoSkin.BackgroundImage = getTexture(playerTwo.getWayColor());
+					pbxPlayerOneSkin.BackgroundImage = getTexture(Field.FIELD_CLEAR);
+				}
 				else
+				{
 					activePlayer = playerOne;
+					pbxPlayerTwoSkin.BackgroundImage = getTexture(Field.FIELD_CLEAR);
+					pbxPlayerOneSkin.BackgroundImage = getTexture(playerOne.getWayColor());
+				}
 			}
 
 			pbBoard.Refresh();
@@ -295,6 +294,7 @@ namespace projectlf6
 			{
 				board[x, y] = Field.FIELD_STONE;
 				this.moves--;
+				setMovesImage();
 			}
 
 			updateLabels();
@@ -330,7 +330,7 @@ namespace projectlf6
 
 		private int rollTheDice()
 		{
-			return dice.Next(1, 7);
+			return dice.Next(1, 13);
 		}
 
 		private void GameMain_KeyDown(object sender, KeyEventArgs e)
@@ -413,10 +413,65 @@ namespace projectlf6
 					}
 					finishCounter--;
 				}
-				moves = rollTheDice();
-				moves += rollTheDice();
+				for (int i = 20; i < 120; i+=5)
+				{
+					Thread.Sleep(i+i);
+					moves = rollTheDice();
+					setMovesImage();
+				}
 			}
 			updateLabels();
+		}
+
+		private void setMovesImage()
+		{
+			Image img = null;
+
+			switch (moves)
+			{
+				case 12:
+					img = Resources.pick12;
+					break;
+				case 11:
+					img = Resources.pick11;
+					break;
+				case 10:
+					img = Resources.pick10;
+					break;
+				case 9:
+					img = Resources.pick09;
+					break;
+				case 8:
+					img = Resources.pick08;
+					break;
+				case 7:
+					img = Resources.pick07;
+					break;
+				case 6:
+					img = Resources.pick06;
+					break;
+				case 5:
+					img = Resources.pick05;
+					break;
+				case 4:
+					img = Resources.pick04;
+					break;
+				case 3:
+					img = Resources.pick03;
+					break;
+				case 2:
+					img = Resources.pick02;
+					break;
+				case 1:
+					img = Resources.pick01;
+					break;
+				case 0:
+					img = Resources.ClearTexture;
+					break;
+			}
+
+			pbxMoves.Image = img;
+			pbxMoves.Refresh();
 		}
 
 		private void updateLabels()
@@ -424,11 +479,8 @@ namespace projectlf6
 			lbl_playerone.Text = playerOne.getName();
 			lbl_scoreplayerone.Text = playerOne.getScore().getScore().ToString();
 
-
 			lbl_playertwo.Text = playerTwo.getName();
 			lbl_scoreplayertwo.Text = playerTwo.getScore().getScore().ToString();
-
-			lbl_currentPlayer.Text = activePlayer.getName();
 
 			this.Text = this.game.getName() + " - " + this.game.getActiveLevel().getName() + " - verbleibende Züge: " + moves + " - verbleibende Runden: " + finishCounter;
 		}
@@ -450,12 +502,16 @@ namespace projectlf6
 			this.playerOne.getScore().setScore(0);
 			this.waysP1 = new List<Location>();
 			this.waysP1.Add(new Location(playerOne.getLocation().getX(), playerOne.getLocation().getY() + 1));
+			pbxPlayerOneSkin.BackgroundImage = getTexture(playerOne.getWayColor());
+			pbxPlayerOneSkin.Image = playerOne.getSkinImage();
 
 			//reset player two for new game
 			this.playerTwo.setLocation(this.game.getActiveLevel().getStartLocations()[1]);
 			this.playerTwo.getScore().setScore(0);
 			this.waysP2 = new List<Location>();
 			this.waysP2.Add(new Location(playerTwo.getLocation().getX(), playerTwo.getLocation().getY() + 1));
+			pbxPlayerTwoSkin.BackgroundImage = getTexture(playerTwo.getWayColor());
+			pbxPlayerTwoSkin.Image = playerTwo.getSkinImage();
 
 			//set and draw new level
 			this.board = this.game.getActiveLevel().getMap();
@@ -470,6 +526,22 @@ namespace projectlf6
 
 			//reset labels
 			updateLabels();
+
+			//set first- and activeplayer
+			if (firstPlayer == playerOne)
+			{
+				firstPlayer = playerTwo;
+				activePlayer = playerTwo;
+				pbxPlayerTwoSkin.BackgroundImage = getTexture(playerTwo.getWayColor());
+				pbxPlayerOneSkin.BackgroundImage = getTexture(Field.FIELD_CLEAR);
+			}
+			else
+			{
+				firstPlayer = playerOne;
+				activePlayer = playerOne;
+				pbxPlayerTwoSkin.BackgroundImage = getTexture(Field.FIELD_CLEAR);
+				pbxPlayerOneSkin.BackgroundImage = getTexture(playerOne.getWayColor());
+			}
 		}
 	}
 }

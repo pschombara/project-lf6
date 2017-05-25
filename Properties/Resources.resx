@@ -199,4 +199,67 @@
   <data name="Icon_512" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon_512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Pickaxe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pickaxe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Alex_Down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Alex_Down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Alex_Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Alex_Left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Alex_Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Alex_Right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Alex_Up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Alex_Up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pick01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pick01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pick02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pick02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pick03" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pick03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pick04" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pick04.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pick05" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pick05.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pick06" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pick06.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pick07" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pick07.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pick08" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pick08.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pick09" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pick09.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pick10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pick10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pick11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pick11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pick12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pick12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Steve_Down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Steve_Down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Steve_Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Steve_Left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Steve_Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Steve_Right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Steve_Up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Steve_Up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

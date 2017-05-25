@@ -221,6 +221,27 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon.ico" />
+    <None Include="Resources\Steve_Up.png" />
+    <None Include="Resources\Steve_Right.png" />
+    <None Include="Resources\Steve_Left.png" />
+    <None Include="Resources\Steve_Down.png" />
+    <None Include="Resources\Alex_Up.png" />
+    <None Include="Resources\Alex_Right.png" />
+    <None Include="Resources\Alex_Left.png" />
+    <None Include="Resources\Alex_Down.png" />
+    <None Include="Resources\pick12.png" />
+    <None Include="Resources\pick11.png" />
+    <None Include="Resources\pick10.png" />
+    <None Include="Resources\pick09.png" />
+    <None Include="Resources\pick08.png" />
+    <None Include="Resources\pick07.png" />
+    <None Include="Resources\pick06.png" />
+    <None Include="Resources\pick05.png" />
+    <None Include="Resources\pick04.png" />
+    <None Include="Resources\pick03.png" />
+    <None Include="Resources\pick02.png" />
+    <None Include="Resources\pick01.png" />
+    <None Include="Resources\Pickaxe.png" />
     <None Include="Resources\Icon_1024.png" />
     <None Include="Resources\Icon_512.png" />
     <None Include="Resources\Icon.png" />
