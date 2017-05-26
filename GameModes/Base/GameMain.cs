@@ -38,7 +38,7 @@ namespace projectlf6
 			this.firstPlayer = activePlayer;
 			this.game = game;
 			startNewLevel();
-			
+
 		}
 
 		private Image getTexture(int texture)
@@ -406,21 +406,87 @@ namespace projectlf6
 					{
 						playerOne.getScore().addScoreToScoreList(playerOne.getScore().getScore());
 						playerTwo.getScore().addScoreToScoreList(playerTwo.getScore().getScore());
-						ScoreView scoreView = new ScoreView(playerOne,playerTwo,game);
+						ScoreView scoreView = new ScoreView(playerOne, playerTwo, game);
 						scoreView.ShowDialog();
-						this.game.changeActiveLevel();
-						startNewLevel();
+						if (game.hasNext())
+						{
+							this.game.changeActiveLevel();
+							startNewLevel();
+						}
+						else
+						{
+							this.Close();
+						}
 					}
 					finishCounter--;
 				}
-				for (int i = 20; i < 120; i+=5)
-				{
-					Thread.Sleep(i+i);
-					moves = rollTheDice();
-					setMovesImage();
-				}
+
+				pbxMoves.Top = this.Height;
+				moves = rollTheDice();
+				slotMachineAnimation();
+				pbxMoves.Top = this.Height - 110;
+				
+				collapseRandomWay();
 			}
 			updateLabels();
+		}
+
+		private void slotMachineAnimation()
+		{
+			pbxMoves.Enabled = false;
+
+			int lower = rollTheDice();
+			Thread.Sleep(10);
+			int middle = rollTheDice();
+			Thread.Sleep(10);
+			int upper = rollTheDice();
+
+			pbxLower.Image = getSlotImage(lower);
+			pbxMidd.Image = getSlotImage(middle);
+			pbxUpper.Image = getSlotImage(upper);
+
+			moveSlotMachine(pbxLower, pbxMidd, pbxUpper, this.Height);
+
+			for (int i = 0; i < 20; i++)
+			{
+				middle = rollTheDice();
+				Thread.Sleep(10);
+				upper = rollTheDice();
+
+				pbxLower.Image = pbxUpper.Image;
+				pbxMidd.Image = getSlotImage(middle);
+				pbxUpper.Image = getSlotImage(upper);
+
+				moveSlotMachine(pbxLower, pbxMidd, pbxUpper, this.Height);
+			}
+
+			pbxLower.Image = pbxUpper.Image;
+			pbxMidd.Image = getSlotImage(middle);
+			pbxUpper.Image = getSlotImage(moves);
+
+			moveSlotMachine(pbxLower, pbxMidd, pbxUpper, this.Height);
+
+			pbxMoves.Image = pbxUpper.Image;
+			pbxMoves.Enabled = true;
+			pbxMoves.Refresh();
+			
+		}
+
+		private void moveSlotMachine(PictureBox pbxLower, PictureBox pbxMidd, PictureBox pbxUpper, int height)
+		{
+			pbxLower.Top = height - 110;
+			pbxMidd.Top = height - 170;
+			pbxUpper.Top = height - 230;
+
+			for (int i = 0; i < 120; i += 2)
+			{
+				pbxLower.Top += 2;
+				pbxMidd.Top += 2;
+				pbxUpper.Top += 2;
+				pbxLower.Refresh();
+				pbxMidd.Refresh();
+				pbxUpper.Refresh();
+			}
 		}
 
 		private void setMovesImage()
@@ -471,7 +537,60 @@ namespace projectlf6
 			}
 
 			pbxMoves.Image = img;
+			//pbxMoves.Top = this.Height - 170;
 			pbxMoves.Refresh();
+		}
+
+		private Image getSlotImage(int moves)
+		{
+			Image img = null;
+
+			switch (moves)
+			{
+				case 12:
+					img = Resources.pick12;
+					break;
+				case 11:
+					img = Resources.pick11;
+					break;
+				case 10:
+					img = Resources.pick10;
+					break;
+				case 9:
+					img = Resources.pick09;
+					break;
+				case 8:
+					img = Resources.pick08;
+					break;
+				case 7:
+					img = Resources.pick07;
+					break;
+				case 6:
+					img = Resources.pick06;
+					break;
+				case 5:
+					img = Resources.pick05;
+					break;
+				case 4:
+					img = Resources.pick04;
+					break;
+				case 3:
+					img = Resources.pick03;
+					break;
+				case 2:
+					img = Resources.pick02;
+					break;
+				case 1:
+					img = Resources.pick01;
+					break;
+				case 0:
+					img = Resources.ClearTexture;
+					break;
+			}
+
+			//pbxMoves.Image = img;
+			//pbxMoves.Top = this.Height - 170;
+			return img;
 		}
 
 		private void updateLabels()
@@ -543,5 +662,129 @@ namespace projectlf6
 				pbxPlayerOneSkin.BackgroundImage = getTexture(playerOne.getWayColor());
 			}
 		}
+
+		private void collapseRandomWay()
+		{
+			int rand = dice.Next() % 5;
+			int x = dice.Next(0, 32);
+			Thread.Sleep(50);
+			int y = dice.Next(0, 32);
+			switch (rand)
+			{
+				case 0:
+					//don't collapse a tunnel
+					break;
+				case 1:
+					//only collapse tunnel if player1 has location(x,y)
+					if (waysP1.Count > 3)
+					{
+						foreach (Location loc in waysP1)
+						{
+							if (loc.getX() == x && loc.getY() == y)
+							{
+								if (playerOne.getLocation().getX() != x || playerOne.getLocation().getY() != y)
+								{
+									board[y, x] = Field.FIELD_NO_BROCKEN;
+									waysP1.Remove(loc);
+									Refresh();
+									break;
+								}
+							}
+						}
+					}
+					break;
+				case 2:
+					//only collapse tunnel if player2 has location(x,y)
+					if (waysP2.Count > 3)
+					{
+						foreach (Location loc in waysP2)
+						{
+							if (loc.getX() == x && loc.getY() == y)
+							{
+								if (playerTwo.getLocation().getX() != x || playerTwo.getLocation().getY() != y)
+								{
+									board[y, x] = Field.FIELD_NO_BROCKEN;
+									waysP2.Remove(loc);
+									Refresh();
+									break;
+								}
+							}
+						}
+					}
+					break;
+				case 3:
+					//collape tunnel if a player has location
+					if (waysP1.Count > 3)
+					{
+						foreach (Location loc in waysP1)
+						{
+							if (loc.getX() == x && loc.getY() == y)
+							{
+								if (playerOne.getLocation().getX() != x || playerOne.getLocation().getY() != y)
+								{
+									board[y, x] = Field.FIELD_NO_BROCKEN;
+									waysP1.Remove(loc);
+									Refresh();
+									break;
+								}
+							}
+						}
+					}
+					if (waysP2.Count > 3)
+					{
+						foreach (Location loc in waysP2)
+						{
+							if (loc.getX() == x && loc.getY() == y)
+							{
+								if (playerTwo.getLocation().getX() != x || playerTwo.getLocation().getY() != y)
+								{
+									board[y, x] = Field.FIELD_NO_BROCKEN;
+									waysP2.Remove(loc);
+									Refresh();
+									break;
+								}
+							}
+						}
+					}
+					break;
+				case 4:
+					//collapse a tunnel of a player
+					if (waysP1.Count > 3 && waysP2.Count > 3)
+					{
+						List<Location> allLocs = new List<Location>();
+						allLocs.AddRange(waysP1);
+						allLocs.AddRange(waysP2);
+						int counter = 0;
+						for (int i = 0; i < x + y; i++)
+						{
+							counter += rollTheDice();
+						}
+						counter = counter % allLocs.Count;
+
+						Location removeloc = allLocs[counter];
+
+						if (waysP1.Contains(removeloc))
+						{
+							if (playerOne.getLocation().getX() != x || playerOne.getLocation().getY() != y)
+							{
+								waysP1.Remove(removeloc);
+								board[y, x] = Field.FIELD_NO_BROCKEN;
+								Refresh();
+							}
+						}
+						else
+						{
+							if (playerTwo.getLocation().getX() != x || playerTwo.getLocation().getY() != y)
+							{
+								waysP2.Remove(removeloc);
+								board[y, x] = Field.FIELD_NO_BROCKEN;
+								Refresh();
+							}
+						}
+					}
+					break;
+			}
+		}
 	}
 }
+

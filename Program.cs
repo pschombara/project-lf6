@@ -17,8 +17,10 @@ namespace projectlf6
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Form1());
-            /*
+			//Application.Run(new Form1());
+
+			//Application.Run(new FogMode());
+
 			//TestForGameWindow
 			Player p1 = new Player();
 			p1.setWayColor(Field.WAY_RED);
@@ -38,7 +40,7 @@ namespace projectlf6
 			testgame.loadFromFile();
 
 			Application.Run(new GameMain(p1, p2, testgame));
-            */
+
 		}
 	}
 }

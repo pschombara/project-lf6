@@ -68,6 +68,8 @@ namespace projectlf6
 			txtNameP1.Text = playerOne.getName();
 			txtNameP2.Text = playerTwo.getName();
 
+			txtTotalScoreP1.Text = playerOne.getScore().getTotalscore().ToString();
+			txtTotalScoreP2.Text = playerTwo.getScore().getTotalscore().ToString();
 		}
 
 		private void btnNext_Click(object sender, EventArgs e)

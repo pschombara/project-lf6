@@ -35,6 +35,8 @@
 			this.txtScoreP2 = new System.Windows.Forms.TextBox();
 			this.txtLevel = new System.Windows.Forms.TextBox();
 			this.btnNext = new System.Windows.Forms.Button();
+			this.txtTotalScoreP1 = new System.Windows.Forms.TextBox();
+			this.txtTotalScoreP2 = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
 			// 
 			// lblLevel
@@ -114,11 +116,41 @@
 			this.btnNext.UseVisualStyleBackColor = true;
 			this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
 			// 
+			// txtTotalScoreP1
+			// 
+			this.txtTotalScoreP1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+			this.txtTotalScoreP1.BackColor = System.Drawing.SystemColors.Control;
+			this.txtTotalScoreP1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.txtTotalScoreP1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtTotalScoreP1.Location = new System.Drawing.Point(12, 89);
+			this.txtTotalScoreP1.Multiline = true;
+			this.txtTotalScoreP1.Name = "txtTotalScoreP1";
+			this.txtTotalScoreP1.ReadOnly = true;
+			this.txtTotalScoreP1.Size = new System.Drawing.Size(150, 20);
+			this.txtTotalScoreP1.TabIndex = 100000;
+			this.txtTotalScoreP1.TabStop = false;
+			this.txtTotalScoreP1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+			// 
+			// txtTotalScoreP2
+			// 
+			this.txtTotalScoreP2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+			this.txtTotalScoreP2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.txtTotalScoreP2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtTotalScoreP2.Location = new System.Drawing.Point(207, 89);
+			this.txtTotalScoreP2.Multiline = true;
+			this.txtTotalScoreP2.Name = "txtTotalScoreP2";
+			this.txtTotalScoreP2.ReadOnly = true;
+			this.txtTotalScoreP2.Size = new System.Drawing.Size(150, 20);
+			this.txtTotalScoreP2.TabIndex = 100002;
+			this.txtTotalScoreP2.TabStop = false;
+			// 
 			// ScoreView
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(368, 150);
+			this.Controls.Add(this.txtTotalScoreP2);
+			this.Controls.Add(this.txtTotalScoreP1);
 			this.Controls.Add(this.btnNext);
 			this.Controls.Add(this.txtLevel);
 			this.Controls.Add(this.txtScoreP2);
@@ -144,5 +176,7 @@
 		private System.Windows.Forms.TextBox txtScoreP2;
 		private System.Windows.Forms.TextBox txtLevel;
 		private System.Windows.Forms.Button btnNext;
+		private System.Windows.Forms.TextBox txtTotalScoreP1;
+		private System.Windows.Forms.TextBox txtTotalScoreP2;
 	}
 }

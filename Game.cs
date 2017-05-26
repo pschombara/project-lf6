@@ -65,6 +65,11 @@ namespace projectlf6
 			return getActiveLevel();
 		}
 
+		public bool hasNext()
+		{
+			return (activeLevel + 1 > levels.Count) ? false : true;
+		}
+
 		public void loadFromFile()
 		{
 			XmlDocument doc = new XmlDocument();
