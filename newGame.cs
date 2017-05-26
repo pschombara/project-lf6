@@ -8,12 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using projectlf6.Properties;
 
 namespace projectlf6
 {
 	public partial class newGame : Form
 	{
 		private List<string> playerList;
+        private List<Bitmap> figures;
+        private List<int> figuresNumbers;
+        private int figurePlayerOne;
+        private int figurePlayerTwo;
+
 		public newGame()
 		{
 			InitializeComponent();
@@ -23,7 +29,30 @@ namespace projectlf6
 			this.fillPlayerComboBox(this.cbPlayerOneProfile);
 			this.fillPlayerComboBox(this.cbPlayerTwoProfile);
 			this.fillGameComboBox();
-		}
+            this.fillFigures();
+            this.figurePlayerOne = 0;
+            this.figurePlayerTwo = 0;
+            this.drawPlayerFigure(this.pbPlayerOneFigure, this.figurePlayerOne);
+            this.drawPlayerFigure(this.pbPlayerTwoFigure, this.figurePlayerTwo);
+        }
+
+        private void drawPlayerFigure(PictureBox box, int index)
+        {
+            box.Image = this.figures[index];
+            box.SizeMode = PictureBoxSizeMode.CenterImage;
+        }
+
+        private void fillFigures()
+        {
+            this.figures = new List<Bitmap>();
+            this.figuresNumbers = new List<int>();
+
+            this.figures.Add(Resources.Steve_Down);
+            this.figures.Add(Resources.Alex_Down);
+
+            this.figuresNumbers.Add(Player.SKIN_STEVE);
+            this.figuresNumbers.Add(Player.SKIN_ALEX);
+        }
 
 		private void prepareFillComboBox()
 		{
@@ -77,9 +106,11 @@ namespace projectlf6
 			{
 				playerOne = new Player(playerOneName);
                 playerOne.setWayColor(cbPlayerOneColor.SelectedIndex + 14);
+                playerOne.setSkin(this.figuresNumbers[this.figurePlayerOne]);
                 playerOne.saveToFile();
 				playerTwo = new Player(playerTwoName);
                 playerTwo.setWayColor(cbPlayerTwoColor.SelectedIndex + 14);
+                playerTwo.setSkin(this.figuresNumbers[this.figurePlayerTwo]);
                 playerTwo.saveToFile();
                 game.loadFromFile();
 				Form GameMain = new GameMain(playerOne, playerTwo, game);
@@ -151,9 +182,69 @@ namespace projectlf6
                 start = false;
                 MessageBox.Show("Bitte wählen Sie unterschiedliche Farben aus.");
             }
+            else if (this.figurePlayerOne == this.figurePlayerTwo)
+            {
+                start = false;
+                MessageBox.Show("Bitte wählen Sie unterschiedliche Spielfiguren aus.");
+            }
 
 			return start;
 		}
 
+        private void btnPlayerOneFigureBack_Click(object sender, EventArgs e)
+        {
+            if (this.figurePlayerOne == 0)
+            {
+                this.figurePlayerOne = this.figures.Count - 1;
+            }
+            else
+            {
+                this.figurePlayerOne--;
+            }
+
+            this.drawPlayerFigure(this.pbPlayerOneFigure, this.figurePlayerOne);
+        }
+
+        private void btnPlayerOneFigureForward_Click(object sender, EventArgs e)
+        {
+            if (this.figurePlayerOne < this.figures.Count - 1)
+            {
+                this.figurePlayerOne++;
+            }
+            else
+            {
+                this.figurePlayerOne = 0;
+            }
+
+            this.drawPlayerFigure(this.pbPlayerOneFigure, this.figurePlayerOne);
+        }
+
+        private void btnPlayerTwoFigureBack_Click(object sender, EventArgs e)
+        {
+            if (this.figurePlayerTwo == 0)
+            {
+                this.figurePlayerTwo = this.figures.Count - 1;
+            }
+            else
+            {
+                this.figurePlayerTwo--;
+            }
+
+            this.drawPlayerFigure(this.pbPlayerTwoFigure, this.figurePlayerTwo);
+        }
+
+        private void btnPlayerTwoFigureForward_Click(object sender, EventArgs e)
+        {
+            if (this.figurePlayerTwo < this.figures.Count - 1)
+            {
+                this.figurePlayerTwo++;
+            }
+            else
+            {
+                this.figurePlayerTwo = 0;
+            }
+
+            this.drawPlayerFigure(this.pbPlayerTwoFigure, this.figurePlayerTwo);
+        }
     }
 }

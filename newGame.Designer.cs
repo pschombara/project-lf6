@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(newGame));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pbPlayerOneFigure = new System.Windows.Forms.PictureBox();
             this.pbPlayerTwoFigure = new System.Windows.Forms.PictureBox();
             this.btnPlayerOneFigureBack = new System.Windows.Forms.Button();
             this.btnPlayerOneFigureForward = new System.Windows.Forms.Button();
@@ -48,8 +47,9 @@
             this.cbGames = new System.Windows.Forms.ComboBox();
             this.cbPlayerOneColor = new System.Windows.Forms.ComboBox();
             this.cbPlayerTwoColor = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPlayerOneFigure)).BeginInit();
+            this.pbPlayerOneFigure = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayerTwoFigure)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlayerOneFigure)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -72,15 +72,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Spieler 2";
             // 
-            // pbPlayerOneFigure
-            // 
-            this.pbPlayerOneFigure.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbPlayerOneFigure.Location = new System.Drawing.Point(12, 89);
-            this.pbPlayerOneFigure.Name = "pbPlayerOneFigure";
-            this.pbPlayerOneFigure.Size = new System.Drawing.Size(100, 111);
-            this.pbPlayerOneFigure.TabIndex = 4;
-            this.pbPlayerOneFigure.TabStop = false;
-            // 
             // pbPlayerTwoFigure
             // 
             this.pbPlayerTwoFigure.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -99,6 +90,7 @@
             this.btnPlayerOneFigureBack.TabIndex = 6;
             this.btnPlayerOneFigureBack.Text = "<<";
             this.btnPlayerOneFigureBack.UseVisualStyleBackColor = true;
+            this.btnPlayerOneFigureBack.Click += new System.EventHandler(this.btnPlayerOneFigureBack_Click);
             // 
             // btnPlayerOneFigureForward
             // 
@@ -109,6 +101,7 @@
             this.btnPlayerOneFigureForward.TabIndex = 7;
             this.btnPlayerOneFigureForward.Text = ">>";
             this.btnPlayerOneFigureForward.UseVisualStyleBackColor = true;
+            this.btnPlayerOneFigureForward.Click += new System.EventHandler(this.btnPlayerOneFigureForward_Click);
             // 
             // btnPlayerTwoFigureForward
             // 
@@ -119,6 +112,7 @@
             this.btnPlayerTwoFigureForward.TabIndex = 9;
             this.btnPlayerTwoFigureForward.Text = ">>";
             this.btnPlayerTwoFigureForward.UseVisualStyleBackColor = true;
+            this.btnPlayerTwoFigureForward.Click += new System.EventHandler(this.btnPlayerTwoFigureForward_Click);
             // 
             // btnPlayerTwoFigureBack
             // 
@@ -129,6 +123,7 @@
             this.btnPlayerTwoFigureBack.TabIndex = 8;
             this.btnPlayerTwoFigureBack.Text = "<<";
             this.btnPlayerTwoFigureBack.UseVisualStyleBackColor = true;
+            this.btnPlayerTwoFigureBack.Click += new System.EventHandler(this.btnPlayerTwoFigureBack_Click);
             // 
             // cbPlayerOneProfile
             // 
@@ -253,6 +248,15 @@
             this.cbPlayerTwoColor.TabIndex = 20;
             this.cbPlayerTwoColor.SelectedIndexChanged += new System.EventHandler(this.cbPlayerTwoColor_SelectedIndexChanged);
             // 
+            // pbPlayerOneFigure
+            // 
+            this.pbPlayerOneFigure.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbPlayerOneFigure.Location = new System.Drawing.Point(12, 89);
+            this.pbPlayerOneFigure.Name = "pbPlayerOneFigure";
+            this.pbPlayerOneFigure.Size = new System.Drawing.Size(100, 111);
+            this.pbPlayerOneFigure.TabIndex = 4;
+            this.pbPlayerOneFigure.TabStop = false;
+            // 
             // newGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,8 +285,8 @@
             this.Name = "newGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Neues Spiel";
-            ((System.ComponentModel.ISupportInitialize)(this.pbPlayerOneFigure)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayerTwoFigure)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlayerOneFigure)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -292,7 +296,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pbPlayerOneFigure;
         private System.Windows.Forms.PictureBox pbPlayerTwoFigure;
         private System.Windows.Forms.Button btnPlayerOneFigureBack;
         private System.Windows.Forms.Button btnPlayerOneFigureForward;
@@ -309,5 +312,6 @@
         private System.Windows.Forms.ComboBox cbGames;
         private System.Windows.Forms.ComboBox cbPlayerOneColor;
         private System.Windows.Forms.ComboBox cbPlayerTwoColor;
+        private System.Windows.Forms.PictureBox pbPlayerOneFigure;
     }
 }
