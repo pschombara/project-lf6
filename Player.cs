@@ -201,6 +201,20 @@ namespace projectlf6
 				this.orientation = Convert.ToInt16(nodeOrientation.Item(0).InnerText);
 			}
 
+            XmlNodeList nodeSkin = doc.GetElementsByTagName("skin");
+
+            if (nodeSkin.Count == 1)
+            {
+                this.skin = Convert.ToInt16(nodeSkin.Item(0).InnerText);
+            }
+
+            XmlNodeList nodeWayColor = doc.GetElementsByTagName("wayColor");
+
+            if (nodeWayColor.Count == 1)
+            {
+                this.wayColor = Convert.ToInt16(nodeWayColor.Item(0).InnerText);
+            }
+
 			XmlNodeList nodeLocation = doc.GetElementsByTagName("location");
 			this.location.loadFromXml(nodeLocation);
 
@@ -213,10 +227,18 @@ namespace projectlf6
 			XmlElement player = doc.CreateElement("player");
 			XmlElement name = doc.CreateElement("name");
 			XmlElement orientation = doc.CreateElement("orientation");
+            XmlElement skin = doc.CreateElement("skin");
+            XmlElement wayColor = doc.CreateElement("wayColor");
+
 			name.InnerText = this.name;
 			orientation.InnerText = this.orientation.ToString();
+            skin.InnerText = this.skin.ToString();
+            wayColor.InnerText = this.wayColor.ToString();
+
 			player.AppendChild(name);
 			player.AppendChild(orientation);
+            player.AppendChild(skin);
+            player.AppendChild(wayColor);
 			player.AppendChild(doc.ImportNode(this.location.serialize(), true));
 			player.AppendChild(doc.ImportNode(this.score.serialize(), true));
 			doc.AppendChild(player);
