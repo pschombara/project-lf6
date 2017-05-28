@@ -53,7 +53,7 @@ namespace projectlf6
 				}
 			}
 
-			int height = (txtLevel.Font.Height ) * levelCount;
+			int height = (txtLevel.Font.Height + 1 ) * levelCount;
 			
 
 			txtLevel.Height = height;

@@ -224,12 +224,12 @@ namespace projectlf6
 			this.Controls.Add(this.pbxMidd);
 			this.Controls.Add(this.pbxLower);
 			this.DoubleBuffered = true;
+			this.Icon = global::projectlf6.Properties.Resources.Icon;
 			this.MainMenuStrip = this.menuStrip1;
 			this.Name = "GameMain";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "GameMain";
 			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameMain_KeyDown);
-			this.Icon = Resources.Icon;
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pbBoard)).EndInit();

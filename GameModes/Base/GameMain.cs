@@ -26,6 +26,7 @@ namespace projectlf6
 		private Bitmap visualBoard;
 		private Player firstPlayer;
 		private int finishCounter;
+		private bool isNotNewLevel;
 
 		public GameMain(Player player_1, Player player_2, Game game)
 		{
@@ -400,9 +401,10 @@ namespace projectlf6
 
 			if (moves == 0 && e.KeyCode == Keys.Space)
 			{
+				isNotNewLevel = true;
 				if (activePlayer == firstPlayer)
 				{
-					if (isLevelComplete())
+					if (finishCounter == 0)
 					{
 						playerOne.getScore().addScoreToScoreList(playerOne.getScore().getScore());
 						playerTwo.getScore().addScoreToScoreList(playerTwo.getScore().getScore());
@@ -412,6 +414,7 @@ namespace projectlf6
 						{
 							this.game.changeActiveLevel();
 							startNewLevel();
+							isNotNewLevel = false;
 						}
 						else
 						{
@@ -420,13 +423,15 @@ namespace projectlf6
 					}
 					finishCounter--;
 				}
+				if(isNotNewLevel)
+				{
+					pbxMoves.Top = this.Height;
+					moves = rollTheDice();
+					slotMachineAnimation();
+					pbxMoves.Top = this.Height - 110;
 
-				pbxMoves.Top = this.Height;
-				moves = rollTheDice();
-				slotMachineAnimation();
-				pbxMoves.Top = this.Height - 110;
-				
-				collapseRandomWay();
+					collapseRandomWay();
+				}
 			}
 			updateLabels();
 		}
@@ -604,16 +609,6 @@ namespace projectlf6
 			this.Text = this.game.getName() + " - " + this.game.getActiveLevel().getName() + " - verbleibende Züge: " + moves + " - verbleibende Runden: " + finishCounter;
 		}
 
-		private bool isLevelComplete()
-		{
-			bool isComplete = false;
-
-			if (finishCounter == 0)
-				isComplete = true;
-
-			return isComplete;
-		}
-
 		private void startNewLevel()
 		{
 			//reset player one for new game
@@ -641,7 +636,7 @@ namespace projectlf6
 			drawPlayer(g);
 			pbBoard.Image = visualBoard;
 			pbBoard.Refresh();
-			finishCounter = 11;
+			finishCounter = 4;
 
 			//reset labels
 			updateLabels();
@@ -684,7 +679,7 @@ namespace projectlf6
 							{
 								if (playerOne.getLocation().getX() != x || playerOne.getLocation().getY() != y)
 								{
-									board[y, x] = Field.FIELD_NO_BROCKEN;
+									board[x, y] = Field.FIELD_NO_BROCKEN;
 									waysP1.Remove(loc);
 									Refresh();
 									break;
@@ -703,7 +698,7 @@ namespace projectlf6
 							{
 								if (playerTwo.getLocation().getX() != x || playerTwo.getLocation().getY() != y)
 								{
-									board[y, x] = Field.FIELD_NO_BROCKEN;
+									board[x, y] = Field.FIELD_NO_BROCKEN;
 									waysP2.Remove(loc);
 									Refresh();
 									break;
@@ -722,7 +717,7 @@ namespace projectlf6
 							{
 								if (playerOne.getLocation().getX() != x || playerOne.getLocation().getY() != y)
 								{
-									board[y, x] = Field.FIELD_NO_BROCKEN;
+									board[x, y] = Field.FIELD_NO_BROCKEN;
 									waysP1.Remove(loc);
 									Refresh();
 									break;
@@ -738,7 +733,7 @@ namespace projectlf6
 							{
 								if (playerTwo.getLocation().getX() != x || playerTwo.getLocation().getY() != y)
 								{
-									board[y, x] = Field.FIELD_NO_BROCKEN;
+									board[x, y] = Field.FIELD_NO_BROCKEN;
 									waysP2.Remove(loc);
 									Refresh();
 									break;
@@ -763,12 +758,15 @@ namespace projectlf6
 
 						Location removeloc = allLocs[counter];
 
+						x = removeloc.getX();
+						y = removeloc.getY();
+
 						if (waysP1.Contains(removeloc))
 						{
 							if (playerOne.getLocation().getX() != x || playerOne.getLocation().getY() != y)
 							{
 								waysP1.Remove(removeloc);
-								board[y, x] = Field.FIELD_NO_BROCKEN;
+								board[x, y] = Field.FIELD_NO_BROCKEN;
 								Refresh();
 							}
 						}
@@ -777,7 +775,7 @@ namespace projectlf6
 							if (playerTwo.getLocation().getX() != x || playerTwo.getLocation().getY() != y)
 							{
 								waysP2.Remove(removeloc);
-								board[y, x] = Field.FIELD_NO_BROCKEN;
+								board[x, y] = Field.FIELD_NO_BROCKEN;
 								Refresh();
 							}
 						}
