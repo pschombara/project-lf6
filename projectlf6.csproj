@@ -221,6 +221,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon.ico" />
+    <None Include="Resources\The_Hero_Up.png" />
+    <None Include="Resources\The_Hero_Right.png" />
+    <None Include="Resources\The_Hero_Left.png" />
+    <None Include="Resources\The_Hero_Down.png" />
+    <None Include="Resources\Lucinda_Up.png" />
+    <None Include="Resources\Lucinda_Right.png" />
+    <None Include="Resources\Lucinda_Left.png" />
+    <None Include="Resources\Lucinda_Down.png" />
+    <None Include="Resources\Camo_Girl_Up.png" />
+    <None Include="Resources\Camo_Girl_Right.png" />
+    <None Include="Resources\Camo_Girl_Left.png" />
+    <None Include="Resources\Camo_Girl_Down.png" />
     <None Include="Resources\Steve_Up.png" />
     <None Include="Resources\Steve_Right.png" />
     <None Include="Resources\Steve_Left.png" />

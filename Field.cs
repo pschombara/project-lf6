@@ -24,8 +24,8 @@ namespace projectlf6
 		public const int FIELD_SILVER = 8;
 		public const int FIELD_GOLD = 9;
 		public const int FIELD_DIAMOND = 10;
-		public const int FIELD_Player_1 = 30;
-		public const int FIELD_Player_2 = 40;
+		//public const int FIELD_Player_1 = 30;
+		//public const int FIELD_Player_2 = 40;
 		public const int FIELD_CLEAR = 13;
 		public const int WAY_BLUE = 14;
 		public const int WAY_BLUE_DARK = 15;
@@ -36,6 +36,11 @@ namespace projectlf6
 		public const int WAY_PURPLE = 20;
 		public const int WAY_RED = 21;
 		public const int WAY_YELLOW = 22;
+		public const int PLAYER_STEVE = 30;
+		public const int PLAYER_ALEX = 40;
+		public const int PLAYER_HERO = 50;
+		public const int PLAYER_LUCINDA = 60;
+		public const int PLAYER_CAMO_GIRL = 70;
 
 		public Field(int fieldType)
 		{

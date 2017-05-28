@@ -24,11 +24,14 @@ namespace projectlf6
 
 		public const int SKIN_STEVE = 30;
 		public const int SKIN_ALEX = 40;
+		public const int SKIN_HERO = 50;
+		public const int SKIN_LUCINDA = 60;
+		public const int SKIN_CAMO_GIRL = 70;
 
 		public Player()
 		{
 			this.name = "";
-			this.skin = Field.FIELD_Player_1;
+			this.skin = Field.PLAYER_STEVE;
 			this.wayColor = Field.FIELD_CLEAR;
 			this.score = new Score();
 			this.location = new Location();
@@ -40,7 +43,7 @@ namespace projectlf6
 		{
 			this.name = name;
 			this.wayColor = Field.FIELD_CLEAR;
-			this.skin = Field.FIELD_Player_1;
+			this.skin = Field.PLAYER_STEVE;
 			this.score = new Score();
 			this.location = new Location();
 			this.orientation = ORIENTATION_DOWN;
@@ -95,6 +98,42 @@ namespace projectlf6
 					break;
 				case 43:
 					img = Resources.Alex_Left;
+					break;
+				case 50:
+					img = Resources.The_Hero_Up;
+					break;
+				case 51:
+					img = Resources.The_Hero_Right;
+					break;
+				case 52:
+					img = Resources.The_Hero_Down;
+					break;
+				case 53:
+					img = Resources.The_Hero_Left;
+					break;
+				case 60:
+					img = Resources.Lucinda_Up;
+					break;
+				case 61:
+					img = Resources.Lucinda_Right;
+					break;
+				case 62:
+					img = Resources.Lucinda_Down;
+					break;
+				case 63:
+					img = Resources.Lucinda_Left;
+					break;
+				case 70:
+					img = Resources.Camo_Girl_Up;
+					break;
+				case 71:
+					img = Resources.Camo_Girl_Right;
+					break;
+				case 72:
+					img = Resources.Camo_Girl_Down;
+					break;
+				case 73:
+					img = Resources.Camo_Girl_Left;
 					break;
 			}
 			return img;

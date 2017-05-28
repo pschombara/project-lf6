@@ -150,14 +150,14 @@ namespace projectlf6
         private void btnPlayer1_Click(object sender, EventArgs e)
         {
             pbSelection.Size = new Size(31, 64);
-            Editor.setTexture(Field.FIELD_Player_1);
+            Editor.setTexture(Field.PLAYER_STEVE);
             pbSelection.BackgroundImage = Resources.Player_1;
         }
 
         private void btnPlayer2_Click(object sender, EventArgs e)
         {
             pbSelection.Size = new Size(31, 64);
-            Editor.setTexture(Field.FIELD_Player_2);
+            Editor.setTexture(Field.PLAYER_ALEX);
             pbSelection.BackgroundImage = Resources.Player_2;
         }
 

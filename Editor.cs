@@ -60,7 +60,7 @@ namespace projectlf6
             {
                 for (int y = 0; y < 32; y++)
                 {
-                    if (selectedTexture == Field.FIELD_Player_1 || selectedTexture == Field.FIELD_Player_2)
+                    if (selectedTexture == Field.PLAYER_STEVE || selectedTexture == Field.PLAYER_ALEX)
                     {
                         graphics.DrawImage(getTexture(map[x, y]), (x * 16), (y * 16), 16, 16);
                     }
@@ -75,8 +75,8 @@ namespace projectlf6
         #region Spieler zeichnen
         private void drawPlayer(Graphics graphics)
         {
-            graphics.DrawImage(getTexture(Field.FIELD_Player_1), (player_1.getX() * 16), (player_1.getY() * 16), 16, 32); //Zeichne Player 1
-            graphics.DrawImage(getTexture(Field.FIELD_Player_2), (player_2.getX() * 16), (player_2.getY() * 16), 16, 32); //Zeichne Player 2
+            graphics.DrawImage(getTexture(Field.PLAYER_STEVE), (player_1.getX() * 16), (player_1.getY() * 16), 16, 32); //Zeichne Player 1
+            graphics.DrawImage(getTexture(Field.PLAYER_ALEX), (player_2.getX() * 16), (player_2.getY() * 16), 16, 32); //Zeichne Player 2
         }
         #endregion
 
@@ -96,7 +96,7 @@ namespace projectlf6
             int MapY = y / 16;
             if (MapX >= 0 && MapX <= 31 && MapY >= 0 && MapY <= 31)
             {
-                if (selectedTexture == Field.FIELD_Player_1)
+                if (selectedTexture == Field.PLAYER_STEVE)
                 {
                     if (map[MapX, MapY] == Field.FIELD_SKY && map[MapX, MapY + 1] == Field.FIELD_SKY && map[MapX, MapY + 2] != Field.FIELD_SKY)
                     {
@@ -112,7 +112,7 @@ namespace projectlf6
                     else
                         MessageBox.Show("Spieler 1 kann nicht an Position gesetzt werden!", "Fehler: Spieler 1");
                 }
-                else if (selectedTexture == Field.FIELD_Player_2)
+                else if (selectedTexture == Field.PLAYER_ALEX)
                 {
                     if (map[MapX, MapY] == Field.FIELD_SKY && map[MapX, MapY + 1] == Field.FIELD_SKY && map[MapX, MapY + 2] != Field.FIELD_SKY)
                     {
@@ -186,9 +186,9 @@ namespace projectlf6
                     return Resources.Gold;
                 case Field.FIELD_DIAMOND:
                     return Resources.Diamond;
-                case Field.FIELD_Player_1:
+                case Field.PLAYER_STEVE:
                     return Resources.Player_1;
-                case Field.FIELD_Player_2:
+                case Field.PLAYER_ALEX:
                     return Resources.Player_2;
                 default:
                     return null;
@@ -404,7 +404,7 @@ namespace projectlf6
         public Cursor getCustomCursor()
         {
             Bitmap b;
-            if (selectedTexture == Field.FIELD_Player_1 || selectedTexture == Field.FIELD_Player_2)
+            if (selectedTexture == Field.PLAYER_STEVE || selectedTexture == Field.PLAYER_ALEX)
             {
                 if (this.isGrid)
                     b = new Bitmap(getTexture(selectedTexture), 15, 31);

@@ -80,11 +80,11 @@ namespace projectlf6
 				case Field.FIELD_DIAMOND:
 					img = Resources.Diamond;
 					break;
-				case Field.FIELD_Player_1:
+				case Field.PLAYER_STEVE:
 				case 11:
 					img = Resources.Player_1;
 					break;
-				case Field.FIELD_Player_2:
+				case Field.PLAYER_ALEX:
 				case 12:
 					img = Resources.Player_2;
 					break;
