@@ -387,7 +387,7 @@ namespace projectlf6
 				}
 			}
 			//Steine zeichnen
-			for (int y = 6; y < 30; y++)
+			for (int y = 6; y < 31; y++)
 			{
 				for (int x = 0; x < 32; x++)
 				{
