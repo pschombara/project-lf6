@@ -37,13 +37,14 @@ namespace projectlf6
             if (!Directory.Exists(path))
 			{
 				Directory.CreateDirectory(path);
-				LevelEditorMain levelEditorMain = new LevelEditorMain(path);
+                g.saveToFile();
+                LevelEditorMain levelEditorMain = new LevelEditorMain(path);
 				levelEditorMain.ShowDialog();
 			}
 			else
 				MessageBox.Show("Spielname existiert bereits!", "Fehler: Spielname!");
 
-            g.saveToFile();
+            //g.saveToFile();
 		}
 
 		private void btnBack_Click(object sender, EventArgs e)
