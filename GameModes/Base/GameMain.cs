@@ -401,6 +401,7 @@ namespace projectlf6
 
 			if (moves == 0 && e.KeyCode == Keys.Space)
 			{
+				bool closing = false;
 				isNotNewLevel = true;
 				if (activePlayer == firstPlayer)
 				{
@@ -418,12 +419,13 @@ namespace projectlf6
 						}
 						else
 						{
+							closing = true;
 							this.Close();
 						}
 					}
 					finishCounter--;
 				}
-				if(isNotNewLevel)
+				if(isNotNewLevel && !closing)
 				{
 					pbxMoves.Top = this.Height;
 					moves = rollTheDice();
@@ -636,7 +638,7 @@ namespace projectlf6
 			drawPlayer(g);
 			pbBoard.Image = visualBoard;
 			pbBoard.Refresh();
-			finishCounter = 4;
+			finishCounter = 2;
 
 			//reset labels
 			updateLabels();

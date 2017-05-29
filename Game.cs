@@ -67,7 +67,7 @@ namespace projectlf6
 
 		public bool hasNext()
 		{
-			return (activeLevel + 1 > levels.Count) ? false : true;
+			return (activeLevel + 1 >= levels.Count) ? false : true;
 		}
 
 		public void loadFromFile()

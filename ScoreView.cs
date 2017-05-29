@@ -70,6 +70,15 @@ namespace projectlf6
 
 			txtTotalScoreP1.Text = playerOne.getScore().getTotalscore().ToString();
 			txtTotalScoreP2.Text = playerTwo.getScore().getTotalscore().ToString();
+
+			if (game.hasNext())
+			{
+				btnNext.Text = "Nächster Level spielen";
+			}
+			else
+			{
+				btnNext.Text = "Spiel beendet";
+			}
 		}
 
 		private void btnNext_Click(object sender, EventArgs e)
