@@ -28,7 +28,13 @@ namespace projectlf6
             this.Close();
 		}
 
-		private void btnNewGame_Click(object sender, EventArgs e)
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            Form Help = new Help();
+            Help.ShowDialog();
+        }
+
+        private void btnNewGame_Click(object sender, EventArgs e)
 		{
 			Form newGame = new newGame();
 			newGame.ShowDialog();
@@ -62,5 +68,5 @@ namespace projectlf6
 				Directory.CreateDirectory(MAIN_PATH + "save\\");
 			}
 		}
-	}
+    }
 }

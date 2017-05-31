@@ -63,6 +63,7 @@
             this.btnHelp.TabIndex = 2;
             this.btnHelp.Text = "Hilfe";
             this.btnHelp.UseVisualStyleBackColor = true;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
             // 
             // btnClose
             // 
@@ -84,6 +85,7 @@
             this.Controls.Add(this.btnLevelEditor);
             this.Controls.Add(this.btnNewGame);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "    ";

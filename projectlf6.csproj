@@ -79,6 +79,12 @@
     <Compile Include="GameMode.cs" />
     <Compile Include="Games.cs" />
     <Compile Include="Global.cs" />
+    <Compile Include="Help.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Help.Designer.cs">
+      <DependentUpon>Help.cs</DependentUpon>
+    </Compile>
     <Compile Include="Level.cs" />
     <Compile Include="LevelEditorMain.cs">
       <SubType>Form</SubType>
@@ -114,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GameModes\Base\GameMain.resx">
       <DependentUpon>GameMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Help.resx">
+      <DependentUpon>Help.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LevelEditorMain.resx">
       <DependentUpon>LevelEditorMain.cs</DependentUpon>
