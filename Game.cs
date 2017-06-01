@@ -116,7 +116,7 @@ namespace projectlf6
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show("Fehler beim Speichern !", "Spiel konnte nicht gespeichert werden", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+				MessageBox.Show("Fehler beim Speichern !", "Spiel konnte nicht gespeichert werden. " + ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
 			}
 
 			return retvar;

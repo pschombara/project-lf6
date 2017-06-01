@@ -32,44 +32,26 @@ namespace projectlf6
 			List<int> scoresP1 = playerOne.getScore().getScoreList();
 			List<int> scoresP2 = playerTwo.getScore().getScoreList();
 
-
-			string lvlText = "";
-			string scoresP1Text = "";
-			string scoresP2Text = "";
+            dgvScoreView.Columns["scorePlayerOne"].HeaderText = "Punkte " + playerOne.getName();
+            dgvScoreView.Columns["scorePlayerTwo"].HeaderText = "Punkte " + playerTwo.getName();
 
 			for (int i = 0; i < levelCount; i++)
 			{
-				lvlText += (i + 1) + "\r\n";
-
-				if (i <= activeLevel)
-				{
-					scoresP1Text += scoresP1[i] + "\r\n";
-					scoresP2Text += scoresP2[i] + "\r\n";
-				}
-				else
-				{
-					scoresP1Text += "\r\n";
-					scoresP2Text += "\r\n";
-				}
+                if (i <= activeLevel)
+                {
+                    dgvScoreView.Rows.Add(scoresP1[i], i + 1, scoresP2[i]);
+                }
+                else
+                {
+                    dgvScoreView.Rows.Add(0, i + 1, 0);
+                }
+               
 			}
 
-			int height = (txtLevel.Font.Height + 1 ) * levelCount;
-			
+            int totalScoreP1 = playerOne.getScore().getTotalscore();
+            int totalScoreP2 = playerTwo.getScore().getTotalscore();
 
-			txtLevel.Height = height;
-			txtScoreP1.Height = height;
-			txtScoreP2.Height = height;
-
-			this.Height = height + 120;
-
-			txtLevel.Text = lvlText;
-			txtScoreP1.Text = scoresP1Text;
-			txtScoreP2.Text = scoresP2Text;
-			txtNameP1.Text = playerOne.getName();
-			txtNameP2.Text = playerTwo.getName();
-
-			txtTotalScoreP1.Text = playerOne.getScore().getTotalscore().ToString();
-			txtTotalScoreP2.Text = playerTwo.getScore().getTotalscore().ToString();
+            dgvScoreView.Rows.Add(totalScoreP1, "Total", totalScoreP2);
 
 			if (game.hasNext())
 			{

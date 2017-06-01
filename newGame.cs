@@ -128,6 +128,7 @@ namespace projectlf6
 				game.loadFromFile();
 				Form GameMain = new GameMain(playerOne, playerTwo, game, rounds);
 
+                this.Close();
 				GameMain.ShowDialog();
 			}
 		}

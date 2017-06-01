@@ -90,7 +90,7 @@
             this.btnPlayerOneFigureBack.Location = new System.Drawing.Point(12, 220);
             this.btnPlayerOneFigureBack.Name = "btnPlayerOneFigureBack";
             this.btnPlayerOneFigureBack.Size = new System.Drawing.Size(46, 29);
-            this.btnPlayerOneFigureBack.TabIndex = 6;
+            this.btnPlayerOneFigureBack.TabIndex = 2;
             this.btnPlayerOneFigureBack.Text = "<<";
             this.btnPlayerOneFigureBack.UseVisualStyleBackColor = true;
             this.btnPlayerOneFigureBack.Click += new System.EventHandler(this.btnPlayerOneFigureBack_Click);
@@ -101,7 +101,7 @@
             this.btnPlayerOneFigureForward.Location = new System.Drawing.Point(66, 220);
             this.btnPlayerOneFigureForward.Name = "btnPlayerOneFigureForward";
             this.btnPlayerOneFigureForward.Size = new System.Drawing.Size(46, 29);
-            this.btnPlayerOneFigureForward.TabIndex = 7;
+            this.btnPlayerOneFigureForward.TabIndex = 3;
             this.btnPlayerOneFigureForward.Text = ">>";
             this.btnPlayerOneFigureForward.UseVisualStyleBackColor = true;
             this.btnPlayerOneFigureForward.Click += new System.EventHandler(this.btnPlayerOneFigureForward_Click);
@@ -112,7 +112,7 @@
             this.btnPlayerTwoFigureForward.Location = new System.Drawing.Point(631, 220);
             this.btnPlayerTwoFigureForward.Name = "btnPlayerTwoFigureForward";
             this.btnPlayerTwoFigureForward.Size = new System.Drawing.Size(46, 29);
-            this.btnPlayerTwoFigureForward.TabIndex = 9;
+            this.btnPlayerTwoFigureForward.TabIndex = 7;
             this.btnPlayerTwoFigureForward.Text = ">>";
             this.btnPlayerTwoFigureForward.UseVisualStyleBackColor = true;
             this.btnPlayerTwoFigureForward.Click += new System.EventHandler(this.btnPlayerTwoFigureForward_Click);
@@ -123,7 +123,7 @@
             this.btnPlayerTwoFigureBack.Location = new System.Drawing.Point(577, 220);
             this.btnPlayerTwoFigureBack.Name = "btnPlayerTwoFigureBack";
             this.btnPlayerTwoFigureBack.Size = new System.Drawing.Size(46, 29);
-            this.btnPlayerTwoFigureBack.TabIndex = 8;
+            this.btnPlayerTwoFigureBack.TabIndex = 6;
             this.btnPlayerTwoFigureBack.Text = "<<";
             this.btnPlayerTwoFigureBack.UseVisualStyleBackColor = true;
             this.btnPlayerTwoFigureBack.Click += new System.EventHandler(this.btnPlayerTwoFigureBack_Click);
@@ -137,7 +137,7 @@
             this.cbPlayerOneProfile.Location = new System.Drawing.Point(12, 44);
             this.cbPlayerOneProfile.Name = "cbPlayerOneProfile";
             this.cbPlayerOneProfile.Size = new System.Drawing.Size(121, 28);
-            this.cbPlayerOneProfile.TabIndex = 10;
+            this.cbPlayerOneProfile.TabIndex = 1;
             this.cbPlayerOneProfile.SelectedIndexChanged += new System.EventHandler(this.cbPlayerOneProfile_SelectedIndexChanged);
             // 
             // cbPlayerTwoProfile
@@ -147,7 +147,7 @@
             this.cbPlayerTwoProfile.Location = new System.Drawing.Point(556, 44);
             this.cbPlayerTwoProfile.Name = "cbPlayerTwoProfile";
             this.cbPlayerTwoProfile.Size = new System.Drawing.Size(121, 28);
-            this.cbPlayerTwoProfile.TabIndex = 11;
+            this.cbPlayerTwoProfile.TabIndex = 5;
             this.cbPlayerTwoProfile.SelectedIndexChanged += new System.EventHandler(this.cbPlayerTwoProfile_SelectedIndexChanged);
             // 
             // label3
@@ -176,7 +176,7 @@
             this.btnStartGame.Location = new System.Drawing.Point(577, 319);
             this.btnStartGame.Name = "btnStartGame";
             this.btnStartGame.Size = new System.Drawing.Size(100, 40);
-            this.btnStartGame.TabIndex = 15;
+            this.btnStartGame.TabIndex = 11;
             this.btnStartGame.Text = "Starten";
             this.btnStartGame.UseVisualStyleBackColor = true;
             this.btnStartGame.Click += new System.EventHandler(this.btnStartGame_Click);
@@ -187,7 +187,7 @@
             this.btnBack.Location = new System.Drawing.Point(12, 319);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(100, 40);
-            this.btnBack.TabIndex = 16;
+            this.btnBack.TabIndex = 12;
             this.btnBack.Text = "Zurück";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -210,7 +210,7 @@
             this.cbGames.Location = new System.Drawing.Point(291, 167);
             this.cbGames.Name = "cbGames";
             this.cbGames.Size = new System.Drawing.Size(121, 28);
-            this.cbGames.TabIndex = 18;
+            this.cbGames.TabIndex = 10;
             // 
             // cbPlayerOneColor
             // 
@@ -230,7 +230,7 @@
             this.cbPlayerOneColor.Location = new System.Drawing.Point(12, 270);
             this.cbPlayerOneColor.Name = "cbPlayerOneColor";
             this.cbPlayerOneColor.Size = new System.Drawing.Size(121, 28);
-            this.cbPlayerOneColor.TabIndex = 19;
+            this.cbPlayerOneColor.TabIndex = 4;
             this.cbPlayerOneColor.SelectedIndexChanged += new System.EventHandler(this.cbPlayerOneColor_SelectedIndexChanged);
             // 
             // cbPlayerTwoColor
@@ -251,7 +251,7 @@
             this.cbPlayerTwoColor.Location = new System.Drawing.Point(556, 270);
             this.cbPlayerTwoColor.Name = "cbPlayerTwoColor";
             this.cbPlayerTwoColor.Size = new System.Drawing.Size(121, 28);
-            this.cbPlayerTwoColor.TabIndex = 20;
+            this.cbPlayerTwoColor.TabIndex = 8;
             this.cbPlayerTwoColor.SelectedIndexChanged += new System.EventHandler(this.cbPlayerTwoColor_SelectedIndexChanged);
             // 
             // pbPlayerOneFigure
@@ -290,7 +290,7 @@
             this.nudGameRounds.Name = "nudGameRounds";
             this.nudGameRounds.ReadOnly = true;
             this.nudGameRounds.Size = new System.Drawing.Size(118, 26);
-            this.nudGameRounds.TabIndex = 22;
+            this.nudGameRounds.TabIndex = 9;
             this.nudGameRounds.Value = new decimal(new int[] {
             10,
             0,
