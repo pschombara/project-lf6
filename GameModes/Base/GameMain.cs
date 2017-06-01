@@ -399,10 +399,25 @@ namespace projectlf6
             }
             #endregion player two
 
+            if (moves == 0)
+            {
+                this.lblRollTheDice.Visible = true;
+
+                if (activePlayer == playerOne)
+                {
+                    this.updateRollTheDiceText(playerOne);
+                }
+                else
+                {
+                    this.updateRollTheDiceText(playerTwo);
+                }
+            }
+
             if (moves == 0 && e.KeyCode == Keys.Space)
             {
                 bool closing = false;
                 isNotNewLevel = true;
+                
                 if (activePlayer == firstPlayer)
                 {
                     if (finishCounter == 0)
@@ -430,6 +445,7 @@ namespace projectlf6
                 }
                 if (isNotNewLevel && !closing)
                 {
+                    this.lblRollTheDice.Visible = false;
                     pbxMoves.Top = this.Height;
                     moves = rollTheDice();
                     slotMachineAnimation();
@@ -439,6 +455,11 @@ namespace projectlf6
                 }
             }
             updateLabels();
+        }
+
+        private void updateRollTheDiceText(Player player)
+        {
+            this.lblRollTheDice.Text = player.getName() + " ist dran ... Mit Leertaste würfeln";
         }
 
         private void slotMachineAnimation()
@@ -665,6 +686,8 @@ namespace projectlf6
                 pbxPlayerTwoSkin.BackgroundImage = getTexture(Field.FIELD_CLEAR);
                 pbxPlayerOneSkin.BackgroundImage = getTexture(playerOne.getWayColor());
             }
+
+            this.updateRollTheDiceText(this.activePlayer);
         }
 
         private void collapseRandomWay()

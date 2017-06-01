@@ -47,6 +47,7 @@ namespace projectlf6
             this.pbxLower = new System.Windows.Forms.PictureBox();
             this.pbxMidd = new System.Windows.Forms.PictureBox();
             this.pbxUpper = new System.Windows.Forms.PictureBox();
+            this.lblRollTheDice = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBoard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPlayerOneSkin)).BeginInit();
@@ -214,11 +215,22 @@ namespace projectlf6
             this.pbxUpper.TabIndex = 18;
             this.pbxUpper.TabStop = false;
             // 
+            // lblRollTheDice
+            // 
+            this.lblRollTheDice.AutoSize = true;
+            this.lblRollTheDice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRollTheDice.Location = new System.Drawing.Point(348, 562);
+            this.lblRollTheDice.Name = "lblRollTheDice";
+            this.lblRollTheDice.Size = new System.Drawing.Size(291, 20);
+            this.lblRollTheDice.TabIndex = 19;
+            this.lblRollTheDice.Text = "Spieler 1 ist dran .. Mit Leertaste würfeln";
+            // 
             // GameMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 601);
+            this.Controls.Add(this.lblRollTheDice);
             this.Controls.Add(this.pbxPlayerTwoSkin);
             this.Controls.Add(this.pbxPlayerOneSkin);
             this.Controls.Add(this.pbBoard);
@@ -274,5 +286,6 @@ namespace projectlf6
 		private System.Windows.Forms.PictureBox pbxMidd;
 		private System.Windows.Forms.PictureBox pbxUpper;
         private System.Windows.Forms.ToolStripMenuItem menue_Musik;
+        private System.Windows.Forms.Label lblRollTheDice;
     }
 }
