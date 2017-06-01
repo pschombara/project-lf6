@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Help));
             this.pB_A = new System.Windows.Forms.PictureBox();
             this.pB_S = new System.Windows.Forms.PictureBox();
             this.pB_D = new System.Windows.Forms.PictureBox();
@@ -299,8 +300,10 @@
             this.Controls.Add(this.pB_D);
             this.Controls.Add(this.pB_S);
             this.Controls.Add(this.pB_A);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Help";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hilfe / Steuerung";
             ((System.ComponentModel.ISupportInitialize)(this.pB_A)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pB_S)).EndInit();

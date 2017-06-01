@@ -109,7 +109,7 @@
             // btnNext
             // 
             this.btnNext.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnNext.Location = new System.Drawing.Point(112, 115);
+            this.btnNext.Location = new System.Drawing.Point(112, 175);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(144, 23);
             this.btnNext.TabIndex = 1;
@@ -123,7 +123,7 @@
             this.txtTotalScoreP1.BackColor = System.Drawing.SystemColors.Control;
             this.txtTotalScoreP1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTotalScoreP1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalScoreP1.Location = new System.Drawing.Point(12, 89);
+            this.txtTotalScoreP1.Location = new System.Drawing.Point(20, 149);
             this.txtTotalScoreP1.Multiline = true;
             this.txtTotalScoreP1.Name = "txtTotalScoreP1";
             this.txtTotalScoreP1.ReadOnly = true;
@@ -137,7 +137,7 @@
             this.txtTotalScoreP2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.txtTotalScoreP2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTotalScoreP2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalScoreP2.Location = new System.Drawing.Point(207, 89);
+            this.txtTotalScoreP2.Location = new System.Drawing.Point(215, 149);
             this.txtTotalScoreP2.Multiline = true;
             this.txtTotalScoreP2.Name = "txtTotalScoreP2";
             this.txtTotalScoreP2.ReadOnly = true;
@@ -149,7 +149,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(368, 150);
+            this.ClientSize = new System.Drawing.Size(384, 210);
             this.Controls.Add(this.txtTotalScoreP2);
             this.Controls.Add(this.txtTotalScoreP1);
             this.Controls.Add(this.btnNext);

@@ -28,7 +28,7 @@ namespace projectlf6
 		private int finishCounter;
 		private bool isNotNewLevel;
 
-		public GameMain(Player player_1, Player player_2, Game game)
+		public GameMain(Player player_1, Player player_2, Game game, int rounds)
 		{
 			InitializeComponent();
 			this.DoubleBuffered = true;
@@ -38,8 +38,8 @@ namespace projectlf6
 			this.activePlayer = (rollTheDice() % 2 == 1 ? playerOne : playerTwo);
 			this.firstPlayer = activePlayer;
 			this.game = game;
+            this.finishCounter = rounds;
 			startNewLevel();
-
 		}
 
 		private Image getTexture(int texture)
@@ -202,7 +202,6 @@ namespace projectlf6
 				drawWays(g);
 				drawPlayer(g);
 				g.Dispose();
-
 			}
 
 			if (moves == 0)
@@ -638,7 +637,6 @@ namespace projectlf6
 			drawPlayer(g);
 			pbBoard.Image = visualBoard;
 			pbBoard.Refresh();
-			finishCounter = 2;
 
 			//reset labels
 			updateLabels();
@@ -681,7 +679,7 @@ namespace projectlf6
 							{
 								if (playerOne.getLocation().getX() != x || playerOne.getLocation().getY() != y)
 								{
-									board[x, y] = Field.FIELD_NO_BROCKEN;
+									board[x, y] = Field.FIELD_DIRT;
 									waysP1.Remove(loc);
 									Refresh();
 									break;
@@ -700,7 +698,7 @@ namespace projectlf6
 							{
 								if (playerTwo.getLocation().getX() != x || playerTwo.getLocation().getY() != y)
 								{
-									board[x, y] = Field.FIELD_NO_BROCKEN;
+									board[x, y] = Field.FIELD_DIRT;
 									waysP2.Remove(loc);
 									Refresh();
 									break;
@@ -719,7 +717,7 @@ namespace projectlf6
 							{
 								if (playerOne.getLocation().getX() != x || playerOne.getLocation().getY() != y)
 								{
-									board[x, y] = Field.FIELD_NO_BROCKEN;
+									board[x, y] = Field.FIELD_DIRT;
 									waysP1.Remove(loc);
 									Refresh();
 									break;
@@ -735,7 +733,7 @@ namespace projectlf6
 							{
 								if (playerTwo.getLocation().getX() != x || playerTwo.getLocation().getY() != y)
 								{
-									board[x, y] = Field.FIELD_NO_BROCKEN;
+									board[x, y] = Field.FIELD_DIRT;
 									waysP2.Remove(loc);
 									Refresh();
 									break;
@@ -768,7 +766,7 @@ namespace projectlf6
 							if (playerOne.getLocation().getX() != x || playerOne.getLocation().getY() != y)
 							{
 								waysP1.Remove(removeloc);
-								board[x, y] = Field.FIELD_NO_BROCKEN;
+								board[x, y] = Field.FIELD_DIRT;
 								Refresh();
 							}
 						}
@@ -777,7 +775,7 @@ namespace projectlf6
 							if (playerTwo.getLocation().getX() != x || playerTwo.getLocation().getY() != y)
 							{
 								waysP2.Remove(removeloc);
-								board[x, y] = Field.FIELD_NO_BROCKEN;
+								board[x, y] = Field.FIELD_DIRT;
 								Refresh();
 							}
 						}

@@ -34,6 +34,8 @@ namespace projectlf6
 			this.figurePlayerTwo = 0;
 			this.drawPlayerFigure(this.pbPlayerOneFigure, this.figurePlayerOne);
 			this.drawPlayerFigure(this.pbPlayerTwoFigure, this.figurePlayerTwo);
+            this.cbPlayerOneColor.SelectedIndex = 0;
+            this.cbPlayerTwoColor.SelectedIndex = 1;
 		}
 
 		private void drawPlayerFigure(PictureBox box, int index)
@@ -93,6 +95,10 @@ namespace projectlf6
 				this.cbGames.Items.Add(games.getGameName(i));
 			}
 
+            if (this.cbGames.Items.Count > 0)
+            {
+                this.cbGames.SelectedIndex = 0;
+            }
 		}
 
 		private void btnBack_Click(object sender, EventArgs e)
@@ -110,7 +116,8 @@ namespace projectlf6
 
 			if (this.checkGameStart())
 			{
-				playerOne = new Player(playerOneName);
+                int rounds = Convert.ToInt16(this.nudGameRounds.Value);
+                playerOne = new Player(playerOneName);
 				playerOne.setWayColor(cbPlayerOneColor.SelectedIndex + 14);
 				playerOne.setSkin(this.figuresNumbers[this.figurePlayerOne]);
 				playerOne.saveToFile();
@@ -119,7 +126,7 @@ namespace projectlf6
 				playerTwo.setSkin(this.figuresNumbers[this.figurePlayerTwo]);
 				playerTwo.saveToFile();
 				game.loadFromFile();
-				Form GameMain = new GameMain(playerOne, playerTwo, game);
+				Form GameMain = new GameMain(playerOne, playerTwo, game, rounds);
 
 				GameMain.ShowDialog();
 			}
@@ -272,5 +279,5 @@ namespace projectlf6
 
 			this.drawPlayerFigure(this.pbPlayerTwoFigure, this.figurePlayerTwo);
 		}
-	}
+    }
 }
