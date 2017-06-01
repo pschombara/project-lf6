@@ -39,6 +39,7 @@ namespace projectlf6
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.optionenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menue_Sound = new System.Windows.Forms.ToolStripMenuItem();
+            this.menue_Musik = new System.Windows.Forms.ToolStripMenuItem();
             this.pbBoard = new System.Windows.Forms.PictureBox();
             this.pbxPlayerOneSkin = new System.Windows.Forms.PictureBox();
             this.pbxPlayerTwoSkin = new System.Windows.Forms.PictureBox();
@@ -46,7 +47,6 @@ namespace projectlf6
             this.pbxLower = new System.Windows.Forms.PictureBox();
             this.pbxMidd = new System.Windows.Forms.PictureBox();
             this.pbxUpper = new System.Windows.Forms.PictureBox();
-            this.menue_Musik = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBoard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPlayerOneSkin)).BeginInit();
@@ -141,8 +141,15 @@ namespace projectlf6
             // 
             this.menue_Sound.CheckOnClick = true;
             this.menue_Sound.Name = "menue_Sound";
-            this.menue_Sound.Size = new System.Drawing.Size(152, 22);
+            this.menue_Sound.Size = new System.Drawing.Size(108, 22);
             this.menue_Sound.Text = "Sound";
+            // 
+            // menue_Musik
+            // 
+            this.menue_Musik.CheckOnClick = true;
+            this.menue_Musik.Name = "menue_Musik";
+            this.menue_Musik.Size = new System.Drawing.Size(108, 22);
+            this.menue_Musik.Text = "Musik";
             // 
             // pbBoard
             // 
@@ -207,13 +214,6 @@ namespace projectlf6
             this.pbxUpper.TabIndex = 18;
             this.pbxUpper.TabStop = false;
             // 
-            // menue_Musik
-            // 
-            this.menue_Musik.CheckOnClick = true;
-            this.menue_Musik.Name = "menue_Musik";
-            this.menue_Musik.Size = new System.Drawing.Size(152, 22);
-            this.menue_Musik.Text = "Musik";
-            // 
             // GameMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -236,6 +236,8 @@ namespace projectlf6
             this.DoubleBuffered = true;
             this.Icon = global::projectlf6.Properties.Resources.Icon;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximumSize = new System.Drawing.Size(1024, 640);
+            this.MinimumSize = new System.Drawing.Size(1024, 640);
             this.Name = "GameMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameMain";

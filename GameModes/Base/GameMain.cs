@@ -26,6 +26,7 @@ namespace projectlf6
 		private Bitmap visualBoard;
 		private Player firstPlayer;
 		private int finishCounter;
+        private int rounds;
 		private bool isNotNewLevel;
 
 		public GameMain(Player player_1, Player player_2, Game game, int rounds)
@@ -38,7 +39,7 @@ namespace projectlf6
 			this.activePlayer = (rollTheDice() % 2 == 1 ? playerOne : playerTwo);
 			this.firstPlayer = activePlayer;
 			this.game = game;
-            this.finishCounter = rounds;
+            this.rounds = rounds;
 			startNewLevel();
 		}
 
@@ -453,7 +454,7 @@ namespace projectlf6
 
 			moveSlotMachine(pbxLower, pbxMidd, pbxUpper, this.Height);
 
-			for (int i = 0; i < 20; i++)
+			for (int i = 0; i < 5; i++)
 			{
 				middle = rollTheDice();
 				Thread.Sleep(10);
@@ -612,9 +613,13 @@ namespace projectlf6
 
 		private void startNewLevel()
 		{
+            //set finish counter to round start value
+            this.finishCounter = this.rounds;
+
 			//reset player one for new game
 			this.playerOne.setLocation(this.game.getActiveLevel().getStartLocations()[0]);
 			this.playerOne.getScore().setScore(0);
+            this.playerOne.setOrientation(Player.ORIENTATION_DOWN);
 			this.waysP1 = new List<Location>();
 			this.waysP1.Add(new Location(playerOne.getLocation().getX(), playerOne.getLocation().getY() + 1));
 			pbxPlayerOneSkin.BackgroundImage = getTexture(playerOne.getWayColor());
@@ -623,7 +628,8 @@ namespace projectlf6
 			//reset player two for new game
 			this.playerTwo.setLocation(this.game.getActiveLevel().getStartLocations()[1]);
 			this.playerTwo.getScore().setScore(0);
-			this.waysP2 = new List<Location>();
+            this.playerTwo.setOrientation(Player.ORIENTATION_DOWN);
+            this.waysP2 = new List<Location>();
 			this.waysP2.Add(new Location(playerTwo.getLocation().getX(), playerTwo.getLocation().getY() + 1));
 			pbxPlayerTwoSkin.BackgroundImage = getTexture(playerTwo.getWayColor());
 			pbxPlayerTwoSkin.Image = playerTwo.getSkinImage();
