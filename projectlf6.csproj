@@ -102,6 +102,11 @@
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\ResourceSound.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceSound.resx</DependentUpon>
+    </Compile>
     <Compile Include="Score.cs" />
     <Compile Include="ScoreView.cs">
       <SubType>Form</SubType>
@@ -140,6 +145,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Properties\ResourceSound.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceSound.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="ScoreView.resx">
       <DependentUpon>ScoreView.cs</DependentUpon>
     </EmbeddedResource>
@@ -230,6 +239,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon.ico" />
+    <None Include="Resources\dig.wav" />
+    <None Include="Resources\dirt.wav" />
+    <None Include="Resources\grass.wav" />
+    <None Include="Resources\levelup.wav" />
+    <None Include="Resources\step.wav" />
+    <None Include="Resources\successful_hit.wav" />
     <None Include="Resources\The_Hero_Up.png" />
     <None Include="Resources\The_Hero_Right.png" />
     <None Include="Resources\The_Hero_Left.png" />

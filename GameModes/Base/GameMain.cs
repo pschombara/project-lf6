@@ -9,6 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using projectlf6.Properties;
+using System.Media;
 
 namespace projectlf6
 {
@@ -194,7 +195,9 @@ namespace projectlf6
                 if (canMove || diggingBeforeMove)
                 {
                     updateData(newLoc.getX(), newLoc.getY(), diggingBeforeMove);
-
+                    SoundPlayer sound = new SoundPlayer(ResourceSound.step);
+                    sound.Play();
+                    sound.Dispose();
                 }
 
                 Graphics g = Graphics.FromImage(visualBoard);
