@@ -246,6 +246,7 @@ namespace projectlf6
             this.Controls.Add(this.pbxMidd);
             this.Controls.Add(this.pbxLower);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = global::projectlf6.Properties.Resources.Icon;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximumSize = new System.Drawing.Size(1024, 640);

@@ -37,7 +37,7 @@
             // 
             // btnNewGame
             // 
-            this.btnNewGame.Location = new System.Drawing.Point(-2, 1);
+            this.btnNewGame.Location = new System.Drawing.Point(548, 422);
             this.btnNewGame.Name = "btnNewGame";
             this.btnNewGame.Size = new System.Drawing.Size(291, 48);
             this.btnNewGame.TabIndex = 0;
@@ -47,7 +47,7 @@
             // 
             // btnLevelEditor
             // 
-            this.btnLevelEditor.Location = new System.Drawing.Point(-2, 55);
+            this.btnLevelEditor.Location = new System.Drawing.Point(12, 12);
             this.btnLevelEditor.Name = "btnLevelEditor";
             this.btnLevelEditor.Size = new System.Drawing.Size(291, 48);
             this.btnLevelEditor.TabIndex = 1;
@@ -57,7 +57,7 @@
             // 
             // btnHelp
             // 
-            this.btnHelp.Location = new System.Drawing.Point(-2, 109);
+            this.btnHelp.Location = new System.Drawing.Point(548, 12);
             this.btnHelp.Name = "btnHelp";
             this.btnHelp.Size = new System.Drawing.Size(291, 48);
             this.btnHelp.TabIndex = 2;
@@ -67,7 +67,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(-2, 163);
+            this.btnClose.Location = new System.Drawing.Point(12, 422);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(291, 48);
             this.btnClose.TabIndex = 3;
@@ -79,11 +79,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 219);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(851, 482);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.btnLevelEditor);
             this.Controls.Add(this.btnNewGame);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";

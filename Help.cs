@@ -81,5 +81,244 @@ namespace projectlf6
             down.SetToolTip(this.pB_2, "Spieler bewegt sich nach unten");
         }
         #endregion
+
+
+        #region Draw_KeyDescription_Player1
+        private void pB_W_Paint(object sender, PaintEventArgs e)
+        {
+            using (Font myFont = new Font("Arial", 12))
+            {
+                e.Graphics.DrawString("W", myFont, Brushes.Black, new Point(2, 2));
+            }
+        }
+
+        private void pB_A_Paint(object sender, PaintEventArgs e)
+        {
+            using (Font myFont = new Font("Arial", 12))
+            {
+                e.Graphics.DrawString("A", myFont, Brushes.Black, new Point(2, 2));
+            }
+        }
+
+        private void pB_S_Paint(object sender, PaintEventArgs e)
+        {
+            using (Font myFont = new Font("Arial", 12))
+            {
+                e.Graphics.DrawString("S", myFont, Brushes.Black, new Point(2, 2));
+            }
+        }
+
+        private void pB_D_Paint(object sender, PaintEventArgs e)
+        {
+            using (Font myFont = new Font("Arial", 12))
+            {
+                e.Graphics.DrawString("D", myFont, Brushes.Black, new Point(2, 2));
+            }
+        }
+
+        private void pB_V_Paint(object sender, PaintEventArgs e)
+        {
+            using (Font myFont = new Font("Arial", 12))
+            {
+                e.Graphics.DrawString("V", myFont, Brushes.Black, new Point(2, 2));
+            }
+        }
+
+        #endregion
+
+
+        #region Draw_KeyDescription_Player2
+        private void pB_8_Paint(object sender, PaintEventArgs e)
+        {
+            using (Font myFont = new Font("Arial", 12))
+            {
+                e.Graphics.DrawString("8", myFont, Brushes.Black, new Point(2, 2));
+            }
+        }
+
+        private void pB_4_Paint(object sender, PaintEventArgs e)
+        {
+            using (Font myFont = new Font("Arial", 12))
+            {
+                e.Graphics.DrawString("4", myFont, Brushes.Black, new Point(2, 2));
+            }
+        }
+
+        private void pB_5_Paint(object sender, PaintEventArgs e)
+        {
+            using (Font myFont = new Font("Arial", 12))
+            {
+                e.Graphics.DrawString("5", myFont, Brushes.Black, new Point(2, 2));
+            }
+        }
+
+        private void pB_6_Paint(object sender, PaintEventArgs e)
+        {
+            using (Font myFont = new Font("Arial", 12))
+            {
+                e.Graphics.DrawString("6", myFont, Brushes.Black, new Point(2, 2));
+            }
+        }
+
+        private void pB_2_Paint(object sender, PaintEventArgs e)
+        {
+            using (Font myFont = new Font("Arial", 12))
+            {
+                e.Graphics.DrawString("2", myFont, Brushes.Black, new Point(2, 2));
+            }
+        }
+        #endregion
+
+
+        private void Help_KeyDown(object sender, KeyEventArgs e)
+        {
+            Keys key = e.KeyCode;
+
+            switch(key)
+            {
+                case Keys.W:
+                    pB_W.BorderStyle = BorderStyle.Fixed3D;
+                    pB_W.BackColor = Color.LightGreen;
+                    lbl_description.Text = "Nach oben bewegen";
+                    break;
+
+                case Keys.A:
+                    pB_A.BorderStyle = BorderStyle.Fixed3D;
+                    pB_A.BackColor = Color.LightGreen;
+                    lbl_description.Text = "Nach links bewegen";
+                    break;
+
+                case Keys.S:
+                    pB_S.BorderStyle = BorderStyle.Fixed3D;
+                    pB_S.BackColor = Color.LightGreen;
+                    lbl_description.Text = "Nach unten bewegen";
+                    break;
+
+                case Keys.D:
+                    pB_D.BorderStyle = BorderStyle.Fixed3D;
+                    pB_D.BackColor = Color.LightGreen;
+                    lbl_description.Text = "Nach rechts bewegen";
+                    break;
+
+                case Keys.V:
+                    pB_V.BorderStyle = BorderStyle.Fixed3D;
+                    pB_V.BackColor = Color.LightGreen;
+                    lbl_description.Text = "Block in Blickrichtung abbauen/zerstören";
+                    break;
+
+                case Keys.Space:
+                    pB_Space.BorderStyle = BorderStyle.Fixed3D;
+                    pB_Space.BackColor = Color.LightGreen;
+                    lbl_description.Text = "Würfeln";
+                    break;
+
+                case Keys.NumPad8:
+                    pB_8.BorderStyle = BorderStyle.Fixed3D;
+                    pB_8.BackColor = Color.LightGreen;
+                    lbl_description.Text = "Nach oben bewegen";
+                    break;
+
+                case Keys.NumPad4:
+                    pB_4.BorderStyle = BorderStyle.Fixed3D;
+                    pB_4.BackColor = Color.LightGreen;
+                    lbl_description.Text = "Nach links bewegen";
+                    break;
+
+                case Keys.NumPad5:
+                    pB_5.BorderStyle = BorderStyle.Fixed3D;
+                    pB_5.BackColor = Color.LightGreen;
+                    lbl_description.Text = "Block in Blickrichtung abbauen/zerstören";
+                    break;
+
+                case Keys.NumPad6:
+                    pB_6.BorderStyle = BorderStyle.Fixed3D;
+                    pB_6.BackColor = Color.LightGreen;
+                    lbl_description.Text = "Nach rechts bewegen";
+                    break;
+
+                case Keys.NumPad2:
+                    pB_2.BorderStyle = BorderStyle.Fixed3D;
+                    pB_2.BackColor = Color.LightGreen;
+                    lbl_description.Text = "Nach unten bewegen";
+                    break;
+            }
+        }
+
+
+        private void Help_KeyUp(object sender, KeyEventArgs e)
+        {
+            Keys key = e.KeyCode;
+
+            switch (key)
+            {
+                case Keys.W:
+                    pB_W.BorderStyle = BorderStyle.FixedSingle;
+                    pB_W.BackColor = DefaultBackColor;
+                    lbl_description.Text = "bitte drücken sie eine Taste...";
+                    break;
+
+                case Keys.A:
+                    pB_A.BorderStyle = BorderStyle.FixedSingle;
+                    pB_A.BackColor = DefaultBackColor;
+                    lbl_description.Text = "bitte drücken sie eine Taste...";
+                    break;
+
+                case Keys.S:
+                    pB_S.BorderStyle = BorderStyle.FixedSingle;
+                    pB_S.BackColor = DefaultBackColor;
+                    lbl_description.Text = "bitte drücken sie eine Taste...";
+                    break;
+
+                case Keys.D:
+                    pB_D.BorderStyle = BorderStyle.FixedSingle;
+                    pB_D.BackColor = DefaultBackColor;
+                    lbl_description.Text = "bitte drücken sie eine Taste...";
+                    break;
+
+                case Keys.V:
+                    pB_V.BorderStyle = BorderStyle.FixedSingle;
+                    pB_V.BackColor = DefaultBackColor;
+                    lbl_description.Text = "bitte drücken sie eine Taste...";
+                    break;
+
+                case Keys.Space:
+                    pB_Space.BorderStyle = BorderStyle.FixedSingle;
+                    pB_Space.BackColor = DefaultBackColor;
+                    lbl_description.Text = "bitte drücken sie eine Taste...";
+                    break;
+
+                case Keys.NumPad8:
+                    pB_8.BorderStyle = BorderStyle.FixedSingle;
+                    pB_8.BackColor = DefaultBackColor;
+                    lbl_description.Text = "bitte drücken sie eine Taste...";
+                    break;
+
+                case Keys.NumPad4:
+                    pB_4.BorderStyle = BorderStyle.FixedSingle;
+                    pB_4.BackColor = DefaultBackColor;
+                    lbl_description.Text = "bitte drücken sie eine Taste...";
+                    break;
+
+                case Keys.NumPad5:
+                    pB_5.BorderStyle = BorderStyle.FixedSingle;
+                    pB_5.BackColor = DefaultBackColor;
+                    lbl_description.Text = "bitte drücken sie eine Taste...";
+                    break;
+
+                case Keys.NumPad6:
+                    pB_6.BorderStyle = BorderStyle.FixedSingle;
+                    pB_6.BackColor = DefaultBackColor;
+                    lbl_description.Text = "bitte drücken sie eine Taste...";
+                    break;
+
+                case Keys.NumPad2:
+                    pB_2.BorderStyle = BorderStyle.FixedSingle;
+                    pB_2.BackColor = DefaultBackColor;
+                    lbl_description.Text = "bitte drücken sie eine Taste...";
+                    break;
+            }
+        }
+
+
     }
 }
