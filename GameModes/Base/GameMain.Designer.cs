@@ -38,7 +38,7 @@ namespace projectlf6
             this.lbl_scoreplayertwo = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.optionenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menue_Sound = new System.Windows.Forms.ToolStripMenuItem();
+            this.menueSound = new System.Windows.Forms.ToolStripMenuItem();
             this.menue_Musik = new System.Windows.Forms.ToolStripMenuItem();
             this.pbBoard = new System.Windows.Forms.PictureBox();
             this.pbxPlayerOneSkin = new System.Windows.Forms.PictureBox();
@@ -132,24 +132,26 @@ namespace projectlf6
             // optionenToolStripMenuItem
             // 
             this.optionenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menue_Sound,
+            this.menueSound,
             this.menue_Musik});
             this.optionenToolStripMenuItem.Name = "optionenToolStripMenuItem";
             this.optionenToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.optionenToolStripMenuItem.Text = "Optionen";
             // 
-            // menue_Sound
+            // menueSound
             // 
-            this.menue_Sound.CheckOnClick = true;
-            this.menue_Sound.Name = "menue_Sound";
-            this.menue_Sound.Size = new System.Drawing.Size(108, 22);
-            this.menue_Sound.Text = "Sound";
+            this.menueSound.Checked = true;
+            this.menueSound.CheckOnClick = true;
+            this.menueSound.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.menueSound.Name = "menueSound";
+            this.menueSound.Size = new System.Drawing.Size(152, 22);
+            this.menueSound.Text = "Sound";
             // 
             // menue_Musik
             // 
             this.menue_Musik.CheckOnClick = true;
             this.menue_Musik.Name = "menue_Musik";
-            this.menue_Musik.Size = new System.Drawing.Size(108, 22);
+            this.menue_Musik.Size = new System.Drawing.Size(152, 22);
             this.menue_Musik.Text = "Musik";
             // 
             // pbBoard
@@ -278,7 +280,7 @@ namespace projectlf6
         private System.Windows.Forms.Label lbl_scoreplayertwo;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem optionenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem menue_Sound;
+        private System.Windows.Forms.ToolStripMenuItem menueSound;
 		private System.Windows.Forms.PictureBox pbBoard;
 		private System.Windows.Forms.PictureBox pbxPlayerOneSkin;
 		private System.Windows.Forms.PictureBox pbxPlayerTwoSkin;

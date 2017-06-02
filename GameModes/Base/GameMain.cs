@@ -194,10 +194,30 @@ namespace projectlf6
 
                 if (canMove || diggingBeforeMove)
                 {
+                    int newField = this.board[newLoc.getX(), newLoc.getY()];
                     updateData(newLoc.getX(), newLoc.getY(), diggingBeforeMove);
-                    SoundPlayer sound = new SoundPlayer(ResourceSound.step);
-                    sound.Play();
-                    sound.Dispose();
+
+                    if (canMove && !diggingBeforeMove)
+                    {
+                        this.playSound(ResourceSound.step);
+                    }
+                    else if (newField == Field.FIELD_GRASS)
+                    {
+                        this.playSound(ResourceSound.grass);
+                    }
+                    else if (newField == Field.FIELD_DIRT)
+                    {
+                        this.playSound(ResourceSound.dirt);
+                    }
+                    else if (newField >= Field.FIELD_COAL && newField <= Field.FIELD_DIAMOND)
+                    {
+                        this.playSound(ResourceSound.successful_hit);
+                    }
+                    else
+                    {
+                        this.playSound(ResourceSound.dig);
+                    }
+                    
                 }
 
                 Graphics g = Graphics.FromImage(visualBoard);
@@ -225,6 +245,16 @@ namespace projectlf6
             }
 
             pbBoard.Refresh();
+        }
+
+        private void playSound(System.IO.UnmanagedMemoryStream play)
+        {
+            if (this.menueSound.Checked)
+            {
+                SoundPlayer sound = new SoundPlayer(play);
+                sound.Play();
+                sound.Dispose();
+            }
         }
 
         private void digIt()
