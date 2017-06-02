@@ -61,10 +61,10 @@ namespace projectlf6
             // lbl_playerone
             // 
             this.lbl_playerone.AutoSize = true;
-            this.lbl_playerone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_playerone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_playerone.Location = new System.Drawing.Point(57, 28);
             this.lbl_playerone.Name = "lbl_playerone";
-            this.lbl_playerone.Size = new System.Drawing.Size(56, 17);
+            this.lbl_playerone.Size = new System.Drawing.Size(61, 20);
             this.lbl_playerone.TabIndex = 1;
             this.lbl_playerone.Text = "Player1";
             // 
@@ -72,11 +72,11 @@ namespace projectlf6
             // 
             this.lbl_playertwo.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_playertwo.AutoSize = true;
-            this.lbl_playertwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_playertwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_playertwo.Location = new System.Drawing.Point(848, 35);
             this.lbl_playertwo.Name = "lbl_playertwo";
             this.lbl_playertwo.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbl_playertwo.Size = new System.Drawing.Size(56, 17);
+            this.lbl_playertwo.Size = new System.Drawing.Size(61, 20);
             this.lbl_playertwo.TabIndex = 2;
             this.lbl_playertwo.Text = "Player2";
             this.lbl_playertwo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -84,38 +84,40 @@ namespace projectlf6
             // lbl1
             // 
             this.lbl1.AutoSize = true;
-            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl1.Location = new System.Drawing.Point(57, 208);
             this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(44, 13);
+            this.lbl1.Size = new System.Drawing.Size(61, 20);
             this.lbl1.TabIndex = 5;
             this.lbl1.Text = "Score:";
             // 
             // lbl2
             // 
             this.lbl2.AutoSize = true;
-            this.lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl2.Location = new System.Drawing.Point(848, 208);
             this.lbl2.Name = "lbl2";
-            this.lbl2.Size = new System.Drawing.Size(44, 13);
+            this.lbl2.Size = new System.Drawing.Size(61, 20);
             this.lbl2.TabIndex = 6;
             this.lbl2.Text = "Score:";
             // 
             // lbl_scoreplayerone
             // 
             this.lbl_scoreplayerone.AutoSize = true;
+            this.lbl_scoreplayerone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_scoreplayerone.Location = new System.Drawing.Point(115, 208);
             this.lbl_scoreplayerone.Name = "lbl_scoreplayerone";
-            this.lbl_scoreplayerone.Size = new System.Drawing.Size(35, 13);
+            this.lbl_scoreplayerone.Size = new System.Drawing.Size(51, 20);
             this.lbl_scoreplayerone.TabIndex = 7;
             this.lbl_scoreplayerone.Text = "label1";
             // 
             // lbl_scoreplayertwo
             // 
             this.lbl_scoreplayertwo.AutoSize = true;
+            this.lbl_scoreplayertwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_scoreplayertwo.Location = new System.Drawing.Point(906, 208);
             this.lbl_scoreplayertwo.Name = "lbl_scoreplayertwo";
-            this.lbl_scoreplayertwo.Size = new System.Drawing.Size(35, 13);
+            this.lbl_scoreplayertwo.Size = new System.Drawing.Size(51, 20);
             this.lbl_scoreplayertwo.TabIndex = 8;
             this.lbl_scoreplayertwo.Text = "label2";
             // 
@@ -144,14 +146,14 @@ namespace projectlf6
             this.menueSound.CheckOnClick = true;
             this.menueSound.CheckState = System.Windows.Forms.CheckState.Checked;
             this.menueSound.Name = "menueSound";
-            this.menueSound.Size = new System.Drawing.Size(152, 22);
+            this.menueSound.Size = new System.Drawing.Size(108, 22);
             this.menueSound.Text = "Sound";
             // 
             // menue_Musik
             // 
             this.menue_Musik.CheckOnClick = true;
             this.menue_Musik.Name = "menue_Musik";
-            this.menue_Musik.Size = new System.Drawing.Size(152, 22);
+            this.menue_Musik.Size = new System.Drawing.Size(108, 22);
             this.menue_Musik.Text = "Musik";
             // 
             // pbBoard

@@ -142,7 +142,7 @@
             // 
             this.neuesLevelToolStripMenuItem.Name = "neuesLevelToolStripMenuItem";
             this.neuesLevelToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.neuesLevelToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.neuesLevelToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
             this.neuesLevelToolStripMenuItem.Text = "Neues Level";
             this.neuesLevelToolStripMenuItem.Click += new System.EventHandler(this.neuesLevelToolStripMenuItem_Click);
             // 
@@ -150,23 +150,23 @@
             // 
             this.levelLadenToolStripMenuItem.Name = "levelLadenToolStripMenuItem";
             this.levelLadenToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
-            this.levelLadenToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.levelLadenToolStripMenuItem.Text = "Level laden";
+            this.levelLadenToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.levelLadenToolStripMenuItem.Text = "Level-Datei laden";
             this.levelLadenToolStripMenuItem.Click += new System.EventHandler(this.levelLadenToolStripMenuItem_Click);
             // 
             // levelSpeichernToolStripMenuItem
             // 
             this.levelSpeichernToolStripMenuItem.Name = "levelSpeichernToolStripMenuItem";
             this.levelSpeichernToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.levelSpeichernToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.levelSpeichernToolStripMenuItem.Text = "Level speichern";
+            this.levelSpeichernToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.levelSpeichernToolStripMenuItem.Text = "Level-Datei speichern";
             this.levelSpeichernToolStripMenuItem.Click += new System.EventHandler(this.levelSpeichernToolStripMenuItem_Click);
             // 
             // levelExportierenToolStripMenuItem
             // 
             this.levelExportierenToolStripMenuItem.Name = "levelExportierenToolStripMenuItem";
             this.levelExportierenToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.levelExportierenToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.levelExportierenToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
             this.levelExportierenToolStripMenuItem.Text = "Level Exportieren";
             this.levelExportierenToolStripMenuItem.Click += new System.EventHandler(this.levelExportierenToolStripMenuItem_Click);
             // 
@@ -174,7 +174,7 @@
             // 
             this.editorBeendenToolStripMenuItem.Name = "editorBeendenToolStripMenuItem";
             this.editorBeendenToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.editorBeendenToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.editorBeendenToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
             this.editorBeendenToolStripMenuItem.Text = "Editor beenden";
             this.editorBeendenToolStripMenuItem.Click += new System.EventHandler(this.editorBeendenToolStripMenuItem_Click);
             // 

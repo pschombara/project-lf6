@@ -37,7 +37,8 @@
             // 
             // btnNewGame
             // 
-            this.btnNewGame.Location = new System.Drawing.Point(548, 422);
+            this.btnNewGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewGame.Location = new System.Drawing.Point(12, 12);
             this.btnNewGame.Name = "btnNewGame";
             this.btnNewGame.Size = new System.Drawing.Size(291, 48);
             this.btnNewGame.TabIndex = 0;
@@ -47,7 +48,8 @@
             // 
             // btnLevelEditor
             // 
-            this.btnLevelEditor.Location = new System.Drawing.Point(12, 12);
+            this.btnLevelEditor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLevelEditor.Location = new System.Drawing.Point(548, 12);
             this.btnLevelEditor.Name = "btnLevelEditor";
             this.btnLevelEditor.Size = new System.Drawing.Size(291, 48);
             this.btnLevelEditor.TabIndex = 1;
@@ -57,7 +59,8 @@
             // 
             // btnHelp
             // 
-            this.btnHelp.Location = new System.Drawing.Point(548, 12);
+            this.btnHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHelp.Location = new System.Drawing.Point(12, 422);
             this.btnHelp.Name = "btnHelp";
             this.btnHelp.Size = new System.Drawing.Size(291, 48);
             this.btnHelp.TabIndex = 2;
@@ -67,7 +70,8 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(12, 422);
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(548, 422);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(291, 48);
             this.btnClose.TabIndex = 3;
