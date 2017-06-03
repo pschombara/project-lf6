@@ -29,6 +29,7 @@ namespace projectlf6
         private int finishCounter;
         private int rounds;
         private bool isNotNewLevel;
+        private bool finish;
 
         public GameMain(Player player_1, Player player_2, Game game, int rounds)
         {
@@ -41,6 +42,7 @@ namespace projectlf6
             this.firstPlayer = activePlayer;
             this.game = game;
             this.rounds = rounds;
+            this.finish = false;
             startNewLevel();
         }
 
@@ -448,7 +450,6 @@ namespace projectlf6
 
             if (moves == 0 && e.KeyCode == Keys.Space)
             {
-                bool closing = false;
                 isNotNewLevel = true;
                 
                 if (activePlayer == firstPlayer)
@@ -467,7 +468,7 @@ namespace projectlf6
                         }
                         else
                         {
-                            closing = true;
+                            this.finish = true;
                             this.Close();
                         }
                     }
@@ -476,7 +477,7 @@ namespace projectlf6
                         finishCounter--;
                     }
                 }
-                if (isNotNewLevel && !closing)
+                if (isNotNewLevel && !this.finish)
                 {
                     this.lblRollTheDice.Visible = false;
                     pbxMoves.Top = this.Height;
@@ -856,11 +857,14 @@ namespace projectlf6
         
         private void GameMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult result = MessageBox.Show("Wollen Sie das Spiel wirklich beenden?", "Spiel beenden?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.No)
+            if (!this.finish)
             {
-                e.Cancel = true;
+                DialogResult result = MessageBox.Show("Wollen Sie das Spiel wirklich beenden?", "Spiel beenden?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
             }
         }
     }
