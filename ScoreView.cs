@@ -15,13 +15,15 @@ namespace projectlf6
 		private Player playerOne;
 		private Player playerTwo;
 		private Game game;
+        private int rounds;
 
-		public ScoreView(Player playerOne, Player playerTwo, Game game)
+		public ScoreView(Player playerOne, Player playerTwo, Game game, int rounds)
 		{
 			InitializeComponent();
 			this.playerOne = playerOne;
 			this.playerTwo = playerTwo;
 			this.game = game;
+            this.rounds = rounds;
 			showScoreLists();
 		}
 
@@ -65,7 +67,24 @@ namespace projectlf6
 
 		private void btnNext_Click(object sender, EventArgs e)
 		{
-			this.Close();
+            if (!this.game.hasNext())
+            {
+                string gameName = this.game.getName();
+                int levels = this.game.getLevels().Count;
+
+                if (this.playerOne.getScore().getTotalscore() > this.playerTwo.getScore().getTotalscore())
+                {
+                    Form highscore = new HighScore(this.playerOne.getName(), gameName, this.playerOne.getScore().getTotalscore(), levels, this.rounds);
+                    highscore.ShowDialog();
+                }
+                else if (this.playerOne.getScore().getTotalscore() < this.playerTwo.getScore().getTotalscore())
+                {
+                    Form highscore = new HighScore(this.playerTwo.getName(), gameName, this.playerTwo.getScore().getTotalscore(), levels, this.rounds);
+                    highscore.ShowDialog();
+                }
+
+                this.Close();
+            }
 		}
 	}
 }

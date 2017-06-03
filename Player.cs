@@ -206,7 +206,6 @@ namespace projectlf6
         public bool saveToFile()
         {
             Directory.CreateDirectory(Global.PATH_PLAYER_FOLDER);
-            string saveXml = this.name.ToXmlPlayerPath();
             XmlDocument doc = new XmlDocument();
 
             doc.AppendChild(doc.ImportNode(this.serialize(), true));

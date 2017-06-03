@@ -68,5 +68,11 @@ namespace projectlf6
 				Directory.CreateDirectory(MAIN_PATH + "save\\");
 			}
 		}
+
+        private void btnOpenHighscore_Click(object sender, EventArgs e)
+        {
+            Form highscore = new HighScore();
+            highscore.ShowDialog();
+        }
     }
 }

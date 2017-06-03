@@ -54,9 +54,17 @@
     <Compile Include="FormSplash.Designer.cs">
       <DependentUpon>FormSplash.cs</DependentUpon>
     </Compile>
+    <Compile Include="HighScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HighScore.Designer.cs">
+      <DependentUpon>HighScore.cs</DependentUpon>
+    </Compile>
     <Compile Include="GameModes\ExtendedClasses\TextureObject.cs" />
     <Compile Include="Editor.cs" />
     <Compile Include="Field.cs" />
+    <Compile Include="HighscoreControl.cs" />
+    <Compile Include="HighscoreItem.cs" />
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +122,9 @@
     <Compile Include="ScoreView.Designer.cs">
       <DependentUpon>ScoreView.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="HighScore.resx">
+      <DependentUpon>HighScore.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>

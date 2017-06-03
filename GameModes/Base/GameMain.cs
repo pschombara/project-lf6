@@ -458,7 +458,7 @@ namespace projectlf6
                     {
                         playerOne.getScore().addScoreToScoreList(playerOne.getScore().getScore());
                         playerTwo.getScore().addScoreToScoreList(playerTwo.getScore().getScore());
-                        ScoreView scoreView = new ScoreView(playerOne, playerTwo, game);
+                        ScoreView scoreView = new ScoreView(playerOne, playerTwo, game, this.rounds);
                         scoreView.ShowDialog();
                         if (game.hasNext())
                         {

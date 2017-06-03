@@ -33,6 +33,7 @@
             this.btnLevelEditor = new System.Windows.Forms.Button();
             this.btnHelp = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnOpenHighscore = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnNewGame
@@ -79,12 +80,24 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // Form1
+            // btnOpenHighscore
+            // 
+            this.btnOpenHighscore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOpenHighscore.Location = new System.Drawing.Point(12, 368);
+            this.btnOpenHighscore.Name = "btnOpenHighscore";
+            this.btnOpenHighscore.Size = new System.Drawing.Size(291, 48);
+            this.btnOpenHighscore.TabIndex = 4;
+            this.btnOpenHighscore.Text = "Highscore";
+            this.btnOpenHighscore.UseVisualStyleBackColor = true;
+            this.btnOpenHighscore.Click += new System.EventHandler(this.btnOpenHighscore_Click);
+            // 
+            // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(851, 482);
+            this.Controls.Add(this.btnOpenHighscore);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.btnLevelEditor);
@@ -92,7 +105,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "    ";
             this.ResumeLayout(false);
@@ -105,6 +118,7 @@
         private System.Windows.Forms.Button btnLevelEditor;
         private System.Windows.Forms.Button btnHelp;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnOpenHighscore;
     }
 }
 
