@@ -848,6 +848,21 @@ namespace projectlf6
                     break;
             }
         }
+
+        private void spielBeendenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        
+        private void GameMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Wollen Sie das Spiel wirklich beenden?", "Spiel beenden?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }
 

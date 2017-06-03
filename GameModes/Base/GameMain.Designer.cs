@@ -48,6 +48,7 @@ namespace projectlf6
             this.pbxMidd = new System.Windows.Forms.PictureBox();
             this.pbxUpper = new System.Windows.Forms.PictureBox();
             this.lblRollTheDice = new System.Windows.Forms.Label();
+            this.spielBeendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBoard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPlayerOneSkin)).BeginInit();
@@ -135,7 +136,8 @@ namespace projectlf6
             // 
             this.optionenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menueSound,
-            this.menue_Musik});
+            this.menue_Musik,
+            this.spielBeendenToolStripMenuItem});
             this.optionenToolStripMenuItem.Name = "optionenToolStripMenuItem";
             this.optionenToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.optionenToolStripMenuItem.Text = "Optionen";
@@ -146,14 +148,14 @@ namespace projectlf6
             this.menueSound.CheckOnClick = true;
             this.menueSound.CheckState = System.Windows.Forms.CheckState.Checked;
             this.menueSound.Name = "menueSound";
-            this.menueSound.Size = new System.Drawing.Size(108, 22);
+            this.menueSound.Size = new System.Drawing.Size(152, 22);
             this.menueSound.Text = "Sound";
             // 
             // menue_Musik
             // 
             this.menue_Musik.CheckOnClick = true;
             this.menue_Musik.Name = "menue_Musik";
-            this.menue_Musik.Size = new System.Drawing.Size(108, 22);
+            this.menue_Musik.Size = new System.Drawing.Size(152, 22);
             this.menue_Musik.Text = "Musik";
             // 
             // pbBoard
@@ -229,6 +231,13 @@ namespace projectlf6
             this.lblRollTheDice.TabIndex = 19;
             this.lblRollTheDice.Text = "Spieler 1 ist dran .. Mit Leertaste würfeln";
             // 
+            // spielBeendenToolStripMenuItem
+            // 
+            this.spielBeendenToolStripMenuItem.Name = "spielBeendenToolStripMenuItem";
+            this.spielBeendenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.spielBeendenToolStripMenuItem.Text = "Spiel Beenden";
+            this.spielBeendenToolStripMenuItem.Click += new System.EventHandler(this.spielBeendenToolStripMenuItem_Click);
+            // 
             // GameMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -258,6 +267,7 @@ namespace projectlf6
             this.Name = "GameMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameMain";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GameMain_FormClosing);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameMain_KeyDown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -292,5 +302,6 @@ namespace projectlf6
 		private System.Windows.Forms.PictureBox pbxUpper;
         private System.Windows.Forms.ToolStripMenuItem menue_Musik;
         private System.Windows.Forms.Label lblRollTheDice;
+        private System.Windows.Forms.ToolStripMenuItem spielBeendenToolStripMenuItem;
     }
 }
