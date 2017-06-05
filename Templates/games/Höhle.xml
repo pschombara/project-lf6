@@ -1,0 +1,11 @@
+<game>
+  <name>Höhle</name>
+  <activeLevel>0</activeLevel>
+  <levels>
+    <level>Ebene1.lvl</level>
+    <level>Ebene2.lvl</level>
+    <level>Ebene3.lvl</level>
+    <level>Ebene4.lvl</level>
+    <level>Ebene5.lvl</level>
+  </levels>
+</game>
