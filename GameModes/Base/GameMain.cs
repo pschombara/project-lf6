@@ -489,6 +489,12 @@ namespace projectlf6
                 }
             }
             updateLabels();
+
+            if(e.KeyCode == Keys.F1)
+            {
+                Form Help = new Help();
+                Help.ShowDialog();
+            }
         }
 
         private void updateRollTheDiceText(Player player)

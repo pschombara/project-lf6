@@ -280,5 +280,14 @@ namespace projectlf6
 
 			this.drawPlayerFigure(this.pbPlayerTwoFigure, this.figurePlayerTwo);
 		}
+
+        private void newGame_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                Form Help = new Help();
+                Help.ShowDialog();
+            }
+        }
     }
 }

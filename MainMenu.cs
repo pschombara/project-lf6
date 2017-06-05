@@ -111,5 +111,14 @@ namespace projectlf6
             Form highscore = new HighScore();
             highscore.ShowDialog();
         }
+
+        private void MainMenu_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                Form Help = new Help();
+                Help.ShowDialog();
+            }
+        }
     }
 }

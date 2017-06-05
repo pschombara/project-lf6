@@ -86,5 +86,14 @@ namespace projectlf6
 
             this.Close();
         }
-	}
+
+        private void ScoreView_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                Form Help = new Help();
+                Help.ShowDialog();
+            }
+        }
+    }
 }

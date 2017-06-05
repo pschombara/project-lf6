@@ -392,5 +392,14 @@ namespace projectlf6
             pnlLevel.Refresh();
             setSaved(false);
         }
+
+        private void LevelEditorMain_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                Form Help = new Help();
+                Help.ShowDialog();
+            }
+        }
     }
 }

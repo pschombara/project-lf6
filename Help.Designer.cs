@@ -46,6 +46,7 @@
             this.pB_Space = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_description = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pB_A)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pB_S)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pB_D)).BeginInit();
@@ -195,6 +196,7 @@
             this.pB_Space.Size = new System.Drawing.Size(200, 50);
             this.pB_Space.TabIndex = 22;
             this.pB_Space.TabStop = false;
+            this.pB_Space.Paint += new System.Windows.Forms.PaintEventHandler(this.pB_Space_Paint);
             // 
             // label3
             // 
@@ -216,11 +218,22 @@
             this.lbl_description.TabIndex = 24;
             this.lbl_description.Text = "bitte drücken sie eine Taste...";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(679, 13);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "Sie können jederzeit die Hilfe über F1 aufrufen. Bitte halten sie die Taste gedrü" +
+    "ckt, für welche sie die Belegungsbeschreibung wissen möchten.";
+            // 
             // Help
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(706, 364);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.lbl_description);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pB_Space);
@@ -241,7 +254,6 @@
             this.MaximizeBox = false;
             this.Name = "Help";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Hilfe / Steuerung";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Help_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Help_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.pB_A)).EndInit();
@@ -278,5 +290,6 @@
         private System.Windows.Forms.PictureBox pB_Space;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbl_description;
+        private System.Windows.Forms.Label label4;
     }
 }

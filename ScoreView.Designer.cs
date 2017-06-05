@@ -134,12 +134,14 @@
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.txtLevel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ScoreView";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ScoreView";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ScoreView_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvScoreView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

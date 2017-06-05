@@ -761,6 +761,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -768,6 +769,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Level Editor";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LevelEditorMain_FormClosing);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LevelEditorMain_KeyDown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.pnlSelection.ResumeLayout(false);

@@ -335,10 +335,12 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "newGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Neues Spiel";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.newGame_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayerTwoFigure)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayerOneFigure)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGameRounds)).EndInit();

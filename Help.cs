@@ -124,6 +124,14 @@ namespace projectlf6
             }
         }
 
+        private void pB_Space_Paint(object sender, PaintEventArgs e)
+        {
+            using (Font myFont = new Font("Arial", 12))
+            {
+                e.Graphics.DrawString("Leertaste", myFont, Brushes.Black, new Point(2, 2));
+            }
+        }
+
         #endregion
 
 
@@ -319,6 +327,6 @@ namespace projectlf6
             }
         }
 
-
+        
     }
 }

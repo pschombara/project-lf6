@@ -119,5 +119,14 @@ namespace projectlf6
             if (e.KeyCode == Keys.Enter)
                 btnNewGame.PerformClick();
         }
+
+        private void GameEditor_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                Form Help = new Help();
+                Help.ShowDialog();
+            }
+        }
     }
 }

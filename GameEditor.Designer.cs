@@ -170,12 +170,14 @@
             this.Controls.Add(this.dataGridViewGames);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "GameEditor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Spiel Editor";
             this.Activated += new System.EventHandler(this.GameEditor_Activated);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameEditor_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGames)).EndInit();
             this.cmsGames.ResumeLayout(false);
             this.grbAddGame.ResumeLayout(false);

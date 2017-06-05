@@ -140,12 +140,15 @@
             this.Controls.Add(this.btnResetHighscore);
             this.Controls.Add(this.btnCloseHighscore);
             this.Controls.Add(this.dgvHighscore);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(796, 362);
             this.MinimumSize = new System.Drawing.Size(796, 362);
             this.Name = "HighScore";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Highscore";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.HighScore_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHighscore)).EndInit();
             this.ResumeLayout(false);
 
