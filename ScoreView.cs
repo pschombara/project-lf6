@@ -82,9 +82,9 @@ namespace projectlf6
                     Form highscore = new HighScore(this.playerTwo.getName(), gameName, this.playerTwo.getScore().getTotalscore(), levels, this.rounds);
                     highscore.ShowDialog();
                 }
-
-                this.Close();
             }
-		}
+
+            this.Close();
+        }
 	}
 }
