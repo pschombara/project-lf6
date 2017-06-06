@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HighScore));
             this.dgvHighscore = new System.Windows.Forms.DataGridView();
             this.place = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.player = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -141,6 +142,7 @@
             this.Controls.Add(this.btnCloseHighscore);
             this.Controls.Add(this.dgvHighscore);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(796, 362);

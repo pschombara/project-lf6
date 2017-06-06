@@ -108,7 +108,7 @@
             this.MaximizeBox = false;
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "    ";
+            this.Text = "Hauptmenü";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainMenu_KeyDown);
             this.ResumeLayout(false);
 
