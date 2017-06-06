@@ -172,14 +172,30 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Templates\games\Höhle2\Ebene1.lvl" />
-    <None Include="Templates\games\Höhle2\Ebene2.lvl" />
-    <None Include="Templates\games\Höhle2\Ebene3.lvl" />
-    <None Include="Templates\games\Höhle\Ebene1.lvl" />
-    <None Include="Templates\games\Höhle\Ebene2.lvl" />
-    <None Include="Templates\games\Höhle\Ebene3.lvl" />
-    <None Include="Templates\games\Höhle\Ebene4.lvl" />
-    <None Include="Templates\games\Höhle\Ebene5.lvl" />
+    <Content Include="Templates\games\Höhle2\Ebene1.lvl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\games\Höhle2\Ebene2.lvl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\games\Höhle2\Ebene3.lvl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\games\Höhle\Ebene1.lvl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\games\Höhle\Ebene2.lvl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\games\Höhle\Ebene3.lvl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\games\Höhle\Ebene4.lvl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\games\Höhle\Ebene5.lvl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -258,8 +274,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon.ico" />
-    <Content Include="Templates\games\Höhle.xml" />
-    <Content Include="Templates\games\Höhle2.xml" />
+    <Content Include="Templates\games\Höhle.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\games\Höhle2.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\background_main.jpg" />
     <None Include="Resources\Sound\successful_hit.wav" />
     <None Include="Resources\Sound\step.wav" />

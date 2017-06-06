@@ -72,7 +72,7 @@ namespace projectlf6
 
         private void addDefaultGames()
         {
-            string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            string path = AppDomain.CurrentDomain.BaseDirectory;
             this.copyDirectory(path + "\\Templates\\games", MAIN_PATH + "games\\");
         }
 
