@@ -219,7 +219,7 @@ namespace projectlf6
                     {
                         this.playSound(ResourceSound.dig);
                     }
-                    
+
                 }
 
                 Graphics g = Graphics.FromImage(visualBoard);
@@ -281,7 +281,10 @@ namespace projectlf6
                 }
 
                 if (canDigg)
+                {
                     canDigg = isDiggable(newLoc.getX(), newLoc.getY());
+                }
+
                 if (canDigg)
                 {
                     activePlayer.getScore().setScore(activePlayer.getScore().getScore() + this.game.getActiveLevel().getFieldAtLocation(newLoc).getPoints());
@@ -455,7 +458,7 @@ namespace projectlf6
             if (moves == 0 && e.KeyCode == Keys.Space)
             {
                 isNotNewLevel = true;
-                
+
                 if (activePlayer == firstPlayer)
                 {
                     if (finishCounter == 0)
@@ -483,18 +486,17 @@ namespace projectlf6
                 }
                 if (isNotNewLevel && !this.finish)
                 {
+                    this.collapseWay();
                     this.lblRollTheDice.Visible = false;
                     pbxMoves.Top = this.Height;
                     moves = rollTheDice();
                     slotMachineAnimation();
                     pbxMoves.Top = this.Height - 110;
-
-                    collapseRandomWay();
                 }
             }
             updateLabels();
 
-            if(e.KeyCode == Keys.F1)
+            if (e.KeyCode == Keys.F1)
             {
                 Form Help = new Help();
                 Help.ShowDialog();
@@ -738,129 +740,33 @@ namespace projectlf6
             this.updateRollTheDiceText(this.activePlayer);
         }
 
-        private void collapseRandomWay()
+        private void collapseWay()
         {
-            int rand = dice.Next() % 5;
-            int x = dice.Next(0, 32);
-            Thread.Sleep(50);
-            int y = dice.Next(0, 32);
-            switch (rand)
+            if (activePlayer == this.playerOne)
             {
-                case 0:
-                    //don't collapse a tunnel
-                    break;
-                case 1:
-                    //only collapse tunnel if player1 has location(x,y)
-                    if (waysP1.Count > 3)
+                for (int i = this.waysP1.Count - 1; i > 0; i--)
+                {
+                    if (!this.waysP1[i].reduceLive())
                     {
-                        foreach (Location loc in waysP1)
-                        {
-                            if (loc.getX() == x && loc.getY() == y)
-                            {
-                                if (playerOne.getLocation().getX() != x || playerOne.getLocation().getY() != y)
-                                {
-                                    board[x, y] = Field.FIELD_DIRT;
-                                    waysP1.Remove(loc);
-                                    Refresh();
-                                    break;
-                                }
-                            }
-                        }
+                        board[this.waysP1[i].getX(), this.waysP1[i].getY()] = Field.FIELD_DIRT;
+                        this.waysP1.RemoveAt(i);
+                        Refresh();
                     }
-                    break;
-                case 2:
-                    //only collapse tunnel if player2 has location(x,y)
-                    if (waysP2.Count > 3)
-                    {
-                        foreach (Location loc in waysP2)
-                        {
-                            if (loc.getX() == x && loc.getY() == y)
-                            {
-                                if (playerTwo.getLocation().getX() != x || playerTwo.getLocation().getY() != y)
-                                {
-                                    board[x, y] = Field.FIELD_DIRT;
-                                    waysP2.Remove(loc);
-                                    Refresh();
-                                    break;
-                                }
-                            }
-                        }
-                    }
-                    break;
-                case 3:
-                    //collape tunnel if a player has location
-                    if (waysP1.Count > 3)
-                    {
-                        foreach (Location loc in waysP1)
-                        {
-                            if (loc.getX() == x && loc.getY() == y)
-                            {
-                                if (playerOne.getLocation().getX() != x || playerOne.getLocation().getY() != y)
-                                {
-                                    board[x, y] = Field.FIELD_DIRT;
-                                    waysP1.Remove(loc);
-                                    Refresh();
-                                    break;
-                                }
-                            }
-                        }
-                    }
-                    if (waysP2.Count > 3)
-                    {
-                        foreach (Location loc in waysP2)
-                        {
-                            if (loc.getX() == x && loc.getY() == y)
-                            {
-                                if (playerTwo.getLocation().getX() != x || playerTwo.getLocation().getY() != y)
-                                {
-                                    board[x, y] = Field.FIELD_DIRT;
-                                    waysP2.Remove(loc);
-                                    Refresh();
-                                    break;
-                                }
-                            }
-                        }
-                    }
-                    break;
-                case 4:
-                    //collapse a tunnel of a player
-                    if (waysP1.Count > 3 && waysP2.Count > 3)
-                    {
-                        List<Location> allLocs = new List<Location>();
-                        allLocs.AddRange(waysP1);
-                        allLocs.AddRange(waysP2);
-                        int counter = 0;
-                        for (int i = 0; i < x + y; i++)
-                        {
-                            counter += rollTheDice();
-                        }
-                        counter = counter % allLocs.Count;
 
-                        Location removeloc = allLocs[counter];
-
-                        x = removeloc.getX();
-                        y = removeloc.getY();
-
-                        if (waysP1.Contains(removeloc))
-                        {
-                            if (playerOne.getLocation().getX() != x || playerOne.getLocation().getY() != y)
-                            {
-                                waysP1.Remove(removeloc);
-                                board[x, y] = Field.FIELD_DIRT;
-                                Refresh();
-                            }
-                        }
-                        else
-                        {
-                            if (playerTwo.getLocation().getX() != x || playerTwo.getLocation().getY() != y)
-                            {
-                                waysP2.Remove(removeloc);
-                                board[x, y] = Field.FIELD_DIRT;
-                                Refresh();
-                            }
-                        }
+                }
+            }
+            else if (activePlayer == this.playerTwo)
+            {
+                for (int i = this.waysP2.Count - 1; i > 0; i--)
+                {
+                    if (!this.waysP2[i].reduceLive())
+                    {
+                        board[this.waysP2[i].getX(), this.waysP2[i].getY()] = Field.FIELD_DIRT;
+                        this.waysP2.RemoveAt(i);
+                        Refresh();
                     }
-                    break;
+
+                }
             }
         }
 
@@ -868,7 +774,7 @@ namespace projectlf6
         {
             this.Close();
         }
-        
+
         private void GameMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!this.finish)
