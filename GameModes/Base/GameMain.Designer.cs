@@ -40,6 +40,7 @@ namespace projectlf6
             this.optionenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menueSound = new System.Windows.Forms.ToolStripMenuItem();
             this.menue_Musik = new System.Windows.Forms.ToolStripMenuItem();
+            this.spielBeendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pbBoard = new System.Windows.Forms.PictureBox();
             this.pbxPlayerOneSkin = new System.Windows.Forms.PictureBox();
             this.pbxPlayerTwoSkin = new System.Windows.Forms.PictureBox();
@@ -48,7 +49,8 @@ namespace projectlf6
             this.pbxMidd = new System.Windows.Forms.PictureBox();
             this.pbxUpper = new System.Windows.Forms.PictureBox();
             this.lblRollTheDice = new System.Windows.Forms.Label();
-            this.spielBeendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblPlayerOneActive = new System.Windows.Forms.Label();
+            this.lblPlayerTwoActive = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBoard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPlayerOneSkin)).BeginInit();
@@ -74,7 +76,7 @@ namespace projectlf6
             this.lbl_playertwo.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_playertwo.AutoSize = true;
             this.lbl_playertwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_playertwo.Location = new System.Drawing.Point(848, 35);
+            this.lbl_playertwo.Location = new System.Drawing.Point(848, 28);
             this.lbl_playertwo.Name = "lbl_playertwo";
             this.lbl_playertwo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbl_playertwo.Size = new System.Drawing.Size(61, 20);
@@ -148,15 +150,22 @@ namespace projectlf6
             this.menueSound.CheckOnClick = true;
             this.menueSound.CheckState = System.Windows.Forms.CheckState.Checked;
             this.menueSound.Name = "menueSound";
-            this.menueSound.Size = new System.Drawing.Size(152, 22);
+            this.menueSound.Size = new System.Drawing.Size(148, 22);
             this.menueSound.Text = "Sound";
             // 
             // menue_Musik
             // 
             this.menue_Musik.CheckOnClick = true;
             this.menue_Musik.Name = "menue_Musik";
-            this.menue_Musik.Size = new System.Drawing.Size(152, 22);
+            this.menue_Musik.Size = new System.Drawing.Size(148, 22);
             this.menue_Musik.Text = "Musik";
+            // 
+            // spielBeendenToolStripMenuItem
+            // 
+            this.spielBeendenToolStripMenuItem.Name = "spielBeendenToolStripMenuItem";
+            this.spielBeendenToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.spielBeendenToolStripMenuItem.Text = "Spiel Beenden";
+            this.spielBeendenToolStripMenuItem.Click += new System.EventHandler(this.spielBeendenToolStripMenuItem_Click);
             // 
             // pbBoard
             // 
@@ -169,7 +178,7 @@ namespace projectlf6
             // 
             // pbxPlayerOneSkin
             // 
-            this.pbxPlayerOneSkin.Location = new System.Drawing.Point(60, 75);
+            this.pbxPlayerOneSkin.Location = new System.Drawing.Point(61, 84);
             this.pbxPlayerOneSkin.Name = "pbxPlayerOneSkin";
             this.pbxPlayerOneSkin.Size = new System.Drawing.Size(75, 123);
             this.pbxPlayerOneSkin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -178,7 +187,7 @@ namespace projectlf6
             // 
             // pbxPlayerTwoSkin
             // 
-            this.pbxPlayerTwoSkin.Location = new System.Drawing.Point(851, 75);
+            this.pbxPlayerTwoSkin.Location = new System.Drawing.Point(852, 77);
             this.pbxPlayerTwoSkin.Name = "pbxPlayerTwoSkin";
             this.pbxPlayerTwoSkin.Size = new System.Drawing.Size(75, 130);
             this.pbxPlayerTwoSkin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -224,25 +233,43 @@ namespace projectlf6
             // lblRollTheDice
             // 
             this.lblRollTheDice.AutoSize = true;
-            this.lblRollTheDice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRollTheDice.BackColor = System.Drawing.SystemColors.Control;
+            this.lblRollTheDice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRollTheDice.Location = new System.Drawing.Point(348, 562);
             this.lblRollTheDice.Name = "lblRollTheDice";
-            this.lblRollTheDice.Size = new System.Drawing.Size(291, 20);
+            this.lblRollTheDice.Size = new System.Drawing.Size(334, 20);
             this.lblRollTheDice.TabIndex = 19;
             this.lblRollTheDice.Text = "Spieler 1 ist dran .. Mit Leertaste würfeln";
             // 
-            // spielBeendenToolStripMenuItem
+            // lblPlayerOneActive
             // 
-            this.spielBeendenToolStripMenuItem.Name = "spielBeendenToolStripMenuItem";
-            this.spielBeendenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.spielBeendenToolStripMenuItem.Text = "Spiel Beenden";
-            this.spielBeendenToolStripMenuItem.Click += new System.EventHandler(this.spielBeendenToolStripMenuItem_Click);
+            this.lblPlayerOneActive.AutoSize = true;
+            this.lblPlayerOneActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayerOneActive.Location = new System.Drawing.Point(84, 48);
+            this.lblPlayerOneActive.Name = "lblPlayerOneActive";
+            this.lblPlayerOneActive.Size = new System.Drawing.Size(28, 26);
+            this.lblPlayerOneActive.TabIndex = 20;
+            this.lblPlayerOneActive.Text = "▼";
+            this.lblPlayerOneActive.Visible = false;
+            // 
+            // lblPlayerTwoActive
+            // 
+            this.lblPlayerTwoActive.AutoSize = true;
+            this.lblPlayerTwoActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayerTwoActive.Location = new System.Drawing.Point(871, 48);
+            this.lblPlayerTwoActive.Name = "lblPlayerTwoActive";
+            this.lblPlayerTwoActive.Size = new System.Drawing.Size(28, 26);
+            this.lblPlayerTwoActive.TabIndex = 21;
+            this.lblPlayerTwoActive.Text = "▼";
+            this.lblPlayerTwoActive.Visible = false;
             // 
             // GameMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 601);
+            this.Controls.Add(this.lblPlayerTwoActive);
+            this.Controls.Add(this.lblPlayerOneActive);
             this.Controls.Add(this.lblRollTheDice);
             this.Controls.Add(this.pbxPlayerTwoSkin);
             this.Controls.Add(this.pbxPlayerOneSkin);
@@ -303,5 +330,7 @@ namespace projectlf6
         private System.Windows.Forms.ToolStripMenuItem menue_Musik;
         private System.Windows.Forms.Label lblRollTheDice;
         private System.Windows.Forms.ToolStripMenuItem spielBeendenToolStripMenuItem;
+        private System.Windows.Forms.Label lblPlayerOneActive;
+        private System.Windows.Forms.Label lblPlayerTwoActive;
     }
 }

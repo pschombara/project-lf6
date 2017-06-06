@@ -237,12 +237,16 @@ namespace projectlf6
                     activePlayer = playerTwo;
                     pbxPlayerTwoSkin.BackgroundImage = getTexture(playerTwo.getWayColor());
                     pbxPlayerOneSkin.BackgroundImage = getTexture(Field.FIELD_CLEAR);
+                    this.lblPlayerTwoActive.Visible = true;
+                    this.lblPlayerOneActive.Visible = false;
                 }
                 else
                 {
                     activePlayer = playerOne;
                     pbxPlayerTwoSkin.BackgroundImage = getTexture(Field.FIELD_CLEAR);
                     pbxPlayerOneSkin.BackgroundImage = getTexture(playerOne.getWayColor());
+                    this.lblPlayerTwoActive.Visible = false;
+                    this.lblPlayerOneActive.Visible = true;
                 }
             }
 
@@ -718,6 +722,8 @@ namespace projectlf6
                 activePlayer = playerTwo;
                 pbxPlayerTwoSkin.BackgroundImage = getTexture(playerTwo.getWayColor());
                 pbxPlayerOneSkin.BackgroundImage = getTexture(Field.FIELD_CLEAR);
+                this.lblPlayerTwoActive.Visible = true;
+                this.lblPlayerOneActive.Visible = false;
             }
             else
             {
@@ -725,6 +731,8 @@ namespace projectlf6
                 activePlayer = playerOne;
                 pbxPlayerTwoSkin.BackgroundImage = getTexture(Field.FIELD_CLEAR);
                 pbxPlayerOneSkin.BackgroundImage = getTexture(playerOne.getWayColor());
+                this.lblPlayerTwoActive.Visible = false;
+                this.lblPlayerOneActive.Visible = true;
             }
 
             this.updateRollTheDiceText(this.activePlayer);
