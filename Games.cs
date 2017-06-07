@@ -12,6 +12,9 @@ namespace minesHunter
         private List<string> gameList;
         private List<int> gameListLevelCount;
 
+        /**
+         * Class constructor Games
+         */
         public Games()
         {
             this.gameList = new List<string>();
@@ -19,6 +22,9 @@ namespace minesHunter
             this.fillGameList();
         }
 
+        /**
+         * Fill game list load games from files
+         */
         private void fillGameList()
         {
             DirectoryInfo directoryInfo = new DirectoryInfo(Global.PATH_GAME_FOLDER);
@@ -33,11 +39,23 @@ namespace minesHunter
             }
         }
 
+        /**
+         * Return the number of games
+         * 
+         * @return int
+         */
         public int getNumberOfGames()
         {
             return this.gameList.Count;
         }
 
+        /**
+         * Get name of game from position
+         * 
+         * @param int index position in list
+         * 
+         * @return string
+         */
         public string getGameName(int index)
         {
             if (index < this.gameList.Count)
@@ -50,6 +68,13 @@ namespace minesHunter
             }
         }
 
+        /**
+         * Get number of game levels from position
+         * 
+         * @param int index position in list
+         * 
+         * @return int
+         */
         public int getNumberOfLevelForGame(int index)
         {
             if (index < this.gameListLevelCount.Count)
@@ -62,6 +87,11 @@ namespace minesHunter
             }
         }
 
+        /**
+         * Get list of games
+         * 
+         * @return List<string>
+         */
         public List<string> getGameList()
         {
             return this.gameList;

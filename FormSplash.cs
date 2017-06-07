@@ -25,6 +25,9 @@ namespace minesHunter
             int nHeightEllipse // width of ellipse
         );
         
+        /**
+         * Class constructor FormSplash
+         */
         public FormSplash()
         {
             InitializeComponent();

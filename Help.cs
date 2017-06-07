@@ -12,6 +12,9 @@ namespace minesHunter
 {
     public partial class Help : Form
     {
+        /**
+         * Class constructor Help
+         */
         public Help()
         {
             InitializeComponent();
@@ -177,7 +180,12 @@ namespace minesHunter
         }
         #endregion
 
-
+        /**
+         * Event handler key down
+         * 
+         * @param object       sender sender
+         * @param KeyEventArgs e      key event arguments
+         */
         private void Help_KeyDown(object sender, KeyEventArgs e)
         {
             Keys key = e.KeyCode;
@@ -252,7 +260,12 @@ namespace minesHunter
             }
         }
 
-
+        /**
+         * Event handler key up
+         * 
+         * @param object       sender sender
+         * @param KeyEventArgs e      key event arguments
+         */
         private void Help_KeyUp(object sender, KeyEventArgs e)
         {
             Keys key = e.KeyCode;

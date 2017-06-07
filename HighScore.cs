@@ -14,6 +14,15 @@ namespace minesHunter
     {
         private HighscoreControl highscoreControl;
 
+        /**
+         * Class constructor HighScore
+         * 
+         * @param string player player name
+         * @param string game   game name
+         * @param int    score  player total score
+         * @param int    levels levels of game
+         * @param int    rounds rounds per level
+         */
         public HighScore(string player, string game, int score, int levels, int rounds)
         {
             InitializeComponent();
@@ -22,6 +31,9 @@ namespace minesHunter
             this.fillHighscoreList();
         }
 
+        /**
+         * Class constructor HighScore
+         */
         public HighScore()
         {
             InitializeComponent();
@@ -29,6 +41,9 @@ namespace minesHunter
             this.fillHighscoreList();
         }
 
+        /**
+         * Fill the data grid view with highscore list 
+         */
         private void fillHighscoreList()
         {
             List<HighscoreItem> highscore = this.highscoreControl.getHighscore();
@@ -46,11 +61,23 @@ namespace minesHunter
             }
         }
 
+         /**
+         * Event handler button close highscore
+         * 
+         * @param object    sender sender
+         * @param EventArgs e      event arguments
+         */
         private void btnCloseHighscore_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /**
+         * Event handler button reset highscore
+         * 
+         * @param object    sender sender
+         * @param EventArgs e      event arguments
+         */
         private void btnResetHighscore_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
@@ -67,6 +94,12 @@ namespace minesHunter
             }
         }
 
+        /**
+         * Event handler help
+         * 
+         * @param object       sender sender
+         * @param KeyEventArgs e      key event arguments
+         */
         private void HighScore_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F1)

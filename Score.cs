@@ -10,33 +10,59 @@ namespace minesHunter
         private int score;
         private List<int> gameScores;
 
+        /**
+         * Class constructor Score
+         */
         public Score()
         {
             this.score = 0;
             this.gameScores = new List<int>();
         }
 
+        /**
+         * Set score
+         * 
+         * @param int score score to set
+         */
         public void setScore(int score)
         {
             this.score = score;
         }
 
+        /**
+         * Get score
+         * 
+         * @return int
+         */
         public int getScore()
         {
             return this.score;
 
         }
 
+        /**
+         * Add score to score list
+         * 
+         * @param int score score to add
+         */
         public void addScoreToScoreList(int score)
         {
             this.gameScores.Add(score);
         }
 
+        /**
+         * Return the score list
+         * 
+         * @return List<int>
+         */
         public List<int> getScoreList()
         {
             return this.gameScores;
         }
 
+        /**
+         * Get total score, iterate over score lsit
+         */
         public int getTotalscore()
         {
             int sum = 0;
@@ -47,6 +73,11 @@ namespace minesHunter
             return sum;
         }
 
+        /**
+         * Get min score
+         * 
+         * @return int
+         */
         public int getMinScore()
         {
             int min = this.gameScores[0];
@@ -58,6 +89,11 @@ namespace minesHunter
             return min;
         }
 
+        /**
+         * Get max score
+         * 
+         * @return int
+         */
         public int getMaxScore()
         {
             int max = this.gameScores[0];
@@ -69,18 +105,37 @@ namespace minesHunter
             return max;
         }
 
+        /**
+         * Increment score and return new score
+         * 
+         * @param int points points to add
+         * 
+         * @return int
+         */
         public int incrementScore(int points)
         {
             this.score += points;
             return score;
         }
 
+        /**
+         * Decrement score and return new score
+         * 
+         * @param int score points to sub
+         * 
+         * @return int
+         */
         public int decrementScore(int score)
         {
             this.score -= score;
             return score;
         }
 
+        /**
+         * Serialize class
+         * 
+         * @return XmlElement
+         */
         public XmlElement serialize()
         {
             XmlDocument document = new XmlDocument();
@@ -103,6 +158,9 @@ namespace minesHunter
             return scoreClass;
         }
 
+        /**
+         * Load class from xml
+         */
         public void loadFromXml(XmlNodeList xml)
         {
             if (xml.Count == 1 && xml.Item(0).Name == "score")
