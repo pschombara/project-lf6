@@ -960,6 +960,20 @@ namespace minesHunter
                 }
             }
         }
+
+        /**
+         * Paint F1 to picture box
+         * 
+         * @param object         sender sender
+         * @param PaintEventArgs e      paint event arguments
+         */
+        private void pB_F1_Paint(object sender, PaintEventArgs e)
+        {
+            using (Font myFont = new Font("Arial", 12))
+            {
+                e.Graphics.DrawString("F1", myFont, Brushes.Black, new Point(2, 2));
+            }
+        }
     }
 }
 

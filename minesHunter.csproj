@@ -84,7 +84,6 @@
     <Compile Include="GameModes\Base\GameMain.Designer.cs">
       <DependentUpon>GameMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="GameMode.cs" />
     <Compile Include="Games.cs" />
     <Compile Include="Global.cs" />
     <Compile Include="Help.cs">
