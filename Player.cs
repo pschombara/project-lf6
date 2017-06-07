@@ -27,6 +27,9 @@ namespace minesHunter
         public const int SKIN_LUCINDA = 60;
         public const int SKIN_CAMO_GIRL = 70;
 
+        /**
+         * Class constructor Player
+         */
         public Player()
         {
             this.name = "";
@@ -38,6 +41,11 @@ namespace minesHunter
             this.number = 0;
         }
 
+        /**
+         * Class constructor Player
+         * 
+         * @param string name player name
+         */
         public Player(string name)
         {
             this.name = name;
@@ -49,26 +57,51 @@ namespace minesHunter
             this.number = 0;
         }
 
+        /**
+         * Set player name
+         * 
+         * @param string name player name
+         */
         public void setName(string name)
         {
             this.name = name;
         }
 
+        /**
+         * Return player name
+         * 
+         * @return string
+         */
         public string getName()
         {
             return this.name;
         }
 
+        /**
+         * Set player skin
+         * 
+         * @param int skin skin id
+         */
         public void setSkin(int skin)
         {
             this.skin = skin;
         }
 
+        /**
+         * Return skin id
+         * 
+         * @return int
+         */
         public int getSkin()
         {
             return this.skin;
         }
 
+        /**
+         * Get player skin image
+         * 
+         * @return Image
+         */
         public Image getSkinImage()
         {
             Image img = null;
@@ -138,54 +171,80 @@ namespace minesHunter
             return img;
         }
 
+        /**
+         * Set way color id
+         * 
+         * @param int newColor color id
+         */
         public void setWayColor(int newColor)
         {
             this.wayColor = newColor;
         }
 
+        /**
+         * Return way color id
+         * 
+         * @return int
+         */
         public int getWayColor()
         {
             return this.wayColor;
         }
 
+        /**
+         * Return player location
+         * 
+         * @return Location
+         */
         public Location getLocation()
         {
             return this.location;
         }
         
+        /**
+         * Set player location
+         * 
+         * @param int x position on x axis
+         * @param int y position on y axis
+         */
         public void setLocation(int x, int y)
         {
-            Location newLoc = new Location(x, y);
-            this.location = newLoc;
+            this.location = new Location(x, y);
         }
 
+        /**
+         * Set player location
+         * 
+         * @param Location newLoc player location to set
+         */
         public void setLocation(Location newLoc)
         {
             this.location = newLoc;
         }
 
+        /**
+         * @return int
+         */
         public int getNumber()
         {
             return this.number;
         }
 
+        /**
+         * Return player score
+         * 
+         * @return Score
+         */
         public Score getScore()
         {
             return this.score;
         }
 
-        public void setNumber(int number)
-        {
-            if (number > 0 && number < 3)
-            {
-                this.number = number;
-            }
-            else
-            {
-                this.number = 0;
-            }
-        }
-
+        /**
+         * Set player orientation
+         * 
+         * @param int orientation player orientation
+         */
         public void setOrientation(int orientation)
         {
             if (orientation >= ORIENTATION_UP && orientation <= ORIENTATION_LEFT)
@@ -198,11 +257,21 @@ namespace minesHunter
             }
         }
 
+        /**
+         * Return player orientation
+         * 
+         * @return int
+         */
         public int getOrientation()
         {
             return this.orientation;
         }
 
+        /**
+         * Save player to xml file
+         * 
+         * @return bool
+         */
         public bool saveToFile()
         {
             Directory.CreateDirectory(Global.PATH_PLAYER_FOLDER);
@@ -214,6 +283,11 @@ namespace minesHunter
             return true;
         }
 
+        /**
+         * Load player from xml file
+         * 
+         * @param string name file name
+         */
         public void loadFromFile(string name)
         {
             XmlDocument doc = new XmlDocument();
@@ -252,6 +326,11 @@ namespace minesHunter
             XmlNodeList nodeScore = doc.GetElementsByTagName("score");
         }
 
+        /**
+         * Serialie player to xml
+         * 
+         * @return XmlElement
+         */
         public XmlElement serialize()
         {
             XmlDocument doc = new XmlDocument();

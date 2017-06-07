@@ -13,6 +13,11 @@ namespace minesHunter
 		private Location startTwo;
 		private string name;
 
+        /**
+         * Class constructor
+         * 
+         * @param string name level name
+         */
 		public Level(string name)
 		{
 			this.name = name;
@@ -21,6 +26,14 @@ namespace minesHunter
 			this.startOne = new Location();
 			this.startTwo = new Location();
 		}
+
+        /**
+         * @param string strSource
+         * @param string strStart
+         * @param string strEnd
+         * 
+         * @return string
+         */
 		private static string getBetween(string strSource, string strStart, string strEnd)
 		{
 			int Start, End;
@@ -36,6 +49,11 @@ namespace minesHunter
 			}
 		}
 
+        /**
+         * Load level from file
+         * 
+         * @param string file file name
+         */
 		public void loadLevelFromFile(string file)
 		{
 			String datei = File.ReadAllText(file);
@@ -56,18 +74,26 @@ namespace minesHunter
 			}
 		}
 
-		public bool saveLevelToFile()
-		{
-			//ToDo
-			return true;
-		}
-
+        /**
+         * Get field at location
+         * 
+         * @param Location location location
+         * 
+         * @return Field
+         */
 		public Field getFieldAtLocation(Location location)
 		{
 			Field field = new Field(this.map[location.getX(),location.getY()]);
 			return field;
 		}
 
+        /**
+         * Get way location for player
+         * 
+         * @param Player player player
+         * 
+         * @return List<Location>
+         */
 		public List<Location> getWayLocationsForPlayer(Player player)
 		{
 			List<Location> wayPoints = new List<Location>();
@@ -84,17 +110,11 @@ namespace minesHunter
 			return wayPoints;
 		}
 
-		public bool isLocationFreeForWay(Location location)
-		{
-			//ToDo
-			return true;
-		}
-
-		public void setWayAtLocation(Location location, Player player)
-		{
-			//ToDo
-		}
-
+        /**
+         * Get start location for player
+         * 
+         * @return List<Location>
+         */
 		public List<Location> getStartLocations()
 		{
 			List<Location> locations = new List<Location>();
@@ -103,11 +123,23 @@ namespace minesHunter
 			return locations;
 		}
 
+        /**
+         * Set field type on location
+         * 
+         * @param Location location location
+         * @param Field    field    field type
+         */
 		public void setFieldAtLocation(Location location, Field field)
 		{
 			this.map[location.getX(),location.getY()] = field.getFieldType();
 		}
 
+        /**
+         * Set start location for player
+         * 
+         * @param Location startLocation start location
+         * @param int      player        player 1 or 2
+         */
 		public void setStartLocationForPlayer(Location startLocation, int player)
 		{
 			if (player == 1)
@@ -116,25 +148,34 @@ namespace minesHunter
 				startTwo = startLocation;
 		}
 
+        /**
+         * Set level name
+         * 
+         * @param string name level name
+         */
 		public void setName(string name)
 		{
 			this.name = name;
 		}
 
+        /**
+         * Get level name
+         * 
+         * @return string
+         */
 		public string getName()
 		{
 			return this.name;
 		}
 
+        /**
+         * Get level map
+         * 
+         * @return int[,]
+         */
 		public int[,] getMap()
 		{
 			return this.map;
-		}
-
-		private bool isNameTaken()
-		{
-			//ToDo
-			return true;
 		}
 	}
 }

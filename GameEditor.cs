@@ -14,15 +14,22 @@ namespace minesHunter
 	public partial class GameEditor : Form
 	{
         #region Konstruktor
+        /**
+         * Class constructor GameEditor
+         */
         public GameEditor()
 		{
 			InitializeComponent();
-
-            //refreshDataGridView();
 		}
         #endregion
 
         #region Activated Event
+        /**
+         * Refresh data gried view if game editor activated
+         *
+         * @param object   sender sender
+         * @param EventArg e     event arguments
+         */
         private void GameEditor_Activated(object sender, EventArgs e)
         {
             refreshDataGridView();
@@ -30,6 +37,12 @@ namespace minesHunter
         #endregion
 
         #region Buttons
+        /**
+         * Event handler button new game
+         *   
+         * @param object   sender sender
+         * @param EventArg e     event arguments
+         */
         private void btnNewGame_Click(object sender, EventArgs e)
 		{
 			string path = Global.PATH_GAME_FOLDER + txtNewGameName.Text;
@@ -47,11 +60,23 @@ namespace minesHunter
             //g.saveToFile();
 		}
 
-		private void btnBack_Click(object sender, EventArgs e)
+        /**
+         * Event handler button click back
+         * 
+         * @param object   sender sender
+         * @param EventArg e     event arguments
+         */
+        private void btnBack_Click(object sender, EventArgs e)
 		{
             Close();
 		}
 
+        /**
+         * Event handler button start level editor
+         * 
+         * @param object   sender sender
+         * @param EventArg e     event arguments 
+         */
         private void btnStartLevelEditor_Click(object sender, EventArgs e)
         {
             LevelEditorMain levelEditorMain = new LevelEditorMain();
@@ -60,6 +85,12 @@ namespace minesHunter
         #endregion
 
         #region DataGridView Events
+        /**
+         * Open game on double click
+         * 
+         * @param object                    sender sender
+         * @param DataGridViewCellEventArgs e      event arguments
+         */
         private void dataGridViewGames_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
 		{
             if (dataGridViewGames.SelectedCells.Count > 0)
@@ -71,6 +102,12 @@ namespace minesHunter
                 MessageBox.Show("Zuerst ein Spiel auswählen bzw. neu erstellen", "Fehler: Kein Spiel ausgewählt");
 		}
 
+        /**
+         * Event handler key down data grid view
+         * 
+         * @param object   sender sender
+         * @param EventArg e      event arguments 
+         */
         private void dataGridViewGames_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -81,11 +118,23 @@ namespace minesHunter
         #endregion
 
         #region Kontextmenü
+        /**
+         * Event handler contextmenu data grid view open game
+         * 
+         * @param object   sender sender
+         * @param EventArg e      event arguments 
+         */
         private void tsmiOpen_Click(object sender, EventArgs e)
         {
             dataGridViewGames_CellDoubleClick(null, null);
         }
 
+        /**
+         * Event handler contextmenu data grid view delete game
+         * 
+         * @param object   sender sender
+         * @param EventArg e      event arguments 
+         */
         private void tsmiDelete_Click(object sender, EventArgs e)
 		{
             if (dataGridViewGames.SelectedCells.Count > 0)
@@ -100,6 +149,9 @@ namespace minesHunter
         }
         #endregion
 
+        /**
+         * Fill data grid view with games
+         */
         private void refreshDataGridView()
         {
             dataGridViewGames.Rows.Clear();
@@ -114,12 +166,24 @@ namespace minesHunter
             txtNewGameName.Text = string.Empty;
         }
 
+        /**
+         * Event handler press enter on new game name text field perform click on button
+         *
+         * @param object      sender sender
+         * @param KeyEventArg e      event arguments 
+         */
         private void txtNewGameName_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 btnNewGame.PerformClick();
         }
 
+        /**
+         * Open global help
+         * 
+         * @param object      sender sender
+         * @param KeyEventArg e      event arguments 
+         */
         private void GameEditor_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F1)
