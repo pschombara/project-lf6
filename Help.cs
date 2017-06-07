@@ -343,6 +343,7 @@ namespace minesHunter
 
         private void btn_anleitung_Click(object sender, EventArgs e)
         {
+            label3.Focus();
             System.Diagnostics.Process.Start(AppDomain.CurrentDomain.BaseDirectory + "\\Anleitung\\Spielanleitung.pdf");
         }
     }

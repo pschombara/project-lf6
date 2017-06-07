@@ -231,10 +231,12 @@
             // 
             // btn_anleitung
             // 
+            this.btn_anleitung.CausesValidation = false;
             this.btn_anleitung.Location = new System.Drawing.Point(279, 50);
             this.btn_anleitung.Name = "btn_anleitung";
             this.btn_anleitung.Size = new System.Drawing.Size(144, 23);
             this.btn_anleitung.TabIndex = 26;
+            this.btn_anleitung.TabStop = false;
             this.btn_anleitung.Text = "Spielanleitung";
             this.btn_anleitung.UseVisualStyleBackColor = true;
             this.btn_anleitung.Click += new System.EventHandler(this.btn_anleitung_Click);
