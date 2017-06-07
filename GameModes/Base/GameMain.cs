@@ -31,6 +31,7 @@ namespace minesHunter
         private int rounds;
         private bool isNotNewLevel;
         private bool finish;
+        private bool hasOre;
 
         /**
          * Class constructor GameMain
@@ -52,6 +53,7 @@ namespace minesHunter
             this.game = game;
             this.rounds = rounds;
             this.finish = false;
+            this.hasOre = true;
             startNewLevel();
         }
 
@@ -418,6 +420,14 @@ namespace minesHunter
                 setMovesImage();
             }
 
+            if (digging && !this.checkOreAvailable())
+            {
+                this.moves = 0;
+                this.finishCounter = 0;
+                this.hasOre = false;
+                this.setMovesImage();
+            }
+
             updateLabels();
         }
 
@@ -556,7 +566,7 @@ namespace minesHunter
             {
                 isNotNewLevel = true;
 
-                if (activePlayer == firstPlayer)
+                if (activePlayer == firstPlayer || !this.hasOre)
                 {
                     if (finishCounter == 0)
                     {
@@ -598,6 +608,27 @@ namespace minesHunter
                 Form Help = new Help();
                 Help.ShowDialog();
             }
+        }
+
+        /**
+         * Check if ore available
+         * 
+         * @return bool
+         */
+        private bool checkOreAvailable()
+        {
+            for (int i = 0; i < 32; i++)
+            {
+                for (int j = 0; j < 32; j++)
+                {
+                    if (this.board[i,j] >= Field.FIELD_COAL && this.board[i,j] <= Field.FIELD_DIAMOND)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
         }
 
         /**
@@ -809,6 +840,9 @@ namespace minesHunter
         {
             //set finish counter to round start value
             this.finishCounter = this.rounds;
+
+            // reset has ore
+            this.hasOre = true;
 
             //reset player one for new game
             this.playerOne.setLocation(this.game.getActiveLevel().getStartLocations()[0]);
