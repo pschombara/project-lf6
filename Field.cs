@@ -24,8 +24,6 @@ namespace minesHunter
 		public const int FIELD_SILVER = 8;
 		public const int FIELD_GOLD = 9;
 		public const int FIELD_DIAMOND = 10;
-		//public const int FIELD_Player_1 = 30;
-		//public const int FIELD_Player_2 = 40;
 		public const int FIELD_CLEAR = 13;
 		public const int WAY_BLUE = 14;
 		public const int WAY_BLUE_DARK = 15;
@@ -42,6 +40,11 @@ namespace minesHunter
 		public const int PLAYER_LUCINDA = 60;
 		public const int PLAYER_CAMO_GIRL = 70;
 
+        /**
+         * Class constructor
+         * 
+         * @param int fieldType field type id
+         */
 		public Field(int fieldType)
 		{
 			this.fieldType = fieldType;
@@ -49,6 +52,11 @@ namespace minesHunter
 			this.setPoints();
 		}
 
+        /**
+         * Get bitmap of texture
+         * 
+         * @return Bitmap
+         */
 		public Bitmap getTexture()
 		{
             switch(fieldType)
@@ -76,16 +84,19 @@ namespace minesHunter
             }
 		}
 
+        /**
+         * Get field type id
+         * 
+         * @return int
+         */
 		public int getFieldType()
 		{
 			return this.fieldType;
 		}
 
-		public void setFieldType(int fieldTypeConstant)
-		{
-			this.fieldType = fieldTypeConstant;
-		}
-
+        /**
+         * Set points of field type
+         */
 		private void setPoints()
 		{
 			if (this.fieldType == FIELD_COAL)
@@ -118,6 +129,11 @@ namespace minesHunter
 			}
 		}
 
+        /**
+         * Get points of field type
+         * 
+         * @return int
+         */
 		public int getPoints()
 		{
 			return this.points;

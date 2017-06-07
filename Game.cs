@@ -19,6 +19,11 @@ namespace minesHunter
 
 		#region Constructors
 
+        /**
+         * Class constructor Game
+         * 
+         * @param string name name of game
+         */
 		public Game(string name)
 		{
 			this.name = name;
@@ -30,46 +35,64 @@ namespace minesHunter
 
 		#region Getter/Setter
 
+        /**
+         * Return list of levels
+         * 
+         * @return List<Level>
+         */
 		public List<Level> getLevels()
 		{
 			return this.levels;
 		}
 
+        /**
+         * Get active level
+         * 
+         * @return Level
+         */
 		public Level getActiveLevel()
 		{
 			return this.levels[activeLevel];
 		}
 
+        /**
+         * Get game name
+         * 
+         * @return string
+         */
 		public string getName()
 		{
 			return this.name;
-		}
-
-		public void setLevels(List<Level> newLevels)
-		{
-			this.levels = newLevels;
-		}
-
-		public void setName(string newName)
-		{
-			this.name = newName;
 		}
 
 		#endregion Getter/Setter
 
 		#region Methods
 
+        /**
+         * Change the active level, increase active level and return level
+         * 
+         * @return Level
+         */
 		public Level changeActiveLevel()
 		{
 			this.activeLevel++;
 			return getActiveLevel();
 		}
 
+        /**
+         * Check if game has next level
+         * 
+         * @return bool
+         */
 		public bool hasNext()
 		{
 			return (activeLevel + 1 >= levels.Count) ? false : true;
 		}
 
+        /**
+         * load class from file
+         */
 		public void loadFromFile()
 		{
 			XmlDocument doc = new XmlDocument();
@@ -99,6 +122,9 @@ namespace minesHunter
 			}
 		}
 
+        /**
+         * Save class to xml file
+         */
 		public bool saveToFile()
 		{
 			bool retvar = false;
@@ -122,6 +148,11 @@ namespace minesHunter
 			return retvar;
 		}
 
+        /**
+         * Serialize class to xml element
+         * 
+         * @return XmlElement
+         */
 		public XmlElement serialize()
 		{
 			XmlDocument document = new XmlDocument();
