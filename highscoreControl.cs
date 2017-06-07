@@ -13,12 +13,24 @@ namespace minesHunter
         private static string MAIN_PATH = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\minesHunter\\";
         private List<HighscoreItem> highscore;
 
+        /**
+         * Class constructor HighscoreControl
+         */
         public HighscoreControl()
         {
             this.highscore = new List<HighscoreItem>();
             this.loadHighscore();
         }
 
+        /**
+         * Add new entry to highscore list
+         * 
+         * @param string player player name
+         * @param string game   game name
+         * @param int    score  player total score
+         * @param int    levels levels of game
+         * @param int    rounds rounds per level 
+         */
         public void addHighscore(string player, string game, int score, int levels, int rounds)
         {
             int position = 0;
@@ -44,17 +56,28 @@ namespace minesHunter
             this.saveHighscore();
         }
 
+        /**
+         * Return highscore list
+         * 
+         * @return List<HighscoreItem>
+         */
         public List<HighscoreItem> getHighscore()
         {
             return this.highscore;
         }
 
+        /**
+         * Clear highscore list and save
+         */
         public void reset()
         {
             this.highscore.Clear();
             this.saveHighscore();
         }
 
+        /**
+         * Load highscore from xml file or create new highscore file if not exist
+         */
         private void loadHighscore()
         {
             if (File.Exists(MAIN_PATH + "highscore.xml"))
@@ -67,6 +90,9 @@ namespace minesHunter
             }
         }
 
+        /**
+         * Save highscore list to xml file
+         */
         private void saveHighscore()
         {
             XmlDocument document = new XmlDocument();
@@ -74,6 +100,9 @@ namespace minesHunter
             document.Save(MAIN_PATH + "highscore.xml");
         }
 
+        /**
+         * Serialize class to xml
+         */
         private XmlElement serialize()
         {
             XmlDocument doc = new XmlDocument();
@@ -107,6 +136,9 @@ namespace minesHunter
             return highscore;
         }
 
+        /**
+         * Load highscore from file
+         */
         private void loadFromFile()
         {
             XmlDocument doc = new XmlDocument();
