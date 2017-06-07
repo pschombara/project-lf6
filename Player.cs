@@ -2,9 +2,9 @@
 using System.Drawing;
 using System.IO;
 using System.Xml;
-using projectlf6.Properties;
+using minesHunter.Properties;
 
-namespace projectlf6
+namespace minesHunter
 {
     public class Player
     {

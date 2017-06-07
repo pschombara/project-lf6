@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace projectlf6
+namespace minesHunter
 {
 	public class Level
 	{

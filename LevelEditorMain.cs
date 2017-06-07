@@ -1,4 +1,4 @@
-﻿using projectlf6.Properties;
+﻿using minesHunter.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace projectlf6
+namespace minesHunter
 {
     public partial class LevelEditorMain : Form
     {

@@ -1,6 +1,6 @@
-﻿using projectlf6.Properties;
+﻿using minesHunter.Properties;
 
-namespace projectlf6
+namespace minesHunter
 {
     partial class GameMain
     {
@@ -343,7 +343,7 @@ namespace projectlf6
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::projectlf6.Properties.Resources.Coal;
+            this.pictureBox1.BackgroundImage = global::minesHunter.Properties.Resources.Coal;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.Location = new System.Drawing.Point(4, 35);
             this.pictureBox1.Name = "pictureBox1";
@@ -364,7 +364,7 @@ namespace projectlf6
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackgroundImage = global::projectlf6.Properties.Resources.Copper;
+            this.pictureBox2.BackgroundImage = global::minesHunter.Properties.Resources.Copper;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox2.Location = new System.Drawing.Point(4, 76);
             this.pictureBox2.Name = "pictureBox2";
@@ -374,7 +374,7 @@ namespace projectlf6
             // 
             // pictureBox3
             // 
-            this.pictureBox3.BackgroundImage = global::projectlf6.Properties.Resources.Iron;
+            this.pictureBox3.BackgroundImage = global::minesHunter.Properties.Resources.Iron;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox3.Location = new System.Drawing.Point(4, 117);
             this.pictureBox3.Name = "pictureBox3";
@@ -384,7 +384,7 @@ namespace projectlf6
             // 
             // pictureBox4
             // 
-            this.pictureBox4.BackgroundImage = global::projectlf6.Properties.Resources.Silver;
+            this.pictureBox4.BackgroundImage = global::minesHunter.Properties.Resources.Silver;
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox4.Location = new System.Drawing.Point(4, 158);
             this.pictureBox4.Name = "pictureBox4";
@@ -394,7 +394,7 @@ namespace projectlf6
             // 
             // pictureBox5
             // 
-            this.pictureBox5.BackgroundImage = global::projectlf6.Properties.Resources.Gold;
+            this.pictureBox5.BackgroundImage = global::minesHunter.Properties.Resources.Gold;
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox5.Location = new System.Drawing.Point(4, 199);
             this.pictureBox5.Name = "pictureBox5";
@@ -404,7 +404,7 @@ namespace projectlf6
             // 
             // pictureBox6
             // 
-            this.pictureBox6.BackgroundImage = global::projectlf6.Properties.Resources.Diamond;
+            this.pictureBox6.BackgroundImage = global::minesHunter.Properties.Resources.Diamond;
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox6.Location = new System.Drawing.Point(4, 240);
             this.pictureBox6.Name = "pictureBox6";
@@ -492,7 +492,7 @@ namespace projectlf6
             this.Controls.Add(this.pbxLower);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = global::projectlf6.Properties.Resources.Icon;
+            this.Icon = global::minesHunter.Properties.Resources.Icon;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximumSize = new System.Drawing.Size(1024, 640);
             this.MinimumSize = new System.Drawing.Size(1024, 640);

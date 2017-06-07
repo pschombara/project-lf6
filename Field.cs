@@ -1,11 +1,11 @@
-﻿using projectlf6.Properties;
+﻿using minesHunter.Properties;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace projectlf6
+namespace minesHunter
 {
 	public class Field
 	{

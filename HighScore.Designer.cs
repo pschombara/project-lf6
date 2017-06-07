@@ -1,4 +1,4 @@
-﻿namespace projectlf6
+﻿namespace minesHunter
 {
     partial class HighScore
     {
@@ -149,7 +149,7 @@
             this.MinimumSize = new System.Drawing.Size(796, 362);
             this.Name = "HighScore";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Highscore";
+            this.Text = "Mines Hunter Highscore";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.HighScore_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHighscore)).EndInit();
             this.ResumeLayout(false);

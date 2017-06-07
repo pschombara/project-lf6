@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Xml;
 
-namespace projectlf6
+namespace minesHunter
 {
     class HighscoreControl
     {
-        private static string MAIN_PATH = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\projectlf6\\";
+        private static string MAIN_PATH = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\minesHunter\\";
         private List<HighscoreItem> highscore;
 
         public HighscoreControl()

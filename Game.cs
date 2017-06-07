@@ -5,7 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Xml;
 
-namespace projectlf6
+namespace minesHunter
 {
 	public class Game
     {

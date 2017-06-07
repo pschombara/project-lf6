@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Xml;
 
-namespace projectlf6
+namespace minesHunter
 {
 	public class Location
     {

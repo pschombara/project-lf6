@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace projectlf6
+namespace minesHunter
 {
     public partial class Help : Form
     {

@@ -8,10 +8,10 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using projectlf6.Properties;
+using minesHunter.Properties;
 using System.Media;
 
-namespace projectlf6
+namespace minesHunter
 {
     public partial class GameMain : Form
     {
@@ -678,7 +678,7 @@ namespace projectlf6
             lbl_playertwo.Text = playerTwo.getName();
             lbl_scoreplayertwo.Text = playerTwo.getScore().getScore().ToString();
 
-            this.Text = this.game.getName() + " - " + this.game.getActiveLevel().getName() + " - verbleibende Züge: " + moves + " - verbleibende Runden: " + finishCounter;
+            this.Text = "Mines Hunter " + this.game.getName() + " - " + this.game.getActiveLevel().getName() + " - verbleibende Züge: " + moves + " - verbleibende Runden: " + finishCounter;
         }
 
         private void startNewLevel()

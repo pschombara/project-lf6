@@ -1,4 +1,4 @@
-﻿using projectlf6.Properties;
+﻿using minesHunter.Properties;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
 
-namespace projectlf6
+namespace minesHunter
 {
 	public class Editor
 	{
@@ -468,7 +468,7 @@ namespace projectlf6
 			Game game = new Game(gameName);
 			game.loadFromFile();
 
-			projectlf6.Level lvl = new projectlf6.Level(levelName);
+			minesHunter.Level lvl = new minesHunter.Level(levelName);
 			lvl.loadLevelFromFile(levelName);
 
 			List<Level> levels = game.getLevels();

@@ -1,4 +1,4 @@
-﻿namespace projectlf6
+﻿namespace minesHunter
 {
     partial class LevelEditorMain
     {
@@ -216,7 +216,7 @@
             // 
             // pbSelection
             // 
-            this.pbSelection.BackgroundImage = global::projectlf6.Properties.Resources.Grass;
+            this.pbSelection.BackgroundImage = global::minesHunter.Properties.Resources.Grass;
             this.pbSelection.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbSelection.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbSelection.Location = new System.Drawing.Point(69, 29);
@@ -251,7 +251,7 @@
             // 
             // btnPlayer2
             // 
-            this.btnPlayer2.BackgroundImage = global::projectlf6.Properties.Resources.Player_2;
+            this.btnPlayer2.BackgroundImage = global::minesHunter.Properties.Resources.Player_2;
             this.btnPlayer2.Location = new System.Drawing.Point(72, 16);
             this.btnPlayer2.Name = "btnPlayer2";
             this.btnPlayer2.Size = new System.Drawing.Size(31, 64);
@@ -262,7 +262,7 @@
             // 
             // btnPlayer1
             // 
-            this.btnPlayer1.BackgroundImage = global::projectlf6.Properties.Resources.Player_1;
+            this.btnPlayer1.BackgroundImage = global::minesHunter.Properties.Resources.Player_1;
             this.btnPlayer1.Location = new System.Drawing.Point(32, 16);
             this.btnPlayer1.Name = "btnPlayer1";
             this.btnPlayer1.Size = new System.Drawing.Size(31, 64);
@@ -288,7 +288,7 @@
             // 
             // btnSky
             // 
-            this.btnSky.BackgroundImage = global::projectlf6.Properties.Resources.Sky;
+            this.btnSky.BackgroundImage = global::minesHunter.Properties.Resources.Sky;
             this.btnSky.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSky.Location = new System.Drawing.Point(30, 128);
             this.btnSky.Name = "btnSky";
@@ -300,7 +300,7 @@
             // 
             // btnNoBrocken
             // 
-            this.btnNoBrocken.BackgroundImage = global::projectlf6.Properties.Resources.No_Brocken;
+            this.btnNoBrocken.BackgroundImage = global::minesHunter.Properties.Resources.No_Brocken;
             this.btnNoBrocken.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnNoBrocken.Location = new System.Drawing.Point(86, 72);
             this.btnNoBrocken.Name = "btnNoBrocken";
@@ -312,7 +312,7 @@
             // 
             // btnStone
             // 
-            this.btnStone.BackgroundImage = global::projectlf6.Properties.Resources.Stone;
+            this.btnStone.BackgroundImage = global::minesHunter.Properties.Resources.Stone;
             this.btnStone.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnStone.Location = new System.Drawing.Point(30, 72);
             this.btnStone.Name = "btnStone";
@@ -324,7 +324,7 @@
             // 
             // btnDirt
             // 
-            this.btnDirt.BackgroundImage = global::projectlf6.Properties.Resources.Dirt;
+            this.btnDirt.BackgroundImage = global::minesHunter.Properties.Resources.Dirt;
             this.btnDirt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDirt.Location = new System.Drawing.Point(86, 16);
             this.btnDirt.Name = "btnDirt";
@@ -336,7 +336,7 @@
             // 
             // btnGrass
             // 
-            this.btnGrass.BackgroundImage = global::projectlf6.Properties.Resources.Grass;
+            this.btnGrass.BackgroundImage = global::minesHunter.Properties.Resources.Grass;
             this.btnGrass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnGrass.Location = new System.Drawing.Point(30, 16);
             this.btnGrass.Name = "btnGrass";
@@ -363,7 +363,7 @@
             // 
             // btnDiamond
             // 
-            this.btnDiamond.BackgroundImage = global::projectlf6.Properties.Resources.Diamond;
+            this.btnDiamond.BackgroundImage = global::minesHunter.Properties.Resources.Diamond;
             this.btnDiamond.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDiamond.Location = new System.Drawing.Point(86, 128);
             this.btnDiamond.Name = "btnDiamond";
@@ -375,7 +375,7 @@
             // 
             // btnGold
             // 
-            this.btnGold.BackgroundImage = global::projectlf6.Properties.Resources.Gold;
+            this.btnGold.BackgroundImage = global::minesHunter.Properties.Resources.Gold;
             this.btnGold.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnGold.Location = new System.Drawing.Point(30, 128);
             this.btnGold.Name = "btnGold";
@@ -387,7 +387,7 @@
             // 
             // btnSilver
             // 
-            this.btnSilver.BackgroundImage = global::projectlf6.Properties.Resources.Silver;
+            this.btnSilver.BackgroundImage = global::minesHunter.Properties.Resources.Silver;
             this.btnSilver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSilver.Location = new System.Drawing.Point(86, 72);
             this.btnSilver.Name = "btnSilver";
@@ -399,7 +399,7 @@
             // 
             // btnIron
             // 
-            this.btnIron.BackgroundImage = global::projectlf6.Properties.Resources.Iron;
+            this.btnIron.BackgroundImage = global::minesHunter.Properties.Resources.Iron;
             this.btnIron.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnIron.Location = new System.Drawing.Point(30, 72);
             this.btnIron.Name = "btnIron";
@@ -411,7 +411,7 @@
             // 
             // btnCopper
             // 
-            this.btnCopper.BackgroundImage = global::projectlf6.Properties.Resources.Copper;
+            this.btnCopper.BackgroundImage = global::minesHunter.Properties.Resources.Copper;
             this.btnCopper.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCopper.Location = new System.Drawing.Point(86, 16);
             this.btnCopper.Name = "btnCopper";
@@ -423,7 +423,7 @@
             // 
             // btnCoal
             // 
-            this.btnCoal.BackgroundImage = global::projectlf6.Properties.Resources.Coal;
+            this.btnCoal.BackgroundImage = global::minesHunter.Properties.Resources.Coal;
             this.btnCoal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCoal.Location = new System.Drawing.Point(30, 16);
             this.btnCoal.Name = "btnCoal";
@@ -465,7 +465,7 @@
             // 
             // pbCoal
             // 
-            this.pbCoal.BackgroundImage = global::projectlf6.Properties.Resources.Coal;
+            this.pbCoal.BackgroundImage = global::minesHunter.Properties.Resources.Coal;
             this.pbCoal.Location = new System.Drawing.Point(65, 18);
             this.pbCoal.Name = "pbCoal";
             this.pbCoal.Size = new System.Drawing.Size(32, 32);
@@ -475,7 +475,7 @@
             // 
             // pbCopper
             // 
-            this.pbCopper.BackgroundImage = global::projectlf6.Properties.Resources.Copper;
+            this.pbCopper.BackgroundImage = global::minesHunter.Properties.Resources.Copper;
             this.pbCopper.Location = new System.Drawing.Point(65, 56);
             this.pbCopper.Name = "pbCopper";
             this.pbCopper.Size = new System.Drawing.Size(32, 32);
@@ -485,7 +485,7 @@
             // 
             // pbIron
             // 
-            this.pbIron.BackgroundImage = global::projectlf6.Properties.Resources.Iron;
+            this.pbIron.BackgroundImage = global::minesHunter.Properties.Resources.Iron;
             this.pbIron.Location = new System.Drawing.Point(65, 94);
             this.pbIron.Name = "pbIron";
             this.pbIron.Size = new System.Drawing.Size(32, 32);
@@ -495,7 +495,7 @@
             // 
             // pbSilver
             // 
-            this.pbSilver.BackgroundImage = global::projectlf6.Properties.Resources.Silver;
+            this.pbSilver.BackgroundImage = global::minesHunter.Properties.Resources.Silver;
             this.pbSilver.Location = new System.Drawing.Point(65, 132);
             this.pbSilver.Name = "pbSilver";
             this.pbSilver.Size = new System.Drawing.Size(32, 32);
@@ -505,7 +505,7 @@
             // 
             // pbGold
             // 
-            this.pbGold.BackgroundImage = global::projectlf6.Properties.Resources.Gold;
+            this.pbGold.BackgroundImage = global::minesHunter.Properties.Resources.Gold;
             this.pbGold.Location = new System.Drawing.Point(65, 170);
             this.pbGold.Name = "pbGold";
             this.pbGold.Size = new System.Drawing.Size(32, 32);
@@ -515,7 +515,7 @@
             // 
             // pbDiamond
             // 
-            this.pbDiamond.BackgroundImage = global::projectlf6.Properties.Resources.Diamond;
+            this.pbDiamond.BackgroundImage = global::minesHunter.Properties.Resources.Diamond;
             this.pbDiamond.Location = new System.Drawing.Point(65, 208);
             this.pbDiamond.Name = "pbDiamond";
             this.pbDiamond.Size = new System.Drawing.Size(32, 32);
@@ -767,7 +767,7 @@
             this.MinimizeBox = false;
             this.Name = "LevelEditorMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Level Editor";
+            this.Text = "Mines Hunter Level Editor";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LevelEditorMain_FormClosing);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LevelEditorMain_KeyDown);
             this.menuStrip1.ResumeLayout(false);

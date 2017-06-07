@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
-namespace projectlf6
+namespace minesHunter
 {
 	public partial class GameEditor : Form
 	{

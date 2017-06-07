@@ -1,4 +1,4 @@
-﻿namespace projectlf6
+﻿namespace minesHunter
 {
     partial class GameEditor
     {
@@ -175,7 +175,7 @@
             this.MinimizeBox = false;
             this.Name = "GameEditor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Spiel Editor";
+            this.Text = "Mines Hunter Spiel Editor";
             this.Activated += new System.EventHandler(this.GameEditor_Activated);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameEditor_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGames)).EndInit();

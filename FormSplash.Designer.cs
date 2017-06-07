@@ -1,4 +1,4 @@
-﻿namespace projectlf6
+﻿namespace minesHunter
 {
     partial class FormSplash
     {
@@ -34,7 +34,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::projectlf6.Properties.Resources.Icon_512;
+            this.BackgroundImage = global::minesHunter.Properties.Resources.Icon_512;
             this.ClientSize = new System.Drawing.Size(512, 512);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormSplash";

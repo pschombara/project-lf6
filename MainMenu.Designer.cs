@@ -1,4 +1,4 @@
-﻿namespace projectlf6
+﻿namespace minesHunter
 {
     partial class MainMenu
     {
@@ -108,7 +108,7 @@
             this.MaximizeBox = false;
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Hauptmenü";
+            this.Text = "Mines Hunter Hauptmenü";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainMenu_KeyDown);
             this.ResumeLayout(false);
 

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
-namespace projectlf6
+namespace minesHunter
 {
     public partial class FormSplash : Form
     {

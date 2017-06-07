@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace projectlf6.Properties {
+namespace minesHunter.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace projectlf6.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("projectlf6.Properties.ResourceSound", typeof(ResourceSound).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("minesHunter.Properties.ResourceSound", typeof(ResourceSound).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

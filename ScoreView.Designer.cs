@@ -1,4 +1,4 @@
-﻿namespace projectlf6
+﻿namespace minesHunter
 {
 	partial class ScoreView
 	{
@@ -140,7 +140,7 @@
             this.Name = "ScoreView";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "ScoreView";
+            this.Text = "Mines Hunter Punkte";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ScoreView_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvScoreView)).EndInit();
             this.ResumeLayout(false);

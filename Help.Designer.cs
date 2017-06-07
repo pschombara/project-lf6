@@ -1,4 +1,4 @@
-﻿namespace projectlf6
+﻿namespace minesHunter
 {
     partial class Help
     {
@@ -254,6 +254,7 @@
             this.MaximizeBox = false;
             this.Name = "Help";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Mines Hunter Hilfe";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Help_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Help_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.pB_A)).EndInit();

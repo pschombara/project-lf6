@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace projectlf6
+namespace minesHunter
 {
 	public class GameMode
 	{

@@ -4,11 +4,11 @@ using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace projectlf6
+namespace minesHunter
 {
     public partial class MainMenu : Form
     {
-        private string MAIN_PATH = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\projectlf6\\";
+        private string MAIN_PATH = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\minesHunter\\";
         FormSplash formSplash;
 
         public MainMenu()

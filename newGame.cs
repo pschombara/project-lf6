@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using projectlf6.Properties;
+using minesHunter.Properties;
 
-namespace projectlf6
+namespace minesHunter
 {
 	public partial class newGame : Form
 	{
