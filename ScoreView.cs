@@ -17,6 +17,14 @@ namespace minesHunter
 		private Game game;
         private int rounds;
 
+        /**
+         * Class constructor ScoreView
+         * 
+         * @param Player playerOne first  player for score
+         * @param Player playerTwo second player for score
+         * @param Game   game      played game
+         * @param int    rounds    rounds to play for levels
+         */
 		public ScoreView(Player playerOne, Player playerTwo, Game game, int rounds)
 		{
 			InitializeComponent();
@@ -27,6 +35,9 @@ namespace minesHunter
 			showScoreLists();
 		}
 
+        /**
+         * Show the score list
+         */
 		private void showScoreLists()
 		{
 			int levelCount = game.getLevels().Count;
@@ -65,7 +76,13 @@ namespace minesHunter
 			}
 		}
 
-		private void btnNext_Click(object sender, EventArgs e)
+        /**
+         * Handle click on button
+         * 
+         * @param object   sender sender
+         * @param EventArg e      event arguments
+         */
+        private void btnNext_Click(object sender, EventArgs e)
 		{
             if (!this.game.hasNext())
             {
@@ -87,6 +104,12 @@ namespace minesHunter
             this.Close();
         }
 
+        /**
+         * Handle key down event
+         * 
+         * @param object       sender sender
+         * @param KeyEventArgs e      key event arguments
+         */
         private void ScoreView_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F1)
