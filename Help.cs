@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -340,6 +341,9 @@ namespace minesHunter
             }
         }
 
-        
+        private void btn_anleitung_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(AppDomain.CurrentDomain.BaseDirectory + "\\Anleitung\\Spielanleitung.pdf");
+        }
     }
 }

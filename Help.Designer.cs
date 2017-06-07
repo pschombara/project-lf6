@@ -47,6 +47,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_description = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.btn_anleitung = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pB_A)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pB_S)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pB_D)).BeginInit();
@@ -228,11 +229,22 @@
             this.label4.Text = "Sie können jederzeit die Hilfe über F1 aufrufen. Bitte halten sie die Taste gedrü" +
     "ckt, für welche sie die Belegungsbeschreibung wissen möchten.";
             // 
+            // btn_anleitung
+            // 
+            this.btn_anleitung.Location = new System.Drawing.Point(279, 50);
+            this.btn_anleitung.Name = "btn_anleitung";
+            this.btn_anleitung.Size = new System.Drawing.Size(144, 23);
+            this.btn_anleitung.TabIndex = 26;
+            this.btn_anleitung.Text = "Spielanleitung";
+            this.btn_anleitung.UseVisualStyleBackColor = true;
+            this.btn_anleitung.Click += new System.EventHandler(this.btn_anleitung_Click);
+            // 
             // Help
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(706, 364);
+            this.Controls.Add(this.btn_anleitung);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lbl_description);
             this.Controls.Add(this.label3);
@@ -292,5 +304,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbl_description;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btn_anleitung;
     }
 }

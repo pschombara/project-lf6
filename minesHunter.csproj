@@ -162,6 +162,9 @@
     <EmbeddedResource Include="ScoreView.resx">
       <DependentUpon>ScoreView.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Anleitung\Spielanleitung.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
