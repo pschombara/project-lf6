@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using minesHunter.Properties;
 using System.Media;
+using System.IO;
 
 namespace minesHunter
 {
@@ -31,13 +32,21 @@ namespace minesHunter
         private bool isNotNewLevel;
         private bool finish;
 
-        public GameMain(Player player_1, Player player_2, Game game, int rounds)
+        /**
+         * Class constructor GameMain
+         * 
+         * @param Player playerOne first player for game
+         * @param Player playerTwo second player for game
+         * @param Game   game      game to play
+         * @param int    rounds    number of rounds to play
+         */
+        public GameMain(Player playerOne, Player playerTwo, Game game, int rounds)
         {
             InitializeComponent();
             this.DoubleBuffered = true;
             this.dice = new Random();
-            this.playerOne = player_1;
-            this.playerTwo = player_2;
+            this.playerOne = playerOne;
+            this.playerTwo = playerTwo;
             this.activePlayer = (rollTheDice() % 2 == 1 ? playerOne : playerTwo);
             this.firstPlayer = activePlayer;
             this.game = game;
@@ -46,6 +55,13 @@ namespace minesHunter
             startNewLevel();
         }
 
+        /**
+         * Return image ressource for texture
+         * 
+         * @param int texture id of the texture
+         * 
+         * @retunr Image
+         */
         private Image getTexture(int texture)
         {
             Image img = null;
@@ -132,6 +148,11 @@ namespace minesHunter
 
         #region draw complete texture sets
 
+        /**
+         * Draw the board
+         * 
+         * @param Graphics g graphic context
+         */
         private void drawBoard(Graphics g)
         {
             for (int x = 0; x < 32; x++)
@@ -143,6 +164,11 @@ namespace minesHunter
             }
         }
 
+        /**
+         * Draw the ways for the players
+         * 
+         * @param Graphics g graphic context
+         */
         private void drawWays(Graphics g)
         {
             foreach (Location loc in waysP1)
@@ -156,6 +182,11 @@ namespace minesHunter
             }
         }
 
+        /**
+          * Draw players
+          * 
+          * @param Graphics g graphic context
+          */
         private void drawPlayer(Graphics g)
         {
             g.DrawImage(playerOne.getSkinImage(), playerOne.getLocation().getX() * 16, playerOne.getLocation().getY() * 16, 16, 32);
@@ -166,11 +197,29 @@ namespace minesHunter
 
         #region draw single textures
 
+        /**
+          * Draw a single texture
+          * 
+          * @param Graphics g       graphic context
+          * @param int      texture texture to draw
+          * @param int      x       position on x axis
+          * @param int      y       position on y axis
+          * @param int      width   graphic width
+          * @param int      height  graphic height
+          */
         public void drawSingleTexture(Graphics g, int texture, int x, int y, int width, int height)
         {
             g.DrawImage(getTexture(texture), x * 16, y * 16, width, height);
         }
 
+        /**
+         * Draw a player
+         * 
+         * @param Graphics g    graphic context
+         * @param Player   p    player to draw
+         * @param int      newX new position of player on x axis
+         * @param int      nexY new position of player on y axis
+         */
         public void drawSinglePlayer(Graphics g, Player p, int newX, int newY)
         {
             g.DrawImage(p.getSkinImage(), newX * 16, newY * 16, 16, 32);
@@ -178,6 +227,12 @@ namespace minesHunter
 
         #endregion draw singles textures
 
+        /**
+         * Handle player move
+         * 
+         * @param Location newLoc            new location for player
+         * @param bool     diggingBeforeMove player must digging before move default false
+         */
         private void move(Location newLoc, bool diggingBeforeMove = false)
         {
             if (newLoc != null)
@@ -253,7 +308,12 @@ namespace minesHunter
             pbBoard.Refresh();
         }
 
-        private void playSound(System.IO.UnmanagedMemoryStream play)
+        /**
+         * Play sound ressource if sound is active
+         * 
+         * @param UnmangedMemoryStream play sound to play
+         */
+        private void playSound(UnmanagedMemoryStream play)
         {
             if (this.menueSound.Checked)
             {
@@ -263,6 +323,9 @@ namespace minesHunter
             }
         }
 
+        /**
+         * Active player dig, check here if player can dig and handle actions
+         */
         private void digIt()
         {
             bool canDigg = true;
@@ -293,6 +356,12 @@ namespace minesHunter
             }
         }
 
+        /**
+         * Check if field is diggable
+         * 
+         * @param int x position on x axis
+         * @param int y position on y axis
+         */
         private bool isDiggable(int x, int y)
         {
             bool diggable = true;
@@ -318,6 +387,13 @@ namespace minesHunter
             return diggable;
         }
 
+        /**
+         * Update player data after moving or digging
+         * 
+         * @param int  x       position on x axis
+         * @param int  y       position on y axis
+         * @param bool digging has player dig
+         */
         private void updateData(int x, int y, bool digging)
         {
             activePlayer.setLocation(x, y - 1);
@@ -331,7 +407,9 @@ namespace minesHunter
             }
 
             if (newWay)
+            {
                 locs.Add(new Location(x, y));
+            }
 
             if (digging)
             {
@@ -343,6 +421,14 @@ namespace minesHunter
             updateLabels();
         }
 
+        /**
+         * Get new location for player when move
+         * 
+         * @params Location oldLocation old player location
+         * @params int      orientation current player orientation 
+         * 
+         * @return Location
+         */
         private Location getNewLocation(Location oldLocation, int orientation)
         {
             Location newLoc = null;
@@ -371,11 +457,22 @@ namespace minesHunter
             return newLoc;
         }
 
+        /**
+         * Roll the dice, random ways player can dig
+         * 
+         * @return int
+         */
         private int rollTheDice()
         {
             return dice.Next(1, 13);
         }
 
+        /**
+         * Handle key down event
+         * 
+         * @param object       sender sender
+         * @param KeyEventArgs e      key event arguments
+         */
         private void GameMain_KeyDown(object sender, KeyEventArgs e)
         {
             if (moves > 0)
@@ -503,11 +600,17 @@ namespace minesHunter
             }
         }
 
+        /**
+         * Upadte text for the next player and a hint to click space to continue
+         */
         private void updateRollTheDiceText(Player player)
         {
             this.lblRollTheDice.Text = player.getName() + " ist dran ... Mit Leertaste würfeln";
         }
 
+        /**
+         * Animate the slot machine
+         */
         private void slotMachineAnimation()
         {
             pbxMoves.Enabled = false;
@@ -549,6 +652,14 @@ namespace minesHunter
 
         }
 
+        /**
+         * Move the slot machine
+         * 
+         * @param PictureBox pbxLower the lower picture box
+         * @param PictureBox pbxMidd  the middle picture box
+         * @param Pictureox  pbxUpper the upper picture box
+         * @param int        height   height
+         */
         private void moveSlotMachine(PictureBox pbxLower, PictureBox pbxMidd, PictureBox pbxUpper, int height)
         {
             pbxLower.Top = height - 110;
@@ -566,6 +677,9 @@ namespace minesHunter
             }
         }
 
+        /**
+         * Set the moves images for slot machine
+         */
         private void setMovesImage()
         {
             Image img = null;
@@ -614,10 +728,16 @@ namespace minesHunter
             }
 
             pbxMoves.Image = img;
-            //pbxMoves.Top = this.Height - 170;
             pbxMoves.Refresh();
         }
 
+        /**
+         * Get slot image for moves
+         * 
+         * @param int moves moves
+         * 
+         * @return Image
+         */
         private Image getSlotImage(int moves)
         {
             Image img = null;
@@ -665,11 +785,12 @@ namespace minesHunter
                     break;
             }
 
-            //pbxMoves.Image = img;
-            //pbxMoves.Top = this.Height - 170;
             return img;
         }
 
+        /**
+         * Update the labels
+         */
         private void updateLabels()
         {
             lbl_playerone.Text = playerOne.getName();
@@ -681,6 +802,9 @@ namespace minesHunter
             this.Text = "Mines Hunter " + this.game.getName() + " - " + this.game.getActiveLevel().getName() + " - verbleibende Züge: " + moves + " - verbleibende Runden: " + finishCounter;
         }
 
+        /**
+         * Prepare to start a new level
+         */
         private void startNewLevel()
         {
             //set finish counter to round start value
@@ -740,6 +864,9 @@ namespace minesHunter
             this.updateRollTheDiceText(this.activePlayer);
         }
 
+        /**
+         * Collapse way element for player
+         */
         private void collapseWay()
         {
             if (activePlayer == this.playerOne)
@@ -770,11 +897,23 @@ namespace minesHunter
             }
         }
 
+        /**
+         * Close game over menu
+         * 
+         * @param object   sender sender
+         * @param EventArg e     event arguments
+         */
         private void spielBeendenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /**
+         * Before game closing check if player realy want to close game
+         * 
+         * @param object               sender sender
+         * @param FormClosingEventArgs e      form closing event arguments
+         */
         private void GameMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!this.finish)
