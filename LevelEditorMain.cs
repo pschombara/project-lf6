@@ -388,7 +388,38 @@ namespace minesHunter
 
         private void btnRandomOres_Click(object sender, EventArgs e)
         {
-            Editor.randomOres((int) numCoalCnt.Value, (int) numCopperCnt.Value, (int) numIronCnt.Value, (int) numSilverCnt.Value, (int) numGoldCnt.Value, (int) numDiamondCnt.Value);
+            int[] coal = new int[3];
+            int[] copper = new int[3];
+            int[] iron = new int[3];
+            int[] silver = new int[3];
+            int[] gold = new int[3];
+            int[] diamond = new int[3];
+
+            coal[0] = (int)numCoalMin.Value;
+            coal[1] = (int)numCoalMax.Value;
+            coal[2] = (int)numCoalCnt.Value;
+
+            copper[0] = (int)numCopperMin.Value;
+            copper[1] = (int)numCopperMax.Value;
+            copper[2] = (int)numCopperCnt.Value;
+
+            iron[0] = (int)numIronMin.Value;
+            iron[1] = (int)numIronMax.Value;
+            iron[2] = (int)numIronCnt.Value;
+
+            silver[0] = (int)numSilverMin.Value;
+            silver[1] = (int)numSilverMax.Value;
+            silver[2] = (int)numSilverCnt.Value;
+
+            gold[0] = (int)numGoldMin.Value;
+            gold[1] = (int)numGoldMax.Value;
+            gold[2] = (int)numGoldCnt.Value;
+
+            diamond[0] = (int)numDiamondMin.Value;
+            diamond[1] = (int)numDiamondMax.Value;
+            diamond[2] = (int)numDiamondCnt.Value;
+
+            Editor.randomOres(coal, copper, iron, silver, gold, diamond);
             pnlLevel.Refresh();
             setSaved(false);
         }
@@ -400,6 +431,33 @@ namespace minesHunter
                 Form Help = new Help();
                 Help.ShowDialog();
             }
+        }
+
+        private void btnResetOres_Click(object sender, EventArgs e)
+        {
+            numCoalMin.Value = 7;
+            numCoalMax.Value = 11;
+            numCoalCnt.Value = 15;
+
+            numCopperMin.Value = 12;
+            numCopperMax.Value = 16;
+            numCopperCnt.Value = 10;
+
+            numIronMin.Value = 17;
+            numIronMax.Value = 20;
+            numIronCnt.Value = 8;
+
+            numSilverMin.Value = 21;
+            numSilverMax.Value = 24;
+            numSilverCnt.Value = 5;
+
+            numGoldMin.Value = 25;
+            numGoldMax.Value = 28;
+            numGoldCnt.Value = 3;
+
+            numDiamondMin.Value = 29;
+            numDiamondMax.Value = 31;
+            numDiamondCnt.Value = 2;
         }
     }
 }

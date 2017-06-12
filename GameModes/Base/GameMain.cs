@@ -514,6 +514,13 @@ namespace minesHunter
                     {
                         digIt();
                     }
+
+                    else if (e.KeyCode == Keys.Enter)
+                    {
+                        moves = 0;
+                        pbxMoves.Image = null;
+                        move(null);
+                    }
                 }
                 #endregion player one
 
@@ -543,6 +550,12 @@ namespace minesHunter
                     else if (e.KeyCode == Keys.NumPad5)
                     {
                         digIt();
+                    }
+                    else if (e.KeyCode == Keys.Enter)
+                    {
+                        moves = 0;
+                        pbxMoves.Image = null;
+                        move(null);
                     }
                 }
             }
@@ -647,9 +660,9 @@ namespace minesHunter
             pbxMoves.Enabled = false;
 
             int lower = rollTheDice();
-            Thread.Sleep(10);
+            Thread.Sleep(15);
             int middle = rollTheDice();
-            Thread.Sleep(10);
+            Thread.Sleep(15);
             int upper = rollTheDice();
 
             pbxLower.Image = getSlotImage(lower);
@@ -661,7 +674,7 @@ namespace minesHunter
             for (int i = 0; i < 5; i++)
             {
                 middle = rollTheDice();
-                Thread.Sleep(10);
+                Thread.Sleep(15);
                 upper = rollTheDice();
 
                 pbxLower.Image = pbxUpper.Image;
@@ -911,9 +924,8 @@ namespace minesHunter
                     {
                         board[this.waysP1[i].getX(), this.waysP1[i].getY()] = Field.FIELD_DIRT;
                         this.waysP1.RemoveAt(i);
-                        Refresh();
+                        //Refresh();
                     }
-
                 }
             }
             else if (activePlayer == this.playerTwo)
@@ -924,11 +936,16 @@ namespace minesHunter
                     {
                         board[this.waysP2[i].getX(), this.waysP2[i].getY()] = Field.FIELD_DIRT;
                         this.waysP2.RemoveAt(i);
-                        Refresh();
+                        //Refresh();
                     }
-
                 }
             }
+
+            Graphics g = Graphics.FromImage(visualBoard);
+            drawBoard(g);
+            drawWays(g);
+            drawPlayer(g);
+            g.Dispose();
         }
 
         /**

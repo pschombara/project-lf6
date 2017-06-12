@@ -30,6 +30,7 @@ namespace minesHunter
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbl_playerone = new System.Windows.Forms.Label();
             this.lbl_playertwo = new System.Windows.Forms.Label();
             this.lbl1 = new System.Windows.Forms.Label();
@@ -68,6 +69,7 @@ namespace minesHunter
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pB_F1 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBoard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPlayerOneSkin)).BeginInit();
@@ -209,6 +211,7 @@ namespace minesHunter
             this.pbxPlayerOneSkin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbxPlayerOneSkin.TabIndex = 13;
             this.pbxPlayerOneSkin.TabStop = false;
+            this.toolTip1.SetToolTip(this.pbxPlayerOneSkin, "Spieler 1");
             // 
             // pbxPlayerTwoSkin
             // 
@@ -218,6 +221,7 @@ namespace minesHunter
             this.pbxPlayerTwoSkin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbxPlayerTwoSkin.TabIndex = 14;
             this.pbxPlayerTwoSkin.TabStop = false;
+            this.toolTip1.SetToolTip(this.pbxPlayerTwoSkin, "Spieler 2");
             // 
             // pbxMoves
             // 
@@ -272,7 +276,7 @@ namespace minesHunter
             this.lblPlayerOneActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayerOneActive.Location = new System.Drawing.Point(84, 48);
             this.lblPlayerOneActive.Name = "lblPlayerOneActive";
-            this.lblPlayerOneActive.Size = new System.Drawing.Size(28, 26);
+            this.lblPlayerOneActive.Size = new System.Drawing.Size(34, 26);
             this.lblPlayerOneActive.TabIndex = 20;
             this.lblPlayerOneActive.Text = "▼";
             this.lblPlayerOneActive.Visible = false;
@@ -283,7 +287,7 @@ namespace minesHunter
             this.lblPlayerTwoActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayerTwoActive.Location = new System.Drawing.Point(871, 48);
             this.lblPlayerTwoActive.Name = "lblPlayerTwoActive";
-            this.lblPlayerTwoActive.Size = new System.Drawing.Size(28, 26);
+            this.lblPlayerTwoActive.Size = new System.Drawing.Size(34, 26);
             this.lblPlayerTwoActive.TabIndex = 21;
             this.lblPlayerTwoActive.Text = "▼";
             this.lblPlayerTwoActive.Visible = false;
@@ -386,6 +390,7 @@ namespace minesHunter
             this.pictureBox2.Size = new System.Drawing.Size(58, 34);
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox2, "Kupfer");
             // 
             // label1
             // 
@@ -418,6 +423,7 @@ namespace minesHunter
             this.pictureBox1.Size = new System.Drawing.Size(58, 34);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox1, "Kohle");
             // 
             // label3
             // 
@@ -439,6 +445,7 @@ namespace minesHunter
             this.pictureBox3.Size = new System.Drawing.Size(58, 34);
             this.pictureBox3.TabIndex = 5;
             this.pictureBox3.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox3, "Eisen");
             // 
             // pictureBox4
             // 
@@ -449,6 +456,7 @@ namespace minesHunter
             this.pictureBox4.Size = new System.Drawing.Size(58, 34);
             this.pictureBox4.TabIndex = 6;
             this.pictureBox4.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox4, "Silber");
             // 
             // pictureBox5
             // 
@@ -459,6 +467,7 @@ namespace minesHunter
             this.pictureBox5.Size = new System.Drawing.Size(58, 34);
             this.pictureBox5.TabIndex = 7;
             this.pictureBox5.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox5, "Gold");
             // 
             // pictureBox6
             // 
@@ -469,6 +478,7 @@ namespace minesHunter
             this.pictureBox6.Size = new System.Drawing.Size(58, 34);
             this.pictureBox6.TabIndex = 8;
             this.pictureBox6.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox6, "Diamant");
             // 
             // pB_F1
             // 
@@ -494,7 +504,7 @@ namespace minesHunter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 601);
+            this.ClientSize = new System.Drawing.Size(1008, 602);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.pB_F1);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -588,5 +598,6 @@ namespace minesHunter
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pB_F1;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

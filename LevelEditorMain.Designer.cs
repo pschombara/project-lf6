@@ -91,6 +91,23 @@
             this.numIronCnt = new System.Windows.Forms.NumericUpDown();
             this.numCopperCnt = new System.Windows.Forms.NumericUpDown();
             this.numCoalCnt = new System.Windows.Forms.NumericUpDown();
+            this.numCoalMin = new System.Windows.Forms.NumericUpDown();
+            this.numCoalMax = new System.Windows.Forms.NumericUpDown();
+            this.numCopperMin = new System.Windows.Forms.NumericUpDown();
+            this.numCopperMax = new System.Windows.Forms.NumericUpDown();
+            this.numIronMin = new System.Windows.Forms.NumericUpDown();
+            this.numIronMax = new System.Windows.Forms.NumericUpDown();
+            this.numSilverMin = new System.Windows.Forms.NumericUpDown();
+            this.numSilverMax = new System.Windows.Forms.NumericUpDown();
+            this.numGoldMin = new System.Windows.Forms.NumericUpDown();
+            this.numGoldMax = new System.Windows.Forms.NumericUpDown();
+            this.numDiamondMin = new System.Windows.Forms.NumericUpDown();
+            this.numDiamondMax = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnResetOres = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.pnlSelection.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSelection)).BeginInit();
@@ -113,6 +130,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.numIronCnt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCopperCnt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCoalCnt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCoalMin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCoalMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCopperMin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCopperMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numIronMin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numIronMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSilverMin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSilverMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numGoldMin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numGoldMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDiamondMin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDiamondMax)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -211,7 +240,7 @@
             this.pnlSelection.Controls.Add(this.pbSelection);
             this.pnlSelection.Location = new System.Drawing.Point(12, 383);
             this.pnlSelection.Name = "pnlSelection";
-            this.pnlSelection.Size = new System.Drawing.Size(196, 110);
+            this.pnlSelection.Size = new System.Drawing.Size(196, 179);
             this.pnlSelection.TabIndex = 1;
             // 
             // pbSelection
@@ -219,7 +248,7 @@
             this.pbSelection.BackgroundImage = global::minesHunter.Properties.Resources.Grass;
             this.pbSelection.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbSelection.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbSelection.Location = new System.Drawing.Point(69, 29);
+            this.pbSelection.Location = new System.Drawing.Point(72, 63);
             this.pbSelection.Name = "pbSelection";
             this.pbSelection.Size = new System.Drawing.Size(50, 50);
             this.pbSelection.TabIndex = 0;
@@ -466,7 +495,7 @@
             // pbCoal
             // 
             this.pbCoal.BackgroundImage = global::minesHunter.Properties.Resources.Coal;
-            this.pbCoal.Location = new System.Drawing.Point(65, 18);
+            this.pbCoal.Location = new System.Drawing.Point(127, 32);
             this.pbCoal.Name = "pbCoal";
             this.pbCoal.Size = new System.Drawing.Size(32, 32);
             this.pbCoal.TabIndex = 0;
@@ -476,7 +505,7 @@
             // pbCopper
             // 
             this.pbCopper.BackgroundImage = global::minesHunter.Properties.Resources.Copper;
-            this.pbCopper.Location = new System.Drawing.Point(65, 56);
+            this.pbCopper.Location = new System.Drawing.Point(127, 69);
             this.pbCopper.Name = "pbCopper";
             this.pbCopper.Size = new System.Drawing.Size(32, 32);
             this.pbCopper.TabIndex = 4;
@@ -486,7 +515,7 @@
             // pbIron
             // 
             this.pbIron.BackgroundImage = global::minesHunter.Properties.Resources.Iron;
-            this.pbIron.Location = new System.Drawing.Point(65, 94);
+            this.pbIron.Location = new System.Drawing.Point(127, 107);
             this.pbIron.Name = "pbIron";
             this.pbIron.Size = new System.Drawing.Size(32, 32);
             this.pbIron.TabIndex = 6;
@@ -496,7 +525,7 @@
             // pbSilver
             // 
             this.pbSilver.BackgroundImage = global::minesHunter.Properties.Resources.Silver;
-            this.pbSilver.Location = new System.Drawing.Point(65, 132);
+            this.pbSilver.Location = new System.Drawing.Point(127, 145);
             this.pbSilver.Name = "pbSilver";
             this.pbSilver.Size = new System.Drawing.Size(32, 32);
             this.pbSilver.TabIndex = 8;
@@ -506,7 +535,7 @@
             // pbGold
             // 
             this.pbGold.BackgroundImage = global::minesHunter.Properties.Resources.Gold;
-            this.pbGold.Location = new System.Drawing.Point(65, 170);
+            this.pbGold.Location = new System.Drawing.Point(127, 183);
             this.pbGold.Name = "pbGold";
             this.pbGold.Size = new System.Drawing.Size(32, 32);
             this.pbGold.TabIndex = 10;
@@ -516,7 +545,7 @@
             // pbDiamond
             // 
             this.pbDiamond.BackgroundImage = global::minesHunter.Properties.Resources.Diamond;
-            this.pbDiamond.Location = new System.Drawing.Point(65, 208);
+            this.pbDiamond.Location = new System.Drawing.Point(127, 221);
             this.pbDiamond.Name = "pbDiamond";
             this.pbDiamond.Size = new System.Drawing.Size(32, 32);
             this.pbDiamond.TabIndex = 12;
@@ -644,6 +673,23 @@
             // 
             // grbRandomOre
             // 
+            this.grbRandomOre.Controls.Add(this.btnResetOres);
+            this.grbRandomOre.Controls.Add(this.label6);
+            this.grbRandomOre.Controls.Add(this.label5);
+            this.grbRandomOre.Controls.Add(this.label4);
+            this.grbRandomOre.Controls.Add(this.label3);
+            this.grbRandomOre.Controls.Add(this.numDiamondMax);
+            this.grbRandomOre.Controls.Add(this.numDiamondMin);
+            this.grbRandomOre.Controls.Add(this.numGoldMax);
+            this.grbRandomOre.Controls.Add(this.numGoldMin);
+            this.grbRandomOre.Controls.Add(this.numSilverMax);
+            this.grbRandomOre.Controls.Add(this.numSilverMin);
+            this.grbRandomOre.Controls.Add(this.numIronMax);
+            this.grbRandomOre.Controls.Add(this.numIronMin);
+            this.grbRandomOre.Controls.Add(this.numCopperMax);
+            this.grbRandomOre.Controls.Add(this.numCopperMin);
+            this.grbRandomOre.Controls.Add(this.numCoalMax);
+            this.grbRandomOre.Controls.Add(this.numCoalMin);
             this.grbRandomOre.Controls.Add(this.btnRandomOres);
             this.grbRandomOre.Controls.Add(this.numDiamondCnt);
             this.grbRandomOre.Controls.Add(this.pbDiamond);
@@ -659,14 +705,14 @@
             this.grbRandomOre.Controls.Add(this.pbCoal);
             this.grbRandomOre.Location = new System.Drawing.Point(765, 215);
             this.grbRandomOre.Name = "grbRandomOre";
-            this.grbRandomOre.Size = new System.Drawing.Size(231, 278);
+            this.grbRandomOre.Size = new System.Drawing.Size(231, 347);
             this.grbRandomOre.TabIndex = 9;
             this.grbRandomOre.TabStop = false;
             this.grbRandomOre.Text = "Erze zufällig verteilen";
             // 
             // btnRandomOres
             // 
-            this.btnRandomOres.Location = new System.Drawing.Point(23, 246);
+            this.btnRandomOres.Location = new System.Drawing.Point(26, 268);
             this.btnRandomOres.Name = "btnRandomOres";
             this.btnRandomOres.Size = new System.Drawing.Size(179, 23);
             this.btnRandomOres.TabIndex = 6;
@@ -676,10 +722,11 @@
             // 
             // numDiamondCnt
             // 
-            this.numDiamondCnt.Location = new System.Drawing.Point(103, 220);
+            this.numDiamondCnt.Location = new System.Drawing.Point(165, 233);
             this.numDiamondCnt.Name = "numDiamondCnt";
-            this.numDiamondCnt.Size = new System.Drawing.Size(68, 20);
+            this.numDiamondCnt.Size = new System.Drawing.Size(50, 20);
             this.numDiamondCnt.TabIndex = 13;
+            this.numDiamondCnt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numDiamondCnt.Value = new decimal(new int[] {
             2,
             0,
@@ -688,10 +735,11 @@
             // 
             // numGoldCnt
             // 
-            this.numGoldCnt.Location = new System.Drawing.Point(103, 182);
+            this.numGoldCnt.Location = new System.Drawing.Point(165, 195);
             this.numGoldCnt.Name = "numGoldCnt";
-            this.numGoldCnt.Size = new System.Drawing.Size(68, 20);
+            this.numGoldCnt.Size = new System.Drawing.Size(50, 20);
             this.numGoldCnt.TabIndex = 11;
+            this.numGoldCnt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numGoldCnt.Value = new decimal(new int[] {
             3,
             0,
@@ -700,10 +748,11 @@
             // 
             // numSilverCnt
             // 
-            this.numSilverCnt.Location = new System.Drawing.Point(103, 144);
+            this.numSilverCnt.Location = new System.Drawing.Point(165, 157);
             this.numSilverCnt.Name = "numSilverCnt";
-            this.numSilverCnt.Size = new System.Drawing.Size(68, 20);
+            this.numSilverCnt.Size = new System.Drawing.Size(50, 20);
             this.numSilverCnt.TabIndex = 9;
+            this.numSilverCnt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numSilverCnt.Value = new decimal(new int[] {
             5,
             0,
@@ -712,10 +761,11 @@
             // 
             // numIronCnt
             // 
-            this.numIronCnt.Location = new System.Drawing.Point(103, 106);
+            this.numIronCnt.Location = new System.Drawing.Point(165, 119);
             this.numIronCnt.Name = "numIronCnt";
-            this.numIronCnt.Size = new System.Drawing.Size(68, 20);
+            this.numIronCnt.Size = new System.Drawing.Size(50, 20);
             this.numIronCnt.TabIndex = 7;
+            this.numIronCnt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numIronCnt.Value = new decimal(new int[] {
             8,
             0,
@@ -724,10 +774,11 @@
             // 
             // numCopperCnt
             // 
-            this.numCopperCnt.Location = new System.Drawing.Point(103, 68);
+            this.numCopperCnt.Location = new System.Drawing.Point(165, 81);
             this.numCopperCnt.Name = "numCopperCnt";
-            this.numCopperCnt.Size = new System.Drawing.Size(68, 20);
+            this.numCopperCnt.Size = new System.Drawing.Size(50, 20);
             this.numCopperCnt.TabIndex = 5;
+            this.numCopperCnt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numCopperCnt.Value = new decimal(new int[] {
             10,
             0,
@@ -736,15 +787,338 @@
             // 
             // numCoalCnt
             // 
-            this.numCoalCnt.Location = new System.Drawing.Point(103, 30);
+            this.numCoalCnt.Location = new System.Drawing.Point(165, 43);
             this.numCoalCnt.Name = "numCoalCnt";
-            this.numCoalCnt.Size = new System.Drawing.Size(68, 20);
+            this.numCoalCnt.Size = new System.Drawing.Size(50, 20);
             this.numCoalCnt.TabIndex = 1;
+            this.numCoalCnt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numCoalCnt.Value = new decimal(new int[] {
             15,
             0,
             0,
             0});
+            // 
+            // numCoalMin
+            // 
+            this.numCoalMin.Location = new System.Drawing.Point(15, 43);
+            this.numCoalMin.Maximum = new decimal(new int[] {
+            32,
+            0,
+            0,
+            0});
+            this.numCoalMin.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numCoalMin.Name = "numCoalMin";
+            this.numCoalMin.Size = new System.Drawing.Size(50, 20);
+            this.numCoalMin.TabIndex = 14;
+            this.numCoalMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numCoalMin.Value = new decimal(new int[] {
+            7,
+            0,
+            0,
+            0});
+            // 
+            // numCoalMax
+            // 
+            this.numCoalMax.Location = new System.Drawing.Point(71, 43);
+            this.numCoalMax.Maximum = new decimal(new int[] {
+            32,
+            0,
+            0,
+            0});
+            this.numCoalMax.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numCoalMax.Name = "numCoalMax";
+            this.numCoalMax.Size = new System.Drawing.Size(50, 20);
+            this.numCoalMax.TabIndex = 15;
+            this.numCoalMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numCoalMax.Value = new decimal(new int[] {
+            11,
+            0,
+            0,
+            0});
+            // 
+            // numCopperMin
+            // 
+            this.numCopperMin.Location = new System.Drawing.Point(15, 81);
+            this.numCopperMin.Maximum = new decimal(new int[] {
+            32,
+            0,
+            0,
+            0});
+            this.numCopperMin.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numCopperMin.Name = "numCopperMin";
+            this.numCopperMin.Size = new System.Drawing.Size(50, 20);
+            this.numCopperMin.TabIndex = 16;
+            this.numCopperMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numCopperMin.Value = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            // 
+            // numCopperMax
+            // 
+            this.numCopperMax.Location = new System.Drawing.Point(71, 81);
+            this.numCopperMax.Maximum = new decimal(new int[] {
+            32,
+            0,
+            0,
+            0});
+            this.numCopperMax.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numCopperMax.Name = "numCopperMax";
+            this.numCopperMax.Size = new System.Drawing.Size(50, 20);
+            this.numCopperMax.TabIndex = 17;
+            this.numCopperMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numCopperMax.Value = new decimal(new int[] {
+            16,
+            0,
+            0,
+            0});
+            // 
+            // numIronMin
+            // 
+            this.numIronMin.Location = new System.Drawing.Point(15, 119);
+            this.numIronMin.Maximum = new decimal(new int[] {
+            32,
+            0,
+            0,
+            0});
+            this.numIronMin.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numIronMin.Name = "numIronMin";
+            this.numIronMin.Size = new System.Drawing.Size(50, 20);
+            this.numIronMin.TabIndex = 18;
+            this.numIronMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numIronMin.Value = new decimal(new int[] {
+            17,
+            0,
+            0,
+            0});
+            // 
+            // numIronMax
+            // 
+            this.numIronMax.Location = new System.Drawing.Point(71, 119);
+            this.numIronMax.Maximum = new decimal(new int[] {
+            32,
+            0,
+            0,
+            0});
+            this.numIronMax.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numIronMax.Name = "numIronMax";
+            this.numIronMax.Size = new System.Drawing.Size(50, 20);
+            this.numIronMax.TabIndex = 19;
+            this.numIronMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numIronMax.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            // 
+            // numSilverMin
+            // 
+            this.numSilverMin.Location = new System.Drawing.Point(15, 157);
+            this.numSilverMin.Maximum = new decimal(new int[] {
+            32,
+            0,
+            0,
+            0});
+            this.numSilverMin.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numSilverMin.Name = "numSilverMin";
+            this.numSilverMin.Size = new System.Drawing.Size(50, 20);
+            this.numSilverMin.TabIndex = 20;
+            this.numSilverMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numSilverMin.Value = new decimal(new int[] {
+            21,
+            0,
+            0,
+            0});
+            // 
+            // numSilverMax
+            // 
+            this.numSilverMax.Location = new System.Drawing.Point(71, 157);
+            this.numSilverMax.Maximum = new decimal(new int[] {
+            32,
+            0,
+            0,
+            0});
+            this.numSilverMax.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numSilverMax.Name = "numSilverMax";
+            this.numSilverMax.Size = new System.Drawing.Size(50, 20);
+            this.numSilverMax.TabIndex = 21;
+            this.numSilverMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numSilverMax.Value = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
+            // 
+            // numGoldMin
+            // 
+            this.numGoldMin.Location = new System.Drawing.Point(15, 195);
+            this.numGoldMin.Maximum = new decimal(new int[] {
+            32,
+            0,
+            0,
+            0});
+            this.numGoldMin.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numGoldMin.Name = "numGoldMin";
+            this.numGoldMin.Size = new System.Drawing.Size(50, 20);
+            this.numGoldMin.TabIndex = 22;
+            this.numGoldMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numGoldMin.Value = new decimal(new int[] {
+            25,
+            0,
+            0,
+            0});
+            // 
+            // numGoldMax
+            // 
+            this.numGoldMax.Location = new System.Drawing.Point(71, 195);
+            this.numGoldMax.Maximum = new decimal(new int[] {
+            32,
+            0,
+            0,
+            0});
+            this.numGoldMax.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numGoldMax.Name = "numGoldMax";
+            this.numGoldMax.Size = new System.Drawing.Size(50, 20);
+            this.numGoldMax.TabIndex = 23;
+            this.numGoldMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numGoldMax.Value = new decimal(new int[] {
+            28,
+            0,
+            0,
+            0});
+            // 
+            // numDiamondMin
+            // 
+            this.numDiamondMin.Location = new System.Drawing.Point(15, 233);
+            this.numDiamondMin.Maximum = new decimal(new int[] {
+            32,
+            0,
+            0,
+            0});
+            this.numDiamondMin.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numDiamondMin.Name = "numDiamondMin";
+            this.numDiamondMin.Size = new System.Drawing.Size(50, 20);
+            this.numDiamondMin.TabIndex = 24;
+            this.numDiamondMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numDiamondMin.Value = new decimal(new int[] {
+            29,
+            0,
+            0,
+            0});
+            // 
+            // numDiamondMax
+            // 
+            this.numDiamondMax.Location = new System.Drawing.Point(71, 233);
+            this.numDiamondMax.Maximum = new decimal(new int[] {
+            32,
+            0,
+            0,
+            0});
+            this.numDiamondMax.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numDiamondMax.Name = "numDiamondMax";
+            this.numDiamondMax.Size = new System.Drawing.Size(50, 20);
+            this.numDiamondMax.TabIndex = 25;
+            this.numDiamondMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numDiamondMax.Value = new decimal(new int[] {
+            31,
+            0,
+            0,
+            0});
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(25, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "von";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(68, 16);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(20, 13);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "bis";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(124, 16);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(22, 13);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "Erz";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(162, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(39, 13);
+            this.label6.TabIndex = 28;
+            this.label6.Text = "Anzahl";
+            // 
+            // btnResetOres
+            // 
+            this.btnResetOres.Location = new System.Drawing.Point(26, 297);
+            this.btnResetOres.Name = "btnResetOres";
+            this.btnResetOres.Size = new System.Drawing.Size(179, 23);
+            this.btnResetOres.TabIndex = 29;
+            this.btnResetOres.Text = "Felder zurücksetzen";
+            this.btnResetOres.UseVisualStyleBackColor = true;
+            this.btnResetOres.Click += new System.EventHandler(this.btnResetOres_Click);
             // 
             // LevelEditorMain
             // 
@@ -789,12 +1163,25 @@
             this.grbGameManager.ResumeLayout(false);
             this.grbGameManager.PerformLayout();
             this.grbRandomOre.ResumeLayout(false);
+            this.grbRandomOre.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numDiamondCnt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numGoldCnt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSilverCnt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numIronCnt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCopperCnt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCoalCnt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCoalMin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCoalMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCopperMin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCopperMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numIronMin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numIronMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSilverMin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSilverMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numGoldMin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numGoldMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDiamondMin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDiamondMax)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -862,5 +1249,22 @@
         private System.Windows.Forms.PictureBox pbCopper;
         private System.Windows.Forms.NumericUpDown numCoalCnt;
         private System.Windows.Forms.PictureBox pbCoal;
+        private System.Windows.Forms.NumericUpDown numDiamondMax;
+        private System.Windows.Forms.NumericUpDown numDiamondMin;
+        private System.Windows.Forms.NumericUpDown numGoldMax;
+        private System.Windows.Forms.NumericUpDown numGoldMin;
+        private System.Windows.Forms.NumericUpDown numSilverMax;
+        private System.Windows.Forms.NumericUpDown numSilverMin;
+        private System.Windows.Forms.NumericUpDown numIronMax;
+        private System.Windows.Forms.NumericUpDown numIronMin;
+        private System.Windows.Forms.NumericUpDown numCopperMax;
+        private System.Windows.Forms.NumericUpDown numCopperMin;
+        private System.Windows.Forms.NumericUpDown numCoalMax;
+        private System.Windows.Forms.NumericUpDown numCoalMin;
+        private System.Windows.Forms.Button btnResetOres;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
     }
 }

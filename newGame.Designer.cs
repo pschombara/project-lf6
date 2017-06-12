@@ -291,6 +291,7 @@
             this.nudGameRounds.ReadOnly = true;
             this.nudGameRounds.Size = new System.Drawing.Size(118, 26);
             this.nudGameRounds.TabIndex = 9;
+            this.nudGameRounds.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudGameRounds.Value = new decimal(new int[] {
             10,
             0,
