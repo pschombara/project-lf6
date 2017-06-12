@@ -64,9 +64,10 @@
             // pB_A
             // 
             this.pB_A.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pB_A.Location = new System.Drawing.Point(25, 234);
+            this.pB_A.Location = new System.Drawing.Point(38, 360);
+            this.pB_A.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pB_A.Name = "pB_A";
-            this.pB_A.Size = new System.Drawing.Size(50, 50);
+            this.pB_A.Size = new System.Drawing.Size(74, 76);
             this.pB_A.TabIndex = 0;
             this.pB_A.TabStop = false;
             this.pB_A.Paint += new System.Windows.Forms.PaintEventHandler(this.pB_A_Paint);
@@ -75,9 +76,10 @@
             // pB_S
             // 
             this.pB_S.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pB_S.Location = new System.Drawing.Point(81, 234);
+            this.pB_S.Location = new System.Drawing.Point(122, 360);
+            this.pB_S.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pB_S.Name = "pB_S";
-            this.pB_S.Size = new System.Drawing.Size(50, 50);
+            this.pB_S.Size = new System.Drawing.Size(74, 76);
             this.pB_S.TabIndex = 1;
             this.pB_S.TabStop = false;
             this.pB_S.Paint += new System.Windows.Forms.PaintEventHandler(this.pB_S_Paint);
@@ -86,9 +88,10 @@
             // pB_D
             // 
             this.pB_D.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pB_D.Location = new System.Drawing.Point(137, 234);
+            this.pB_D.Location = new System.Drawing.Point(206, 360);
+            this.pB_D.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pB_D.Name = "pB_D";
-            this.pB_D.Size = new System.Drawing.Size(50, 50);
+            this.pB_D.Size = new System.Drawing.Size(74, 76);
             this.pB_D.TabIndex = 2;
             this.pB_D.TabStop = false;
             this.pB_D.Paint += new System.Windows.Forms.PaintEventHandler(this.pB_D_Paint);
@@ -97,9 +100,10 @@
             // pB_W
             // 
             this.pB_W.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pB_W.Location = new System.Drawing.Point(81, 178);
+            this.pB_W.Location = new System.Drawing.Point(122, 274);
+            this.pB_W.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pB_W.Name = "pB_W";
-            this.pB_W.Size = new System.Drawing.Size(50, 50);
+            this.pB_W.Size = new System.Drawing.Size(74, 76);
             this.pB_W.TabIndex = 3;
             this.pB_W.TabStop = false;
             this.pB_W.Paint += new System.Windows.Forms.PaintEventHandler(this.pB_W_Paint);
@@ -108,9 +112,10 @@
             // pB_V
             // 
             this.pB_V.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pB_V.Location = new System.Drawing.Point(193, 290);
+            this.pB_V.Location = new System.Drawing.Point(290, 446);
+            this.pB_V.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pB_V.Name = "pB_V";
-            this.pB_V.Size = new System.Drawing.Size(50, 50);
+            this.pB_V.Size = new System.Drawing.Size(74, 76);
             this.pB_V.TabIndex = 4;
             this.pB_V.TabStop = false;
             this.pB_V.Paint += new System.Windows.Forms.PaintEventHandler(this.pB_V_Paint);
@@ -119,9 +124,10 @@
             // pB_8
             // 
             this.pB_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pB_8.Location = new System.Drawing.Point(579, 178);
+            this.pB_8.Location = new System.Drawing.Point(868, 274);
+            this.pB_8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pB_8.Name = "pB_8";
-            this.pB_8.Size = new System.Drawing.Size(50, 50);
+            this.pB_8.Size = new System.Drawing.Size(74, 76);
             this.pB_8.TabIndex = 5;
             this.pB_8.TabStop = false;
             this.pB_8.Paint += new System.Windows.Forms.PaintEventHandler(this.pB_8_Paint);
@@ -130,9 +136,10 @@
             // pB_5
             // 
             this.pB_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pB_5.Location = new System.Drawing.Point(579, 234);
+            this.pB_5.Location = new System.Drawing.Point(868, 360);
+            this.pB_5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pB_5.Name = "pB_5";
-            this.pB_5.Size = new System.Drawing.Size(50, 50);
+            this.pB_5.Size = new System.Drawing.Size(74, 76);
             this.pB_5.TabIndex = 6;
             this.pB_5.TabStop = false;
             this.pB_5.Paint += new System.Windows.Forms.PaintEventHandler(this.pB_5_Paint);
@@ -141,9 +148,10 @@
             // pB_4
             // 
             this.pB_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pB_4.Location = new System.Drawing.Point(523, 234);
+            this.pB_4.Location = new System.Drawing.Point(784, 360);
+            this.pB_4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pB_4.Name = "pB_4";
-            this.pB_4.Size = new System.Drawing.Size(50, 50);
+            this.pB_4.Size = new System.Drawing.Size(74, 76);
             this.pB_4.TabIndex = 7;
             this.pB_4.TabStop = false;
             this.pB_4.Paint += new System.Windows.Forms.PaintEventHandler(this.pB_4_Paint);
@@ -152,9 +160,10 @@
             // pB_6
             // 
             this.pB_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pB_6.Location = new System.Drawing.Point(635, 234);
+            this.pB_6.Location = new System.Drawing.Point(952, 360);
+            this.pB_6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pB_6.Name = "pB_6";
-            this.pB_6.Size = new System.Drawing.Size(50, 50);
+            this.pB_6.Size = new System.Drawing.Size(74, 76);
             this.pB_6.TabIndex = 8;
             this.pB_6.TabStop = false;
             this.pB_6.Paint += new System.Windows.Forms.PaintEventHandler(this.pB_6_Paint);
@@ -163,9 +172,10 @@
             // pB_2
             // 
             this.pB_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pB_2.Location = new System.Drawing.Point(579, 290);
+            this.pB_2.Location = new System.Drawing.Point(868, 446);
+            this.pB_2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pB_2.Name = "pB_2";
-            this.pB_2.Size = new System.Drawing.Size(50, 50);
+            this.pB_2.Size = new System.Drawing.Size(74, 76);
             this.pB_2.TabIndex = 9;
             this.pB_2.TabStop = false;
             this.pB_2.Paint += new System.Windows.Forms.PaintEventHandler(this.pB_2_Paint);
@@ -174,27 +184,32 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(56, 148);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(84, 228);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 13);
+            this.label1.Size = new System.Drawing.Size(150, 20);
             this.label1.TabIndex = 10;
             this.label1.Text = "Steuerung Spieler 1";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(552, 148);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(828, 228);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 13);
+            this.label2.Size = new System.Drawing.Size(150, 20);
             this.label2.TabIndex = 11;
             this.label2.Text = "Steuerung Spieler 2";
             // 
             // pB_Space
             // 
             this.pB_Space.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pB_Space.Location = new System.Drawing.Point(269, 290);
+            this.pB_Space.Location = new System.Drawing.Point(404, 446);
+            this.pB_Space.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pB_Space.Name = "pB_Space";
-            this.pB_Space.Size = new System.Drawing.Size(200, 50);
+            this.pB_Space.Size = new System.Drawing.Size(299, 76);
             this.pB_Space.TabIndex = 22;
             this.pB_Space.TabStop = false;
             this.pB_Space.Paint += new System.Windows.Forms.PaintEventHandler(this.pB_Space_Paint);
@@ -202,10 +217,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(190, 111);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(285, 171);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 13);
+            this.label3.Size = new System.Drawing.Size(111, 20);
             this.label3.TabIndex = 23;
             this.label3.Tag = "";
             this.label3.Text = "Beschreibung:";
@@ -213,28 +229,35 @@
             // lbl_description
             // 
             this.lbl_description.AutoSize = true;
-            this.lbl_description.Location = new System.Drawing.Point(296, 111);
+            this.lbl_description.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_description.Location = new System.Drawing.Point(444, 171);
+            this.lbl_description.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_description.Name = "lbl_description";
-            this.lbl_description.Size = new System.Drawing.Size(147, 13);
+            this.lbl_description.Size = new System.Drawing.Size(215, 20);
             this.lbl_description.TabIndex = 24;
             this.lbl_description.Text = "bitte drücken sie eine Taste...";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 9);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(196, 14);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(679, 13);
+            this.label4.Size = new System.Drawing.Size(676, 40);
             this.label4.TabIndex = 25;
-            this.label4.Text = "Sie können jederzeit die Hilfe über F1 aufrufen. Bitte halten sie die Taste gedrü" +
-    "ckt, für welche sie die Belegungsbeschreibung wissen möchten.";
+            this.label4.Text = "Sie können jederzeit die Hilfe über F1 aufrufen. \r\nBitte halten sie die Taste ged" +
+    "rückt, für welche sie die Belegungsbeschreibung wissen möchten.";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btn_anleitung
             // 
             this.btn_anleitung.CausesValidation = false;
-            this.btn_anleitung.Location = new System.Drawing.Point(279, 50);
+            this.btn_anleitung.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_anleitung.Location = new System.Drawing.Point(426, 101);
+            this.btn_anleitung.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_anleitung.Name = "btn_anleitung";
-            this.btn_anleitung.Size = new System.Drawing.Size(144, 23);
+            this.btn_anleitung.Size = new System.Drawing.Size(216, 35);
             this.btn_anleitung.TabIndex = 26;
             this.btn_anleitung.TabStop = false;
             this.btn_anleitung.Text = "Spielanleitung";
@@ -243,9 +266,9 @@
             // 
             // Help
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(706, 364);
+            this.ClientSize = new System.Drawing.Size(1059, 560);
             this.Controls.Add(this.btn_anleitung);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lbl_description);
@@ -263,9 +286,11 @@
             this.Controls.Add(this.pB_D);
             this.Controls.Add(this.pB_S);
             this.Controls.Add(this.pB_A);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "Help";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

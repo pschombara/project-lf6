@@ -40,7 +40,6 @@ namespace minesHunter
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.optionenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menueSound = new System.Windows.Forms.ToolStripMenuItem();
-            this.menue_Musik = new System.Windows.Forms.ToolStripMenuItem();
             this.spielBeendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pbBoard = new System.Windows.Forms.PictureBox();
             this.pbxPlayerOneSkin = new System.Windows.Forms.PictureBox();
@@ -165,7 +164,6 @@ namespace minesHunter
             // 
             this.optionenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menueSound,
-            this.menue_Musik,
             this.spielBeendenToolStripMenuItem});
             this.optionenToolStripMenuItem.Name = "optionenToolStripMenuItem";
             this.optionenToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
@@ -177,20 +175,13 @@ namespace minesHunter
             this.menueSound.CheckOnClick = true;
             this.menueSound.CheckState = System.Windows.Forms.CheckState.Checked;
             this.menueSound.Name = "menueSound";
-            this.menueSound.Size = new System.Drawing.Size(148, 22);
+            this.menueSound.Size = new System.Drawing.Size(152, 22);
             this.menueSound.Text = "Sound";
-            // 
-            // menue_Musik
-            // 
-            this.menue_Musik.CheckOnClick = true;
-            this.menue_Musik.Name = "menue_Musik";
-            this.menue_Musik.Size = new System.Drawing.Size(148, 22);
-            this.menue_Musik.Text = "Musik";
             // 
             // spielBeendenToolStripMenuItem
             // 
             this.spielBeendenToolStripMenuItem.Name = "spielBeendenToolStripMenuItem";
-            this.spielBeendenToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.spielBeendenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.spielBeendenToolStripMenuItem.Text = "Spiel Beenden";
             this.spielBeendenToolStripMenuItem.Click += new System.EventHandler(this.spielBeendenToolStripMenuItem_Click);
             // 
@@ -576,7 +567,6 @@ namespace minesHunter
 		private System.Windows.Forms.PictureBox pbxLower;
 		private System.Windows.Forms.PictureBox pbxMidd;
 		private System.Windows.Forms.PictureBox pbxUpper;
-        private System.Windows.Forms.ToolStripMenuItem menue_Musik;
         private System.Windows.Forms.Label lblRollTheDice;
         private System.Windows.Forms.ToolStripMenuItem spielBeendenToolStripMenuItem;
         private System.Windows.Forms.Label lblPlayerOneActive;

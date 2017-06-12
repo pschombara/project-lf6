@@ -102,26 +102,29 @@
             // 
             // txtNewGameName
             // 
-            this.txtNewGameName.Location = new System.Drawing.Point(50, 34);
+            this.txtNewGameName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNewGameName.Location = new System.Drawing.Point(67, 24);
             this.txtNewGameName.Name = "txtNewGameName";
-            this.txtNewGameName.Size = new System.Drawing.Size(100, 20);
+            this.txtNewGameName.Size = new System.Drawing.Size(100, 26);
             this.txtNewGameName.TabIndex = 1;
             this.txtNewGameName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNewGameName_KeyDown);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 37);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.Size = new System.Drawing.Size(55, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Name:";
             // 
             // btnNewGame
             // 
-            this.btnNewGame.Location = new System.Drawing.Point(156, 32);
+            this.btnNewGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewGame.Location = new System.Drawing.Point(171, 24);
             this.btnNewGame.Name = "btnNewGame";
-            this.btnNewGame.Size = new System.Drawing.Size(151, 23);
+            this.btnNewGame.Size = new System.Drawing.Size(151, 26);
             this.btnNewGame.TabIndex = 3;
             this.btnNewGame.Text = "Neues Spiel erstellen";
             this.btnNewGame.UseVisualStyleBackColor = true;
@@ -129,9 +132,10 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(12, 282);
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(12, 273);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.Size = new System.Drawing.Size(75, 32);
             this.btnBack.TabIndex = 4;
             this.btnBack.Text = "Zurück";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -142,6 +146,7 @@
             this.grbAddGame.Controls.Add(this.label1);
             this.grbAddGame.Controls.Add(this.txtNewGameName);
             this.grbAddGame.Controls.Add(this.btnNewGame);
+            this.grbAddGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbAddGame.Location = new System.Drawing.Point(0, 187);
             this.grbAddGame.Name = "grbAddGame";
             this.grbAddGame.Size = new System.Drawing.Size(744, 66);
@@ -151,12 +156,14 @@
             // 
             // btnStartLevelEditor
             // 
-            this.btnStartLevelEditor.Location = new System.Drawing.Point(94, 282);
+            this.btnStartLevelEditor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStartLevelEditor.Location = new System.Drawing.Point(107, 273);
             this.btnStartLevelEditor.Name = "btnStartLevelEditor";
-            this.btnStartLevelEditor.Size = new System.Drawing.Size(110, 23);
+            this.btnStartLevelEditor.Size = new System.Drawing.Size(124, 32);
             this.btnStartLevelEditor.TabIndex = 6;
             this.btnStartLevelEditor.Text = "<Level Editor>";
             this.btnStartLevelEditor.UseVisualStyleBackColor = true;
+            this.btnStartLevelEditor.Visible = false;
             this.btnStartLevelEditor.Click += new System.EventHandler(this.btnStartLevelEditor_Click);
             // 
             // GameEditor
