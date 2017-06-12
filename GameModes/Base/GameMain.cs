@@ -924,7 +924,7 @@ namespace minesHunter
                     {
                         board[this.waysP1[i].getX(), this.waysP1[i].getY()] = Field.FIELD_DIRT;
                         this.waysP1.RemoveAt(i);
-                        //Refresh();
+                        this.playSound(ResourceSound.Collapse);
                     }
                 }
             }
@@ -936,16 +936,19 @@ namespace minesHunter
                     {
                         board[this.waysP2[i].getX(), this.waysP2[i].getY()] = Field.FIELD_DIRT;
                         this.waysP2.RemoveAt(i);
-                        //Refresh();
+                        this.playSound(ResourceSound.Collapse);
                     }
                 }
             }
 
+            //Neu zeichnen
             Graphics g = Graphics.FromImage(visualBoard);
             drawBoard(g);
             drawWays(g);
             drawPlayer(g);
             g.Dispose();
+            //Aktualisieren
+            Refresh();
         }
 
         /**
