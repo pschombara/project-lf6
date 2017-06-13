@@ -144,6 +144,14 @@ namespace minesHunter
         {
             //pnlLevel.Refresh();
         }
+
+        private void beschriftungToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (beschriftungToolStripMenuItem.Checked)
+                pbScale.Visible = true;
+            else
+                pbScale.Visible = false;
+        }
         #endregion
 
         #region Texture Buttons

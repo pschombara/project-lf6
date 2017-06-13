@@ -121,14 +121,8 @@
   <data name="The_Hero_Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\The_Hero_Right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Lucinda_Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Lucinda_Left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Camo_Girl_Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Camo_Girl_Right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pick01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pick01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Steve_Up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Steve_Up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="wayBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wayBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,14 +136,14 @@
   <data name="Coal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Coal.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="The_Hero_Down" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\The_Hero_Down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ScaleVertikal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ScaleVertikal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pick02" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pick02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pick04" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pick04.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pick09" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pick09.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Icon_1024" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon_1024.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ClearTexture" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ClearTexture.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,35 +154,29 @@
   <data name="The_Hero_Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\The_Hero_Left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="The_Hero_Up" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\The_Hero_Up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Alex_Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Alex_Right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="No_Brocken" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\No_Brocken.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pick05" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pick05.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Player_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Lucinda_Up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Lucinda_Up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="wayBlueLight" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wayBlueLight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Steve_Up" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Steve_Up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="wayPink" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wayPink.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pick11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pick11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Copper" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Copper.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="wayGreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\wayGreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pick01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pick01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Grass" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Grass.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,29 +187,29 @@
   <data name="Lucinda_Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Lucinda_Right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Silver" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Silver.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="wayGreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wayGreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Camo_Girl_Down" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Camo_Girl_Down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Icon_512" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon_512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="wayYellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wayYellow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pick03" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pick03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pick06" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pick06.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Steve_Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Steve_Right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="The_Hero_Up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\The_Hero_Up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Lucinda_Down" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Lucinda_Down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pick12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pick12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pick08" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pick08.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pick11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pick11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Player_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Player_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Steve_Down" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Steve_Down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -235,70 +223,85 @@
   <data name="Dirt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dirt.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Diamond" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Diamond.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pick06" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pick06.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pick09" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pick09.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pick04" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pick04.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="background_main" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background_main.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Player_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Player_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pick08" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pick08.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Lucinda_Up" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Lucinda_Up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Player_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Player_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="wayPurple" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wayPurple.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Silver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Silver.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Iron" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Iron.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Stone" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Stone.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pick03" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pick03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icon_1024" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icon_1024.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="The_Hero_Down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\The_Hero_Down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pick10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pick10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Steve_Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Steve_Right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pick12" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pick12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Lucinda_Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Lucinda_Left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Camo_Girl_Up" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Camo_Girl_Up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Lucinda_Down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Lucinda_Down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="wayOrange" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wayOrange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icon_512" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icon_512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pick05" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pick05.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Diamond" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Diamond.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Stone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Stone.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Camo_Girl_Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Camo_Girl_Left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pick02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pick02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Camo_Girl_Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Camo_Girl_Right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pick10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pick10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Steve_Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Steve_Left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Pickaxe" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pickaxe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="pick07" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pick07.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Camo_Girl_Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Camo_Girl_Left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Camo_Girl_Up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Camo_Girl_Up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pickaxe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pickaxe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="wayBlueDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wayBlueDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Gold" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Gold.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="background_main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\background_main.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

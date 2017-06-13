@@ -190,6 +190,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="Resources\Sound\Collapse.wav" />
+    <None Include="Resources\ScaleVertikal.png" />
     <Content Include="Templates\games\Höhle2\Ebene1.lvl">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

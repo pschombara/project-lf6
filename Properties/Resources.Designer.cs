@@ -473,6 +473,16 @@ namespace minesHunter.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ScaleVertikal {
+            get {
+                object obj = ResourceManager.GetObject("ScaleVertikal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Silver {
             get {
                 object obj = ResourceManager.GetObject("Silver", resourceCulture);
