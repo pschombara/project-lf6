@@ -110,6 +110,27 @@
             this.numCopperCnt = new System.Windows.Forms.NumericUpDown();
             this.numCoalCnt = new System.Windows.Forms.NumericUpDown();
             this.pbScale = new System.Windows.Forms.PictureBox();
+            this.grbOreAnalytics = new System.Windows.Forms.GroupBox();
+            this.pbAnalyticsCoal = new System.Windows.Forms.PictureBox();
+            this.pbAnalyticsCopper = new System.Windows.Forms.PictureBox();
+            this.lblAnalyticsCntCoal = new System.Windows.Forms.Label();
+            this.lblAnalyticsCntCopper = new System.Windows.Forms.Label();
+            this.lblAnalyticsPointsCoal = new System.Windows.Forms.Label();
+            this.lblAnalyticsPointsCopper = new System.Windows.Forms.Label();
+            this.pbAnalyticsIron = new System.Windows.Forms.PictureBox();
+            this.pbAnalyticsSilver = new System.Windows.Forms.PictureBox();
+            this.lblAnalyticsCntIron = new System.Windows.Forms.Label();
+            this.lblAnalyticsCntSilver = new System.Windows.Forms.Label();
+            this.lblAnalyticsPointsIron = new System.Windows.Forms.Label();
+            this.lblAnalyticsPointsSilver = new System.Windows.Forms.Label();
+            this.pbAnalyticsGold = new System.Windows.Forms.PictureBox();
+            this.pbAnalyticsDiamond = new System.Windows.Forms.PictureBox();
+            this.lblAnalyticsCntGold = new System.Windows.Forms.Label();
+            this.lblAnalyticsCntDiamond = new System.Windows.Forms.Label();
+            this.lblAnalyticsPointsGold = new System.Windows.Forms.Label();
+            this.lblAnalyticsPointsDiamond = new System.Windows.Forms.Label();
+            this.grbAnalyticsGesamt = new System.Windows.Forms.GroupBox();
+            this.lblTotalPoints = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.pnlSelection.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSelection)).BeginInit();
@@ -145,6 +166,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.numCopperCnt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCoalCnt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbScale)).BeginInit();
+            this.grbOreAnalytics.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAnalyticsCoal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAnalyticsCopper)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAnalyticsIron)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAnalyticsSilver)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAnalyticsGold)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAnalyticsDiamond)).BeginInit();
+            this.grbAnalyticsGesamt.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -1143,11 +1172,240 @@
             this.pbScale.TabStop = false;
             this.pbScale.Visible = false;
             // 
+            // grbOreAnalytics
+            // 
+            this.grbOreAnalytics.Controls.Add(this.lblAnalyticsPointsDiamond);
+            this.grbOreAnalytics.Controls.Add(this.lblAnalyticsPointsGold);
+            this.grbOreAnalytics.Controls.Add(this.lblAnalyticsCntDiamond);
+            this.grbOreAnalytics.Controls.Add(this.lblAnalyticsCntGold);
+            this.grbOreAnalytics.Controls.Add(this.pbAnalyticsDiamond);
+            this.grbOreAnalytics.Controls.Add(this.pbAnalyticsGold);
+            this.grbOreAnalytics.Controls.Add(this.lblAnalyticsPointsSilver);
+            this.grbOreAnalytics.Controls.Add(this.lblAnalyticsPointsIron);
+            this.grbOreAnalytics.Controls.Add(this.lblAnalyticsCntSilver);
+            this.grbOreAnalytics.Controls.Add(this.lblAnalyticsCntIron);
+            this.grbOreAnalytics.Controls.Add(this.pbAnalyticsSilver);
+            this.grbOreAnalytics.Controls.Add(this.pbAnalyticsIron);
+            this.grbOreAnalytics.Controls.Add(this.lblAnalyticsPointsCopper);
+            this.grbOreAnalytics.Controls.Add(this.lblAnalyticsPointsCoal);
+            this.grbOreAnalytics.Controls.Add(this.lblAnalyticsCntCopper);
+            this.grbOreAnalytics.Controls.Add(this.lblAnalyticsCntCoal);
+            this.grbOreAnalytics.Controls.Add(this.pbAnalyticsCopper);
+            this.grbOreAnalytics.Controls.Add(this.pbAnalyticsCoal);
+            this.grbOreAnalytics.Location = new System.Drawing.Point(229, 568);
+            this.grbOreAnalytics.Name = "grbOreAnalytics";
+            this.grbOreAnalytics.Size = new System.Drawing.Size(513, 89);
+            this.grbOreAnalytics.TabIndex = 12;
+            this.grbOreAnalytics.TabStop = false;
+            this.grbOreAnalytics.Text = "Auswertung der Erze";
+            // 
+            // pbAnalyticsCoal
+            // 
+            this.pbAnalyticsCoal.BackgroundImage = global::minesHunter.Properties.Resources.Coal;
+            this.pbAnalyticsCoal.Location = new System.Drawing.Point(59, 19);
+            this.pbAnalyticsCoal.Name = "pbAnalyticsCoal";
+            this.pbAnalyticsCoal.Size = new System.Drawing.Size(32, 32);
+            this.pbAnalyticsCoal.TabIndex = 30;
+            this.pbAnalyticsCoal.TabStop = false;
+            this.toolTip1.SetToolTip(this.pbAnalyticsCoal, "Kohle");
+            // 
+            // pbAnalyticsCopper
+            // 
+            this.pbAnalyticsCopper.BackgroundImage = global::minesHunter.Properties.Resources.Copper;
+            this.pbAnalyticsCopper.Location = new System.Drawing.Point(59, 57);
+            this.pbAnalyticsCopper.Name = "pbAnalyticsCopper";
+            this.pbAnalyticsCopper.Size = new System.Drawing.Size(32, 32);
+            this.pbAnalyticsCopper.TabIndex = 30;
+            this.pbAnalyticsCopper.TabStop = false;
+            this.toolTip1.SetToolTip(this.pbAnalyticsCopper, "Kupfer");
+            // 
+            // lblAnalyticsCntCoal
+            // 
+            this.lblAnalyticsCntCoal.AutoSize = true;
+            this.lblAnalyticsCntCoal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnalyticsCntCoal.Location = new System.Drawing.Point(6, 19);
+            this.lblAnalyticsCntCoal.Name = "lblAnalyticsCntCoal";
+            this.lblAnalyticsCntCoal.Size = new System.Drawing.Size(27, 20);
+            this.lblAnalyticsCntCoal.TabIndex = 31;
+            this.lblAnalyticsCntCoal.Text = "0x";
+            // 
+            // lblAnalyticsCntCopper
+            // 
+            this.lblAnalyticsCntCopper.AutoSize = true;
+            this.lblAnalyticsCntCopper.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnalyticsCntCopper.Location = new System.Drawing.Point(6, 57);
+            this.lblAnalyticsCntCopper.Name = "lblAnalyticsCntCopper";
+            this.lblAnalyticsCntCopper.Size = new System.Drawing.Size(27, 20);
+            this.lblAnalyticsCntCopper.TabIndex = 32;
+            this.lblAnalyticsCntCopper.Text = "0x";
+            // 
+            // lblAnalyticsPointsCoal
+            // 
+            this.lblAnalyticsPointsCoal.AutoSize = true;
+            this.lblAnalyticsPointsCoal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnalyticsPointsCoal.Location = new System.Drawing.Point(97, 19);
+            this.lblAnalyticsPointsCoal.Name = "lblAnalyticsPointsCoal";
+            this.lblAnalyticsPointsCoal.Size = new System.Drawing.Size(50, 20);
+            this.lblAnalyticsPointsCoal.TabIndex = 33;
+            this.lblAnalyticsPointsCoal.Text = "= 0 P";
+            // 
+            // lblAnalyticsPointsCopper
+            // 
+            this.lblAnalyticsPointsCopper.AutoSize = true;
+            this.lblAnalyticsPointsCopper.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnalyticsPointsCopper.Location = new System.Drawing.Point(97, 57);
+            this.lblAnalyticsPointsCopper.Name = "lblAnalyticsPointsCopper";
+            this.lblAnalyticsPointsCopper.Size = new System.Drawing.Size(50, 20);
+            this.lblAnalyticsPointsCopper.TabIndex = 34;
+            this.lblAnalyticsPointsCopper.Text = "= 0 P";
+            // 
+            // pbAnalyticsIron
+            // 
+            this.pbAnalyticsIron.BackgroundImage = global::minesHunter.Properties.Resources.Iron;
+            this.pbAnalyticsIron.Location = new System.Drawing.Point(224, 19);
+            this.pbAnalyticsIron.Name = "pbAnalyticsIron";
+            this.pbAnalyticsIron.Size = new System.Drawing.Size(32, 32);
+            this.pbAnalyticsIron.TabIndex = 30;
+            this.pbAnalyticsIron.TabStop = false;
+            this.toolTip1.SetToolTip(this.pbAnalyticsIron, "Eisen");
+            // 
+            // pbAnalyticsSilver
+            // 
+            this.pbAnalyticsSilver.BackgroundImage = global::minesHunter.Properties.Resources.Silver;
+            this.pbAnalyticsSilver.Location = new System.Drawing.Point(224, 57);
+            this.pbAnalyticsSilver.Name = "pbAnalyticsSilver";
+            this.pbAnalyticsSilver.Size = new System.Drawing.Size(32, 32);
+            this.pbAnalyticsSilver.TabIndex = 30;
+            this.pbAnalyticsSilver.TabStop = false;
+            this.toolTip1.SetToolTip(this.pbAnalyticsSilver, "Silber");
+            // 
+            // lblAnalyticsCntIron
+            // 
+            this.lblAnalyticsCntIron.AutoSize = true;
+            this.lblAnalyticsCntIron.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnalyticsCntIron.Location = new System.Drawing.Point(176, 19);
+            this.lblAnalyticsCntIron.Name = "lblAnalyticsCntIron";
+            this.lblAnalyticsCntIron.Size = new System.Drawing.Size(27, 20);
+            this.lblAnalyticsCntIron.TabIndex = 35;
+            this.lblAnalyticsCntIron.Text = "0x";
+            // 
+            // lblAnalyticsCntSilver
+            // 
+            this.lblAnalyticsCntSilver.AutoSize = true;
+            this.lblAnalyticsCntSilver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnalyticsCntSilver.Location = new System.Drawing.Point(176, 57);
+            this.lblAnalyticsCntSilver.Name = "lblAnalyticsCntSilver";
+            this.lblAnalyticsCntSilver.Size = new System.Drawing.Size(27, 20);
+            this.lblAnalyticsCntSilver.TabIndex = 36;
+            this.lblAnalyticsCntSilver.Text = "0x";
+            // 
+            // lblAnalyticsPointsIron
+            // 
+            this.lblAnalyticsPointsIron.AutoSize = true;
+            this.lblAnalyticsPointsIron.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnalyticsPointsIron.Location = new System.Drawing.Point(256, 19);
+            this.lblAnalyticsPointsIron.Name = "lblAnalyticsPointsIron";
+            this.lblAnalyticsPointsIron.Size = new System.Drawing.Size(50, 20);
+            this.lblAnalyticsPointsIron.TabIndex = 37;
+            this.lblAnalyticsPointsIron.Text = "= 0 P";
+            // 
+            // lblAnalyticsPointsSilver
+            // 
+            this.lblAnalyticsPointsSilver.AutoSize = true;
+            this.lblAnalyticsPointsSilver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnalyticsPointsSilver.Location = new System.Drawing.Point(256, 57);
+            this.lblAnalyticsPointsSilver.Name = "lblAnalyticsPointsSilver";
+            this.lblAnalyticsPointsSilver.Size = new System.Drawing.Size(50, 20);
+            this.lblAnalyticsPointsSilver.TabIndex = 38;
+            this.lblAnalyticsPointsSilver.Text = "= 0 P";
+            // 
+            // pbAnalyticsGold
+            // 
+            this.pbAnalyticsGold.BackgroundImage = global::minesHunter.Properties.Resources.Gold;
+            this.pbAnalyticsGold.Location = new System.Drawing.Point(389, 19);
+            this.pbAnalyticsGold.Name = "pbAnalyticsGold";
+            this.pbAnalyticsGold.Size = new System.Drawing.Size(32, 32);
+            this.pbAnalyticsGold.TabIndex = 30;
+            this.pbAnalyticsGold.TabStop = false;
+            this.toolTip1.SetToolTip(this.pbAnalyticsGold, "Gold");
+            // 
+            // pbAnalyticsDiamond
+            // 
+            this.pbAnalyticsDiamond.BackgroundImage = global::minesHunter.Properties.Resources.Diamond;
+            this.pbAnalyticsDiamond.Location = new System.Drawing.Point(389, 57);
+            this.pbAnalyticsDiamond.Name = "pbAnalyticsDiamond";
+            this.pbAnalyticsDiamond.Size = new System.Drawing.Size(32, 32);
+            this.pbAnalyticsDiamond.TabIndex = 30;
+            this.pbAnalyticsDiamond.TabStop = false;
+            this.toolTip1.SetToolTip(this.pbAnalyticsDiamond, "Diamant");
+            // 
+            // lblAnalyticsCntGold
+            // 
+            this.lblAnalyticsCntGold.AutoSize = true;
+            this.lblAnalyticsCntGold.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnalyticsCntGold.Location = new System.Drawing.Point(340, 19);
+            this.lblAnalyticsCntGold.Name = "lblAnalyticsCntGold";
+            this.lblAnalyticsCntGold.Size = new System.Drawing.Size(27, 20);
+            this.lblAnalyticsCntGold.TabIndex = 39;
+            this.lblAnalyticsCntGold.Text = "0x";
+            // 
+            // lblAnalyticsCntDiamond
+            // 
+            this.lblAnalyticsCntDiamond.AutoSize = true;
+            this.lblAnalyticsCntDiamond.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnalyticsCntDiamond.Location = new System.Drawing.Point(340, 57);
+            this.lblAnalyticsCntDiamond.Name = "lblAnalyticsCntDiamond";
+            this.lblAnalyticsCntDiamond.Size = new System.Drawing.Size(27, 20);
+            this.lblAnalyticsCntDiamond.TabIndex = 40;
+            this.lblAnalyticsCntDiamond.Text = "0x";
+            // 
+            // lblAnalyticsPointsGold
+            // 
+            this.lblAnalyticsPointsGold.AutoSize = true;
+            this.lblAnalyticsPointsGold.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnalyticsPointsGold.Location = new System.Drawing.Point(427, 19);
+            this.lblAnalyticsPointsGold.Name = "lblAnalyticsPointsGold";
+            this.lblAnalyticsPointsGold.Size = new System.Drawing.Size(50, 20);
+            this.lblAnalyticsPointsGold.TabIndex = 41;
+            this.lblAnalyticsPointsGold.Text = "= 0 P";
+            // 
+            // lblAnalyticsPointsDiamond
+            // 
+            this.lblAnalyticsPointsDiamond.AutoSize = true;
+            this.lblAnalyticsPointsDiamond.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnalyticsPointsDiamond.Location = new System.Drawing.Point(427, 57);
+            this.lblAnalyticsPointsDiamond.Name = "lblAnalyticsPointsDiamond";
+            this.lblAnalyticsPointsDiamond.Size = new System.Drawing.Size(50, 20);
+            this.lblAnalyticsPointsDiamond.TabIndex = 42;
+            this.lblAnalyticsPointsDiamond.Text = "= 0 P";
+            // 
+            // grbAnalyticsGesamt
+            // 
+            this.grbAnalyticsGesamt.Controls.Add(this.lblTotalPoints);
+            this.grbAnalyticsGesamt.Location = new System.Drawing.Point(765, 568);
+            this.grbAnalyticsGesamt.Name = "grbAnalyticsGesamt";
+            this.grbAnalyticsGesamt.Size = new System.Drawing.Size(231, 89);
+            this.grbAnalyticsGesamt.TabIndex = 13;
+            this.grbAnalyticsGesamt.TabStop = false;
+            this.grbAnalyticsGesamt.Text = "Gesamt-Punkte";
+            // 
+            // lblTotalPoints
+            // 
+            this.lblTotalPoints.AutoSize = true;
+            this.lblTotalPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPoints.Location = new System.Drawing.Point(79, 30);
+            this.lblTotalPoints.Name = "lblTotalPoints";
+            this.lblTotalPoints.Size = new System.Drawing.Size(73, 29);
+            this.lblTotalPoints.TabIndex = 43;
+            this.lblTotalPoints.Text = "= 0 P";
+            // 
             // LevelEditorMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 682);
+            this.Controls.Add(this.grbAnalyticsGesamt);
+            this.Controls.Add(this.grbOreAnalytics);
             this.Controls.Add(this.pbScale);
             this.Controls.Add(this.grbRandomOre);
             this.Controls.Add(this.grbGameManager);
@@ -1207,6 +1465,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.numCopperCnt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCoalCnt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbScale)).EndInit();
+            this.grbOreAnalytics.ResumeLayout(false);
+            this.grbOreAnalytics.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAnalyticsCoal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAnalyticsCopper)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAnalyticsIron)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAnalyticsSilver)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAnalyticsGold)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAnalyticsDiamond)).EndInit();
+            this.grbAnalyticsGesamt.ResumeLayout(false);
+            this.grbAnalyticsGesamt.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1293,5 +1561,26 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pbScale;
         private System.Windows.Forms.ToolStripMenuItem beschriftungToolStripMenuItem;
+        private System.Windows.Forms.GroupBox grbOreAnalytics;
+        private System.Windows.Forms.Label lblAnalyticsPointsDiamond;
+        private System.Windows.Forms.Label lblAnalyticsPointsGold;
+        private System.Windows.Forms.Label lblAnalyticsCntDiamond;
+        private System.Windows.Forms.Label lblAnalyticsCntGold;
+        private System.Windows.Forms.PictureBox pbAnalyticsDiamond;
+        private System.Windows.Forms.PictureBox pbAnalyticsGold;
+        private System.Windows.Forms.Label lblAnalyticsPointsSilver;
+        private System.Windows.Forms.Label lblAnalyticsPointsIron;
+        private System.Windows.Forms.Label lblAnalyticsCntSilver;
+        private System.Windows.Forms.Label lblAnalyticsCntIron;
+        private System.Windows.Forms.PictureBox pbAnalyticsSilver;
+        private System.Windows.Forms.PictureBox pbAnalyticsIron;
+        private System.Windows.Forms.Label lblAnalyticsPointsCopper;
+        private System.Windows.Forms.Label lblAnalyticsPointsCoal;
+        private System.Windows.Forms.Label lblAnalyticsCntCopper;
+        private System.Windows.Forms.Label lblAnalyticsCntCoal;
+        private System.Windows.Forms.PictureBox pbAnalyticsCopper;
+        private System.Windows.Forms.PictureBox pbAnalyticsCoal;
+        private System.Windows.Forms.GroupBox grbAnalyticsGesamt;
+        private System.Windows.Forms.Label lblTotalPoints;
     }
 }

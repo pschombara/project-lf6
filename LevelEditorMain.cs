@@ -142,7 +142,10 @@ namespace minesHunter
 
         private void mauszeigerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //pnlLevel.Refresh();
+            if (mauszeigerToolStripMenuItem.Checked && pnlLevel.ClientRectangle.Contains(pnlLevel.PointToClient(Cursor.Position)))
+                this.Cursor = Editor.getCustomCursor();
+            else
+                this.Cursor = Cursors.Arrow;
         }
 
         private void beschriftungToolStripMenuItem_Click(object sender, EventArgs e)
@@ -252,6 +255,7 @@ namespace minesHunter
         {
             Editor.putTexture(pnlLevel.CreateGraphics(), e.X, e.Y);
             setSaved(false);
+            RefreshAnalytics();
         }
 
         private void pnlLevel_MouseMove(object sender, MouseEventArgs e)
@@ -263,11 +267,7 @@ namespace minesHunter
                 setSaved(false);
             }
 
-            //ToDo stürtzt manchmal ab wenn Mauszeiger angeschaltet
-            if (mauszeigerToolStripMenuItem.Checked)
-                this.Cursor = Editor.getCustomCursor();
-            else
-                this.Cursor = Cursors.Arrow;
+            RefreshAnalytics();
         }
 
         private void pnlLevel_MouseEnter(object sender, EventArgs e)
@@ -288,6 +288,8 @@ namespace minesHunter
         private void pnlLevel_Paint(object sender, PaintEventArgs e)
         {
             Editor.drawLevel(e.Graphics);
+
+            RefreshAnalytics();
         }
 
         private Bitmap getLevelAsBitmap()
@@ -466,6 +468,24 @@ namespace minesHunter
             numDiamondMin.Value = 29;
             numDiamondMax.Value = 31;
             numDiamondCnt.Value = 2;
+        }
+
+        public void RefreshAnalytics()
+        {
+            int[] ores = Editor.AnalyticOres();
+            lblAnalyticsCntCoal.Text = ores[0].ToString() + "x";
+            lblAnalyticsPointsCoal.Text = "= " + ores[1].ToString() + " P";
+            lblAnalyticsCntCopper.Text = ores[2].ToString() + "x";
+            lblAnalyticsPointsCopper.Text = "= " + ores[3].ToString() + " P";
+            lblAnalyticsCntIron.Text = ores[4].ToString() + "x";
+            lblAnalyticsPointsIron.Text = "= " + ores[5].ToString() + " P";
+            lblAnalyticsCntSilver.Text = ores[6].ToString() + "x";
+            lblAnalyticsPointsSilver.Text = "= " + ores[7].ToString() + " P";
+            lblAnalyticsCntGold.Text = ores[8].ToString() + "x";
+            lblAnalyticsPointsGold.Text = "= " + ores[9].ToString() + " P";
+            lblAnalyticsCntDiamond.Text = ores[10].ToString() + "x";
+            lblAnalyticsPointsDiamond.Text = "= " + ores[11].ToString() + " P";
+            lblTotalPoints.Text = "= " + ores[12].ToString() + " P";
         }
     }
 }

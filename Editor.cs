@@ -495,5 +495,59 @@ namespace minesHunter
 
             game.saveToFile();
         }
+
+        public int[] AnalyticOres()
+        {
+            int cntCoal = 0;
+            int cntCopper = 0;
+            int cntIron = 0;
+            int cntSilver = 0;
+            int cntGold = 0;
+            int cntDiamond = 0;
+
+            for (int x = 0; x < 32; x++)
+            {
+                for (int y = 0; y < 32; y++)
+                {
+                    switch (map[x, y])
+                    {
+                        case Field.FIELD_COAL:
+                            ++cntCoal;
+                            break;
+                        case Field.FIELD_COPPER:
+                            ++cntCopper;
+                            break;
+                        case Field.FIELD_IRON:
+                            ++cntIron;
+                            break;
+                        case Field.FIELD_SILVER:
+                            ++cntSilver;
+                            break;
+                        case Field.FIELD_GOLD:
+                            ++cntGold;
+                            break;
+                        case Field.FIELD_DIAMOND:
+                            ++cntDiamond;
+                            break;
+                    }
+                }
+            }
+
+            int[] ores = new int[13];
+            ores[0] = cntCoal;
+            ores[1] = cntCoal * new Field(Field.FIELD_COAL).getPoints();
+            ores[2] = cntCopper;
+            ores[3] = cntCopper * new Field(Field.FIELD_COPPER).getPoints();
+            ores[4] = cntIron;
+            ores[5] = cntIron * new Field(Field.FIELD_IRON).getPoints();
+            ores[6] = cntSilver;
+            ores[7] = cntSilver * new Field(Field.FIELD_SILVER).getPoints();
+            ores[8] = cntGold;
+            ores[9] = cntGold * new Field(Field.FIELD_GOLD).getPoints();
+            ores[10] = cntDiamond;
+            ores[11] = cntDiamond * new Field(Field.FIELD_DIAMOND).getPoints();
+            ores[12] = ores[1] + ores[3] + ores[5] + ores[7] + ores[9] + ores[11];
+            return ores;
+        }
     }
 }
