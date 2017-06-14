@@ -133,9 +133,9 @@
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(12, 273);
+            this.btnBack.Location = new System.Drawing.Point(10, 265);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(75, 32);
+            this.btnBack.Size = new System.Drawing.Size(180, 40);
             this.btnBack.TabIndex = 4;
             this.btnBack.Text = "Zurück";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -157,7 +157,7 @@
             // btnStartLevelEditor
             // 
             this.btnStartLevelEditor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartLevelEditor.Location = new System.Drawing.Point(107, 273);
+            this.btnStartLevelEditor.Location = new System.Drawing.Point(198, 269);
             this.btnStartLevelEditor.Name = "btnStartLevelEditor";
             this.btnStartLevelEditor.Size = new System.Drawing.Size(124, 32);
             this.btnStartLevelEditor.TabIndex = 6;

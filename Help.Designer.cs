@@ -48,6 +48,8 @@
             this.lbl_description = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btn_anleitung = new System.Windows.Forms.Button();
+            this.pB_Enter = new System.Windows.Forms.PictureBox();
+            this.btnClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pB_A)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pB_S)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pB_D)).BeginInit();
@@ -59,6 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pB_6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pB_2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pB_Space)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pB_Enter)).BeginInit();
             this.SuspendLayout();
             // 
             // pB_A
@@ -264,11 +267,34 @@
             this.btn_anleitung.UseVisualStyleBackColor = true;
             this.btn_anleitung.Click += new System.EventHandler(this.btn_anleitung_Click);
             // 
+            // pB_Enter
+            // 
+            this.pB_Enter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pB_Enter.Location = new System.Drawing.Point(404, 274);
+            this.pB_Enter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pB_Enter.Name = "pB_Enter";
+            this.pB_Enter.Size = new System.Drawing.Size(299, 76);
+            this.pB_Enter.TabIndex = 27;
+            this.pB_Enter.TabStop = false;
+            this.pB_Enter.Paint += new System.Windows.Forms.PaintEventHandler(this.pB_Enter_Paint);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(12, 508);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(180, 40);
+            this.btnClose.TabIndex = 28;
+            this.btnClose.Text = "Zurück";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // Help
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1059, 560);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.pB_Enter);
             this.Controls.Add(this.btn_anleitung);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lbl_description);
@@ -308,6 +334,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pB_6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pB_2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pB_Space)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pB_Enter)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,5 +360,7 @@
         private System.Windows.Forms.Label lbl_description;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btn_anleitung;
+        private System.Windows.Forms.PictureBox pB_Enter;
+        private System.Windows.Forms.Button btnClose;
     }
 }

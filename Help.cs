@@ -136,6 +136,14 @@ namespace minesHunter
             }
         }
 
+        private void pB_Enter_Paint(object sender, PaintEventArgs e)
+        {
+            using (Font myFont = new Font("Arial", 12))
+            {
+                e.Graphics.DrawString("Enter", myFont, Brushes.Black, new Point(2, 2));
+            }
+        }
+
         #endregion
 
 
@@ -229,6 +237,12 @@ namespace minesHunter
                     lbl_description.Text = "Würfeln";
                     break;
 
+                case Keys.Enter:
+                    pB_Enter.BorderStyle = BorderStyle.Fixed3D;
+                    pB_Enter.BackColor = Color.LightGreen;
+                    lbl_description.Text = "Aussetzen (nachdem gewürfelt) / nächster Spieler";
+                    break;
+
                 case Keys.NumPad8:
                     pB_8.BorderStyle = BorderStyle.Fixed3D;
                     pB_8.BackColor = Color.LightGreen;
@@ -309,6 +323,12 @@ namespace minesHunter
                     lbl_description.Text = "bitte drücken sie eine Taste...";
                     break;
 
+                case Keys.Enter:
+                    pB_Enter.BorderStyle = BorderStyle.FixedSingle;
+                    pB_Enter.BackColor = DefaultBackColor;
+                    lbl_description.Text = "bitte drücken sie eine Taste...";
+                    break;
+
                 case Keys.NumPad8:
                     pB_8.BorderStyle = BorderStyle.FixedSingle;
                     pB_8.BackColor = DefaultBackColor;
@@ -345,6 +365,11 @@ namespace minesHunter
         {
             label3.Focus();
             System.Diagnostics.Process.Start(AppDomain.CurrentDomain.BaseDirectory + "\\Anleitung\\Spielanleitung.pdf");
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

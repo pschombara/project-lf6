@@ -116,18 +116,18 @@
             this.btnCloseHighscore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCloseHighscore.Location = new System.Drawing.Point(12, 280);
             this.btnCloseHighscore.Name = "btnCloseHighscore";
-            this.btnCloseHighscore.Size = new System.Drawing.Size(169, 40);
+            this.btnCloseHighscore.Size = new System.Drawing.Size(180, 40);
             this.btnCloseHighscore.TabIndex = 1;
-            this.btnCloseHighscore.Text = "Beenden";
+            this.btnCloseHighscore.Text = "Zurück";
             this.btnCloseHighscore.UseVisualStyleBackColor = true;
             this.btnCloseHighscore.Click += new System.EventHandler(this.btnCloseHighscore_Click);
             // 
             // btnResetHighscore
             // 
             this.btnResetHighscore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnResetHighscore.Location = new System.Drawing.Point(586, 280);
+            this.btnResetHighscore.Location = new System.Drawing.Point(588, 280);
             this.btnResetHighscore.Name = "btnResetHighscore";
-            this.btnResetHighscore.Size = new System.Drawing.Size(182, 40);
+            this.btnResetHighscore.Size = new System.Drawing.Size(180, 40);
             this.btnResetHighscore.TabIndex = 2;
             this.btnResetHighscore.Text = "Zurücksetzen";
             this.btnResetHighscore.UseVisualStyleBackColor = true;
@@ -137,7 +137,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(780, 323);
+            this.ClientSize = new System.Drawing.Size(780, 324);
             this.Controls.Add(this.btnResetHighscore);
             this.Controls.Add(this.btnCloseHighscore);
             this.Controls.Add(this.dgvHighscore);
