@@ -634,7 +634,7 @@ namespace minesHunter
             {
                 for (int j = 0; j < 32; j++)
                 {
-                    if (this.board[i,j] >= Field.FIELD_COAL && this.board[i,j] <= Field.FIELD_DIAMOND)
+                    if (this.board[i, j] >= Field.FIELD_COAL && this.board[i, j] <= Field.FIELD_DIAMOND)
                     {
                         return true;
                     }
@@ -922,9 +922,12 @@ namespace minesHunter
                 {
                     if (!this.waysP1[i].reduceLive())
                     {
-                        board[this.waysP1[i].getX(), this.waysP1[i].getY()] = Field.FIELD_DIRT;
-                        this.waysP1.RemoveAt(i);
-                        this.playSound(ResourceSound.Collapse);
+                        if (!(this.waysP1[i].getX() == playerOne.getLocation().getX() && this.waysP1[i].getY() == playerOne.getLocation().getY() + 1))
+                        {
+                            board[this.waysP1[i].getX(), this.waysP1[i].getY()] = Field.FIELD_DIRT;
+                            this.waysP1.RemoveAt(i);
+                            this.playSound(ResourceSound.Collapse);
+                        }
                     }
                 }
             }
@@ -934,9 +937,12 @@ namespace minesHunter
                 {
                     if (!this.waysP2[i].reduceLive())
                     {
-                        board[this.waysP2[i].getX(), this.waysP2[i].getY()] = Field.FIELD_DIRT;
-                        this.waysP2.RemoveAt(i);
-                        this.playSound(ResourceSound.Collapse);
+                        if (!(this.waysP2[i].getX() == playerTwo.getLocation().getX() && this.waysP2[i].getY() == playerTwo.getLocation().getY() + 1))
+                        {
+                            board[this.waysP2[i].getX(), this.waysP2[i].getY()] = Field.FIELD_DIRT;
+                            this.waysP2.RemoveAt(i);
+                            this.playSound(ResourceSound.Collapse);
+                        }
                     }
                 }
             }
