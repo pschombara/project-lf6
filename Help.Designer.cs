@@ -284,6 +284,7 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(180, 40);
             this.btnClose.TabIndex = 28;
+            this.btnClose.TabStop = false;
             this.btnClose.Text = "Zurück";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
